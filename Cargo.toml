@@ -1,0 +1,39 @@
+[package]
+name = "bevy_asm_tests"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy_ecs = { git = "https://github.com/bevyengine/bevy", branch = "main" }
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+
+[[example]]
+name = "entity_insert"
+crate-type = ["lib"]
+
+[[example]]
+name = "entity_remove"
+crate-type = ["lib"]
+
+[[example]]
+name = "entity_remove_intersection"
+crate-type = ["lib"]
+
+[[example]]
+name = "query_iter"
+crate-type = ["lib"]
+
+[[example]]
+name = "query_for_each"
+crate-type = ["lib"]
+
+[[example]]
+name = "query_get"
+crate-type = ["lib"]
+
+[[example]]
+name = "world_get"
+crate-type = ["lib"]
