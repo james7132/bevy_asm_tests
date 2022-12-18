@@ -27,7 +27,15 @@ name = "query_iter"
 crate-type = ["lib"]
 
 [[example]]
+name = "query_iter_sparse"
+crate-type = ["lib"]
+
+[[example]]
 name = "query_for_each"
+crate-type = ["lib"]
+
+[[example]]
+name = "query_for_each_sparse"
 crate-type = ["lib"]
 
 [[example]]
@@ -35,5 +43,13 @@ name = "query_get"
 crate-type = ["lib"]
 
 [[example]]
+name = "query_get_sparse"
+crate-type = ["lib"]
+
+[[example]]
 name = "world_get"
+crate-type = ["lib"]
+
+[[example]]
+name = "world_get_sparse"
 crate-type = ["lib"]
