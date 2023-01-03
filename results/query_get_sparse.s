@@ -5,7 +5,7 @@
 	.endef
 	.globl	@feat.00
 .set @feat.00, 0
-	.file	"query_get_sparse.467abf3a-cgu.0"
+	.file	"query_get_sparse.8a9e7198-cgu.0"
 	.def	query_get;
 	.scl	2;
 	.type	32;
@@ -31,118 +31,94 @@ query_get:
 	.seh_pushreg %rbp
 	pushq	%rbx
 	.seh_pushreg %rbx
-	subq	$120, %rsp
-	.seh_stackalloc 120
+	subq	$88, %rsp
+	.seh_stackalloc 88
 	.seh_endprologue
-	movl	%r8d, %r12d
-	movl	%edx, %ebp
-	movq	(%rcx), %rsi
-	movq	8(%rcx), %r15
-	movl	16(%rcx), %r13d
-	movl	20(%rcx), %r14d
-	leaq	8(%rsi), %rdx
-	leaq	56(%rsp), %rdi
+	movl	%r8d, %r13d
+	movl	%edx, %ebx
+	movq	(%rcx), %rdi
+	movq	8(%rcx), %rsi
+	movl	16(%rcx), %r15d
+	movl	20(%rcx), %r12d
+	leaq	8(%rdi), %rdx
+	leaq	40(%rsp), %rbp
+	movq	%rbp, %rcx
+	movl	%ebx, %r8d
+	movl	%r13d, %r9d
+	callq	_ZN8bevy_ecs6entity8Entities3get17h8355c6c0f38b2755E
+	cmpl	$0, 40(%rsp)
+	movl	$1, %eax
+	je	.LBB0_2
+	movl	44(%rsp), %eax
+.LBB0_2:
+	je	.LBB0_3
+	movl	%eax, %ecx
+	shrq	$5, %rcx
+	cmpq	64(%rsi), %rcx
+	jae	.LBB0_6
+	movq	48(%rsi), %rdx
+	movl	(%rdx,%rcx,4), %ecx
+	btl	%eax, %ecx
+	jae	.LBB0_6
+	movq	336(%rsi), %rdx
+	movq	344(%rsi), %rbp
+	leaq	240(%rdi), %rbx
+	movq	%rbx, %rcx
+	callq	_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17h45db64a136acb059E
+	movq	%rax, %r14
+	movq	%rbx, %rcx
+	movq	%rbp, %rdx
+	callq	_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17h45db64a136acb059E
+	movq	%rax, %rbp
+	movq	%rax, 80(%rsp)
+	addq	$352, %rsi
 	movq	%rdi, %rcx
-	movl	%ebp, %r8d
+	movq	%rsi, %rdx
+	movl	%r15d, %r8d
 	movl	%r12d, %r9d
-	callq	_ZN8bevy_ecs6entity8Entities3get17h7e3ec050f64c5387E
-	movl	%ebp, %eax
-	movq	%r12, %rbx
+	callq	_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h2634c7fb1d1468e5E
+	movq	120(%r14), %rsi
+	movl	%r13d, 40(%rsp)
+	leaq	40(%rsp), %rcx
+	callq	_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17h77f890244aa7bfc7E
+	movl	4(%rsi,%rax,8), %esi
+	movq	(%r14), %rdi
+	imulq	%rsi, %rdi
+	addq	32(%r14), %rdi
+	shlq	$2, %rsi
+	movq	48(%r14), %rbx
+	addq	%rsi, %rbx
+	addq	72(%r14), %rsi
+	movq	120(%rbp), %r14
+	movl	%r13d, 40(%rsp)
+	leaq	40(%rsp), %rcx
+	callq	_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17h77f890244aa7bfc7E
+	movl	4(%r14,%rax,8), %eax
+	leaq	40(%rsp), %rbp
+	movq	80(%rsp), %rcx
+	imulq	(%rcx), %rax
+	addq	32(%rcx), %rax
+	jmp	.LBB0_9
+.LBB0_6:
+	xorl	%eax, %eax
+	jmp	.LBB0_7
+.LBB0_3:
+	movl	$1, %eax
+.LBB0_7:
 	shlq	$32, %rbx
 	orq	%rax, %rbx
-	cmpq	$0, 56(%rsp)
-	je	.LBB0_2
-	movq	64(%rsp), %rbx
-.LBB0_2:
-	je	.LBB0_8
-	movq	%rbx, %rax
-	shrq	$5, %rax
-	cmpq	64(%r15), %rax
-	jae	.LBB0_7
-	movq	48(%r15), %rcx
-	movl	(%rcx,%rax,4), %eax
-	btl	%ebx, %eax
-	jae	.LBB0_7
-	movq	72(%rsp), %rax
-	movq	%rax, 104(%rsp)
-	movq	160(%rsi), %rax
-	movq	%rax, 112(%rsp)
-	movq	336(%r15), %rdx
-	movq	344(%r15), %rax
-	movq	%rax, 96(%rsp)
-	movl	%r14d, %edi
-	leaq	240(%rsi), %r14
-	movq	%r14, %rcx
-	callq	_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17hd1d94803de0ce562E
-	movq	%rax, %rbp
-	movq	%r14, %rcx
-	movq	96(%rsp), %rdx
-	callq	_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17hd1d94803de0ce562E
-	movq	%rax, %r14
-	addq	$352, %r15
-	movq	%rsi, %rcx
-	movq	%r15, %rdx
-	movl	%r13d, %r8d
-	movl	%edi, %r15d
-	movl	%edi, %r9d
-	callq	_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h20345ab9dc04a3a1E
-	movq	104(%rsp), %rcx
-	leaq	(%rbx,%rbx,4), %rax
-	shlq	$5, %rax
-	movq	112(%rsp), %rdx
-	movq	104(%rdx,%rax), %rdx
-	cmpq	%rdx, %rcx
-	jae	.LBB0_11
-	movq	120(%rbp), %rsi
-	movl	%r12d, 56(%rsp)
-	leaq	56(%rsp), %rcx
-	callq	_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17h4da07b09974712c1E
-	movl	4(%rsi,%rax,8), %edi
-	movq	(%rbp), %rsi
-	imulq	%rdi, %rsi
-	addq	32(%rbp), %rsi
-	shlq	$2, %rdi
-	movq	48(%rbp), %rbx
-	addq	%rdi, %rbx
-	addq	72(%rbp), %rdi
-	movq	120(%r14), %rbp
-	movl	%r12d, 56(%rsp)
-	leaq	56(%rsp), %rcx
-	callq	_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17h4da07b09974712c1E
-	movl	4(%rbp,%rax,8), %eax
-	imulq	(%r14), %rax
-	addq	32(%r14), %rax
-	movq	%rbx, 40(%rsp)
-	movq	%rdi, 48(%rsp)
-	leaq	56(%rsp), %rdi
-	movl	%r15d, %r14d
-	jmp	.LBB0_10
-.LBB0_7:
-	movl	$0, 40(%rsp)
-	movl	%ebp, 44(%rsp)
-	movl	%r12d, 48(%rsp)
-	jmp	.LBB0_9
-.LBB0_8:
-	movl	$1, 40(%rsp)
-	movq	%rbx, 44(%rsp)
+	movl	%r13d, %esi
+	xorl	%edi, %edi
 .LBB0_9:
-	xorl	%esi, %esi
-.LBB0_10:
-	movl	40(%rsp), %ecx
-	movl	%ecx, 64(%rsp)
-	movl	44(%rsp), %ecx
-	movl	%ecx, 68(%rsp)
-	movl	48(%rsp), %ecx
-	movl	%ecx, 72(%rsp)
-	movl	52(%rsp), %ecx
-	movl	%ecx, 76(%rsp)
+	movq	%rdi, 40(%rsp)
+	movq	%rbx, 48(%rsp)
 	movq	%rsi, 56(%rsp)
-	movl	%r13d, 80(%rsp)
-	movl	%r14d, 84(%rsp)
-	movq	%rax, 88(%rsp)
+	movl	%r15d, 64(%rsp)
+	movl	%r12d, 68(%rsp)
+	movq	%rax, 72(%rsp)
 	#APP
 	#NO_APP
-	addq	$120, %rsp
+	addq	$88, %rsp
 	popq	%rbx
 	popq	%rbp
 	popq	%rdi
@@ -152,19 +128,5 @@ query_get:
 	popq	%r14
 	popq	%r15
 	retq
-.LBB0_11:
-	leaq	anon.161d7961c923b4e842c0f6e55225f2ee.1(%rip), %r8
-	callq	_ZN4core9panicking18panic_bounds_check17h676803aa0dfb5c32E
-	ud2
 	.seh_endproc
-
-	.section	.rdata,"dr",one_only,anon.161d7961c923b4e842c0f6e55225f2ee.0
-anon.161d7961c923b4e842c0f6e55225f2ee.0:
-	.ascii	"C:\\Users\\James\\.cargo\\git\\checkouts\\bevy-f7ffde730c324c74\\f8e4b75\\crates\\bevy_ecs\\src\\archetype.rs"
-
-	.section	.rdata,"dr",one_only,anon.161d7961c923b4e842c0f6e55225f2ee.1
-	.p2align	3
-anon.161d7961c923b4e842c0f6e55225f2ee.1:
-	.quad	anon.161d7961c923b4e842c0f6e55225f2ee.0
-	.asciz	"b\000\000\000\000\000\000\000\245\001\000\000\t\000\000"
 

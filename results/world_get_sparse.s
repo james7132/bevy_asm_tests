@@ -5,16 +5,16 @@
 	.endef
 	.globl	@feat.00
 .set @feat.00, 0
-	.file	"world_get_sparse.27556fe9-cgu.0"
+	.file	"world_get_sparse.c80fb777-cgu.0"
 	.def	world_get;
 	.scl	2;
 	.type	32;
 	.endef
-	.globl	__xmm@0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c
-	.section	.rdata,"dr",discard,__xmm@0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c
+	.globl	__xmm@4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d
+	.section	.rdata,"dr",discard,__xmm@4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d
 	.p2align	4
-__xmm@0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c:
-	.zero	16,12
+__xmm@4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d:
+	.zero	16,77
 	.section	.text,"xr",one_only,world_get
 	.globl	world_get
 	.p2align	4, 0x90
@@ -46,8 +46,8 @@ world_get:
 	leaq	40(%rsp), %rsi
 	movq	%rsi, %rcx
 	movl	%r13d, %r9d
-	callq	_ZN8bevy_ecs6entity8Entities3get17h7e3ec050f64c5387E
-	cmpq	$0, 40(%rsp)
+	callq	_ZN8bevy_ecs6entity8Entities3get17h8355c6c0f38b2755E
+	cmpl	$0, 40(%rsp)
 	je	.LBB0_8
 	cmpq	$0, 120(%r14)
 	je	.LBB0_8
@@ -56,11 +56,11 @@ world_get:
 	movq	96(%r14), %rdx
 	movq	104(%r14), %r10
 	leaq	-16(%r10), %rdi
-	movabsq	$1872462966029893990, %rsi
+	movabsq	$-7325935326040561373, %rsi
 	xorl	%r8d, %r8d
-	movdqa	__xmm@0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c(%rip), %xmm0
+	movdqa	__xmm@4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$-4626563118006802354, %r11
+	movabsq	$8447095621563674327, %r11
 	xorl	%r9d, %r9d
 .LBB0_3:
 	andq	%rdx, %rsi
@@ -105,7 +105,7 @@ world_get:
 	movq	-8(%r10,%rax), %rdx
 	addq	$240, %r14
 	movq	%r14, %rcx
-	callq	_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17hd1d94803de0ce562E
+	callq	_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17h45db64a136acb059E
 	testq	%rax, %rax
 	je	.LBB0_13
 	movq	%rax, %rbx
@@ -113,7 +113,7 @@ world_get:
 	movq	136(%rax), %rdi
 	movl	%r13d, 40(%rsp)
 	leaq	40(%rsp), %rcx
-	callq	_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17h4da07b09974712c1E
+	callq	_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17h77f890244aa7bfc7E
 	cmpq	%rdi, %rax
 	jae	.LBB0_13
 	cmpl	$0, (%rsi,%rax,8)

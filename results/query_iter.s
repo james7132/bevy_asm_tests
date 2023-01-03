@@ -5,7 +5,7 @@
 	.endef
 	.globl	@feat.00
 .set @feat.00, 0
-	.file	"query_iter.c39650bf-cgu.0"
+	.file	"query_iter.f944fe02-cgu.0"
 	.def	query_iter;
 	.scl	2;
 	.type	32;
@@ -37,22 +37,24 @@ query_iter:
 	leaq	352(%r15), %rdx
 	movq	%rsi, %rcx
 	movl	%r14d, %r9d
-	callq	_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h20345ab9dc04a3a1E
+	callq	_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h2634c7fb1d1468e5E
 	movq	288(%r15), %rax
 	movq	304(%r15), %rcx
-	leaq	(%rax,%rcx,8), %rcx
+	leaq	(%rax,%rcx,4), %rcx
 	xorl	%edi, %edi
-	xorl	%ebx, %ebx
+	xorl	%r9d, %r9d
 	xorl	%edx, %edx
 	xorl	%ebp, %ebp
 	jmp	.LBB0_1
 	.p2align	4, 0x90
 .LBB0_5:
-	movss	(%rbx,%rbp,4), %xmm0
-	movl	%r14d, (%r8,%rbp,4)
-	addss	(%rdi,%rbp,4), %xmm0
-	movss	%xmm0, (%rdi,%rbp,4)
+	movl	%ebp, %ebx
+	shlq	$2, %rbx
 	incq	%rbp
+	movss	(%r9,%rbx), %xmm0
+	movl	%r14d, (%r8,%rbx)
+	addss	(%rdi,%rbx), %xmm0
+	movss	%xmm0, (%rdi,%rbx)
 .LBB0_1:
 	cmpq	%rdx, %rbp
 	jne	.LBB0_5
@@ -60,8 +62,8 @@ query_iter:
 .LBB0_2:
 	cmpq	%rcx, %rax
 	je	.LBB0_6
-	movq	(%rax), %rdx
-	addq	$8, %rax
+	movl	(%rax), %edx
+	addq	$4, %rax
 	movq	312(%rsi), %rbp
 	leaq	(%rdx,%rdx,8), %rbx
 	movq	64(%rbp,%rbx,8), %rdx
@@ -83,7 +85,7 @@ query_iter:
 	movq	8(%r10,%r9), %rbp
 	leaq	(%rbp,%rbp,2), %rbp
 	shlq	$5, %rbp
-	movq	32(%rbx,%rbp), %rbx
+	movq	32(%rbx,%rbp), %r9
 	xorl	%ebp, %ebp
 	jmp	.LBB0_5
 .LBB0_6:

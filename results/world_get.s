@@ -5,16 +5,16 @@
 	.endef
 	.globl	@feat.00
 .set @feat.00, 0
-	.file	"world_get.a25d66c0-cgu.0"
+	.file	"world_get.3faa8847-cgu.0"
 	.def	world_get;
 	.scl	2;
 	.type	32;
 	.endef
-	.globl	__xmm@6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
-	.section	.rdata,"dr",discard,__xmm@6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+	.globl	__xmm@15151515151515151515151515151515
+	.section	.rdata,"dr",discard,__xmm@15151515151515151515151515151515
 	.p2align	4
-__xmm@6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d:
-	.zero	16,109
+__xmm@15151515151515151515151515151515:
+	.zero	16,21
 	.section	.text,"xr",one_only,world_get
 	.globl	world_get
 	.p2align	4, 0x90
@@ -45,28 +45,28 @@ world_get:
 	leaq	8(%rcx), %rdx
 	leaq	40(%rsp), %rsi
 	movq	%rsi, %rcx
-	callq	_ZN8bevy_ecs6entity8Entities3get17h7e3ec050f64c5387E
-	cmpq	$0, 40(%rsp)
-	je	.LBB0_8
+	callq	_ZN8bevy_ecs6entity8Entities3get17h8355c6c0f38b2755E
+	cmpl	$0, 40(%rsp)
+	je	.LBB0_12
 	cmpq	$0, 120(%r13)
-	je	.LBB0_8
-	movq	48(%rsp), %r10
-	movq	56(%rsp), %rcx
+	je	.LBB0_12
+	movl	52(%rsp), %ecx
+	movl	56(%rsp), %r10d
 	movl	696(%r13), %eax
 	movl	%eax, 36(%rsp)
 	movl	700(%r13), %r9d
-	movq	96(%r13), %rbx
-	movq	104(%r13), %r11
-	leaq	-16(%r11), %r8
-	movabsq	$-2619184688480258489, %rsi
-	xorl	%r15d, %r15d
-	movdqa	__xmm@6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d(%rip), %xmm0
+	movq	96(%r13), %rsi
+	movq	104(%r13), %r15
+	leaq	-16(%r15), %r8
+	movabsq	$3142833306800168132, %rdx
+	xorl	%r11d, %r11d
+	movdqa	__xmm@15151515151515151515151515151515(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$1878771034081780331, %rdx
+	movabsq	$-1582147638775907148, %rax
 	xorl	%r12d, %r12d
 .LBB0_3:
-	andq	%rbx, %rsi
-	movdqu	(%r11,%rsi), %xmm2
+	andq	%rsi, %rdx
+	movdqu	(%r15,%rdx), %xmm2
 	movdqa	%xmm2, %xmm3
 	pcmpeqb	%xmm0, %xmm3
 	pmovmskb	%xmm3, %ebp
@@ -78,84 +78,69 @@ world_get:
 	movzwl	%di, %edi
 	leal	-1(%rbp), %r14d
 	andl	%ebp, %r14d
-	addq	%rsi, %rdi
-	andq	%rbx, %rdi
+	addq	%rdx, %rdi
+	andq	%rsi, %rdi
 	movq	%rdi, %rbp
 	shlq	$4, %rbp
-	movq	%r8, %rax
-	subq	%rbp, %rax
+	movq	%r8, %rbx
+	subq	%rbp, %rbx
 	movl	%r14d, %ebp
-	cmpq	%rdx, (%rax)
+	cmpq	%rax, (%rbx)
 	jne	.LBB0_4
-	jmp	.LBB0_9
+	jmp	.LBB0_8
 	.p2align	4, 0x90
 .LBB0_6:
 	pcmpeqb	%xmm1, %xmm2
 	pmovmskb	%xmm2, %edi
 	testl	%edi, %edi
-	jne	.LBB0_16
-	addq	%r12, %rsi
-	addq	$16, %rsi
+	jne	.LBB0_14
+	addq	%r12, %rdx
+	addq	$16, %rdx
 	addq	$16, %r12
 	jmp	.LBB0_3
 .LBB0_8:
-	xorl	%r15d, %r15d
-	jmp	.LBB0_17
-.LBB0_9:
-	movq	176(%r13), %rdx
-	cmpq	%r10, %rdx
-	jbe	.LBB0_19
-	movq	160(%r13), %rsi
 	movq	328(%r13), %rdx
-	leaq	(%r10,%r10,4), %rbx
-	shlq	$5, %rbx
-	movq	8(%rsi,%rbx), %rax
-	cmpq	%rdx, %rax
-	jae	.LBB0_20
+	cmpq	%rcx, %rdx
+	jbe	.LBB0_17
 	negq	%rdi
 	shlq	$4, %rdi
-	movq	-8(%r11,%rdi), %rdi
+	movq	-8(%r15,%rdi), %rax
 	movq	312(%r13), %rdx
-	leaq	(%rax,%rax,8), %rax
-	cmpq	%rdi, 40(%rdx,%rax,8)
-	jbe	.LBB0_15
-	leaq	(%rdx,%rax,8), %rax
-	movq	32(%rax), %rbp
-	shlq	$4, %rdi
-	cmpq	$0, (%rbp,%rdi)
-	je	.LBB0_15
-	movq	104(%rsi,%rbx), %rdx
-	cmpq	%rcx, %rdx
-	jbe	.LBB0_21
-	leaq	(%rsi,%rbx), %rdx
-	addq	$88, %rdx
-	movq	(%rdx), %rdx
-	movq	(%rax), %rbx
-	movq	8(%rbp,%rdi), %rax
-	leaq	(%rax,%rax,2), %rbp
-	shlq	$5, %rbp
-	shlq	$4, %rcx
-	movq	(%rdx,%rcx), %rax
-	movq	(%rbx,%rbp), %r15
-	imulq	%rax, %r15
-	addq	32(%rbx,%rbp), %r15
-	shlq	$2, %rax
-	movq	48(%rbx,%rbp), %rcx
-	addq	%rax, %rcx
-	addq	72(%rbx,%rbp), %rax
+	leaq	(%rcx,%rcx,8), %rcx
+	cmpq	%rax, 40(%rdx,%rcx,8)
+	jbe	.LBB0_13
+	leaq	(%rdx,%rcx,8), %rcx
+	movq	32(%rcx), %rdx
+	shlq	$4, %rax
+	cmpq	$0, (%rdx,%rax)
 	leaq	40(%rsp), %rsi
-	movl	36(%rsp), %edx
-	jmp	.LBB0_17
+	je	.LBB0_12
+	movq	(%rcx), %rcx
+	movq	8(%rdx,%rax), %rax
+	leaq	(%rax,%rax,2), %rdx
+	shlq	$5, %rdx
+	movq	(%rcx,%rdx), %r11
+	imulq	%r10, %r11
+	addq	32(%rcx,%rdx), %r11
+	shlq	$2, %r10
+	movq	48(%rcx,%rdx), %rax
+	addq	%r10, %rax
+	addq	72(%rcx,%rdx), %r10
+	movl	36(%rsp), %ecx
+	jmp	.LBB0_15
+.LBB0_12:
+	xorl	%r11d, %r11d
+	jmp	.LBB0_15
+.LBB0_13:
+	xorl	%r11d, %r11d
+.LBB0_14:
+	leaq	40(%rsp), %rsi
 .LBB0_15:
-	xorl	%r15d, %r15d
-.LBB0_16:
-	leaq	40(%rsp), %rsi
-.LBB0_17:
-	movq	%r15, 40(%rsp)
-	movq	%rcx, 48(%rsp)
-	movq	%rax, 56(%rsp)
+	movq	%r11, 40(%rsp)
+	movq	%rax, 48(%rsp)
+	movq	%r10, 56(%rsp)
 	movl	%r9d, 64(%rsp)
-	movl	%edx, 68(%rsp)
+	movl	%ecx, 68(%rsp)
 	#APP
 	#NO_APP
 	addq	$72, %rsp
@@ -168,45 +153,19 @@ world_get:
 	popq	%r14
 	popq	%r15
 	retq
-.LBB0_19:
+.LBB0_17:
 	leaq	anon.155300dae0580fe2c3564be8a13f3f51.1(%rip), %r8
-	movq	%r10, %rcx
-	callq	_ZN4core9panicking18panic_bounds_check17h676803aa0dfb5c32E
-	ud2
-.LBB0_20:
-	leaq	anon.155300dae0580fe2c3564be8a13f3f51.2(%rip), %r8
-	movq	%rax, %rcx
-	callq	_ZN4core9panicking18panic_bounds_check17h676803aa0dfb5c32E
-	ud2
-.LBB0_21:
-	leaq	anon.155300dae0580fe2c3564be8a13f3f51.4(%rip), %r8
 	callq	_ZN4core9panicking18panic_bounds_check17h676803aa0dfb5c32E
 	ud2
 	.seh_endproc
 
 	.section	.rdata,"dr",one_only,anon.155300dae0580fe2c3564be8a13f3f51.0
 anon.155300dae0580fe2c3564be8a13f3f51.0:
-	.ascii	"C:\\Users\\conta\\.cargo\\git\\checkouts\\bevy-f7ffde730c324c74\\f8e4b75\\crates\\bevy_ecs\\src\\world\\entity_ref.rs"
+	.ascii	"C:\\Users\\James\\.cargo\\git\\checkouts\\bevy-f7ffde730c324c74\\b44b606\\crates\\bevy_ecs\\src\\world\\entity_ref.rs"
 
 	.section	.rdata,"dr",one_only,anon.155300dae0580fe2c3564be8a13f3f51.1
 	.p2align	3
 anon.155300dae0580fe2c3564be8a13f3f51.1:
 	.quad	anon.155300dae0580fe2c3564be8a13f3f51.0
-	.asciz	"i\000\000\000\000\000\000\000\302\002\000\000\026\000\000"
-
-	.section	.rdata,"dr",one_only,anon.155300dae0580fe2c3564be8a13f3f51.2
-	.p2align	3
-anon.155300dae0580fe2c3564be8a13f3f51.2:
-	.quad	anon.155300dae0580fe2c3564be8a13f3f51.0
-	.asciz	"i\000\000\000\000\000\000\000\303\002\000\000\022\000\000"
-
-	.section	.rdata,"dr",one_only,anon.155300dae0580fe2c3564be8a13f3f51.3
-anon.155300dae0580fe2c3564be8a13f3f51.3:
-	.ascii	"C:\\Users\\conta\\.cargo\\git\\checkouts\\bevy-f7ffde730c324c74\\f8e4b75\\crates\\bevy_ecs\\src\\archetype.rs"
-
-	.section	.rdata,"dr",one_only,anon.155300dae0580fe2c3564be8a13f3f51.4
-	.p2align	3
-anon.155300dae0580fe2c3564be8a13f3f51.4:
-	.quad	anon.155300dae0580fe2c3564be8a13f3f51.3
-	.asciz	"b\000\000\000\000\000\000\000\245\001\000\000\t\000\000"
+	.asciz	"i\000\000\000\000\000\000\000\366\002\000\000\036\000\000"
 
