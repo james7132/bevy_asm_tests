@@ -4,7 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-bevy_ecs = "0.10"
+#bevy_ecs = "0.10"
+bevy_ecs = { git = "https://github.com/james7132/bevy", branch = "less-panicking-bundles" }
 
 [profile.release]
 opt-level = 3

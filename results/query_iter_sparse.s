@@ -1,5 +1,5 @@
 	.text
-	.file	"query_iter_sparse.b81d8baa-cgu.0"
+	.file	"query_iter_sparse.f6c71015-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4, 0x90
@@ -34,7 +34,7 @@ query_iter:
 	movq	336(%rbp), %rsi
 	movq	344(%rbp), %r15
 	leaq	160(%rbx), %r13
-	movq	_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17hf6023fba36a240ceE@GOTPCREL(%rip), %r14
+	movq	_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17h7d8a255d7bbf9057E@GOTPCREL(%rip), %r14
 	movq	%r13, %rdi
 	callq	*%r14
 	movq	%rax, 48(%rsp)
@@ -47,7 +47,7 @@ query_iter:
 	movl	8(%rsp), %edx
 	movl	%r12d, 16(%rsp)
 	movl	%r12d, %ecx
-	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17hfd380a16337107d7E@GOTPCREL(%rip)
+	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h1826c046abe80838E@GOTPCREL(%rip)
 	movq	320(%rbp), %r12
 	movq	328(%rbp), %rax
 	leaq	(%r12,%rax,4), %r13
@@ -67,7 +67,7 @@ query_iter:
 	movq	128(%rbp), %r15
 	movl	%eax, 24(%rsp)
 	leaq	24(%rsp), %rdi
-	callq	*_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17hed436c82d13dc68dE@GOTPCREL(%rip)
+	callq	*_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17h7d15bf016e446bc2E@GOTPCREL(%rip)
 	movl	4(%r15,%rax,8), %eax
 	movq	%rax, 72(%rsp)
 	movq	(%rbp), %r15
@@ -82,7 +82,7 @@ query_iter:
 	movl	20(%rsp), %eax
 	movl	%eax, 28(%rsp)
 	leaq	28(%rsp), %rdi
-	callq	*_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17hed436c82d13dc68dE@GOTPCREL(%rip)
+	callq	*_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17h7d15bf016e446bc2E@GOTPCREL(%rip)
 	movq	8(%rsp), %rdx
 	movq	40(%rbp), %rcx
 	movq	56(%rsp), %rsi

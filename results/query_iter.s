@@ -1,5 +1,5 @@
 	.text
-	.file	"query_iter.330b16d2-cgu.0"
+	.file	"query_iter.e7234613-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4, 0x90
@@ -27,7 +27,7 @@ query_iter:
 	leaq	352(%r15), %rsi
 	movq	%rbx, %rdi
 	movl	%r14d, %ecx
-	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17hfd380a16337107d7E@GOTPCREL(%rip)
+	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h1826c046abe80838E@GOTPCREL(%rip)
 	movq	296(%r15), %rax
 	movq	304(%r15), %rcx
 	leaq	(%rax,%rcx,4), %rcx

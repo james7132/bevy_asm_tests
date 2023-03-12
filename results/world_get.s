@@ -1,9 +1,9 @@
 	.text
-	.file	"world_get.c9a0292f-cgu.0"
+	.file	"world_get.19a8fde2-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4
 .LCPI0_0:
-	.zero	16,123
+	.zero	16,16
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -32,38 +32,40 @@ world_get:
 	.cfi_offset %rbp, -16
 	movl	%edx, %ebx
 	movl	%esi, %ebp
-	callq	*_ZN8bevy_ecs5world5World20as_unsafe_world_cell17h75058e136bf80396E@GOTPCREL(%rip)
-	leaq	16(%rsp), %r15
-	movq	%r15, %rdi
+	callq	*_ZN8bevy_ecs5world5World20as_unsafe_world_cell17hc12886d2a18d1db9E@GOTPCREL(%rip)
+	leaq	16(%rsp), %r12
+	movq	%r12, %rdi
 	movq	%rax, %rsi
 	movl	%ebp, %edx
 	movl	%ebx, %ecx
-	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell10get_entity17h9dd3b52864fcf6a3E@GOTPCREL(%rip)
+	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell10get_entity17h6ec11eb2b919d214E@GOTPCREL(%rip)
 	cmpq	$0, 16(%rsp)
 	je	.LBB0_13
-	movl	32(%rsp), %r15d
+	movl	32(%rsp), %r12d
 	movl	36(%rsp), %r14d
-	movq	40(%rsp), %r12
-	movq	_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell14world_metadata17haaacd8b187eb4d78E@GOTPCREL(%rip), %rbp
-	movq	%r12, %rdi
-	callq	*%rbp
-	movl	764(%rax), %r13d
-	movq	%r12, %rdi
-	callq	*%rbp
-	movl	760(%rax), %ebx
-	movq	%r12, %rdi
-	callq	*%rbp
+	movq	40(%rsp), %r13
+	movq	_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell14world_metadata17h391633d371e55fceE@GOTPCREL(%rip), %rbx
+	movq	%r13, %rdi
+	callq	*%rbx
+	movl	764(%rax), %ebp
+	movq	%r13, %rdi
+	callq	*%rbx
+	movl	760(%rax), %edi
+	callq	*_ZN8bevy_ecs9component4Tick3new17h2abf9ac3d2356e37E@GOTPCREL(%rip)
+	movl	%eax, %r15d
+	movq	%r13, %rdi
+	callq	*%rbx
 	cmpq	$0, 488(%rax)
 	je	.LBB0_14
-	movl	%ebx, 12(%rsp)
+	movl	%ebp, 12(%rsp)
 	movq	472(%rax), %rdx
 	movq	496(%rax), %r10
-	leaq	-16(%r10), %rbp
-	movabsq	$-708015860159896424, %rdi
+	leaq	-16(%r10), %rbx
+	movabsq	$2415546278270131360, %rdi
 	xorl	%r8d, %r8d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$8462170712992056376, %r11
+	movabsq	$-7010241247703014880, %r11
 	xorl	%r9d, %r9d
 .LBB0_3:
 	andq	%rdx, %rdi
@@ -77,15 +79,15 @@ world_get:
 	je	.LBB0_6
 	bsfw	%cx, %ax
 	movzwl	%ax, %eax
-	leal	-1(%rcx), %ebx
-	andl	%ecx, %ebx
+	leal	-1(%rcx), %ebp
+	andl	%ecx, %ebp
 	addq	%rdi, %rax
 	andq	%rdx, %rax
 	movq	%rax, %rcx
 	shlq	$4, %rcx
-	movq	%rbp, %rsi
+	movq	%rbx, %rsi
 	subq	%rcx, %rsi
-	movl	%ebx, %ecx
+	movl	%ebp, %ecx
 	cmpq	%r11, (%rsi)
 	jne	.LBB0_4
 	jmp	.LBB0_8
@@ -102,28 +104,28 @@ world_get:
 .LBB0_8:
 	negq	%rax
 	shlq	$4, %rax
-	movq	-8(%r10,%rax), %rbp
-	movq	%r12, %rdi
-	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell12unsafe_world17h7f946eef85c792bcE@GOTPCREL(%rip)
+	movq	-8(%r10,%rax), %rbx
+	movq	%r13, %rdi
+	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell12unsafe_world17hd193af4460bb3820E@GOTPCREL(%rip)
 	movq	312(%rax), %rsi
-	cmpq	%r15, %rsi
+	cmpq	%r12, %rsi
 	jbe	.LBB0_17
 	movq	304(%rax), %rcx
-	leaq	(%r15,%r15,8), %rdx
+	leaq	(%r12,%r12,8), %rdx
 	xorl	%r8d, %r8d
-	cmpq	%rbp, 40(%rcx,%rdx,8)
+	cmpq	%rbx, 40(%rcx,%rdx,8)
 	jbe	.LBB0_15
 	movq	32(%rcx,%rdx,8), %rsi
 	testq	%rsi, %rsi
-	leaq	16(%rsp), %r15
+	leaq	16(%rsp), %r12
 	movl	12(%rsp), %edi
 	je	.LBB0_16
-	shlq	$4, %rbp
-	cmpq	$0, (%rsi,%rbp)
+	shlq	$4, %rbx
+	cmpq	$0, (%rsi,%rbx)
 	je	.LBB0_13
 	leaq	(%rcx,%rdx,8), %rax
 	movq	(%rax), %rcx
-	movq	8(%rsi,%rbp), %rax
+	movq	8(%rsi,%rbx), %rax
 	leaq	(%rax,%rax,2), %rdx
 	shlq	$5, %rdx
 	movq	(%rcx,%rdx), %r8
@@ -140,13 +142,13 @@ world_get:
 .LBB0_14:
 	xorl	%r8d, %r8d
 .LBB0_15:
-	leaq	16(%rsp), %r15
+	leaq	16(%rsp), %r12
 .LBB0_16:
 	movq	%r8, 16(%rsp)
 	movq	%rax, 24(%rsp)
 	movq	%r14, 32(%rsp)
-	movl	%r13d, 40(%rsp)
-	movl	%edi, 44(%rsp)
+	movl	%edi, 40(%rsp)
+	movl	%r15d, 44(%rsp)
 	#APP
 	#NO_APP
 	addq	$56, %rsp
@@ -167,7 +169,7 @@ world_get:
 .LBB0_17:
 	.cfi_def_cfa_offset 112
 	leaq	.Lanon.155300dae0580fe2c3564be8a13f3f51.1(%rip), %rdx
-	movq	%r15, %rdi
+	movq	%r12, %rdi
 	callq	*_ZN4core9panicking18panic_bounds_check17h35d160a4cf1fb235E@GOTPCREL(%rip)
 	ud2
 .Lfunc_end0:
@@ -177,7 +179,7 @@ world_get:
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.0,@object
 	.section	.rodata..Lanon.155300dae0580fe2c3564be8a13f3f51.0,"a",@progbits
 .Lanon.155300dae0580fe2c3564be8a13f3f51.0:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/7dbe7d8/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/78aa6df/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.0, 109
 
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.1,@object

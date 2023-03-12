@@ -1,9 +1,9 @@
 	.text
-	.file	"world_get_sparse.9400a8cb-cgu.0"
+	.file	"world_get_sparse.c2235aad-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4
 .LCPI0_0:
-	.zero	16,10
+	.zero	16,115
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -32,24 +32,26 @@ world_get:
 	.cfi_offset %rbp, -16
 	movl	%edx, %ebx
 	movl	%esi, %ebp
-	callq	*_ZN8bevy_ecs5world5World20as_unsafe_world_cell17h48b207706fa0d8dcE@GOTPCREL(%rip)
+	callq	*_ZN8bevy_ecs5world5World20as_unsafe_world_cell17hc12886d2a18d1db9E@GOTPCREL(%rip)
 	leaq	16(%rsp), %r14
 	movq	%r14, %rdi
 	movq	%rax, %rsi
 	movl	%ebp, %edx
 	movl	%ebx, %ecx
-	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell10get_entity17h0a559f64ee34be58E@GOTPCREL(%rip)
+	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell10get_entity17h6ec11eb2b919d214E@GOTPCREL(%rip)
 	cmpq	$0, 16(%rsp)
 	je	.LBB0_12
 	movq	40(%rsp), %r13
 	movl	52(%rsp), %ebx
-	movq	_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell14world_metadata17h7e79d5631d610fe9E@GOTPCREL(%rip), %rbp
+	movq	_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell14world_metadata17h391633d371e55fceE@GOTPCREL(%rip), %rbp
 	movq	%r13, %rdi
 	callq	*%rbp
 	movl	764(%rax), %r12d
 	movq	%r13, %rdi
 	callq	*%rbp
-	movl	760(%rax), %r15d
+	movl	760(%rax), %edi
+	callq	*_ZN8bevy_ecs9component4Tick3new17h2abf9ac3d2356e37E@GOTPCREL(%rip)
+	movl	%eax, %r15d
 	movq	%r13, %rdi
 	callq	*%rbp
 	cmpq	$0, 488(%rax)
@@ -58,11 +60,11 @@ world_get:
 	movq	472(%rax), %rdx
 	movq	496(%rax), %r10
 	leaq	-16(%r10), %rbp
-	movabsq	$1557316598574398974, %rdi
+	movabsq	$-1742388699576362908, %rdi
 	xorl	%r8d, %r8d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$-6250090009709157242, %r11
+	movabsq	$5527093675782848980, %r11
 	xorl	%r9d, %r9d
 .LBB0_3:
 	andq	%rdx, %rdi
@@ -103,10 +105,10 @@ world_get:
 	shlq	$4, %rax
 	movq	-8(%r10,%rax), %rbp
 	movq	%r13, %rdi
-	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell12unsafe_world17hb02b6e97826b6e54E@GOTPCREL(%rip)
+	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell12unsafe_world17hd193af4460bb3820E@GOTPCREL(%rip)
 	leaq	160(%rax), %rdi
 	movq	%rbp, %rsi
-	callq	*_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17hf6023fba36a240ceE@GOTPCREL(%rip)
+	callq	*_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17h7d8a255d7bbf9057E@GOTPCREL(%rip)
 	testq	%rax, %rax
 	je	.LBB0_12
 	movq	%rax, %rbx
@@ -115,7 +117,7 @@ world_get:
 	movl	12(%rsp), %eax
 	movl	%eax, 16(%rsp)
 	leaq	16(%rsp), %rdi
-	callq	*_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17hed436c82d13dc68dE@GOTPCREL(%rip)
+	callq	*_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17h7d15bf016e446bc2E@GOTPCREL(%rip)
 	cmpq	%rbp, %rax
 	jae	.LBB0_12
 	cmpl	$0, (%r13,%rax,8)

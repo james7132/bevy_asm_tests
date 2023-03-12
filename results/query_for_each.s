@@ -1,5 +1,5 @@
 	.text
-	.file	"query_for_each.51c5d6be-cgu.0"
+	.file	"query_for_each.fd202bbf-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4, 0x90
@@ -28,7 +28,7 @@ query_for_each:
 	leaq	352(%r15), %rsi
 	movq	%r14, %rdi
 	movl	%r12d, %ecx
-	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h6bb7b156695554deE@GOTPCREL(%rip)
+	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h1826c046abe80838E@GOTPCREL(%rip)
 	movq	304(%r15), %rcx
 	testq	%rcx, %rcx
 	je	.LBB0_6
