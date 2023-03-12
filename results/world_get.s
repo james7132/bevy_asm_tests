@@ -1,9 +1,9 @@
 	.text
-	.file	"world_get.cca1a8c3-cgu.0"
+	.file	"world_get.c9a0292f-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4
 .LCPI0_0:
-	.zero	16,18
+	.zero	16,123
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -32,19 +32,19 @@ world_get:
 	.cfi_offset %rbp, -16
 	movl	%edx, %ebx
 	movl	%esi, %ebp
-	callq	*_ZN8bevy_ecs5world5World20as_unsafe_world_cell17h48b207706fa0d8dcE@GOTPCREL(%rip)
+	callq	*_ZN8bevy_ecs5world5World20as_unsafe_world_cell17h75058e136bf80396E@GOTPCREL(%rip)
 	leaq	16(%rsp), %r15
 	movq	%r15, %rdi
 	movq	%rax, %rsi
 	movl	%ebp, %edx
 	movl	%ebx, %ecx
-	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell10get_entity17h0a559f64ee34be58E@GOTPCREL(%rip)
+	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell10get_entity17h9dd3b52864fcf6a3E@GOTPCREL(%rip)
 	cmpq	$0, 16(%rsp)
 	je	.LBB0_13
 	movl	32(%rsp), %r15d
 	movl	36(%rsp), %r14d
 	movq	40(%rsp), %r12
-	movq	_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell14world_metadata17h7e79d5631d610fe9E@GOTPCREL(%rip), %rbp
+	movq	_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell14world_metadata17haaacd8b187eb4d78E@GOTPCREL(%rip), %rbp
 	movq	%r12, %rdi
 	callq	*%rbp
 	movl	764(%rax), %r13d
@@ -59,11 +59,11 @@ world_get:
 	movq	472(%rax), %rdx
 	movq	496(%rax), %r10
 	leaq	-16(%r10), %rbp
-	movabsq	$2692656909827549579, %rdi
+	movabsq	$-708015860159896424, %rdi
 	xorl	%r8d, %r8d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$-7066160543756846177, %r11
+	movabsq	$8462170712992056376, %r11
 	xorl	%r9d, %r9d
 .LBB0_3:
 	andq	%rdx, %rdi
@@ -104,7 +104,7 @@ world_get:
 	shlq	$4, %rax
 	movq	-8(%r10,%rax), %rbp
 	movq	%r12, %rdi
-	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell12unsafe_world17hb02b6e97826b6e54E@GOTPCREL(%rip)
+	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell12unsafe_world17h7f946eef85c792bcE@GOTPCREL(%rip)
 	movq	312(%rax), %rsi
 	cmpq	%r15, %rsi
 	jbe	.LBB0_17
@@ -177,15 +177,15 @@ world_get:
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.0,@object
 	.section	.rodata..Lanon.155300dae0580fe2c3564be8a13f3f51.0,"a",@progbits
 .Lanon.155300dae0580fe2c3564be8a13f3f51.0:
-	.ascii	"/home/james/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_ecs-0.10.0/src/world/unsafe_world_cell.rs"
-	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.0, 111
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/7dbe7d8/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
+	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.0, 109
 
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.1,@object
 	.section	.data.rel.ro..Lanon.155300dae0580fe2c3564be8a13f3f51.1,"aw",@progbits
 	.p2align	3
 .Lanon.155300dae0580fe2c3564be8a13f3f51.1:
 	.quad	.Lanon.155300dae0580fe2c3564be8a13f3f51.0
-	.asciz	"o\000\000\000\000\000\000\000\370\002\000\000\t\000\000"
+	.asciz	"m\000\000\000\000\000\000\000\371\002\000\000\t\000\000"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.1, 24
 
 	.section	".note.GNU-stack","",@progbits
