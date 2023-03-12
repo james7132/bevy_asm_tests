@@ -8,6 +8,6 @@ pub struct A(f32);
 pub struct B(f32);
 
 #[no_mangle]
-fn entity_remove(world: &mut World, entity: Entity) {
-    let _ = black_box(world.entity_mut(entity).remove_intersection::<A>());
+fn entity_remove(world: &mut World, entity: Entity) -> Option<A> {
+    black_box(world.entity_mut(entity).take::<A>())
 }

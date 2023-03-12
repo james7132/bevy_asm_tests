@@ -1,18 +1,18 @@
 # Bevy Assembly Tests
 
-This is a collection of compilation tests to check the assembly output of common 
+This is a collection of compilation tests to check the assembly output of common
 ECS operations in Bevy.
 
 This repo will be updated with every release of Bevy, and may track any major
 changes Bevy ECS on main.
 
 Currently, the tests are only built in release mode, with LTO enabled, for
-`x86_64-pc-windows-msvc` using the latest stable Rust toolchain and standard library
-(currently 1.66). Please file an issue asking if you would like to test against other
+`x86_64-unknown-linux-gnu` using the latest stable Rust toolchain and standard library
+(currently 1.68). Please file an issue asking if you would like to test against other
 platforms or toolchains.
 
 The source code for each example case can be found in the `examples/` directory, and
-final output for each case can be found in `results/`. 
+final output for each case can be found in `results/`.
 
 ## Building Locally
 The output can be built locally with the following command:

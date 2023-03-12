@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cargo build --release
+cargo build --release --examples
 rm results/*.s
 cp target/release/examples/*.s results
 for file in results/*.s ; do

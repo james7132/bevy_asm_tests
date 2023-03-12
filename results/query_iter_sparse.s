@@ -1,138 +1,144 @@
 	.text
-	.def	@feat.00;
-	.scl	3;
-	.type	0;
-	.endef
-	.globl	@feat.00
-.set @feat.00, 0
-	.file	"query_iter_sparse.87be5244-cgu.0"
-	.def	query_iter;
-	.scl	2;
-	.type	32;
-	.endef
-	.section	.text,"xr",one_only,query_iter
+	.file	"query_iter_sparse.b81d8baa-cgu.0"
+	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4, 0x90
+	.type	query_iter,@function
 query_iter:
-.seh_proc query_iter
-	pushq	%r15
-	.seh_pushreg %r15
-	pushq	%r14
-	.seh_pushreg %r14
-	pushq	%r13
-	.seh_pushreg %r13
-	pushq	%r12
-	.seh_pushreg %r12
-	pushq	%rsi
-	.seh_pushreg %rsi
-	pushq	%rdi
-	.seh_pushreg %rdi
+	.cfi_startproc
 	pushq	%rbp
-	.seh_pushreg %rbp
+	.cfi_def_cfa_offset 16
+	pushq	%r15
+	.cfi_def_cfa_offset 24
+	pushq	%r14
+	.cfi_def_cfa_offset 32
+	pushq	%r13
+	.cfi_def_cfa_offset 40
+	pushq	%r12
+	.cfi_def_cfa_offset 48
 	pushq	%rbx
-	.seh_pushreg %rbx
-	subq	$104, %rsp
-	.seh_stackalloc 104
-	.seh_endprologue
-	movq	(%rcx), %r12
-	movq	8(%rcx), %rdi
-	movl	16(%rcx), %r14d
-	movl	20(%rcx), %ebx
-	movq	336(%rdi), %rdx
-	movq	344(%rdi), %r15
-	leaq	240(%r12), %rbp
-	movq	%rbp, %rcx
-	callq	_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17h45db64a136acb059E
-	movq	%rax, 64(%rsp)
-	movq	%rbp, %rcx
-	movq	%r15, %rdx
-	callq	_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17h45db64a136acb059E
-	movq	%rax, 56(%rsp)
-	leaq	352(%rdi), %rdx
-	movq	%r12, %rcx
-	movl	%r14d, %r8d
-	movl	%ebx, 36(%rsp)
-	movl	%ebx, %r9d
-	callq	_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h2634c7fb1d1468e5E
-	movq	312(%rdi), %rbp
-	movq	328(%rdi), %rax
-	leaq	(,%rax,4), %rdi
-	addq	%rbp, %rdi
-	leaq	anon.a01df851b6197f632189e2f0fa818bdd.0(%rip), %rax
+	.cfi_def_cfa_offset 56
+	subq	$88, %rsp
+	.cfi_def_cfa_offset 144
+	.cfi_offset %rbx, -56
+	.cfi_offset %r12, -48
+	.cfi_offset %r13, -40
+	.cfi_offset %r14, -32
+	.cfi_offset %r15, -24
+	.cfi_offset %rbp, -16
+	movq	(%rdi), %rbx
+	movq	8(%rdi), %rbp
+	movl	16(%rdi), %eax
+	movl	%eax, 8(%rsp)
+	movl	20(%rdi), %r12d
+	movq	336(%rbp), %rsi
+	movq	344(%rbp), %r15
+	leaq	160(%rbx), %r13
+	movq	_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17hf6023fba36a240ceE@GOTPCREL(%rip), %r14
+	movq	%r13, %rdi
+	callq	*%r14
 	movq	%rax, 48(%rsp)
+	movq	%r13, %rdi
+	movq	%r15, %rsi
+	callq	*%r14
+	movq	%rax, 40(%rsp)
+	leaq	352(%rbp), %rsi
+	movq	%rbx, %rdi
+	movl	8(%rsp), %edx
+	movl	%r12d, 16(%rsp)
+	movl	%r12d, %ecx
+	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17hfd380a16337107d7E@GOTPCREL(%rip)
+	movq	320(%rbp), %r12
+	movq	328(%rbp), %rax
+	leaq	(%r12,%rax,4), %r13
+	leaq	.Lanon.a01df851b6197f632189e2f0fa818bdd.0(%rip), %rax
+	movq	%rax, 32(%rsp)
 	xorl	%r14d, %r14d
 	xorl	%edx, %edx
-	movq	56(%rsp), %rsi
 	jmp	.LBB0_1
 	.p2align	4, 0x90
 .LBB0_5:
-	movq	%rdx, 96(%rsp)
+	movq	%rdx, 8(%rsp)
 	leaq	(%rdx,%rdx,2), %rax
-	movq	48(%rsp), %rcx
-	movl	4(%rcx,%rax,4), %r15d
-	movq	64(%rsp), %r13
-	movq	120(%r13), %rbx
-	movl	%r15d, 40(%rsp)
-	leaq	40(%rsp), %rcx
-	callq	_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17h77f890244aa7bfc7E
-	movl	4(%rbx,%rax,8), %eax
-	movq	%rax, 80(%rsp)
-	movq	(%r13), %rbx
-	imulq	%rax, %rbx
-	movq	32(%r13), %rax
-	movq	%rax, 88(%rsp)
-	movq	72(%r13), %r13
-	movq	120(%rsi), %rax
+	movq	32(%rsp), %rcx
+	movl	4(%rcx,%rax,4), %eax
+	movl	%eax, 20(%rsp)
+	movq	48(%rsp), %rbp
+	movq	128(%rbp), %r15
+	movl	%eax, 24(%rsp)
+	leaq	24(%rsp), %rdi
+	callq	*_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17hed436c82d13dc68dE@GOTPCREL(%rip)
+	movl	4(%r15,%rax,8), %eax
 	movq	%rax, 72(%rsp)
-	movl	%r15d, 44(%rsp)
-	leaq	44(%rsp), %rcx
-	callq	_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17h77f890244aa7bfc7E
-	movq	96(%rsp), %rdx
-	movq	32(%rsi), %r8
-	movq	72(%rsp), %rcx
-	movl	4(%rcx,%rax,8), %eax
-	imulq	(%rsi), %rax
+	movq	(%rbp), %r15
+	imulq	%rax, %r15
+	movq	40(%rbp), %rax
+	movq	%rax, 80(%rsp)
+	movq	80(%rbp), %rax
+	movq	%rax, 64(%rsp)
+	movq	40(%rsp), %rbp
+	movq	128(%rbp), %rax
+	movq	%rax, 56(%rsp)
+	movl	20(%rsp), %eax
+	movl	%eax, 28(%rsp)
+	leaq	28(%rsp), %rdi
+	callq	*_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17hed436c82d13dc68dE@GOTPCREL(%rip)
+	movq	8(%rsp), %rdx
+	movq	40(%rbp), %rcx
+	movq	56(%rsp), %rsi
+	movl	4(%rsi,%rax,8), %eax
+	imulq	(%rbp), %rax
 	incq	%rdx
-	movss	(%r8,%rax), %xmm0
-	movl	36(%rsp), %eax
-	movq	80(%rsp), %rcx
-	movl	%eax, (%r13,%rcx,4)
-	movq	88(%rsp), %rax
-	addss	(%rax,%rbx), %xmm0
-	movss	%xmm0, (%rax,%rbx)
+	movss	(%rcx,%rax), %xmm0
+	movl	16(%rsp), %eax
+	movq	72(%rsp), %rcx
+	movq	64(%rsp), %rsi
+	movl	%eax, (%rsi,%rcx,4)
+	movq	80(%rsp), %rax
+	addss	(%rax,%r15), %xmm0
+	movss	%xmm0, (%rax,%r15)
 .LBB0_1:
 	cmpq	%r14, %rdx
 	jne	.LBB0_5
 	.p2align	4, 0x90
 .LBB0_2:
-	cmpq	%rdi, %rbp
+	cmpq	%r13, %r12
 	je	.LBB0_6
-	movl	(%rbp), %ecx
-	addq	$4, %rbp
-	movq	160(%r12), %rax
+	movl	(%r12), %ecx
+	addq	$4, %r12
+	movq	144(%rbx), %rax
 	imulq	$152, %rcx, %rcx
-	movq	88(%rax,%rcx), %r14
+	movq	136(%rax,%rcx), %r14
 	testq	%r14, %r14
 	je	.LBB0_2
-	movq	72(%rax,%rcx), %rax
-	movq	%rax, 48(%rsp)
+	movq	128(%rax,%rcx), %rax
+	movq	%rax, 32(%rsp)
 	xorl	%edx, %edx
 	jmp	.LBB0_5
 .LBB0_6:
-	addq	$104, %rsp
+	addq	$88, %rsp
+	.cfi_def_cfa_offset 56
 	popq	%rbx
-	popq	%rbp
-	popq	%rdi
-	popq	%rsi
+	.cfi_def_cfa_offset 48
 	popq	%r12
+	.cfi_def_cfa_offset 40
 	popq	%r13
+	.cfi_def_cfa_offset 32
 	popq	%r14
+	.cfi_def_cfa_offset 24
 	popq	%r15
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
 	retq
-	.seh_endproc
+.Lfunc_end0:
+	.size	query_iter, .Lfunc_end0-query_iter
+	.cfi_endproc
 
-	.section	.rdata,"dr",one_only,anon.a01df851b6197f632189e2f0fa818bdd.0
+	.type	.Lanon.a01df851b6197f632189e2f0fa818bdd.0,@object
+	.section	.rodata..Lanon.a01df851b6197f632189e2f0fa818bdd.0,"a",@progbits
 	.p2align	2
-anon.a01df851b6197f632189e2f0fa818bdd.0:
+.Lanon.a01df851b6197f632189e2f0fa818bdd.0:
+	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.0, 0
 
-	.globl	_fltused
+	.section	".note.GNU-stack","",@progbits

@@ -9,5 +9,5 @@ pub struct B(f32);
 
 #[no_mangle]
 fn entity_remove(world: &mut World, entity: Entity) {
-    let _ = black_box(world.entity_mut(entity).remove::<A>());
+    black_box(world.entity_mut(entity).remove::<A>());
 }

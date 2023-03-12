@@ -1,117 +1,119 @@
 	.text
-	.def	@feat.00;
-	.scl	3;
-	.type	0;
-	.endef
-	.globl	@feat.00
-.set @feat.00, 0
-	.file	"query_get.13224c48-cgu.0"
-	.def	query_get;
-	.scl	2;
-	.type	32;
-	.endef
-	.section	.text,"xr",one_only,query_get
+	.file	"query_get.d1c2d7ba-cgu.0"
+	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4, 0x90
+	.type	query_get,@function
 query_get:
-.seh_proc query_get
-	pushq	%r15
-	.seh_pushreg %r15
-	pushq	%r14
-	.seh_pushreg %r14
-	pushq	%r12
-	.seh_pushreg %r12
-	pushq	%rsi
-	.seh_pushreg %rsi
-	pushq	%rdi
-	.seh_pushreg %rdi
+	.cfi_startproc
 	pushq	%rbp
-	.seh_pushreg %rbp
+	.cfi_def_cfa_offset 16
+	pushq	%r15
+	.cfi_def_cfa_offset 24
+	pushq	%r14
+	.cfi_def_cfa_offset 32
+	pushq	%r13
+	.cfi_def_cfa_offset 40
+	pushq	%r12
+	.cfi_def_cfa_offset 48
 	pushq	%rbx
-	.seh_pushreg %rbx
-	subq	$80, %rsp
-	.seh_stackalloc 80
-	.seh_endprologue
-	movl	%r8d, %ebp
-	movl	%edx, %ebx
-	movq	(%rcx), %rsi
-	movq	8(%rcx), %rdi
-	movl	16(%rcx), %r15d
-	movl	20(%rcx), %r12d
-	leaq	8(%rsi), %rdx
-	leaq	40(%rsp), %r14
-	movq	%r14, %rcx
-	movl	%ebx, %r8d
-	movl	%ebp, %r9d
-	callq	_ZN8bevy_ecs6entity8Entities3get17h8355c6c0f38b2755E
-	cmpl	$0, 40(%rsp)
-	je	.LBB0_4
-	movl	44(%rsp), %eax
+	.cfi_def_cfa_offset 56
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 96
+	.cfi_offset %rbx, -56
+	.cfi_offset %r12, -48
+	.cfi_offset %r13, -40
+	.cfi_offset %r14, -32
+	.cfi_offset %r15, -24
+	.cfi_offset %rbp, -16
+	movl	%edx, %ebp
+	movl	%esi, %ebx
+	movq	(%rdi), %r13
+	movq	8(%rdi), %r14
+	movl	16(%rdi), %r15d
+	movl	20(%rdi), %r12d
+	movq	%rsp, %rdi
+	movq	%r13, %rsi
+	movl	%ebx, %edx
+	movl	%ebp, %ecx
+	callq	*_ZN8bevy_ecs6entity8Entities3get17h45270d353afa6d06E@GOTPCREL(%rip)
+	cmpl	$0, (%rsp)
+	je	.LBB0_7
+	movl	4(%rsp), %eax
 	movq	%rax, %rcx
 	shrq	$5, %rcx
-	cmpq	64(%rdi), %rcx
-	jae	.LBB0_6
-	movq	48(%rdi), %rdx
+	cmpq	72(%r14), %rcx
+	jae	.LBB0_4
+	movq	64(%r14), %rdx
 	movl	(%rdx,%rcx,4), %ecx
 	btl	%eax, %ecx
-	jae	.LBB0_6
-	movl	52(%rsp), %ebx
-	movl	56(%rsp), %ebp
-	leaq	352(%rdi), %rdx
-	movq	%rsi, %rcx
-	movl	%r15d, %r8d
-	movl	%r12d, %r9d
-	callq	_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h2634c7fb1d1468e5E
-	movq	312(%rsi), %rax
+	jae	.LBB0_4
+	movl	12(%rsp), %ebx
+	movl	16(%rsp), %ebp
+	leaq	352(%r14), %rsi
+	movq	%r13, %rdi
+	movl	%r15d, %edx
+	movl	%r12d, %ecx
+	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17hfd380a16337107d7E@GOTPCREL(%rip)
+	movq	304(%r13), %rax
 	leaq	(%rbx,%rbx,8), %rcx
-	movq	336(%rdi), %rdx
-	movq	344(%rdi), %rbx
+	movq	336(%r14), %rdx
+	movq	344(%r14), %rsi
 	movq	(%rax,%rcx,8), %rdi
 	movq	32(%rax,%rcx,8), %rax
 	shlq	$4, %rdx
 	movq	8(%rax,%rdx), %rcx
-	leaq	(%rcx,%rcx,2), %rcx
-	shlq	$5, %rcx
-	shlq	$4, %rbx
-	movq	8(%rax,%rbx), %rax
-	leaq	(%rax,%rax,2), %rdx
+	leaq	(%rcx,%rcx,2), %rdx
 	shlq	$5, %rdx
+	shlq	$4, %rsi
+	movq	8(%rax,%rsi), %rax
+	leaq	(%rax,%rax,2), %rsi
+	shlq	$5, %rsi
 	shlq	$2, %rbp
-	movq	32(%rdi,%rcx), %rax
-	addq	%rbp, %rax
-	movq	48(%rdi,%rcx), %rbx
-	addq	%rbp, %rbx
-	movq	72(%rdi,%rcx), %rcx
+	movq	40(%rdi,%rdx), %rcx
 	addq	%rbp, %rcx
-	addq	32(%rdi,%rdx), %rbp
-	jmp	.LBB0_8
-.LBB0_6:
-	xorl	%eax, %eax
-	jmp	.LBB0_7
+	movq	56(%rdi,%rdx), %rbx
+	addq	%rbp, %rbx
+	movq	80(%rdi,%rdx), %rax
+	addq	%rbp, %rax
+	addq	40(%rdi,%rsi), %rbp
+	jmp	.LBB0_6
 .LBB0_4:
-	movl	$1, %eax
+	shlq	$32, %rbx
+	jmp	.LBB0_5
 .LBB0_7:
 	shlq	$32, %rbx
-	orq	%rax, %rbx
-	movl	%ebp, %ecx
-	xorl	%eax, %eax
-.LBB0_8:
-	movq	%rax, 40(%rsp)
-	movq	%rbx, 48(%rsp)
-	movq	%rcx, 56(%rsp)
-	movl	%r15d, 64(%rsp)
-	movl	%r12d, 68(%rsp)
-	movq	%rbp, 72(%rsp)
+	orq	$1, %rbx
+.LBB0_5:
+	movl	%ebp, %eax
+	xorl	%ecx, %ecx
+.LBB0_6:
+	movq	%rcx, (%rsp)
+	movq	%rbx, 8(%rsp)
+	movq	%rax, 16(%rsp)
+	movl	%r15d, 24(%rsp)
+	movl	%r12d, 28(%rsp)
+	movq	%rbp, 32(%rsp)
+	movq	%rsp, %rax
 	#APP
 	#NO_APP
-	addq	$80, %rsp
+	addq	$40, %rsp
+	.cfi_def_cfa_offset 56
 	popq	%rbx
-	popq	%rbp
-	popq	%rdi
-	popq	%rsi
+	.cfi_def_cfa_offset 48
 	popq	%r12
+	.cfi_def_cfa_offset 40
+	popq	%r13
+	.cfi_def_cfa_offset 32
 	popq	%r14
+	.cfi_def_cfa_offset 24
 	popq	%r15
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
 	retq
-	.seh_endproc
+.Lfunc_end0:
+	.size	query_get, .Lfunc_end0-query_get
+	.cfi_endproc
 
+	.section	".note.GNU-stack","",@progbits

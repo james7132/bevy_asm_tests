@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-bevy_ecs = { git = "https://github.com/bevyengine/bevy", branch = "main" }
+bevy_ecs = "0.10"
 
 [profile.release]
 opt-level = 3
@@ -19,7 +19,7 @@ name = "entity_remove"
 crate-type = ["lib"]
 
 [[example]]
-name = "entity_remove_intersection"
+name = "entity_take"
 crate-type = ["lib"]
 
 [[example]]
