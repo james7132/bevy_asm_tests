@@ -32,25 +32,25 @@ world_get:
 	.cfi_offset %rbp, -16
 	movl	%edx, %ebx
 	movl	%esi, %ebp
-	callq	*_ZN8bevy_ecs5world5World20as_unsafe_world_cell17h093274cdae025216E@GOTPCREL(%rip)
+	callq	*bevy_ecs::world::World::as_unsafe_world_cell@GOTPCREL(%rip)
 	leaq	16(%rsp), %r14
 	movq	%r14, %rdi
 	movq	%rax, %rsi
 	movl	%ebp, %edx
 	movl	%ebx, %ecx
-	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell10get_entity17hf468b3474f557487E@GOTPCREL(%rip)
+	callq	*bevy_ecs::world::unsafe_world_cell::UnsafeWorldCell::get_entity@GOTPCREL(%rip)
 	cmpq	$0, 16(%rsp)
 	je	.LBB0_12
 	movq	40(%rsp), %r13
 	movl	52(%rsp), %ebx
-	movq	_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell14world_metadata17hfb693f86399cefcdE@GOTPCREL(%rip), %rbp
+	movq	bevy_ecs::world::unsafe_world_cell::UnsafeWorldCell::world_metadata@GOTPCREL(%rip), %rbp
 	movq	%r13, %rdi
 	callq	*%rbp
 	movl	764(%rax), %r12d
 	movq	%r13, %rdi
 	callq	*%rbp
 	movl	760(%rax), %edi
-	callq	*_ZN8bevy_ecs9component4Tick3new17h4d4fa6fa107f5c4dE@GOTPCREL(%rip)
+	callq	*bevy_ecs::component::Tick::new@GOTPCREL(%rip)
 	movl	%eax, %r15d
 	movq	%r13, %rdi
 	callq	*%rbp
@@ -105,10 +105,10 @@ world_get:
 	shlq	$4, %rax
 	movq	-8(%r10,%rax), %rbp
 	movq	%r13, %rdi
-	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell12unsafe_world17h0b0e41614a2c744bE@GOTPCREL(%rip)
+	callq	*bevy_ecs::world::unsafe_world_cell::UnsafeWorldCell::unsafe_world@GOTPCREL(%rip)
 	leaq	160(%rax), %rdi
 	movq	%rbp, %rsi
-	callq	*_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17h97de2298059f36a3E@GOTPCREL(%rip)
+	callq	*bevy_ecs::storage::sparse_set::SparseSets::get@GOTPCREL(%rip)
 	testq	%rax, %rax
 	je	.LBB0_12
 	movq	%rax, %rbx
@@ -117,7 +117,7 @@ world_get:
 	movl	12(%rsp), %eax
 	movl	%eax, 16(%rsp)
 	leaq	16(%rsp), %rdi
-	callq	*_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17hbb24cba696ec0cbcE@GOTPCREL(%rip)
+	callq	*<u32 as bevy_ecs::storage::sparse_set::SparseSetIndex>::sparse_set_index@GOTPCREL(%rip)
 	cmpq	%rbp, %rax
 	jae	.LBB0_12
 	cmpl	$0, (%r13,%rax,8)

@@ -28,7 +28,7 @@ query_for_each:
 	leaq	352(%r15), %rsi
 	movq	%r14, %rdi
 	movl	%r12d, %ecx
-	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h67fabdabaece8c19E@GOTPCREL(%rip)
+	callq	*<() as bevy_ecs::query::fetch::WorldQuery>::init_fetch@GOTPCREL(%rip)
 	movq	304(%r15), %rcx
 	testq	%rcx, %rcx
 	je	.LBB0_6

@@ -34,7 +34,7 @@ query_for_each:
 	movq	336(%r14), %rsi
 	movq	344(%r14), %r13
 	leaq	160(%rbx), %rbp
-	movq	_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17h97de2298059f36a3E@GOTPCREL(%rip), %r15
+	movq	bevy_ecs::storage::sparse_set::SparseSets::get@GOTPCREL(%rip), %r15
 	movq	%rbp, %rdi
 	callq	*%r15
 	movq	%rax, 40(%rsp)
@@ -48,14 +48,14 @@ query_for_each:
 	movl	(%rsp), %edx
 	movl	%r12d, %r15d
 	movl	%r12d, %ecx
-	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h67fabdabaece8c19E@GOTPCREL(%rip)
+	callq	*<() as bevy_ecs::query::fetch::WorldQuery>::init_fetch@GOTPCREL(%rip)
 	movq	328(%r14), %rax
 	testq	%rax, %rax
 	je	.LBB0_6
 	movq	320(%r14), %rdx
 	leaq	(%rdx,%rax,4), %rax
 	movq	%rax, 32(%rsp)
-	movq	_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17hbb24cba696ec0cbcE@GOTPCREL(%rip), %r14
+	movq	<u32 as bevy_ecs::storage::sparse_set::SparseSetIndex>::sparse_set_index@GOTPCREL(%rip), %r14
 	movl	%r15d, 12(%rsp)
 	jmp	.LBB0_3
 	.p2align	4, 0x90

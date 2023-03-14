@@ -18,12 +18,15 @@ final output for each case can be found in `results/`.
 The output can be built locally with the following command:
 
 ```bash
-cargo rustc --release --examples
+./run.sh
 ```
 
 The assembly output will be automatically written to the `target/release/examples`
 directory and hae a `*.s` file extension. The example name may be suffixed with
 a source hash.
+
+You may need to have [`rustfilt`](https://crates.io/crates/rustfilt) installed,
+which the script uses to clean up the mangled names in the output.
 
 ## License
 MIT / Apache 2.0

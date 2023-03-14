@@ -37,7 +37,7 @@ query_get:
 	movq	%r13, %rsi
 	movl	%ebx, %edx
 	movl	%r12d, %ecx
-	callq	*_ZN8bevy_ecs6entity8Entities3get17h1d6cfce9ad70fb8cE@GOTPCREL(%rip)
+	callq	*bevy_ecs::entity::Entities::get@GOTPCREL(%rip)
 	cmpl	$0, 16(%rsp)
 	movl	28(%rsp), %ecx
 	cmovel	%r12d, %ecx
@@ -56,7 +56,7 @@ query_get:
 	movq	344(%r14), %rax
 	movq	%rax, 8(%rsp)
 	leaq	160(%r13), %rbx
-	movq	_ZN8bevy_ecs7storage10sparse_set10SparseSets3get17h97de2298059f36a3E@GOTPCREL(%rip), %rbp
+	movq	bevy_ecs::storage::sparse_set::SparseSets::get@GOTPCREL(%rip), %rbp
 	movq	%rbx, %rdi
 	callq	*%rbp
 	movl	%r15d, (%rsp)
@@ -70,10 +70,10 @@ query_get:
 	movq	%r14, %rsi
 	movl	(%rsp), %edx
 	movl	4(%rsp), %ecx
-	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h67fabdabaece8c19E@GOTPCREL(%rip)
+	callq	*<() as bevy_ecs::query::fetch::WorldQuery>::init_fetch@GOTPCREL(%rip)
 	movq	128(%r15), %rbx
 	movl	%r12d, 16(%rsp)
-	movq	_ZN69_$LT$u32$u20$as$u20$bevy_ecs..storage..sparse_set..SparseSetIndex$GT$16sparse_set_index17hbb24cba696ec0cbcE@GOTPCREL(%rip), %rbp
+	movq	<u32 as bevy_ecs::storage::sparse_set::SparseSetIndex>::sparse_set_index@GOTPCREL(%rip), %rbp
 	leaq	16(%rsp), %rdi
 	callq	*%rbp
 	movq	%rbp, %rcx

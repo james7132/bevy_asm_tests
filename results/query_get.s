@@ -36,7 +36,7 @@ query_get:
 	movq	%r13, %rsi
 	movl	%ebx, %edx
 	movl	%ebp, %ecx
-	callq	*_ZN8bevy_ecs6entity8Entities3get17h1d6cfce9ad70fb8cE@GOTPCREL(%rip)
+	callq	*bevy_ecs::entity::Entities::get@GOTPCREL(%rip)
 	cmpl	$0, (%rsp)
 	je	.LBB0_7
 	movl	4(%rsp), %eax
@@ -54,7 +54,7 @@ query_get:
 	movq	%r13, %rdi
 	movl	%r15d, %edx
 	movl	%r12d, %ecx
-	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h67fabdabaece8c19E@GOTPCREL(%rip)
+	callq	*<() as bevy_ecs::query::fetch::WorldQuery>::init_fetch@GOTPCREL(%rip)
 	movq	304(%r13), %rax
 	leaq	(%rbx,%rbx,8), %rcx
 	movq	336(%r14), %rdx

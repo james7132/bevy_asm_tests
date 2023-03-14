@@ -32,26 +32,26 @@ world_get:
 	.cfi_offset %rbp, -16
 	movl	%edx, %ebx
 	movl	%esi, %ebp
-	callq	*_ZN8bevy_ecs5world5World20as_unsafe_world_cell17h093274cdae025216E@GOTPCREL(%rip)
+	callq	*bevy_ecs::world::World::as_unsafe_world_cell@GOTPCREL(%rip)
 	leaq	16(%rsp), %r12
 	movq	%r12, %rdi
 	movq	%rax, %rsi
 	movl	%ebp, %edx
 	movl	%ebx, %ecx
-	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell10get_entity17hf468b3474f557487E@GOTPCREL(%rip)
+	callq	*bevy_ecs::world::unsafe_world_cell::UnsafeWorldCell::get_entity@GOTPCREL(%rip)
 	cmpq	$0, 16(%rsp)
 	je	.LBB0_13
 	movl	32(%rsp), %r12d
 	movl	36(%rsp), %r14d
 	movq	40(%rsp), %r13
-	movq	_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell14world_metadata17hfb693f86399cefcdE@GOTPCREL(%rip), %rbx
+	movq	bevy_ecs::world::unsafe_world_cell::UnsafeWorldCell::world_metadata@GOTPCREL(%rip), %rbx
 	movq	%r13, %rdi
 	callq	*%rbx
 	movl	764(%rax), %ebp
 	movq	%r13, %rdi
 	callq	*%rbx
 	movl	760(%rax), %edi
-	callq	*_ZN8bevy_ecs9component4Tick3new17h4d4fa6fa107f5c4dE@GOTPCREL(%rip)
+	callq	*bevy_ecs::component::Tick::new@GOTPCREL(%rip)
 	movl	%eax, %r15d
 	movq	%r13, %rdi
 	callq	*%rbx
@@ -106,7 +106,7 @@ world_get:
 	shlq	$4, %rax
 	movq	-8(%r10,%rax), %rbx
 	movq	%r13, %rdi
-	callq	*_ZN8bevy_ecs5world17unsafe_world_cell15UnsafeWorldCell12unsafe_world17h0b0e41614a2c744bE@GOTPCREL(%rip)
+	callq	*bevy_ecs::world::unsafe_world_cell::UnsafeWorldCell::unsafe_world@GOTPCREL(%rip)
 	movq	312(%rax), %rsi
 	cmpq	%r12, %rsi
 	jbe	.LBB0_17
@@ -170,7 +170,7 @@ world_get:
 	.cfi_def_cfa_offset 112
 	leaq	.Lanon.155300dae0580fe2c3564be8a13f3f51.1(%rip), %rdx
 	movq	%r12, %rdi
-	callq	*_ZN4core9panicking18panic_bounds_check17h35d160a4cf1fb235E@GOTPCREL(%rip)
+	callq	*core::panicking::panic_bounds_check@GOTPCREL(%rip)
 	ud2
 .Lfunc_end0:
 	.size	world_get, .Lfunc_end0-world_get
