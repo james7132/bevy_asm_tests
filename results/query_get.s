@@ -1,5 +1,5 @@
 	.text
-	.file	"query_get.d1c2d7ba-cgu.0"
+	.file	"query_get.fab92710-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4, 0x90
@@ -36,7 +36,7 @@ query_get:
 	movq	%r13, %rsi
 	movl	%ebx, %edx
 	movl	%ebp, %ecx
-	callq	*_ZN8bevy_ecs6entity8Entities3get17h45270d353afa6d06E@GOTPCREL(%rip)
+	callq	*_ZN8bevy_ecs6entity8Entities3get17h1d6cfce9ad70fb8cE@GOTPCREL(%rip)
 	cmpl	$0, (%rsp)
 	je	.LBB0_7
 	movl	4(%rsp), %eax
@@ -54,7 +54,7 @@ query_get:
 	movq	%r13, %rdi
 	movl	%r15d, %edx
 	movl	%r12d, %ecx
-	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17hfd380a16337107d7E@GOTPCREL(%rip)
+	callq	*_ZN63_$LT$$LP$$RP$$u20$as$u20$bevy_ecs..query..fetch..WorldQuery$GT$10init_fetch17h67fabdabaece8c19E@GOTPCREL(%rip)
 	movq	304(%r13), %rax
 	leaq	(%rbx,%rbx,8), %rcx
 	movq	336(%r14), %rdx
