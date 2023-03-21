@@ -1,9 +1,9 @@
 	.text
-	.file	"world_get_sparse.3d8e9ea4-cgu.0"
+	.file	"world_get_sparse.f3fe88e8-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4
 .LCPI0_0:
-	.zero	16,47
+	.zero	16,23
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -46,10 +46,10 @@ world_get:
 	movq	bevy_ecs::world::unsafe_world_cell::UnsafeWorldCell::world_metadata@GOTPCREL(%rip), %rbp
 	movq	%r13, %rdi
 	callq	*%rbp
-	movl	764(%rax), %r12d
+	movl	892(%rax), %r12d
 	movq	%r13, %rdi
 	callq	*%rbp
-	movl	760(%rax), %edi
+	movl	888(%rax), %edi
 	callq	*bevy_ecs::component::Tick::new@GOTPCREL(%rip)
 	movl	%eax, %r15d
 	movq	%r13, %rdi
@@ -60,11 +60,11 @@ world_get:
 	movq	472(%rax), %rdx
 	movq	496(%rax), %r10
 	leaq	-16(%r10), %rbp
-	movabsq	$6847647775979049335, %rdi
+	movabsq	$3407292884543212750, %rdi
 	xorl	%r8d, %r8d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$-717650336812927781, %r11
+	movabsq	$2593172948988957718, %r11
 	xorl	%r9d, %r9d
 .LBB0_3:
 	andq	%rdx, %rdi

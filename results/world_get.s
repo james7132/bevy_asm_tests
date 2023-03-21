@@ -1,9 +1,9 @@
 	.text
-	.file	"world_get.2bf44490-cgu.0"
+	.file	"world_get.16073d17-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4
 .LCPI0_0:
-	.zero	16,21
+	.zero	16,63
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -47,10 +47,10 @@ world_get:
 	movq	bevy_ecs::world::unsafe_world_cell::UnsafeWorldCell::world_metadata@GOTPCREL(%rip), %rbx
 	movq	%r13, %rdi
 	callq	*%rbx
-	movl	764(%rax), %ebp
+	movl	892(%rax), %ebp
 	movq	%r13, %rdi
 	callq	*%rbx
-	movl	760(%rax), %edi
+	movl	888(%rax), %edi
 	callq	*bevy_ecs::component::Tick::new@GOTPCREL(%rip)
 	movl	%eax, %r15d
 	movq	%r13, %rdi
@@ -61,11 +61,11 @@ world_get:
 	movq	472(%rax), %rdx
 	movq	496(%rax), %r10
 	leaq	-16(%r10), %rbx
-	movabsq	$3149472688334063316, %rdi
+	movabsq	$9118595683557307334, %rdi
 	xorl	%r8d, %r8d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$430724676794124932, %r11
+	movabsq	$1154216939020327214, %r11
 	xorl	%r9d, %r9d
 .LBB0_3:
 	andq	%rdx, %rdi
@@ -179,7 +179,7 @@ world_get:
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.0,@object
 	.section	.rodata..Lanon.155300dae0580fe2c3564be8a13f3f51.0,"a",@progbits
 .Lanon.155300dae0580fe2c3564be8a13f3f51.0:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/e77eb00/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/6dda873/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.0, 109
 
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.1,@object
