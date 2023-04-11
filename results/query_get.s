@@ -1,5 +1,5 @@
 	.text
-	.file	"query_get.6a42294c-cgu.0"
+	.file	"query_get.defe3bb1-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4, 0x90
@@ -38,16 +38,16 @@ query_get:
 	movl	%ebp, %ecx
 	callq	*bevy_ecs::entity::Entities::get@GOTPCREL(%rip)
 	cmpl	$0, (%rsp)
-	je	.LBB0_7
+	je	.LBB0_4
 	movl	4(%rsp), %eax
 	movq	%rax, %rcx
 	shrq	$5, %rcx
 	cmpq	72(%r14), %rcx
-	jae	.LBB0_4
+	jae	.LBB0_6
 	movq	64(%r14), %rdx
 	movl	(%rdx,%rcx,4), %ecx
 	btl	%eax, %ecx
-	jae	.LBB0_4
+	jae	.LBB0_6
 	movl	12(%rsp), %ebx
 	movl	16(%rsp), %ebp
 	leaq	352(%r14), %rsi
@@ -63,38 +63,39 @@ query_get:
 	movq	32(%rax,%rcx,8), %rax
 	shlq	$4, %rdx
 	movq	8(%rax,%rdx), %rcx
-	leaq	(%rcx,%rcx,2), %rdx
-	shlq	$5, %rdx
+	leaq	(%rcx,%rcx,2), %rcx
+	shlq	$5, %rcx
 	shlq	$4, %rsi
 	movq	8(%rax,%rsi), %rax
-	leaq	(%rax,%rax,2), %rsi
-	shlq	$5, %rsi
+	leaq	(%rax,%rax,2), %rdx
+	shlq	$5, %rdx
 	shlq	$2, %rbp
-	movq	40(%rdi,%rdx), %rcx
-	addq	%rbp, %rcx
-	movq	56(%rdi,%rdx), %rbx
-	addq	%rbp, %rbx
-	movq	80(%rdi,%rdx), %rax
+	movq	40(%rdi,%rcx), %rax
 	addq	%rbp, %rax
-	addq	40(%rdi,%rsi), %rbp
-	jmp	.LBB0_6
+	movq	56(%rdi,%rcx), %rbx
+	addq	%rbp, %rbx
+	movq	80(%rdi,%rcx), %rcx
+	addq	%rbp, %rcx
+	addq	40(%rdi,%rdx), %rbp
+	jmp	.LBB0_8
+.LBB0_6:
+	xorl	%eax, %eax
+	jmp	.LBB0_7
 .LBB0_4:
-	shlq	$32, %rbx
-	jmp	.LBB0_5
+	movl	$1, %eax
 .LBB0_7:
 	shlq	$32, %rbx
-	orq	$1, %rbx
-.LBB0_5:
-	movl	%ebp, %eax
-	xorl	%ecx, %ecx
-.LBB0_6:
-	movq	%rcx, (%rsp)
+	orq	%rax, %rbx
+	movl	%ebp, %ecx
+	xorl	%eax, %eax
+.LBB0_8:
+	movq	%rsp, %rdx
+	movq	%rax, (%rsp)
 	movq	%rbx, 8(%rsp)
-	movq	%rax, 16(%rsp)
+	movq	%rcx, 16(%rsp)
 	movl	%r15d, 24(%rsp)
 	movl	%r12d, 28(%rsp)
 	movq	%rbp, 32(%rsp)
-	movq	%rsp, %rax
 	#APP
 	#NO_APP
 	addq	$40, %rsp

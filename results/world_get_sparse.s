@@ -1,9 +1,9 @@
 	.text
-	.file	"world_get_sparse.f3fe88e8-cgu.0"
+	.file	"world_get_sparse.38308d1b-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4
 .LCPI0_0:
-	.zero	16,23
+	.zero	16,13
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -60,11 +60,11 @@ world_get:
 	movq	472(%rax), %rdx
 	movq	496(%rax), %r10
 	leaq	-16(%r10), %rbp
-	movabsq	$3407292884543212750, %rdi
+	movabsq	$1875383519155916600, %rdi
 	xorl	%r8d, %r8d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$2593172948988957718, %r11
+	movabsq	$-3107199966482744232, %r11
 	xorl	%r9d, %r9d
 .LBB0_3:
 	andq	%rdx, %rdi
