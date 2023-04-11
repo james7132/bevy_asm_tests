@@ -69,7 +69,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs"
 version = "0.11.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d623731e2c0f4c5ce4213a30685e73e190db60b4"
+source = "git+https://github.com/james7132/bevy?branch=more-inline#f133ef401c9ce41abdb00c85184902c81fadc489"
 dependencies = [
  "async-channel",
  "bevy_ecs_macros",
@@ -89,7 +89,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs_macros"
 version = "0.11.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d623731e2c0f4c5ce4213a30685e73e190db60b4"
+source = "git+https://github.com/james7132/bevy?branch=more-inline#f133ef401c9ce41abdb00c85184902c81fadc489"
 dependencies = [
  "bevy_macro_utils",
  "proc-macro2",
@@ -100,7 +100,7 @@ dependencies = [
 [[package]]
 name = "bevy_macro_utils"
 version = "0.11.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d623731e2c0f4c5ce4213a30685e73e190db60b4"
+source = "git+https://github.com/james7132/bevy?branch=more-inline#f133ef401c9ce41abdb00c85184902c81fadc489"
 dependencies = [
  "quote",
  "rustc-hash",
@@ -111,12 +111,12 @@ dependencies = [
 [[package]]
 name = "bevy_ptr"
 version = "0.11.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d623731e2c0f4c5ce4213a30685e73e190db60b4"
+source = "git+https://github.com/james7132/bevy?branch=more-inline#f133ef401c9ce41abdb00c85184902c81fadc489"
 
 [[package]]
 name = "bevy_reflect"
 version = "0.11.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d623731e2c0f4c5ce4213a30685e73e190db60b4"
+source = "git+https://github.com/james7132/bevy?branch=more-inline#f133ef401c9ce41abdb00c85184902c81fadc489"
 dependencies = [
  "bevy_ptr",
  "bevy_reflect_derive",
@@ -132,7 +132,7 @@ dependencies = [
 [[package]]
 name = "bevy_reflect_derive"
 version = "0.11.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d623731e2c0f4c5ce4213a30685e73e190db60b4"
+source = "git+https://github.com/james7132/bevy?branch=more-inline#f133ef401c9ce41abdb00c85184902c81fadc489"
 dependencies = [
  "bevy_macro_utils",
  "bit-set",
@@ -145,7 +145,7 @@ dependencies = [
 [[package]]
 name = "bevy_tasks"
 version = "0.11.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d623731e2c0f4c5ce4213a30685e73e190db60b4"
+source = "git+https://github.com/james7132/bevy?branch=more-inline#f133ef401c9ce41abdb00c85184902c81fadc489"
 dependencies = [
  "async-channel",
  "async-executor",
@@ -159,7 +159,7 @@ dependencies = [
 [[package]]
 name = "bevy_utils"
 version = "0.11.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d623731e2c0f4c5ce4213a30685e73e190db60b4"
+source = "git+https://github.com/james7132/bevy?branch=more-inline#f133ef401c9ce41abdb00c85184902c81fadc489"
 dependencies = [
  "ahash",
  "bevy_utils_proc_macros",
@@ -175,7 +175,7 @@ dependencies = [
 [[package]]
 name = "bevy_utils_proc_macros"
 version = "0.11.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d623731e2c0f4c5ce4213a30685e73e190db60b4"
+source = "git+https://github.com/james7132/bevy?branch=more-inline#f133ef401c9ce41abdb00c85184902c81fadc489"
 dependencies = [
  "proc-macro2",
  "quote",

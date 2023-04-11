@@ -1,9 +1,9 @@
 	.text
-	.file	"world_get_sparse.38308d1b-cgu.0"
+	.file	"world_get_sparse.bc9a443c-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4
 .LCPI0_0:
-	.zero	16,13
+	.zero	16,120
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -30,116 +30,115 @@ world_get:
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
+	movq	%rdi, %rax
 	movl	%edx, %ebx
-	movl	%esi, %ebp
-	callq	*bevy_ecs::world::World::as_unsafe_world_cell@GOTPCREL(%rip)
-	leaq	16(%rsp), %r14
-	movq	%r14, %rdi
+	leaq	(%rbx,%rbx,4), %rdi
+	shlq	$2, %rdi
+	addq	16(%rax), %rdi
+	xorl	%r13d, %r13d
+	cmpq	%rbx, 24(%rax)
+	cmovbeq	%r13, %rdi
+	jbe	.LBB0_17
+	movl	%edx, %ecx
+	movl	%esi, %edx
+	cmpl	%esi, (%rdi)
+	jne	.LBB0_16
+	cmpl	$-1, 4(%rdi)
+	je	.LBB0_16
+	addq	$4, %rdi
+	movdqu	(%rdi), %xmm0
+	movdqa	%xmm0, 32(%rsp)
+	movq	%rsp, %rdi
+	leaq	32(%rsp), %r8
 	movq	%rax, %rsi
-	movl	%ebp, %edx
-	movl	%ebx, %ecx
-	callq	*bevy_ecs::world::unsafe_world_cell::UnsafeWorldCell::get_entity@GOTPCREL(%rip)
-	cmpq	$0, 16(%rsp)
-	je	.LBB0_12
-	movq	40(%rsp), %r13
-	movl	52(%rsp), %ebx
-	movq	bevy_ecs::world::unsafe_world_cell::UnsafeWorldCell::world_metadata@GOTPCREL(%rip), %rbp
-	movq	%r13, %rdi
-	callq	*%rbp
-	movl	892(%rax), %r12d
-	movq	%r13, %rdi
-	callq	*%rbp
-	movl	888(%rax), %edi
-	callq	*bevy_ecs::component::Tick::new@GOTPCREL(%rip)
-	movl	%eax, %r15d
-	movq	%r13, %rdi
-	callq	*%rbp
-	cmpq	$0, 488(%rax)
-	je	.LBB0_12
-	movl	%ebx, 12(%rsp)
-	movq	472(%rax), %rdx
-	movq	496(%rax), %r10
-	leaq	-16(%r10), %rbp
-	movabsq	$1875383519155916600, %rdi
-	xorl	%r8d, %r8d
+	callq	*bevy_ecs::world::unsafe_world_cell::UnsafeEntityCell::new@GOTPCREL(%rip)
+	movq	16(%rsp), %r15
+	movl	28(%rsp), %r8d
+	movl	892(%r15), %r11d
+	movl	888(%r15), %r10d
+	cmpq	$0, 488(%r15)
+	je	.LBB0_16
+	movq	472(%r15), %rdx
+	movq	496(%r15), %r9
+	leaq	-16(%r9), %rsi
+	movabsq	$-1124919657574247764, %rcx
+	xorl	%r13d, %r13d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$-3107199966482744232, %r11
-	xorl	%r9d, %r9d
-.LBB0_3:
-	andq	%rdx, %rdi
-	movdqu	(%r10,%rdi), %xmm2
+	movabsq	$8204007897802787068, %r12
+	xorl	%r14d, %r14d
+.LBB0_5:
+	andq	%rdx, %rcx
+	movdqu	(%r9,%rcx), %xmm2
 	movdqa	%xmm2, %xmm3
 	pcmpeqb	%xmm0, %xmm3
-	pmovmskb	%xmm3, %ecx
+	pmovmskb	%xmm3, %ebx
 	.p2align	4, 0x90
-.LBB0_4:
-	testw	%cx, %cx
-	je	.LBB0_5
-	bsfw	%cx, %ax
-	movzwl	%ax, %eax
-	leal	-1(%rcx), %ebx
-	andl	%ecx, %ebx
-	addq	%rdi, %rax
-	andq	%rdx, %rax
-	movq	%rax, %rcx
-	shlq	$4, %rcx
-	movq	%rbp, %rsi
-	subq	%rcx, %rsi
-	movl	%ebx, %ecx
-	cmpq	%r11, (%rsi)
-	jne	.LBB0_4
-	jmp	.LBB0_8
-	.p2align	4, 0x90
-.LBB0_5:
-	pcmpeqb	%xmm1, %xmm2
-	pmovmskb	%xmm2, %eax
-	testl	%eax, %eax
-	jne	.LBB0_13
-	addq	%r9, %rdi
-	addq	$16, %rdi
-	addq	$16, %r9
-	jmp	.LBB0_3
+.LBB0_6:
+	testw	%bx, %bx
+	je	.LBB0_8
+	bsfw	%bx, %di
+	movzwl	%di, %edi
+	leal	-1(%rbx), %ebp
+	andl	%ebx, %ebp
+	addq	%rcx, %rdi
+	andq	%rdx, %rdi
+	movq	%rdi, %rbx
+	shlq	$4, %rbx
+	movq	%rsi, %rax
+	subq	%rbx, %rax
+	movl	%ebp, %ebx
+	cmpq	%r12, (%rax)
+	jne	.LBB0_6
+	jmp	.LBB0_11
 .LBB0_8:
-	negq	%rax
+	pcmpeqb	%xmm1, %xmm2
+	pmovmskb	%xmm2, %edi
+	testl	%edi, %edi
+	jne	.LBB0_17
+	addq	%r14, %rcx
+	addq	$16, %rcx
+	addq	$16, %r14
+	jmp	.LBB0_5
+.LBB0_11:
+	negq	%rdi
+	shlq	$4, %rdi
+	movq	-8(%r9,%rdi), %rax
+	cmpq	%rax, 224(%r15)
+	jbe	.LBB0_16
+	movq	216(%r15), %rdx
 	shlq	$4, %rax
-	movq	-8(%r10,%rax), %rbp
-	movq	%r13, %rdi
-	callq	*bevy_ecs::world::unsafe_world_cell::UnsafeWorldCell::unsafe_world@GOTPCREL(%rip)
-	leaq	160(%rax), %rdi
-	movq	%rbp, %rsi
-	callq	*bevy_ecs::storage::sparse_set::SparseSets::get@GOTPCREL(%rip)
-	testq	%rax, %rax
-	je	.LBB0_12
-	movq	%rax, %rbx
-	movq	128(%rax), %r13
-	movq	136(%rax), %rbp
-	movl	12(%rsp), %eax
-	movl	%eax, 16(%rsp)
-	leaq	16(%rsp), %rdi
-	callq	*<u32 as bevy_ecs::storage::sparse_set::SparseSetIndex>::sparse_set_index@GOTPCREL(%rip)
-	cmpq	%rbp, %rax
-	jae	.LBB0_12
-	cmpl	$0, (%r13,%rax,8)
-	je	.LBB0_12
-	movl	4(%r13,%rax,8), %eax
-	movq	(%rbx), %r8
-	imulq	%rax, %r8
-	addq	40(%rbx), %r8
-	shlq	$2, %rax
-	movq	56(%rbx), %rcx
+	cmpq	$0, (%rdx,%rax)
+	je	.LBB0_16
+	movq	168(%r15), %rcx
+	movq	8(%rdx,%rax), %rax
+	leaq	(%rax,%rax,8), %rax
+	shlq	$4, %rax
+	cmpq	%r8, 136(%rcx,%rax)
+	jbe	.LBB0_16
+	movq	128(%rcx,%rax), %rdx
+	cmpl	$0, (%rdx,%r8,8)
+	je	.LBB0_16
 	addq	%rax, %rcx
-	addq	80(%rbx), %rax
-	jmp	.LBB0_14
-.LBB0_12:
-	xorl	%r8d, %r8d
-.LBB0_13:
-.LBB0_14:
-	movq	%r8, 16(%rsp)
-	movq	%rcx, 24(%rsp)
-	movq	%rax, 32(%rsp)
-	movl	%r12d, 40(%rsp)
-	movl	%r15d, 44(%rsp)
+	movl	4(%rdx,%r8,8), %edx
+	movq	(%rcx), %r13
+	imulq	%rdx, %r13
+	addq	40(%rcx), %r13
+	shlq	$2, %rdx
+	movq	56(%rcx), %rax
+	addq	%rdx, %rax
+	addq	80(%rcx), %rdx
+	jmp	.LBB0_18
+.LBB0_16:
+	xorl	%r13d, %r13d
+.LBB0_17:
+.LBB0_18:
+	movq	%r13, (%rsp)
+	movq	%rax, 8(%rsp)
+	movq	%rdx, 16(%rsp)
+	movl	%r11d, 24(%rsp)
+	movl	%r10d, 28(%rsp)
+	movq	%rsp, %rax
 	#APP
 	#NO_APP
 	addq	$56, %rsp

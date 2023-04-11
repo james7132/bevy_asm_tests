@@ -1,5 +1,5 @@
 	.text
-	.file	"query_iter_sparse.13622385-cgu.0"
+	.file	"query_iter_sparse.aad8b384-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4, 0x90
@@ -18,105 +18,87 @@ query_iter:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
 	.cfi_def_cfa_offset 56
-	subq	$88, %rsp
-	.cfi_def_cfa_offset 144
+	subq	$32, %rsp
+	.cfi_def_cfa_offset 88
 	.cfi_offset %rbx, -56
 	.cfi_offset %r12, -48
 	.cfi_offset %r13, -40
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
-	movq	(%rdi), %rbx
-	movq	8(%rdi), %rbp
-	movl	16(%rdi), %eax
-	movl	%eax, 8(%rsp)
-	movl	20(%rdi), %r12d
-	movq	336(%rbp), %rsi
-	movq	344(%rbp), %r15
-	leaq	160(%rbx), %r13
-	movq	bevy_ecs::storage::sparse_set::SparseSets::get@GOTPCREL(%rip), %r14
-	movq	%r13, %rdi
-	callq	*%r14
-	movq	%rax, 48(%rsp)
-	movq	%r13, %rdi
-	movq	%r15, %rsi
-	callq	*%r14
-	movq	%rax, 40(%rsp)
-	leaq	352(%rbp), %rsi
-	movq	%rbx, %rdi
-	movl	8(%rsp), %edx
-	movl	%r12d, 16(%rsp)
-	movl	%r12d, %ecx
-	callq	*<() as bevy_ecs::query::fetch::WorldQuery>::init_fetch@GOTPCREL(%rip)
-	movq	320(%rbp), %r12
-	movq	328(%rbp), %rax
-	leaq	(%r12,%rax,4), %r13
-	leaq	.Lanon.a01df851b6197f632189e2f0fa818bdd.0(%rip), %rax
-	movq	%rax, 32(%rsp)
-	xorl	%r14d, %r14d
-	xorl	%edx, %edx
+	movq	(%rdi), %rax
+	movq	8(%rdi), %rcx
+	movl	20(%rdi), %edx
+	movl	%edx, 4(%rsp)
+	movq	336(%rcx), %rdx
+	movq	344(%rcx), %rsi
+	movq	168(%rax), %rbx
+	movq	216(%rax), %rdi
+	shlq	$4, %rdx
+	movq	8(%rdi,%rdx), %rdx
+	leaq	(%rdx,%rdx,8), %rdx
+	shlq	$4, %rdx
+	leaq	(%rbx,%rdx), %r15
+	shlq	$4, %rsi
+	movq	8(%rdi,%rsi), %rsi
+	leaq	(%rsi,%rsi,8), %rsi
+	shlq	$4, %rsi
+	leaq	(%rbx,%rsi), %r11
+	movq	320(%rcx), %rdi
+	movq	328(%rcx), %rcx
+	leaq	(%rdi,%rcx,4), %rcx
+	leaq	128(%rbx,%rdx), %rdx
+	movq	%rdx, 24(%rsp)
+	leaq	128(%rbx,%rsi), %rdx
+	movq	%rdx, 16(%rsp)
+	leaq	.Lanon.a01df851b6197f632189e2f0fa818bdd.0(%rip), %rdx
+	movq	%rdx, 8(%rsp)
+	xorl	%esi, %esi
+	xorl	%r12d, %r12d
 	jmp	.LBB0_1
 	.p2align	4, 0x90
 .LBB0_5:
-	movq	%rdx, 8(%rsp)
-	leaq	(%rdx,%rdx,2), %rax
-	movq	32(%rsp), %rcx
-	movl	4(%rcx,%rax,4), %eax
-	movl	%eax, 20(%rsp)
-	movq	48(%rsp), %rbp
-	movq	128(%rbp), %r15
-	movl	%eax, 24(%rsp)
-	leaq	24(%rsp), %rdi
-	callq	*<u32 as bevy_ecs::storage::sparse_set::SparseSetIndex>::sparse_set_index@GOTPCREL(%rip)
-	movl	4(%r15,%rax,8), %eax
-	movq	%rax, 72(%rsp)
-	movq	(%rbp), %r15
-	imulq	%rax, %r15
-	movq	40(%rbp), %rax
-	movq	%rax, 80(%rsp)
-	movq	80(%rbp), %rax
-	movq	%rax, 64(%rsp)
-	movq	40(%rsp), %rbp
-	movq	128(%rbp), %rax
-	movq	%rax, 56(%rsp)
-	movl	20(%rsp), %eax
-	movl	%eax, 28(%rsp)
-	leaq	28(%rsp), %rdi
-	callq	*<u32 as bevy_ecs::storage::sparse_set::SparseSetIndex>::sparse_set_index@GOTPCREL(%rip)
-	movq	8(%rsp), %rdx
-	movq	40(%rbp), %rcx
-	movq	56(%rsp), %rsi
-	movl	4(%rsi,%rax,8), %eax
-	imulq	(%rbp), %rax
-	incq	%rdx
-	movss	(%rcx,%rax), %xmm0
-	movl	16(%rsp), %eax
-	movq	72(%rsp), %rcx
-	movq	64(%rsp), %rsi
-	movl	%eax, (%rsi,%rcx,4)
-	movq	80(%rsp), %rax
-	addss	(%rax,%r15), %xmm0
-	movss	%xmm0, (%rax,%r15)
+	leaq	(%r12,%r12,2), %rdx
+	movq	8(%rsp), %rbp
+	movl	4(%rbp,%rdx,4), %edx
+	movq	24(%rsp), %rbp
+	movq	(%rbp), %rbx
+	movl	4(%rbx,%rdx,8), %r13d
+	movq	(%r15), %rbx
+	imulq	%r13, %rbx
+	movq	40(%r15), %r14
+	movq	80(%r15), %r8
+	movq	16(%rsp), %rbp
+	movq	(%rbp), %r9
+	movq	40(%r11), %r10
+	movl	4(%r9,%rdx,8), %edx
+	imulq	(%r11), %rdx
+	incq	%r12
+	movss	(%r10,%rdx), %xmm0
+	movl	4(%rsp), %edx
+	movl	%edx, (%r8,%r13,4)
+	addss	(%r14,%rbx), %xmm0
+	movss	%xmm0, (%r14,%rbx)
 .LBB0_1:
-	cmpq	%r14, %rdx
+	cmpq	%rsi, %r12
 	jne	.LBB0_5
 	.p2align	4, 0x90
 .LBB0_2:
-	cmpq	%r13, %r12
+	cmpq	%rcx, %rdi
 	je	.LBB0_6
-	movl	(%r12), %ecx
-	addq	$4, %r12
-	movq	144(%rbx), %rax
-	imulq	$152, %rcx, %rcx
-	movq	136(%rax,%rcx), %r14
-	testq	%r14, %r14
+	movl	(%rdi), %edx
+	addq	$4, %rdi
+	movq	144(%rax), %rbx
+	imulq	$152, %rdx, %rdx
+	movq	136(%rbx,%rdx), %rsi
+	testq	%rsi, %rsi
 	je	.LBB0_2
-	movq	128(%rax,%rcx), %rax
-	movq	%rax, 32(%rsp)
-	xorl	%edx, %edx
+	movq	128(%rbx,%rdx), %rdx
+	movq	%rdx, 8(%rsp)
+	xorl	%r12d, %r12d
 	jmp	.LBB0_5
 .LBB0_6:
-	addq	$88, %rsp
+	addq	$32, %rsp
 	.cfi_def_cfa_offset 56
 	popq	%rbx
 	.cfi_def_cfa_offset 48
