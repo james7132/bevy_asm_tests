@@ -6,60 +6,44 @@
 	.type	query_get,@function
 query_get:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	pushq	%r15
-	.cfi_def_cfa_offset 24
-	pushq	%r14
-	.cfi_def_cfa_offset 32
-	pushq	%r13
-	.cfi_def_cfa_offset 40
-	pushq	%r12
-	.cfi_def_cfa_offset 48
 	pushq	%rbx
-	.cfi_def_cfa_offset 56
+	.cfi_def_cfa_offset 16
 	subq	$40, %rsp
-	.cfi_def_cfa_offset 96
-	.cfi_offset %rbx, -56
-	.cfi_offset %r12, -48
-	.cfi_offset %r13, -40
-	.cfi_offset %r14, -32
-	.cfi_offset %r15, -24
-	.cfi_offset %rbp, -16
-	movl	%edx, %ebp
-	movl	%esi, %ebx
-	movq	(%rdi), %r13
-	movq	8(%rdi), %r14
-	movl	16(%rdi), %r15d
-	movl	20(%rdi), %r12d
-	movq	%rsp, %rdi
-	movq	%r13, %rsi
-	movl	%ebx, %edx
-	movl	%ebp, %ecx
-	callq	*bevy_ecs::entity::Entities::get@GOTPCREL(%rip)
-	movl	(%rsp), %eax
-	testq	%rax, %rax
-	je	.LBB0_4
-	movq	%rax, %rcx
-	shrq	$5, %rcx
-	cmpq	72(%r14), %rcx
-	jae	.LBB0_6
-	movq	64(%r14), %rdx
-	movl	(%rdx,%rcx,4), %ecx
-	btl	%eax, %ecx
-	jae	.LBB0_6
-	movl	8(%rsp), %ebx
-	movl	12(%rsp), %ebp
-	leaq	352(%r14), %rsi
-	movq	%r13, %rdi
-	movl	%r15d, %edx
-	movl	%r12d, %ecx
-	callq	*<() as bevy_ecs::query::fetch::WorldQuery>::init_fetch@GOTPCREL(%rip)
-	movq	304(%r13), %rax
-	leaq	(%rbx,%rbx,8), %rcx
-	movq	336(%r14), %rdx
-	movq	344(%r14), %rsi
-	movq	(%rax,%rcx,8), %rdi
+	.cfi_def_cfa_offset 56
+	.cfi_offset %rbx, -16
+	movq	(%rdi), %rax
+	movl	16(%rdi), %r8d
+	movl	20(%rdi), %r9d
+	movl	%edx, %ebx
+	leaq	(%rbx,%rbx,4), %rdx
+	shlq	$2, %rdx
+	addq	16(%rax), %rdx
+	xorl	%ecx, %ecx
+	movl	$1, %r10d
+	cmpq	%rbx, 24(%rax)
+	cmovaq	%rdx, %rcx
+	jbe	.LBB0_6
+	cmpl	%esi, (%rcx)
+	jne	.LBB0_6
+	movl	4(%rcx), %r11d
+	testq	%r11, %r11
+	je	.LBB0_6
+	movq	8(%rdi), %r10
+	movq	%r11, %rdi
+	shrq	$5, %rdi
+	cmpq	72(%r10), %rdi
+	jae	.LBB0_5
+	movq	64(%r10), %rdx
+	movl	(%rdx,%rdi,4), %edx
+	btl	%r11d, %edx
+	jae	.LBB0_5
+	movl	12(%rcx), %edx
+	movl	16(%rcx), %edi
+	movq	304(%rax), %rax
+	leaq	(%rdx,%rdx,8), %rcx
+	movq	336(%r10), %rdx
+	movq	344(%r10), %rsi
+	movq	(%rax,%rcx,8), %r10
 	movq	32(%rax,%rcx,8), %rax
 	shlq	$4, %rdx
 	movq	8(%rax,%rdx), %rcx
@@ -69,48 +53,34 @@ query_get:
 	movq	8(%rax,%rsi), %rax
 	leaq	(%rax,%rax,2), %rdx
 	shlq	$5, %rdx
-	shlq	$2, %rbp
-	movq	40(%rdi,%rcx), %rax
-	addq	%rbp, %rax
-	movq	56(%rdi,%rcx), %rbx
-	addq	%rbp, %rbx
-	movq	80(%rdi,%rcx), %rcx
-	addq	%rbp, %rcx
-	addq	40(%rdi,%rdx), %rbp
+	shlq	$2, %rdi
+	movq	40(%r10,%rcx), %rax
+	addq	%rdi, %rax
+	movq	56(%r10,%rcx), %rsi
+	addq	%rdi, %rsi
+	movq	80(%r10,%rcx), %rbx
+	addq	%rdi, %rbx
+	addq	40(%r10,%rdx), %rdi
 	jmp	.LBB0_8
+.LBB0_5:
+	xorl	%r10d, %r10d
 .LBB0_6:
-	xorl	%eax, %eax
-	jmp	.LBB0_7
-.LBB0_4:
-	movl	$1, %eax
-.LBB0_7:
-	shlq	$32, %rbx
-	orq	%rax, %rbx
-	movl	%ebp, %ecx
+	shlq	$32, %rsi
+	orq	%r10, %rsi
 	xorl	%eax, %eax
 .LBB0_8:
-	movq	%rsp, %rdx
 	movq	%rax, (%rsp)
-	movq	%rbx, 8(%rsp)
-	movq	%rcx, 16(%rsp)
-	movl	%r15d, 24(%rsp)
-	movl	%r12d, 28(%rsp)
-	movq	%rbp, 32(%rsp)
+	movq	%rsi, 8(%rsp)
+	movq	%rbx, 16(%rsp)
+	movl	%r8d, 24(%rsp)
+	movl	%r9d, 28(%rsp)
+	movq	%rdi, 32(%rsp)
+	movq	%rsp, %rax
 	#APP
 	#NO_APP
 	addq	$40, %rsp
-	.cfi_def_cfa_offset 56
-	popq	%rbx
-	.cfi_def_cfa_offset 48
-	popq	%r12
-	.cfi_def_cfa_offset 40
-	popq	%r13
-	.cfi_def_cfa_offset 32
-	popq	%r14
-	.cfi_def_cfa_offset 24
-	popq	%r15
 	.cfi_def_cfa_offset 16
-	popq	%rbp
+	popq	%rbx
 	.cfi_def_cfa_offset 8
 	retq
 .Lfunc_end0:

@@ -69,7 +69,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs"
 version = "0.11.0-dev"
-source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#48439e1c3b96322041630deaa470b829da82401b"
+source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#d3d2d9eb80c894167e2cd42204c940c92b5b4e4e"
 dependencies = [
  "async-channel",
  "bevy_ecs_macros",
@@ -89,7 +89,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs_macros"
 version = "0.11.0-dev"
-source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#48439e1c3b96322041630deaa470b829da82401b"
+source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#d3d2d9eb80c894167e2cd42204c940c92b5b4e4e"
 dependencies = [
  "bevy_macro_utils",
  "proc-macro2",
@@ -100,7 +100,7 @@ dependencies = [
 [[package]]
 name = "bevy_macro_utils"
 version = "0.11.0-dev"
-source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#48439e1c3b96322041630deaa470b829da82401b"
+source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#d3d2d9eb80c894167e2cd42204c940c92b5b4e4e"
 dependencies = [
  "quote",
  "rustc-hash",
@@ -111,12 +111,12 @@ dependencies = [
 [[package]]
 name = "bevy_ptr"
 version = "0.11.0-dev"
-source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#48439e1c3b96322041630deaa470b829da82401b"
+source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#d3d2d9eb80c894167e2cd42204c940c92b5b4e4e"
 
 [[package]]
 name = "bevy_reflect"
 version = "0.11.0-dev"
-source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#48439e1c3b96322041630deaa470b829da82401b"
+source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#d3d2d9eb80c894167e2cd42204c940c92b5b4e4e"
 dependencies = [
  "bevy_ptr",
  "bevy_reflect_derive",
@@ -132,7 +132,7 @@ dependencies = [
 [[package]]
 name = "bevy_reflect_derive"
 version = "0.11.0-dev"
-source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#48439e1c3b96322041630deaa470b829da82401b"
+source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#d3d2d9eb80c894167e2cd42204c940c92b5b4e4e"
 dependencies = [
  "bevy_macro_utils",
  "bit-set",
@@ -145,7 +145,7 @@ dependencies = [
 [[package]]
 name = "bevy_tasks"
 version = "0.11.0-dev"
-source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#48439e1c3b96322041630deaa470b829da82401b"
+source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#d3d2d9eb80c894167e2cd42204c940c92b5b4e4e"
 dependencies = [
  "async-channel",
  "async-executor",
@@ -159,7 +159,7 @@ dependencies = [
 [[package]]
 name = "bevy_utils"
 version = "0.11.0-dev"
-source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#48439e1c3b96322041630deaa470b829da82401b"
+source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#d3d2d9eb80c894167e2cd42204c940c92b5b4e4e"
 dependencies = [
  "ahash",
  "bevy_utils_proc_macros",
@@ -175,7 +175,7 @@ dependencies = [
 [[package]]
 name = "bevy_utils_proc_macros"
 version = "0.11.0-dev"
-source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#48439e1c3b96322041630deaa470b829da82401b"
+source = "git+https://github.com/james7132/bevy?branch=niche-archetype-id#d3d2d9eb80c894167e2cd42204c940c92b5b4e4e"
 dependencies = [
  "proc-macro2",
  "quote",
