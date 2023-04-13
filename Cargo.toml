@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-bevy_ecs = { git = "https://github.com/bevyengine/bevy", branch = "main" }
+bevy_ecs = { git = "https://github.com/james7132/bevy", branch = "niche-archetype-id" }
 
 [profile.release]
 opt-level = 3

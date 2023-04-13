@@ -1,5 +1,5 @@
 	.text
-	.file	"query_for_each.9060df0f-cgu.0"
+	.file	"query_for_each.9f134bd6-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4, 0x90
@@ -12,64 +12,74 @@ query_for_each:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
 	.cfi_def_cfa_offset 32
-	pushq	%rbx
+	pushq	%r12
 	.cfi_def_cfa_offset 40
-	.cfi_offset %rbx, -40
+	pushq	%rbx
+	.cfi_def_cfa_offset 48
+	.cfi_offset %rbx, -48
+	.cfi_offset %r12, -40
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
-	movq	8(%rdi), %rax
-	movq	304(%rax), %rdx
-	testq	%rdx, %rdx
+	movq	(%rdi), %r14
+	movq	8(%rdi), %r15
+	movl	16(%rdi), %edx
+	movl	20(%rdi), %r12d
+	leaq	352(%r15), %rsi
+	movq	%r14, %rdi
+	movl	%r12d, %ecx
+	callq	*<() as bevy_ecs::query::fetch::WorldQuery>::init_fetch@GOTPCREL(%rip)
+	movq	304(%r15), %rcx
+	testq	%rcx, %rcx
 	je	.LBB0_6
-	movq	(%rdi), %r10
-	movl	20(%rdi), %r15d
-	movq	296(%rax), %r14
-	leaq	(%r14,%rdx,4), %r11
-	movq	336(%rax), %r8
-	movq	344(%rax), %r9
-	shlq	$4, %r8
-	shlq	$4, %r9
+	movq	296(%r15), %r9
+	leaq	(%r9,%rcx,4), %r8
 	jmp	.LBB0_3
 	.p2align	4, 0x90
 .LBB0_2:
-	cmpq	%r11, %r14
+	cmpq	%r8, %r9
 	je	.LBB0_6
 .LBB0_3:
-	movl	(%r14), %edx
-	addq	$4, %r14
-	movq	304(%r10), %rax
-	leaq	(%rdx,%rdx,8), %rdx
-	movq	64(%rax,%rdx,8), %rdi
-	testq	%rdi, %rdi
+	movl	(%r9), %edx
+	addq	$4, %r9
+	movq	304(%r14), %rcx
+	leaq	(%rdx,%rdx,8), %rsi
+	movq	64(%rcx,%rsi,8), %rdx
+	testq	%rdx, %rdx
 	je	.LBB0_2
-	movq	(%rax,%rdx,8), %rbx
-	movq	32(%rax,%rdx,8), %rdx
-	movq	8(%rdx,%r8), %rax
-	leaq	(%rax,%rax,2), %rsi
-	shlq	$5, %rsi
-	movq	40(%rbx,%rsi), %rax
-	movq	80(%rbx,%rsi), %rsi
-	movq	8(%rdx,%r9), %rdx
-	leaq	(%rdx,%rdx,2), %rdx
-	shlq	$5, %rdx
-	movq	40(%rbx,%rdx), %rbx
-	xorl	%edx, %edx
+	movq	336(%r15), %rdi
+	movq	344(%r15), %rbx
+	movq	(%rcx,%rsi,8), %rax
+	movq	32(%rcx,%rsi,8), %rcx
+	shlq	$4, %rdi
+	movq	8(%rcx,%rdi), %rsi
+	leaq	(%rsi,%rsi,2), %rdi
+	shlq	$5, %rdi
+	movq	40(%rax,%rdi), %rsi
+	movq	80(%rax,%rdi), %rdi
+	shlq	$4, %rbx
+	movq	8(%rcx,%rbx), %rcx
+	leaq	(%rcx,%rcx,2), %rcx
+	shlq	$5, %rcx
+	movq	40(%rax,%rcx), %rcx
+	xorl	%ebx, %ebx
 	.p2align	4, 0x90
 .LBB0_5:
-	movl	%edx, %ecx
-	shlq	$2, %rcx
-	movss	(%rbx,%rcx), %xmm0
-	movl	%r15d, (%rsi,%rcx)
-	addss	(%rax,%rcx), %xmm0
-	leaq	1(%rdx), %rbp
-	movss	%xmm0, (%rax,%rcx)
-	movq	%rbp, %rdx
-	cmpq	%rbp, %rdi
+	movl	%ebx, %eax
+	shlq	$2, %rax
+	movss	(%rcx,%rax), %xmm0
+	movl	%r12d, (%rdi,%rax)
+	addss	(%rsi,%rax), %xmm0
+	leaq	1(%rbx), %rbp
+	movss	%xmm0, (%rsi,%rax)
+	movq	%rbp, %rbx
+	cmpq	%rbp, %rdx
 	jne	.LBB0_5
 	jmp	.LBB0_2
 .LBB0_6:
 	popq	%rbx
+	.cfi_def_cfa_offset 40
+	popq	%r12
 	.cfi_def_cfa_offset 32
 	popq	%r14
 	.cfi_def_cfa_offset 24
