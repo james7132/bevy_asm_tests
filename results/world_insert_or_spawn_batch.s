@@ -1,14 +1,12 @@
 	.text
-	.file	"world_insert_or_spawn_batch.23499888-cgu.0"
+	.file	"world_insert_or_spawn_batch.42d8dff60e736b49-cgu.0"
 	.section	".text.core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<(bevy_ecs::entity::Entity,(world_insert_or_spawn_batch::A,world_insert_or_spawn_batch::B))>>","ax",@progbits
 	.p2align	4, 0x90
 	.type	core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<(bevy_ecs::entity::Entity,(world_insert_or_spawn_batch::A,world_insert_or_spawn_batch::B))>>,@function
 core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<(bevy_ecs::entity::Entity,(world_insert_or_spawn_batch::A,world_insert_or_spawn_batch::B))>>:
 	.cfi_startproc
-	movq	(%rdi), %rsi
 	testq	%rsi, %rsi
 	je	.LBB0_1
-	movq	24(%rdi), %rdi
 	shlq	$4, %rsi
 	movl	$4, %edx
 	jmpq	*__rust_dealloc@GOTPCREL(%rip)
@@ -18,111 +16,20 @@ core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<(bevy_ecs::entity::Enti
 	.size	core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<(bevy_ecs::entity::Entity,(world_insert_or_spawn_batch::A,world_insert_or_spawn_batch::B))>>, .Lfunc_end0-core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<(bevy_ecs::entity::Entity,(world_insert_or_spawn_batch::A,world_insert_or_spawn_batch::B))>>
 	.cfi_endproc
 
-	.section	".text.core::ptr::drop_in_place<hashbrown::scopeguard::ScopeGuard<&mut hashbrown::raw::RawTableInner<alloc::alloc::Global>,hashbrown::raw::RawTableInner<alloc::alloc::Global>::rehash_in_place::{{closure}}>>","ax",@progbits
-	.p2align	4, 0x90
-	.type	core::ptr::drop_in_place<hashbrown::scopeguard::ScopeGuard<&mut hashbrown::raw::RawTableInner<alloc::alloc::Global>,hashbrown::raw::RawTableInner<alloc::alloc::Global>::rehash_in_place::{{closure}}>>,@function
-core::ptr::drop_in_place<hashbrown::scopeguard::ScopeGuard<&mut hashbrown::raw::RawTableInner<alloc::alloc::Global>,hashbrown::raw::RawTableInner<alloc::alloc::Global>::rehash_in_place::{{closure}}>>:
-	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	pushq	%r15
-	.cfi_def_cfa_offset 24
-	pushq	%r14
-	.cfi_def_cfa_offset 32
-	pushq	%r13
-	.cfi_def_cfa_offset 40
-	pushq	%r12
-	.cfi_def_cfa_offset 48
-	pushq	%rbx
-	.cfi_def_cfa_offset 56
-	pushq	%rax
-	.cfi_def_cfa_offset 64
-	.cfi_offset %rbx, -56
-	.cfi_offset %r12, -48
-	.cfi_offset %r13, -40
-	.cfi_offset %r14, -32
-	.cfi_offset %r15, -24
-	.cfi_offset %rbp, -16
-	movq	(%rdi), %r14
-	movq	16(%rdi), %r13
-	testq	%r14, %r14
-	je	.LBB1_5
-	movq	(%r13), %r15
-	cmpq	$-1, %r15
-	je	.LBB1_5
-	movq	8(%rdi), %r12
-	movq	%r12, %rbx
-	negq	%rbx
-	negq	%r15
-	movq	$-16, %rbp
-	jmp	.LBB1_3
-	.p2align	4, 0x90
-.LBB1_4:
-	subq	%r12, %rbx
-	leaq	(%r15,%rbp), %rax
-	incq	%rax
-	incq	%rbp
-	cmpq	$-15, %rax
-	je	.LBB1_5
-.LBB1_3:
-	movq	24(%r13), %rax
-	cmpb	$-128, 16(%rax,%rbp)
-	jne	.LBB1_4
-	movq	(%r13), %rcx
-	andq	%rbp, %rcx
-	movb	$-1, 16(%rax,%rbp)
-	movb	$-1, 16(%rcx,%rax)
-	movq	24(%r13), %rdi
-	addq	%rbx, %rdi
-	callq	*%r14
-	decq	16(%r13)
-	jmp	.LBB1_4
-.LBB1_5:
-	movq	(%r13), %rax
-	leaq	1(%rax), %rcx
-	movq	%rcx, %rdx
-	shrq	$3, %rdx
-	andq	$-8, %rcx
-	subq	%rdx, %rcx
-	cmpq	$8, %rax
-	cmovbq	%rax, %rcx
-	subq	16(%r13), %rcx
-	movq	%rcx, 8(%r13)
-	addq	$8, %rsp
-	.cfi_def_cfa_offset 56
-	popq	%rbx
-	.cfi_def_cfa_offset 48
-	popq	%r12
-	.cfi_def_cfa_offset 40
-	popq	%r13
-	.cfi_def_cfa_offset 32
-	popq	%r14
-	.cfi_def_cfa_offset 24
-	popq	%r15
-	.cfi_def_cfa_offset 16
-	popq	%rbp
-	.cfi_def_cfa_offset 8
-	retq
-.Lfunc_end1:
-	.size	core::ptr::drop_in_place<hashbrown::scopeguard::ScopeGuard<&mut hashbrown::raw::RawTableInner<alloc::alloc::Global>,hashbrown::raw::RawTableInner<alloc::alloc::Global>::rehash_in_place::{{closure}}>>, .Lfunc_end1-core::ptr::drop_in_place<hashbrown::scopeguard::ScopeGuard<&mut hashbrown::raw::RawTableInner<alloc::alloc::Global>,hashbrown::raw::RawTableInner<alloc::alloc::Global>::rehash_in_place::{{closure}}>>
-	.cfi_endproc
-
 	.section	".text.core::ptr::drop_in_place<bevy_ecs::bundle::BundleInfo>","ax",@progbits
 	.p2align	4, 0x90
 	.type	core::ptr::drop_in_place<bevy_ecs::bundle::BundleInfo>,@function
 core::ptr::drop_in_place<bevy_ecs::bundle::BundleInfo>:
 	.cfi_startproc
-	movq	8(%rdi), %rsi
 	testq	%rsi, %rsi
-	je	.LBB2_1
-	movq	16(%rdi), %rdi
+	je	.LBB1_1
 	shlq	$3, %rsi
 	movl	$8, %edx
 	jmpq	*__rust_dealloc@GOTPCREL(%rip)
-.LBB2_1:
+.LBB1_1:
 	retq
-.Lfunc_end2:
-	.size	core::ptr::drop_in_place<bevy_ecs::bundle::BundleInfo>, .Lfunc_end2-core::ptr::drop_in_place<bevy_ecs::bundle::BundleInfo>
+.Lfunc_end1:
+	.size	core::ptr::drop_in_place<bevy_ecs::bundle::BundleInfo>, .Lfunc_end1-core::ptr::drop_in_place<bevy_ecs::bundle::BundleInfo>
 	.cfi_endproc
 
 	.section	".text.core::ptr::drop_in_place<bevy_ecs::component::ComponentInfo>","ax",@progbits
@@ -130,20 +37,16 @@ core::ptr::drop_in_place<bevy_ecs::bundle::BundleInfo>:
 	.type	core::ptr::drop_in_place<bevy_ecs::component::ComponentInfo>,@function
 core::ptr::drop_in_place<bevy_ecs::component::ComponentInfo>:
 	.cfi_startproc
-	cmpq	$0, (%rdi)
-	je	.LBB3_2
-	movq	8(%rdi), %rsi
+	testq	%rdi, %rdi
+	je	.LBB2_2
 	testq	%rsi, %rsi
-	je	.LBB3_2
-	movq	16(%rdi), %rdi
-	movq	%rsi, %rdx
-	notq	%rdx
-	shrq	$63, %rdx
+	je	.LBB2_2
+	movl	$1, %edx
 	jmpq	*__rust_dealloc@GOTPCREL(%rip)
-.LBB3_2:
+.LBB2_2:
 	retq
-.Lfunc_end3:
-	.size	core::ptr::drop_in_place<bevy_ecs::component::ComponentInfo>, .Lfunc_end3-core::ptr::drop_in_place<bevy_ecs::component::ComponentInfo>
+.Lfunc_end2:
+	.size	core::ptr::drop_in_place<bevy_ecs::component::ComponentInfo>, .Lfunc_end2-core::ptr::drop_in_place<bevy_ecs::component::ComponentInfo>
 	.cfi_endproc
 
 	.section	".text.core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::entity::Entity>>","ax",@progbits
@@ -151,17 +54,15 @@ core::ptr::drop_in_place<bevy_ecs::component::ComponentInfo>:
 	.type	core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::entity::Entity>>,@function
 core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::entity::Entity>>:
 	.cfi_startproc
-	movq	(%rdi), %rsi
 	testq	%rsi, %rsi
-	je	.LBB4_1
-	movq	8(%rdi), %rdi
+	je	.LBB3_1
 	shlq	$3, %rsi
 	movl	$4, %edx
 	jmpq	*__rust_dealloc@GOTPCREL(%rip)
-.LBB4_1:
+.LBB3_1:
 	retq
-.Lfunc_end4:
-	.size	core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::entity::Entity>>, .Lfunc_end4-core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::entity::Entity>>
+.Lfunc_end3:
+	.size	core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::entity::Entity>>, .Lfunc_end3-core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::entity::Entity>>
 	.cfi_endproc
 
 	.section	".text.core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::component::ComponentId>>","ax",@progbits
@@ -169,17 +70,15 @@ core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::entity::Entity>>:
 	.type	core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::component::ComponentId>>,@function
 core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::component::ComponentId>>:
 	.cfi_startproc
-	movq	(%rdi), %rsi
 	testq	%rsi, %rsi
-	je	.LBB5_1
-	movq	8(%rdi), %rdi
+	je	.LBB4_1
 	shlq	$3, %rsi
 	movl	$8, %edx
 	jmpq	*__rust_dealloc@GOTPCREL(%rip)
-.LBB5_1:
+.LBB4_1:
 	retq
-.Lfunc_end5:
-	.size	core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::component::ComponentId>>, .Lfunc_end5-core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::component::ComponentId>>
+.Lfunc_end4:
+	.size	core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::component::ComponentId>>, .Lfunc_end4-core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::component::ComponentId>>
 	.cfi_endproc
 
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
@@ -196,46 +95,46 @@ alloc::raw_vec::finish_grow:
 	.cfi_offset %rbx, -32
 	.cfi_offset %r14, -24
 	.cfi_offset %r15, -16
-	movq	%rsi, %r14
-	movq	%rdi, %rbx
-	testq	%rdx, %rdx
-	je	.LBB6_5
-	movq	%rdx, %r15
-	cmpq	$0, 16(%rcx)
-	je	.LBB6_7
-	movq	8(%rcx), %rsi
+	movq	%rdx, %rbx
+	movq	%rdi, %r14
 	testq	%rsi, %rsi
-	je	.LBB6_7
+	je	.LBB5_6
+	movq	%rsi, %r15
+	cmpq	$0, 8(%rcx)
+	je	.LBB5_7
+	movq	16(%rcx), %rsi
+	testq	%rsi, %rsi
+	je	.LBB5_7
 	movq	(%rcx), %rdi
 	movq	%r15, %rdx
-	movq	%r14, %rcx
+	movq	%rbx, %rcx
 	callq	*__rust_realloc@GOTPCREL(%rip)
 	testq	%rax, %rax
-	jne	.LBB6_11
-.LBB6_4:
-	movq	%r14, 8(%rbx)
-	movq	%r15, 16(%rbx)
-	jmp	.LBB6_6
-.LBB6_7:
-	testq	%r14, %r14
-	je	.LBB6_8
-	movq	%r14, %rdi
+	jne	.LBB5_11
+.LBB5_4:
+	movq	%r15, 8(%r14)
+	jmp	.LBB5_5
+.LBB5_7:
+	testq	%rbx, %rbx
+	je	.LBB5_8
+	movq	__rust_no_alloc_shim_is_unstable@GOTPCREL(%rip), %rax
+	movzbl	(%rax), %eax
+	movq	%rbx, %rdi
 	movq	%r15, %rsi
 	callq	*__rust_alloc@GOTPCREL(%rip)
 	testq	%rax, %rax
-	je	.LBB6_4
-.LBB6_11:
-	movq	%rax, 8(%rbx)
-	movq	%r14, 16(%rbx)
+	je	.LBB5_4
+.LBB5_11:
+	movq	%rax, 8(%r14)
 	xorl	%eax, %eax
-	jmp	.LBB6_12
-.LBB6_5:
-	movq	%r14, 8(%rbx)
-	movq	$0, 16(%rbx)
-.LBB6_6:
+	jmp	.LBB5_12
+.LBB5_6:
+	movq	$0, 8(%r14)
+.LBB5_5:
 	movl	$1, %eax
-.LBB6_12:
-	movq	%rax, (%rbx)
+.LBB5_12:
+	movq	%rbx, 16(%r14)
+	movq	%rax, (%r14)
 	popq	%rbx
 	.cfi_def_cfa_offset 24
 	popq	%r14
@@ -243,14 +142,98 @@ alloc::raw_vec::finish_grow:
 	popq	%r15
 	.cfi_def_cfa_offset 8
 	retq
-.LBB6_8:
+.LBB5_8:
 	.cfi_def_cfa_offset 32
 	movq	%r15, %rax
 	testq	%rax, %rax
-	jne	.LBB6_11
+	jne	.LBB5_11
+	jmp	.LBB5_4
+.Lfunc_end5:
+	.size	alloc::raw_vec::finish_grow, .Lfunc_end5-alloc::raw_vec::finish_grow
+	.cfi_endproc
+
+	.section	".text.alloc::raw_vec::RawVec<T,A>::reserve_for_push","ax",@progbits
+	.p2align	4, 0x90
+	.type	alloc::raw_vec::RawVec<T,A>::reserve_for_push,@function
+alloc::raw_vec::RawVec<T,A>::reserve_for_push:
+	.cfi_startproc
+	pushq	%r14
+	.cfi_def_cfa_offset 16
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	subq	$56, %rsp
+	.cfi_def_cfa_offset 80
+	.cfi_offset %rbx, -24
+	.cfi_offset %r14, -16
+	incq	%rsi
+	je	.LBB6_10
+	movq	%rdi, %rbx
+	movq	8(%rdi), %rax
+	leaq	(%rax,%rax), %rcx
+	cmpq	%rsi, %rcx
+	cmovaq	%rcx, %rsi
+	cmpq	$5, %rsi
+	movl	$4, %r14d
+	cmovaeq	%rsi, %r14
+	movabsq	$768614336404564651, %rcx
+	xorl	%esi, %esi
+	cmpq	%rcx, %r14
+	setb	%sil
+	leaq	(,%r14,4), %rcx
+	leaq	(%rcx,%rcx,2), %rdx
+	shlq	$2, %rsi
+	testq	%rax, %rax
+	je	.LBB6_3
+	movq	(%rbx), %rcx
+	shlq	$2, %rax
+	leaq	(%rax,%rax,2), %rax
+	movq	%rcx, 8(%rsp)
+	movq	$4, 16(%rsp)
+	movq	%rax, 24(%rsp)
 	jmp	.LBB6_4
+.LBB6_3:
+	movq	$0, 16(%rsp)
+.LBB6_4:
+	leaq	32(%rsp), %rdi
+	leaq	8(%rsp), %rcx
+	callq	alloc::raw_vec::finish_grow
+	cmpq	$0, 32(%rsp)
+	movq	40(%rsp), %rdi
+	je	.LBB6_5
+	movabsq	$-9223372036854775807, %rax
+	cmpq	%rax, %rdi
+	jne	.LBB6_8
+	addq	$56, %rsp
+	.cfi_def_cfa_offset 24
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%r14
+	.cfi_def_cfa_offset 8
+	retq
+.LBB6_5:
+	.cfi_def_cfa_offset 80
+	movq	%rdi, (%rbx)
+	movq	%r14, 8(%rbx)
+	addq	$56, %rsp
+	.cfi_def_cfa_offset 24
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%r14
+	.cfi_def_cfa_offset 8
+	retq
+.LBB6_8:
+	.cfi_def_cfa_offset 80
+	testq	%rdi, %rdi
+	jne	.LBB6_9
+.LBB6_10:
+	callq	*alloc::raw_vec::capacity_overflow@GOTPCREL(%rip)
+	ud2
+.LBB6_9:
+	movq	48(%rsp), %rsi
+	callq	*alloc::alloc::handle_alloc_error@GOTPCREL(%rip)
+	ud2
 .Lfunc_end6:
-	.size	alloc::raw_vec::finish_grow, .Lfunc_end6-alloc::raw_vec::finish_grow
+	.size	alloc::raw_vec::RawVec<T,A>::reserve_for_push, .Lfunc_end6-alloc::raw_vec::RawVec<T,A>::reserve_for_push
 	.cfi_endproc
 
 	.section	".text.alloc::raw_vec::RawVec<T,A>::reserve_for_push","ax",@progbits
@@ -268,30 +251,30 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	.cfi_offset %r14, -16
 	incq	%rsi
 	je	.LBB7_10
-	movq	%rdi, %r14
-	movq	(%rdi), %rax
+	movq	%rdi, %rbx
+	movq	8(%rdi), %rax
 	leaq	(%rax,%rax), %rcx
 	cmpq	%rsi, %rcx
 	cmovaq	%rcx, %rsi
 	cmpq	$5, %rsi
-	movl	$4, %ebx
-	cmovaeq	%rsi, %rbx
-	xorl	%edx, %edx
-	movq	%rbx, %rcx
-	shrq	$60, %rcx
-	sete	%dl
-	leaq	(,%rbx,8), %rsi
-	shlq	$3, %rdx
+	movl	$4, %r14d
+	cmovaeq	%rsi, %r14
+	movabsq	$104811045873349726, %rcx
+	xorl	%esi, %esi
+	cmpq	%rcx, %r14
+	setb	%sil
+	imulq	$88, %r14, %rdx
+	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB7_3
-	movq	8(%r14), %rcx
-	shlq	$3, %rax
+	movq	(%rbx), %rcx
+	imulq	$88, %rax, %rax
 	movq	%rcx, 8(%rsp)
-	movq	%rax, 16(%rsp)
-	movq	$8, 24(%rsp)
+	movq	$8, 16(%rsp)
+	movq	%rax, 24(%rsp)
 	jmp	.LBB7_4
 .LBB7_3:
-	movq	$0, 24(%rsp)
+	movq	$0, 16(%rsp)
 .LBB7_4:
 	leaq	32(%rsp), %rdi
 	leaq	8(%rsp), %rcx
@@ -299,9 +282,8 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$0, 32(%rsp)
 	movq	40(%rsp), %rdi
 	je	.LBB7_5
-	movq	48(%rsp), %rsi
 	movabsq	$-9223372036854775807, %rax
-	cmpq	%rax, %rsi
+	cmpq	%rax, %rdi
 	jne	.LBB7_8
 	addq	$56, %rsp
 	.cfi_def_cfa_offset 24
@@ -312,8 +294,8 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	retq
 .LBB7_5:
 	.cfi_def_cfa_offset 80
-	movq	%rdi, 8(%r14)
-	movq	%rbx, (%r14)
+	movq	%rdi, (%rbx)
+	movq	%r14, 8(%rbx)
 	addq	$56, %rsp
 	.cfi_def_cfa_offset 24
 	popq	%rbx
@@ -323,12 +305,13 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	retq
 .LBB7_8:
 	.cfi_def_cfa_offset 80
-	testq	%rsi, %rsi
+	testq	%rdi, %rdi
 	jne	.LBB7_9
 .LBB7_10:
 	callq	*alloc::raw_vec::capacity_overflow@GOTPCREL(%rip)
 	ud2
 .LBB7_9:
+	movq	48(%rsp), %rsi
 	callq	*alloc::alloc::handle_alloc_error@GOTPCREL(%rip)
 	ud2
 .Lfunc_end7:
@@ -350,30 +333,30 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	.cfi_offset %r14, -16
 	incq	%rsi
 	je	.LBB8_10
-	movq	%rdi, %r14
-	movq	(%rdi), %rax
+	movq	%rdi, %rbx
+	movq	8(%rdi), %rax
 	leaq	(%rax,%rax), %rcx
 	cmpq	%rsi, %rcx
 	cmovaq	%rcx, %rsi
 	cmpq	$5, %rsi
-	movl	$4, %ebx
-	cmovaeq	%rsi, %rbx
-	movabsq	$104811045873349725, %rcx
-	xorl	%edx, %edx
-	cmpq	%rcx, %rbx
-	setbe	%dl
-	imulq	$88, %rbx, %rsi
-	shlq	$3, %rdx
+	movl	$4, %r14d
+	cmovaeq	%rsi, %r14
+	xorl	%esi, %esi
+	movq	%r14, %rcx
+	shrq	$60, %rcx
+	sete	%sil
+	leaq	(,%r14,8), %rdx
+	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB8_3
-	movq	8(%r14), %rcx
-	imulq	$88, %rax, %rax
+	movq	(%rbx), %rcx
+	shlq	$3, %rax
 	movq	%rcx, 8(%rsp)
-	movq	%rax, 16(%rsp)
-	movq	$8, 24(%rsp)
+	movq	$8, 16(%rsp)
+	movq	%rax, 24(%rsp)
 	jmp	.LBB8_4
 .LBB8_3:
-	movq	$0, 24(%rsp)
+	movq	$0, 16(%rsp)
 .LBB8_4:
 	leaq	32(%rsp), %rdi
 	leaq	8(%rsp), %rcx
@@ -381,9 +364,8 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$0, 32(%rsp)
 	movq	40(%rsp), %rdi
 	je	.LBB8_5
-	movq	48(%rsp), %rsi
 	movabsq	$-9223372036854775807, %rax
-	cmpq	%rax, %rsi
+	cmpq	%rax, %rdi
 	jne	.LBB8_8
 	addq	$56, %rsp
 	.cfi_def_cfa_offset 24
@@ -394,8 +376,8 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	retq
 .LBB8_5:
 	.cfi_def_cfa_offset 80
-	movq	%rdi, 8(%r14)
-	movq	%rbx, (%r14)
+	movq	%rdi, (%rbx)
+	movq	%r14, 8(%rbx)
 	addq	$56, %rsp
 	.cfi_def_cfa_offset 24
 	popq	%rbx
@@ -405,12 +387,13 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	retq
 .LBB8_8:
 	.cfi_def_cfa_offset 80
-	testq	%rsi, %rsi
+	testq	%rdi, %rdi
 	jne	.LBB8_9
 .LBB8_10:
 	callq	*alloc::raw_vec::capacity_overflow@GOTPCREL(%rip)
 	ud2
 .LBB8_9:
+	movq	48(%rsp), %rsi
 	callq	*alloc::alloc::handle_alloc_error@GOTPCREL(%rip)
 	ud2
 .Lfunc_end8:
@@ -432,32 +415,31 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	.cfi_offset %r14, -16
 	incq	%rsi
 	je	.LBB9_10
-	movq	%rdi, %r14
-	movq	(%rdi), %rax
+	movq	%rdi, %rbx
+	movq	8(%rdi), %rax
 	leaq	(%rax,%rax), %rcx
 	cmpq	%rsi, %rcx
 	cmovaq	%rcx, %rsi
 	cmpq	$5, %rsi
-	movl	$4, %ebx
-	cmovaeq	%rsi, %rbx
-	movabsq	$768614336404564650, %rcx
-	xorl	%edx, %edx
-	cmpq	%rcx, %rbx
-	setbe	%dl
-	leaq	(,%rbx,4), %rcx
-	leaq	(%rcx,%rcx,2), %rsi
-	shlq	$2, %rdx
+	movl	$4, %r14d
+	cmovaeq	%rsi, %r14
+	xorl	%esi, %esi
+	movq	%r14, %rcx
+	shrq	$58, %rcx
+	sete	%sil
+	movq	%r14, %rdx
+	shlq	$5, %rdx
+	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB9_3
-	movq	8(%r14), %rcx
-	shlq	$2, %rax
-	leaq	(%rax,%rax,2), %rax
+	movq	(%rbx), %rcx
+	shlq	$5, %rax
 	movq	%rcx, 8(%rsp)
-	movq	%rax, 16(%rsp)
-	movq	$4, 24(%rsp)
+	movq	$8, 16(%rsp)
+	movq	%rax, 24(%rsp)
 	jmp	.LBB9_4
 .LBB9_3:
-	movq	$0, 24(%rsp)
+	movq	$0, 16(%rsp)
 .LBB9_4:
 	leaq	32(%rsp), %rdi
 	leaq	8(%rsp), %rcx
@@ -465,9 +447,8 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$0, 32(%rsp)
 	movq	40(%rsp), %rdi
 	je	.LBB9_5
-	movq	48(%rsp), %rsi
 	movabsq	$-9223372036854775807, %rax
-	cmpq	%rax, %rsi
+	cmpq	%rax, %rdi
 	jne	.LBB9_8
 	addq	$56, %rsp
 	.cfi_def_cfa_offset 24
@@ -478,8 +459,8 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	retq
 .LBB9_5:
 	.cfi_def_cfa_offset 80
-	movq	%rdi, 8(%r14)
-	movq	%rbx, (%r14)
+	movq	%rdi, (%rbx)
+	movq	%r14, 8(%rbx)
 	addq	$56, %rsp
 	.cfi_def_cfa_offset 24
 	popq	%rbx
@@ -489,12 +470,13 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	retq
 .LBB9_8:
 	.cfi_def_cfa_offset 80
-	testq	%rsi, %rsi
+	testq	%rdi, %rdi
 	jne	.LBB9_9
 .LBB9_10:
 	callq	*alloc::raw_vec::capacity_overflow@GOTPCREL(%rip)
 	ud2
 .LBB9_9:
+	movq	48(%rsp), %rsi
 	callq	*alloc::alloc::handle_alloc_error@GOTPCREL(%rip)
 	ud2
 .Lfunc_end9:
@@ -516,31 +498,30 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	.cfi_offset %r14, -16
 	incq	%rsi
 	je	.LBB10_10
-	movq	%rdi, %r14
-	movq	(%rdi), %rax
+	movq	%rdi, %rbx
+	movq	8(%rdi), %rax
 	leaq	(%rax,%rax), %rcx
 	cmpq	%rsi, %rcx
 	cmovaq	%rcx, %rsi
 	cmpq	$5, %rsi
-	movl	$4, %ebx
-	cmovaeq	%rsi, %rbx
-	xorl	%edx, %edx
-	movq	%rbx, %rcx
-	shrq	$58, %rcx
-	sete	%dl
-	movq	%rbx, %rsi
-	shlq	$5, %rsi
-	shlq	$3, %rdx
+	movl	$4, %r14d
+	cmovaeq	%rsi, %r14
+	xorl	%esi, %esi
+	movq	%r14, %rcx
+	shrq	$60, %rcx
+	sete	%sil
+	leaq	(,%r14,8), %rdx
+	shlq	$2, %rsi
 	testq	%rax, %rax
 	je	.LBB10_3
-	movq	8(%r14), %rcx
-	shlq	$5, %rax
+	movq	(%rbx), %rcx
+	shlq	$3, %rax
 	movq	%rcx, 8(%rsp)
-	movq	%rax, 16(%rsp)
-	movq	$8, 24(%rsp)
+	movq	$4, 16(%rsp)
+	movq	%rax, 24(%rsp)
 	jmp	.LBB10_4
 .LBB10_3:
-	movq	$0, 24(%rsp)
+	movq	$0, 16(%rsp)
 .LBB10_4:
 	leaq	32(%rsp), %rdi
 	leaq	8(%rsp), %rcx
@@ -548,9 +529,8 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$0, 32(%rsp)
 	movq	40(%rsp), %rdi
 	je	.LBB10_5
-	movq	48(%rsp), %rsi
 	movabsq	$-9223372036854775807, %rax
-	cmpq	%rax, %rsi
+	cmpq	%rax, %rdi
 	jne	.LBB10_8
 	addq	$56, %rsp
 	.cfi_def_cfa_offset 24
@@ -561,8 +541,8 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	retq
 .LBB10_5:
 	.cfi_def_cfa_offset 80
-	movq	%rdi, 8(%r14)
-	movq	%rbx, (%r14)
+	movq	%rdi, (%rbx)
+	movq	%r14, 8(%rbx)
 	addq	$56, %rsp
 	.cfi_def_cfa_offset 24
 	popq	%rbx
@@ -572,98 +552,17 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	retq
 .LBB10_8:
 	.cfi_def_cfa_offset 80
-	testq	%rsi, %rsi
+	testq	%rdi, %rdi
 	jne	.LBB10_9
 .LBB10_10:
 	callq	*alloc::raw_vec::capacity_overflow@GOTPCREL(%rip)
 	ud2
 .LBB10_9:
+	movq	48(%rsp), %rsi
 	callq	*alloc::alloc::handle_alloc_error@GOTPCREL(%rip)
 	ud2
 .Lfunc_end10:
 	.size	alloc::raw_vec::RawVec<T,A>::reserve_for_push, .Lfunc_end10-alloc::raw_vec::RawVec<T,A>::reserve_for_push
-	.cfi_endproc
-
-	.section	".text.alloc::raw_vec::RawVec<T,A>::reserve_for_push","ax",@progbits
-	.p2align	4, 0x90
-	.type	alloc::raw_vec::RawVec<T,A>::reserve_for_push,@function
-alloc::raw_vec::RawVec<T,A>::reserve_for_push:
-	.cfi_startproc
-	pushq	%r14
-	.cfi_def_cfa_offset 16
-	pushq	%rbx
-	.cfi_def_cfa_offset 24
-	subq	$56, %rsp
-	.cfi_def_cfa_offset 80
-	.cfi_offset %rbx, -24
-	.cfi_offset %r14, -16
-	incq	%rsi
-	je	.LBB11_10
-	movq	%rdi, %r14
-	movq	(%rdi), %rax
-	leaq	(%rax,%rax), %rcx
-	cmpq	%rsi, %rcx
-	cmovaq	%rcx, %rsi
-	cmpq	$5, %rsi
-	movl	$4, %ebx
-	cmovaeq	%rsi, %rbx
-	xorl	%edx, %edx
-	movq	%rbx, %rcx
-	shrq	$60, %rcx
-	sete	%dl
-	leaq	(,%rbx,8), %rsi
-	shlq	$2, %rdx
-	testq	%rax, %rax
-	je	.LBB11_3
-	movq	8(%r14), %rcx
-	shlq	$3, %rax
-	movq	%rcx, 8(%rsp)
-	movq	%rax, 16(%rsp)
-	movq	$4, 24(%rsp)
-	jmp	.LBB11_4
-.LBB11_3:
-	movq	$0, 24(%rsp)
-.LBB11_4:
-	leaq	32(%rsp), %rdi
-	leaq	8(%rsp), %rcx
-	callq	alloc::raw_vec::finish_grow
-	cmpq	$0, 32(%rsp)
-	movq	40(%rsp), %rdi
-	je	.LBB11_5
-	movq	48(%rsp), %rsi
-	movabsq	$-9223372036854775807, %rax
-	cmpq	%rax, %rsi
-	jne	.LBB11_8
-	addq	$56, %rsp
-	.cfi_def_cfa_offset 24
-	popq	%rbx
-	.cfi_def_cfa_offset 16
-	popq	%r14
-	.cfi_def_cfa_offset 8
-	retq
-.LBB11_5:
-	.cfi_def_cfa_offset 80
-	movq	%rdi, 8(%r14)
-	movq	%rbx, (%r14)
-	addq	$56, %rsp
-	.cfi_def_cfa_offset 24
-	popq	%rbx
-	.cfi_def_cfa_offset 16
-	popq	%r14
-	.cfi_def_cfa_offset 8
-	retq
-.LBB11_8:
-	.cfi_def_cfa_offset 80
-	testq	%rsi, %rsi
-	jne	.LBB11_9
-.LBB11_10:
-	callq	*alloc::raw_vec::capacity_overflow@GOTPCREL(%rip)
-	ud2
-.LBB11_9:
-	callq	*alloc::alloc::handle_alloc_error@GOTPCREL(%rip)
-	ud2
-.Lfunc_end11:
-	.size	alloc::raw_vec::RawVec<T,A>::reserve_for_push, .Lfunc_end11-alloc::raw_vec::RawVec<T,A>::reserve_for_push
 	.cfi_endproc
 
 	.section	.text.bevy_ecs::bundle::BundleInserter::insert,"ax",@progbits
@@ -691,402 +590,567 @@ bevy_ecs::bundle::BundleInserter::insert:
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
-	movq	%r8, %r15
-	movq	%rsi, %rbx
-	movq	%rdi, %r8
-	movq	48(%rsi), %rax
+	movq	%r8, %rbx
+	movq	%rsi, %r14
+	movq	%rdi, %r9
+	movq	(%rsi), %rax
 	testq	%rax, %rax
 	movq	%rdi, 56(%rsp)
-	movss	%xmm1, 44(%rsp)
-	je	.LBB12_37
-	movl	%ecx, %r13d
+	movss	%xmm1, 52(%rsp)
+	je	.LBB11_9
+	movl	%ecx, %ebp
 	movl	%edx, %r12d
 	cmpl	$1, %eax
-	jne	.LBB12_6
-	movq	8(%rbx), %r14
-	movl	4(%r15), %edi
-	movq	136(%r14), %rsi
+	jne	.LBB11_18
+	movq	24(%r14), %r13
+	movl	4(%rbx), %edi
+	movq	88(%r13), %rsi
 	cmpq	%rdi, %rsi
-	jbe	.LBB12_43
+	jbe	.LBB11_99
 	decq	%rsi
-	movq	128(%r14), %rax
+	movq	72(%r13), %rax
 	leaq	(%rdi,%rdi,2), %rcx
 	movl	8(%rax,%rcx,4), %r15d
 	leaq	(%rsi,%rsi,2), %rdx
-	movl	8(%rax,%rdx,4), %ebp
+	movl	8(%rax,%rdx,4), %r8d
 	movq	(%rax,%rdx,4), %rdx
 	movq	%rdx, (%rax,%rcx,4)
-	movl	%ebp, 8(%rax,%rcx,4)
-	movq	%rsi, 136(%r14)
+	movl	%r8d, 8(%rax,%rcx,4)
+	movq	%rsi, 88(%r13)
 	cmpq	%rdi, %rsi
-	je	.LBB12_27
-	jbe	.LBB12_5
-	leaq	(%rax,%rcx,4), %rax
-	movl	4(%rax), %eax
-	movq	16(%rbx), %rcx
-	movq	16(%rcx), %rcx
-	leaq	(%rax,%rax,4), %rax
+	je	.LBB11_40
+	jbe	.LBB11_97
+	leaq	(%rax,%rcx,4), %rdx
+	movl	4(%rdx), %esi
+	movq	32(%r14), %rcx
+	leaq	(%rsi,%rsi,4), %rax
+	cmpq	%rsi, 16(%rcx)
+	jbe	.LBB11_25
+	movq	(%rcx), %rcx
+	movl	(%rcx,%rax,4), %esi
+	cmpl	(%rdx), %esi
+	jne	.LBB11_38
+	movl	4(%rcx,%rax,4), %r8d
+	cmpl	$-1, %r8d
+	je	.LBB11_38
+	leaq	(%rcx,%rax,4), %rdx
+	addq	$4, %rdx
+	movl	8(%rdx), %esi
+	movl	12(%rdx), %edx
+	jmp	.LBB11_39
+.LBB11_9:
+	movq	24(%r14), %rcx
+	movq	40(%r14), %r13
+	movq	24(%r13), %rax
+	xorl	%r12d, %r12d
+	cmpq	16(%rcx), %rax
+	jae	.LBB11_12
+	movq	(%rcx), %rcx
+	testq	%rcx, %rcx
+	je	.LBB11_12
+	shlq	$5, %rax
+	leaq	(%rcx,%rax), %r12
+	movq	(%rcx,%rax), %rax
+	testq	%rax, %rax
+	cmoveq	%rax, %r12
+.LBB11_12:
+	movq	48(%r14), %rbp
+	movl	12(%rbx), %r15d
+	movl	72(%r14), %eax
+	movl	%eax, 8(%rsp)
+	movss	%xmm0, 32(%rsp)
+	movq	(%r13), %rax
+	movq	(%rax), %rax
+	xorl	%r14d, %r14d
+	cmpq	%rax, 40(%rbp)
+	jbe	.LBB11_16
+	movq	32(%rbp), %rcx
+	testq	%rcx, %rcx
+	je	.LBB11_16
+	shlq	$4, %rax
+	cmpq	$0, (%rcx,%rax)
+	je	.LBB11_27
+	movq	8(%rcx,%rax), %rax
+	leaq	(%rax,%rax,2), %r14
+	shlq	$5, %r14
+	addq	(%rbp), %r14
+.LBB11_16:
+	movq	(%r12), %rax
+	cmpb	$0, (%rax)
+	je	.LBB11_28
+.LBB11_17:
+	leaq	32(%rsp), %rdx
+	movq	%r14, %rdi
+	movq	%r15, %rsi
+	callq	*bevy_ecs::storage::blob_vec::BlobVec::replace_unchecked@GOTPCREL(%rip)
+	movl	8(%rsp), %ecx
+	jmp	.LBB11_29
+.LBB11_18:
+	movl	%r12d, 16(%rsp)
+	movq	24(%r14), %r12
+	movl	4(%rbx), %edi
+	movq	88(%r12), %rsi
+	cmpq	%rdi, %rsi
+	jbe	.LBB11_99
+	decq	%rsi
+	movq	72(%r12), %rax
+	leaq	(%rdi,%rdi,2), %rcx
+	movl	8(%rax,%rcx,4), %ebx
+	leaq	(%rsi,%rsi,2), %rdx
+	movl	8(%rax,%rdx,4), %r8d
+	movq	(%rax,%rdx,4), %rdx
+	movq	%rdx, (%rax,%rcx,4)
+	movl	%r8d, 8(%rax,%rcx,4)
+	movq	%rsi, 88(%r12)
+	cmpq	%rdi, %rsi
+	je	.LBB11_66
+	jbe	.LBB11_97
+	leaq	(%rax,%rcx,4), %rdx
+	movl	4(%rdx), %esi
+	movq	32(%r14), %rcx
+	leaq	(%rsi,%rsi,4), %rax
+	cmpq	%rsi, 16(%rcx)
+	jbe	.LBB11_26
+	movq	(%rcx), %rcx
+	movl	(%rcx,%rax,4), %esi
+	cmpl	(%rdx), %esi
+	jne	.LBB11_64
+	movl	4(%rcx,%rax,4), %edx
+	cmpl	$-1, %edx
+	je	.LBB11_64
+	leaq	(%rcx,%rax,4), %r8
+	addq	$4, %r8
+	movl	8(%r8), %esi
+	movl	12(%r8), %r8d
+	jmp	.LBB11_65
+.LBB11_25:
+	movq	(%rcx), %rcx
+.LBB11_38:
+.LBB11_39:
+	movl	%r8d, 4(%rcx,%rax,4)
 	movl	%edi, 8(%rcx,%rax,4)
-.LBB12_27:
-	movq	56(%rbx), %rbp
-	movq	136(%rbp), %rsi
-	movq	%rsi, %rax
-	cmpq	120(%rbp), %rsi
-	movq	%rsi, 8(%rsp)
-	jne	.LBB12_29
-	leaq	120(%rbp), %rdi
-	movq	8(%rsp), %rsi
-	movss	%xmm0, 16(%rsp)
+	movl	%esi, 12(%rcx,%rax,4)
+	movl	%edx, 16(%rcx,%rax,4)
+.LBB11_40:
+	movq	8(%r14), %rbx
+	movq	88(%rbx), %rsi
+	cmpq	80(%rbx), %rsi
+	movq	%rsi, 24(%rsp)
+	jne	.LBB11_42
+	leaq	72(%rbx), %rdi
+	movq	24(%rsp), %rsi
+	movss	%xmm0, 8(%rsp)
 	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
-	movq	8(%rsp), %rsi
-	movss	16(%rsp), %xmm0
-	movq	136(%rbp), %rax
-.LBB12_29:
-	movq	128(%rbp), %rcx
+	movq	24(%rsp), %rsi
+	movss	8(%rsp), %xmm0
+	movq	88(%rbx), %rax
+	jmp	.LBB11_43
+.LBB11_42:
+	movq	%rsi, %rax
+.LBB11_43:
+	movq	72(%rbx), %rcx
 	leaq	(%rax,%rax,2), %rdx
 	movl	%r12d, (%rcx,%rdx,4)
-	movl	%r13d, 4(%rcx,%rdx,4)
+	movl	%ebp, 4(%rcx,%rdx,4)
 	movl	%r15d, 8(%rcx,%rdx,4)
 	incq	%rax
-	movq	%rax, 136(%rbp)
-	movl	144(%rbp), %edi
-	movl	148(%rbp), %edx
-	movq	16(%rbx), %rax
-	movq	16(%rax), %rax
-	movl	%r13d, %ecx
+	movq	%rax, 88(%rbx)
+	movl	144(%rbx), %edi
+	movl	148(%rbx), %edx
+	movq	32(%r14), %rax
+	movq	(%rax), %rax
+	movl	%ebp, %ecx
 	leaq	(%rcx,%rcx,4), %rcx
-	movl	%edi, 48(%rsp)
+	movl	%edi, 16(%rsp)
 	movl	%edi, 4(%rax,%rcx,4)
 	movl	%esi, 8(%rax,%rcx,4)
-	movl	%edx, 16(%rsp)
+	movl	%edx, 8(%rsp)
 	movl	%edx, 12(%rax,%rcx,4)
 	movl	%r15d, 16(%rax,%rcx,4)
+	movq	40(%r14), %rbx
 	movq	24(%rbx), %rax
-	movq	32(%rbx), %rcx
-	movq	(%rax), %rdx
-	movq	56(%r14), %rsi
-	shlq	$5, %rdx
-	movq	8(%rsi,%rdx), %r14
-	movl	72(%rbx), %edx
-	movl	%edx, (%rsp)
-	movss	%xmm0, 24(%rsp)
-	movq	16(%rax), %r12
-	movq	(%r12), %rax
-	movq	(%rcx), %rbx
-	movq	32(%rcx), %r13
+	xorl	%r12d, %r12d
+	cmpq	16(%r13), %rax
+	jae	.LBB11_46
+	movq	(%r13), %rcx
+	testq	%rcx, %rcx
+	je	.LBB11_46
+	shlq	$5, %rax
+	leaq	(%rcx,%rax), %r12
+	movq	(%rcx,%rax), %rax
+	testq	%rax, %rax
+	cmoveq	%rax, %r12
+.LBB11_46:
+	movq	48(%r14), %r13
+	movl	72(%r14), %ebp
+	movss	%xmm0, 32(%rsp)
+	movq	(%rbx), %rax
+	movq	(%rax), %rax
+	xorl	%r14d, %r14d
+	cmpq	%rax, 40(%r13)
+	jbe	.LBB11_50
+	movq	32(%r13), %rcx
+	testq	%rcx, %rcx
+	je	.LBB11_50
 	shlq	$4, %rax
-	movq	8(%r13,%rax), %rax
-	leaq	(%rax,%rax,2), %rbp
-	shlq	$5, %rbp
-	leaq	(%rbx,%rbp), %rdi
-	cmpb	$0, (%r14)
-	je	.LBB12_30
-	leaq	24(%rsp), %rdx
+	cmpq	$0, (%rcx,%rax)
+	je	.LBB11_52
+	movq	8(%rcx,%rax), %rax
+	leaq	(%rax,%rax,2), %r14
+	shlq	$5, %r14
+	addq	(%r13), %r14
+.LBB11_50:
+	movq	(%r12), %rax
+	cmpb	$0, (%rax)
+	je	.LBB11_53
+.LBB11_51:
+	leaq	32(%rsp), %rdx
+	movq	%r14, %rdi
 	movq	%r15, %rsi
 	callq	*bevy_ecs::storage::blob_vec::BlobVec::replace_unchecked@GOTPCREL(%rip)
-	movl	(%rsp), %ecx
-	jmp	.LBB12_32
-.LBB12_37:
-	movq	8(%rbx), %rax
-	movq	24(%rbx), %rcx
-	movq	(%rcx), %rdx
-	movq	56(%rax), %rax
-	shlq	$5, %rdx
-	movq	8(%rax,%rdx), %rdx
-	movq	32(%rbx), %rax
-	movl	12(%r15), %r12d
-	movl	72(%rbx), %esi
-	movl	%esi, 8(%rsp)
-	movss	%xmm0, 24(%rsp)
-	movq	16(%rcx), %r13
-	movq	(%r13), %rcx
-	movq	(%rax), %rbx
-	movq	32(%rax), %r14
-	shlq	$4, %rcx
-	movq	8(%r14,%rcx), %rax
-	leaq	(%rax,%rax,2), %rbp
-	shlq	$5, %rbp
-	leaq	(%rbx,%rbp), %rdi
-	movq	%rdx, 16(%rsp)
-	cmpb	$0, (%rdx)
-	je	.LBB12_36
-	leaq	24(%rsp), %rdx
-	movq	%r12, %rsi
-	callq	*bevy_ecs::storage::blob_vec::BlobVec::replace_unchecked@GOTPCREL(%rip)
-	movl	8(%rsp), %ecx
-	jmp	.LBB12_39
-.LBB12_6:
-	movl	%r12d, 8(%rsp)
-	movq	8(%rbx), %r12
-	movl	4(%r15), %edi
-	movq	136(%r12), %rsi
-	cmpq	%rdi, %rsi
-	jbe	.LBB12_43
-	movss	%xmm0, 16(%rsp)
-	decq	%rsi
-	movq	128(%r12), %rax
-	leaq	(%rdi,%rdi,2), %rcx
-	movl	8(%rax,%rcx,4), %r14d
-	leaq	(%rsi,%rsi,2), %rdx
-	movl	8(%rax,%rdx,4), %ebp
-	movq	(%rax,%rdx,4), %rdx
-	movq	%rdx, (%rax,%rcx,4)
-	movl	%ebp, 8(%rax,%rcx,4)
-	movq	%rsi, 136(%r12)
-	cmpq	%rdi, %rsi
-	je	.LBB12_10
-	jbe	.LBB12_5
-	leaq	(%rax,%rcx,4), %rax
-	movl	4(%rax), %eax
-	movq	16(%rbx), %rcx
-	movq	16(%rcx), %rcx
-	leaq	(%rax,%rax,4), %rax
+	jmp	.LBB11_54
+.LBB11_26:
+	movq	(%rcx), %rcx
+.LBB11_64:
+.LBB11_65:
+	movl	%edx, 4(%rcx,%rax,4)
 	movl	%edi, 8(%rcx,%rax,4)
-.LBB12_10:
-	movq	32(%rbx), %rsi
-	movq	64(%rbx), %rcx
-	leaq	24(%rsp), %rdi
-	movl	%r14d, %edx
-	movq	%rcx, 48(%rsp)
+	movl	%esi, 12(%rcx,%rax,4)
+	movl	%r8d, 16(%rcx,%rax,4)
+.LBB11_66:
+	movss	%xmm0, 8(%rsp)
+	movq	16(%r14), %rcx
+	movq	48(%r14), %rsi
+	leaq	32(%rsp), %rdi
+	movl	%ebx, %edx
+	movq	%rcx, 24(%rsp)
 	callq	*bevy_ecs::storage::table::Table::move_to_superset_unchecked@GOTPCREL(%rip)
-	movq	56(%rbx), %rbp
-	movl	24(%rsp), %r15d
-	movq	136(%rbp), %r8
-	movq	%r8, %rax
-	cmpq	120(%rbp), %r8
-	jne	.LBB12_12
-	leaq	120(%rbp), %rdi
+	movq	8(%r14), %r13
+	movl	44(%rsp), %r15d
+	movq	88(%r13), %r8
+	cmpq	80(%r13), %r8
+	jne	.LBB11_68
+	leaq	72(%r13), %rdi
 	movq	%r8, %rsi
-	movl	%r14d, (%rsp)
-	movq	%r8, %r14
+	movq	%r12, 64(%rsp)
+	movq	%r15, %r12
+	movl	%ebx, %r15d
+	movl	%ebp, %ebx
+	movq	%r8, %rbp
 	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
-	movq	%r14, %r8
-	movl	(%rsp), %r14d
-	movq	136(%rbp), %rax
-.LBB12_12:
-	movq	128(%rbp), %rcx
+	movq	%rbp, %r8
+	movl	%ebx, %ebp
+	movl	%r15d, %ebx
+	movq	%r12, %r15
+	movq	64(%rsp), %r12
+	movq	88(%r13), %rax
+	jmp	.LBB11_69
+.LBB11_68:
+	movq	%r8, %rax
+.LBB11_69:
+	movss	8(%rsp), %xmm0
+	movq	72(%r13), %rcx
 	leaq	(%rax,%rax,2), %rdx
-	movl	8(%rsp), %esi
+	movl	16(%rsp), %esi
 	movl	%esi, (%rcx,%rdx,4)
-	movl	%r13d, 4(%rcx,%rdx,4)
+	movl	%ebp, 4(%rcx,%rdx,4)
 	movl	%r15d, 8(%rcx,%rdx,4)
 	incq	%rax
-	movq	%rax, 136(%rbp)
-	movl	144(%rbp), %r10d
-	movl	148(%rbp), %r9d
-	movq	16(%rbx), %rax
-	movq	16(%rax), %rcx
-	movl	%r13d, %edx
-	leaq	(%rdx,%rdx,4), %rdx
-	movl	%r10d, 4(%rcx,%rdx,4)
-	movl	%r8d, 8(%rcx,%rdx,4)
-	movl	%r9d, 12(%rcx,%rdx,4)
-	movl	%r15d, 16(%rcx,%rdx,4)
-	cmpl	$1, 28(%rsp)
-	movss	16(%rsp), %xmm0
-	jne	.LBB12_17
-	movl	36(%rsp), %ecx
-	movq	16(%rax), %rdx
-	leaq	(%rcx,%rcx,4), %rcx
-	leaq	(%rdx,%rcx,4), %rax
-	addq	$4, %rax
-	movl	4(%rdx,%rcx,4), %esi
-	movl	8(%rdx,%rcx,4), %edi
-	movl	12(%rdx,%rcx,4), %edx
-	movq	%r12, %rcx
-	cmpl	%esi, 144(%r12)
-	je	.LBB12_15
-	imulq	$152, %rsi, %rcx
-	addq	(%rbx), %rcx
-	cmpl	%esi, 144(%rbp)
-	cmoveq	%rbp, %rcx
-.LBB12_15:
-	movl	%edi, 4(%rax)
-	movl	%edx, 8(%rax)
-	movl	%r14d, 12(%rax)
-	movq	136(%rcx), %rsi
-	cmpq	%rdi, %rsi
-	jbe	.LBB12_44
-	movq	128(%rcx), %rax
-	leaq	(%rdi,%rdi,2), %rcx
-	movl	%r14d, 8(%rax,%rcx,4)
-.LBB12_17:
-	movl	%r10d, 68(%rsp)
-	movl	%r9d, (%rsp)
-	movq	%r8, 8(%rsp)
-	movq	24(%rbx), %rax
+	movq	%rax, 88(%r13)
+	movl	144(%r13), %r9d
+	movl	148(%r13), %r10d
+	movq	32(%r14), %rax
 	movq	(%rax), %rcx
-	movq	56(%r12), %rdx
-	shlq	$5, %rcx
-	movq	8(%rdx,%rcx), %rdx
-	movl	72(%rbx), %r12d
-	movss	%xmm0, 4(%rsp)
-	movq	16(%rax), %rbx
-	movq	(%rbx), %rax
-	movq	48(%rsp), %rcx
-	movq	(%rcx), %rbp
-	movq	32(%rcx), %r14
+	movl	%ebp, %edx
+	leaq	(%rdx,%rdx,4), %rdx
+	movl	%r9d, 4(%rcx,%rdx,4)
+	movl	%r8d, 8(%rcx,%rdx,4)
+	movl	%r10d, 12(%rcx,%rdx,4)
+	movl	%r15d, 16(%rcx,%rdx,4)
+	cmpl	$0, 32(%rsp)
+	je	.LBB11_74
+	movl	40(%rsp), %ecx
+	movq	(%rax), %rsi
+	leaq	(%rcx,%rcx,4), %rcx
+	leaq	(%rsi,%rcx,4), %rax
+	addq	$4, %rax
+	movl	4(%rsi,%rcx,4), %edx
+	movl	8(%rsi,%rcx,4), %edi
+	movq	%r12, %rcx
+	cmpl	%edx, 144(%r12)
+	je	.LBB11_72
+	imulq	$152, %rdx, %rcx
+	addq	64(%r14), %rcx
+	cmpl	%edx, 144(%r13)
+	cmoveq	%r13, %rcx
+.LBB11_72:
+	movl	%ebx, 12(%rax)
+	movq	88(%rcx), %rsi
+	cmpq	%rdi, %rsi
+	jbe	.LBB11_98
+	movq	72(%rcx), %rax
+	leaq	(%rdi,%rdi,2), %rcx
+	movl	%ebx, 8(%rax,%rcx,4)
+.LBB11_74:
+	movq	40(%r14), %rbp
+	movq	24(%rbp), %rax
+	xorl	%r13d, %r13d
+	cmpq	16(%r12), %rax
+	jae	.LBB11_77
+	movq	(%r12), %rcx
+	testq	%rcx, %rcx
+	movq	24(%rsp), %rdx
+	je	.LBB11_78
+	shlq	$5, %rax
+	leaq	(%rcx,%rax), %r13
+	movq	(%rcx,%rax), %rax
+	testq	%rax, %rax
+	cmoveq	%rax, %r13
+	jmp	.LBB11_78
+.LBB11_77:
+	movq	24(%rsp), %rdx
+.LBB11_78:
+	movl	72(%r14), %r12d
+	movss	%xmm0, 20(%rsp)
+	movq	(%rbp), %rax
+	movq	(%rax), %rax
+	xorl	%r14d, %r14d
+	cmpq	%rax, 40(%rdx)
+	jbe	.LBB11_83
+	movq	32(%rdx), %rcx
+	testq	%rcx, %rcx
+	je	.LBB11_83
 	shlq	$4, %rax
-	movq	8(%r14,%rax), %rax
-	leaq	(%rax,%rax,2), %r13
-	shlq	$5, %r13
-	movq	%rbp, %rdi
-	addq	%r13, %rdi
-	movq	%rdx, 16(%rsp)
-	cmpb	$0, (%rdx)
-	je	.LBB12_18
-	leaq	4(%rsp), %rdx
+	cmpq	$0, (%rcx,%rax)
+	je	.LBB11_82
+	movq	8(%rcx,%rax), %rax
+	leaq	(%rax,%rax,2), %r14
+	shlq	$5, %r14
+	addq	(%rdx), %r14
+	jmp	.LBB11_83
+.LBB11_27:
+	xorl	%r14d, %r14d
+	movq	(%r12), %rax
+	cmpb	$0, (%rax)
+	jne	.LBB11_17
+.LBB11_28:
+	movq	8(%r14), %rdx
+	movq	%rdx, %rdi
+	imulq	%r15, %rdi
+	addq	16(%r14), %rdi
+	leaq	32(%rsp), %rsi
+	callq	*memcpy@GOTPCREL(%rip)
+	movq	48(%r14), %rax
+	movl	8(%rsp), %ecx
+	movl	%ecx, (%rax,%r15,4)
+.LBB11_29:
+	movq	72(%r14), %rax
+	movl	%ecx, (%rax,%r15,4)
+	movss	52(%rsp), %xmm0
+	movss	%xmm0, 32(%rsp)
+	movq	(%r13), %rax
+	movq	8(%rax), %rax
+	xorl	%r14d, %r14d
+	cmpq	%rax, 40(%rbp)
+	jbe	.LBB11_33
+	movq	32(%rbp), %rcx
+	testq	%rcx, %rcx
+	je	.LBB11_33
+	shlq	$4, %rax
+	cmpq	$0, (%rcx,%rax)
+	je	.LBB11_35
+	movq	8(%rcx,%rax), %rax
+	leaq	(%rax,%rax,2), %r14
+	shlq	$5, %r14
+	addq	(%rbp), %r14
+.LBB11_33:
+	movq	(%r12), %rax
+	cmpb	$0, 1(%rax)
+	je	.LBB11_36
+.LBB11_34:
+	leaq	32(%rsp), %rdx
+	movq	%r14, %rdi
 	movq	%r15, %rsi
 	callq	*bevy_ecs::storage::blob_vec::BlobVec::replace_unchecked@GOTPCREL(%rip)
-	jmp	.LBB12_20
-.LBB12_36:
-	movq	(%rdi), %rdx
-	movq	%rdx, %rax
-	imulq	%r12, %rax
-	addq	40(%rdi), %rax
-	leaq	24(%rsp), %rsi
-	movq	%rax, %rdi
-	callq	*memcpy@GOTPCREL(%rip)
-	movq	56(%rbx,%rbp), %rax
 	movl	8(%rsp), %ecx
-	movl	%ecx, (%rax,%r12,4)
-.LBB12_39:
-	movq	80(%rbx,%rbp), %rax
-	movl	%ecx, (%rax,%r12,4)
-	movss	44(%rsp), %xmm0
-	movss	%xmm0, 24(%rsp)
-	movq	8(%r13), %rax
-	shlq	$4, %rax
-	movq	8(%r14,%rax), %rax
-	leaq	(%rax,%rax,2), %rbp
-	shlq	$5, %rbp
-	leaq	(%rbx,%rbp), %rdi
-	movq	16(%rsp), %rax
+	jmp	.LBB11_37
+.LBB11_35:
+	xorl	%r14d, %r14d
+	movq	(%r12), %rax
 	cmpb	$0, 1(%rax)
-	movl	%ecx, %r14d
-	je	.LBB12_40
-	leaq	24(%rsp), %rdx
-	movq	%r12, %rsi
-	callq	*bevy_ecs::storage::blob_vec::BlobVec::replace_unchecked@GOTPCREL(%rip)
-	jmp	.LBB12_42
-.LBB12_40:
-	movq	(%rdi), %rdx
-	movq	%r12, %rax
-	imulq	%rdx, %rax
-	addq	40(%rdi), %rax
-	leaq	24(%rsp), %rsi
-	movq	%rax, %rdi
+	jne	.LBB11_34
+.LBB11_36:
+	movq	8(%r14), %rdx
+	movq	%rdx, %rdi
+	imulq	%r15, %rdi
+	addq	16(%r14), %rdi
+	leaq	32(%rsp), %rsi
 	callq	*memcpy@GOTPCREL(%rip)
-	movq	56(%rbx,%rbp), %rax
-	movl	%r14d, (%rax,%r12,4)
-.LBB12_42:
-	movq	80(%rbx,%rbp), %rax
-	movl	%r14d, (%rax,%r12,4)
-	movups	(%r15), %xmm0
+	movq	48(%r14), %rax
+	movl	8(%rsp), %ecx
+	movl	%ecx, (%rax,%r15,4)
+.LBB11_37:
+	movq	72(%r14), %rax
+	movl	%ecx, (%rax,%r15,4)
+	movups	(%rbx), %xmm0
 	movq	56(%rsp), %rax
 	movups	%xmm0, (%rax)
-	jmp	.LBB12_25
-.LBB12_30:
-	movq	(%rdi), %rdx
-	movq	%rdx, %rax
-	imulq	%r15, %rax
-	addq	40(%rdi), %rax
-	leaq	24(%rsp), %rsi
-	movq	%rax, %rdi
+	jmp	.LBB11_96
+.LBB11_52:
+	xorl	%r14d, %r14d
+	movq	(%r12), %rax
+	cmpb	$0, (%rax)
+	jne	.LBB11_51
+.LBB11_53:
+	movq	8(%r14), %rdx
+	movq	%rdx, %rdi
+	imulq	%r15, %rdi
+	addq	16(%r14), %rdi
+	leaq	32(%rsp), %rsi
 	callq	*memcpy@GOTPCREL(%rip)
-	movq	56(%rbx,%rbp), %rax
-	movl	(%rsp), %ecx
-	movl	%ecx, (%rax,%r15,4)
-.LBB12_32:
-	movq	80(%rbx,%rbp), %rax
-	movl	%ecx, (%rax,%r15,4)
-	movss	44(%rsp), %xmm0
-	movss	%xmm0, 24(%rsp)
-	movq	8(%r12), %rax
+	movq	48(%r14), %rax
+	movl	%ebp, (%rax,%r15,4)
+.LBB11_54:
+	movq	72(%r14), %rax
+	movl	%ebp, (%rax,%r15,4)
+	movss	52(%rsp), %xmm0
+	movss	%xmm0, 32(%rsp)
+	movq	(%rbx), %rax
+	movq	8(%rax), %rax
+	xorl	%r14d, %r14d
+	cmpq	%rax, 40(%r13)
+	jbe	.LBB11_58
+	movq	32(%r13), %rcx
+	testq	%rcx, %rcx
+	movl	8(%rsp), %ebx
+	je	.LBB11_59
 	shlq	$4, %rax
-	movq	8(%r13,%rax), %rax
-	leaq	(%rax,%rax,2), %rbp
-	shlq	$5, %rbp
-	leaq	(%rbx,%rbp), %rdi
-	cmpb	$0, 1(%r14)
-	movl	%ecx, %r14d
-	je	.LBB12_33
-	leaq	24(%rsp), %rdx
-	movq	%r15, %rsi
-	callq	*bevy_ecs::storage::blob_vec::BlobVec::replace_unchecked@GOTPCREL(%rip)
-	jmp	.LBB12_35
-.LBB12_33:
-	movq	(%rdi), %rdx
-	movq	%rdx, %rax
-	imulq	%r15, %rax
-	addq	40(%rdi), %rax
-	leaq	24(%rsp), %rsi
-	movq	%rax, %rdi
-	callq	*memcpy@GOTPCREL(%rip)
-	movq	56(%rbx,%rbp), %rax
-	movl	%r14d, (%rax,%r15,4)
-.LBB12_35:
-	movl	16(%rsp), %edx
-	movl	48(%rsp), %ecx
-	movq	80(%rbx,%rbp), %rax
-	movl	%r14d, (%rax,%r15,4)
-	movq	56(%rsp), %rax
-	movl	%ecx, (%rax)
-	movq	8(%rsp), %rcx
-	movl	%ecx, 4(%rax)
-	movl	%edx, 8(%rax)
-	jmp	.LBB12_24
-.LBB12_18:
-	movq	(%rdi), %rdx
-	movq	%rdx, %rax
-	imulq	%r15, %rax
-	addq	40(%rdi), %rax
-	leaq	4(%rsp), %rsi
-	movq	%rax, %rdi
-	callq	*memcpy@GOTPCREL(%rip)
-	movq	56(%rbp,%r13), %rax
-	movl	%r12d, (%rax,%r15,4)
-.LBB12_20:
-	movq	80(%rbp,%r13), %rax
-	movl	%r12d, (%rax,%r15,4)
-	movss	44(%rsp), %xmm0
-	movss	%xmm0, 4(%rsp)
-	movq	8(%rbx), %rax
-	shlq	$4, %rax
-	movq	8(%r14,%rax), %rax
-	leaq	(%rax,%rax,2), %rbx
-	shlq	$5, %rbx
-	leaq	(%rbx,%rbp), %rdi
-	movq	16(%rsp), %rax
+	cmpq	$0, (%rcx,%rax)
+	je	.LBB11_61
+	movq	8(%rcx,%rax), %rax
+	leaq	(%rax,%rax,2), %r14
+	shlq	$5, %r14
+	addq	(%r13), %r14
+	movq	(%r12), %rax
 	cmpb	$0, 1(%rax)
-	je	.LBB12_21
-	leaq	4(%rsp), %rdx
+	jne	.LBB11_60
+.LBB11_62:
+	movq	8(%r14), %rdx
+	movq	%rdx, %rdi
+	imulq	%r15, %rdi
+	addq	16(%r14), %rdi
+	leaq	32(%rsp), %rsi
+	callq	*memcpy@GOTPCREL(%rip)
+	movq	48(%r14), %rax
+	movl	%ebp, (%rax,%r15,4)
+	jmp	.LBB11_63
+.LBB11_58:
+	movl	8(%rsp), %ebx
+.LBB11_59:
+	movq	(%r12), %rax
+	cmpb	$0, 1(%rax)
+	je	.LBB11_62
+.LBB11_60:
+	leaq	32(%rsp), %rdx
+	movq	%r14, %rdi
 	movq	%r15, %rsi
 	callq	*bevy_ecs::storage::blob_vec::BlobVec::replace_unchecked@GOTPCREL(%rip)
-	jmp	.LBB12_23
-.LBB12_21:
-	movq	(%rdi), %rdx
-	movq	%rdx, %rax
-	imulq	%r15, %rax
-	addq	40(%rdi), %rax
-	leaq	4(%rsp), %rsi
-	movq	%rax, %rdi
+.LBB11_63:
+	movl	16(%rsp), %ecx
+	movq	72(%r14), %rax
+	movl	%ebp, (%rax,%r15,4)
+	movq	56(%rsp), %rax
+	movl	%ecx, (%rax)
+	movq	24(%rsp), %rcx
+	movl	%ecx, 4(%rax)
+	movl	%ebx, 8(%rax)
+	jmp	.LBB11_95
+.LBB11_61:
+	xorl	%r14d, %r14d
+	movq	(%r12), %rax
+	cmpb	$0, 1(%rax)
+	jne	.LBB11_60
+	jmp	.LBB11_62
+.LBB11_82:
+	xorl	%r14d, %r14d
+.LBB11_83:
+	movl	%r10d, 16(%rsp)
+	movl	%r9d, %ebx
+	movq	%r8, 8(%rsp)
+	movq	(%r13), %rax
+	cmpb	$0, (%rax)
+	je	.LBB11_85
+	leaq	20(%rsp), %rdx
+	movq	%r14, %rdi
+	movq	%r15, %rsi
+	callq	*bevy_ecs::storage::blob_vec::BlobVec::replace_unchecked@GOTPCREL(%rip)
+	jmp	.LBB11_86
+.LBB11_85:
+	movq	8(%r14), %rdx
+	movq	%rdx, %rdi
+	imulq	%r15, %rdi
+	addq	16(%r14), %rdi
+	leaq	20(%rsp), %rsi
 	callq	*memcpy@GOTPCREL(%rip)
-	movq	56(%rbp,%rbx), %rax
+	movq	48(%r14), %rax
 	movl	%r12d, (%rax,%r15,4)
-.LBB12_23:
-	movq	80(%rbp,%rbx), %rax
+.LBB11_86:
+	movq	72(%r14), %rax
+	movl	%r12d, (%rax,%r15,4)
+	movss	52(%rsp), %xmm0
+	movss	%xmm0, 20(%rsp)
+	movq	(%rbp), %rax
+	movq	8(%rax), %rax
+	xorl	%r14d, %r14d
+	movq	24(%rsp), %rdx
+	cmpq	%rax, 40(%rdx)
+	jbe	.LBB11_90
+	movq	32(%rdx), %rcx
+	testq	%rcx, %rcx
+	je	.LBB11_90
+	shlq	$4, %rax
+	cmpq	$0, (%rcx,%rax)
+	je	.LBB11_92
+	movq	8(%rcx,%rax), %rax
+	leaq	(%rax,%rax,2), %r14
+	shlq	$5, %r14
+	addq	(%rdx), %r14
+.LBB11_90:
+	movq	(%r13), %rax
+	cmpb	$0, 1(%rax)
+	je	.LBB11_93
+.LBB11_91:
+	leaq	20(%rsp), %rdx
+	movq	%r14, %rdi
+	movq	%r15, %rsi
+	callq	*bevy_ecs::storage::blob_vec::BlobVec::replace_unchecked@GOTPCREL(%rip)
+	jmp	.LBB11_94
+.LBB11_92:
+	xorl	%r14d, %r14d
+	movq	(%r13), %rax
+	cmpb	$0, 1(%rax)
+	jne	.LBB11_91
+.LBB11_93:
+	movq	8(%r14), %rdx
+	movq	%rdx, %rdi
+	imulq	%r15, %rdi
+	addq	16(%r14), %rdi
+	leaq	20(%rsp), %rsi
+	callq	*memcpy@GOTPCREL(%rip)
+	movq	48(%r14), %rax
+	movl	%r12d, (%rax,%r15,4)
+.LBB11_94:
+	movq	72(%r14), %rax
 	movl	%r12d, (%rax,%r15,4)
 	movq	56(%rsp), %rax
-	movl	68(%rsp), %ecx
-	movl	%ecx, (%rax)
+	movl	%ebx, (%rax)
 	movq	8(%rsp), %rcx
 	movl	%ecx, 4(%rax)
-	movl	(%rsp), %ecx
+	movl	16(%rsp), %ecx
 	movl	%ecx, 8(%rax)
-.LBB12_24:
+.LBB11_95:
 	movl	%r15d, 12(%rax)
-.LBB12_25:
+.LBB11_96:
 	addq	$72, %rsp
 	.cfi_def_cfa_offset 56
 	popq	%rbx
@@ -1102,22 +1166,26 @@ bevy_ecs::bundle::BundleInserter::insert:
 	popq	%rbp
 	.cfi_def_cfa_offset 8
 	retq
-.LBB12_5:
+.LBB11_97:
 	.cfi_def_cfa_offset 128
-	leaq	.Lanon.ec88cfe8160c27a9dec3209ea7295488.5(%rip), %rdx
+	leaq	.Lanon.ec88cfe8160c27a9dec3209ea7295488.3(%rip), %rdx
 	callq	*core::panicking::panic_bounds_check@GOTPCREL(%rip)
 	ud2
-.LBB12_44:
-	leaq	.Lanon.ec88cfe8160c27a9dec3209ea7295488.4(%rip), %rdx
+.LBB11_98:
+	leaq	.Lanon.ec88cfe8160c27a9dec3209ea7295488.1(%rip), %rdx
 	callq	*core::panicking::panic_bounds_check@GOTPCREL(%rip)
 	ud2
-.LBB12_43:
+.LBB11_99:
 	callq	*alloc::vec::Vec<T,A>::swap_remove::assert_failed@GOTPCREL(%rip)
 	ud2
-.Lfunc_end12:
-	.size	bevy_ecs::bundle::BundleInserter::insert, .Lfunc_end12-bevy_ecs::bundle::BundleInserter::insert
+.Lfunc_end11:
+	.size	bevy_ecs::bundle::BundleInserter::insert, .Lfunc_end11-bevy_ecs::bundle::BundleInserter::insert
 	.cfi_endproc
 
+	.section	.rodata.cst16,"aM",@progbits,16
+	.p2align	4, 0x0
+.LCPI12_0:
+	.zero	16,128
 	.section	".text.unlikely.hashbrown::raw::RawTable<T,A>::reserve_rehash","ax",@progbits
 	.p2align	4, 0x90
 	.type	hashbrown::raw::RawTable<T,A>::reserve_rehash,@function
@@ -1135,60 +1203,92 @@ hashbrown::raw::RawTable<T,A>::reserve_rehash:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
 	.cfi_def_cfa_offset 56
-	subq	$40, %rsp
-	.cfi_def_cfa_offset 96
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 80
 	.cfi_offset %rbx, -56
 	.cfi_offset %r12, -48
 	.cfi_offset %r13, -40
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
-	movq	%rsi, 24(%rsp)
-	leaq	24(%rsp), %rax
-	movq	%rax, 32(%rsp)
-	movq	16(%rdi), %rbx
-	movq	%rbx, %rcx
-	incq	%rcx
-	jne	.LBB13_2
-.LBB13_1:
+	movq	24(%rdi), %rsi
+	movq	%rsi, %rax
+	incq	%rax
+	jne	.LBB12_2
+.LBB12_38:
 	movl	$1, %edi
 	callq	*hashbrown::raw::Fallibility::capacity_overflow@GOTPCREL(%rip)
-	movq	%rdx, %r12
-	jmp	.LBB13_28
-.LBB13_2:
-	movq	%rdi, %r15
-	movq	(%rdi), %r14
-	leaq	1(%r14), %r13
-	movq	%r13, %rdx
-	shrq	$3, %rdx
+.LBB12_39:
+	movq	%rax, %r13
+	jmp	.LBB12_40
+.LBB12_2:
+	movq	%rdi, %rbp
+	movq	8(%rdi), %rbx
+	leaq	1(%rbx), %r12
+	movq	%r12, %rcx
+	shrq	$3, %rcx
+	movq	%r12, %r15
+	andq	$-8, %r15
+	subq	%rcx, %r15
+	cmpq	$8, %rbx
+	cmovbq	%rbx, %r15
+	movq	%r15, %rcx
+	shrq	%rcx
+	cmpq	%rcx, %rax
+	jbe	.LBB12_5
+	incq	%r15
+	cmpq	%r15, %rax
+	cmovaq	%rax, %r15
+	cmpq	$8, %r15
+	jae	.LBB12_12
+	movq	%rbp, (%rsp)
+	xorl	%eax, %eax
+	cmpq	$4, %r15
+	setae	%al
+	leaq	4(,%rax,4), %rdi
+	movl	$24, %ecx
+	movq	%rdi, %rax
+	mulq	%rcx
+	jno	.LBB12_16
+	jmp	.LBB12_38
+.LBB12_5:
+	movq	(%rbp), %r13
+	movq	%r12, %rcx
+	shrq	$4, %rcx
+	xorl	%eax, %eax
+	testb	$15, %r12b
+	setne	%al
+	addq	%rcx, %rax
+	je	.LBB12_8
+	movdqa	.LCPI12_0(%rip), %xmm0
+	movq	%r13, %rcx
+	.p2align	4, 0x90
+.LBB12_7:
+	pxor	%xmm1, %xmm1
+	pcmpgtb	(%rcx), %xmm1
+	por	%xmm0, %xmm1
+	movdqa	%xmm1, (%rcx)
+	addq	$16, %rcx
+	decq	%rax
+	jne	.LBB12_7
+.LBB12_8:
+	cmpq	$16, %r12
+	movq	%rsi, 8(%rsp)
+	jae	.LBB12_21
+	leaq	16(%r13), %rdi
+	movq	%r13, %rsi
+	movq	%r12, %rdx
+	callq	*memmove@GOTPCREL(%rip)
+	cmpq	$-1, %rbx
+	jne	.LBB12_22
+	xorl	%r15d, %r15d
+.LBB12_11:
+	movabsq	$-9223372036854775807, %r13
+	subq	8(%rsp), %r15
+	movq	%r15, 16(%rbp)
+.LBB12_40:
 	movq	%r13, %rax
-	andq	$-8, %rax
-	subq	%rdx, %rax
-	cmpq	$8, %r14
-	cmovbq	%r14, %rax
-	movq	%rax, %rdx
-	shrq	%rdx
-	cmpq	%rdx, %rcx
-	jbe	.LBB13_15
-	incq	%rax
-	cmpq	%rax, %rcx
-	cmovaq	%rcx, %rax
-	cmpq	$8, %rax
-	jae	.LBB13_4
-	xorl	%ecx, %ecx
-	cmpq	$4, %rax
-	setae	%cl
-	leaq	4(,%rcx,4), %r8
-	jmp	.LBB13_7
-.LBB13_15:
-	movabsq	$-9223372036854775807, %r12
-	leaq	hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}}(%rip), %rdx
-	leaq	32(%rsp), %rsi
-	movq	%r15, %rdi
-	callq	hashbrown::raw::RawTableInner<A>::rehash_in_place
-.LBB13_28:
-	movq	%r12, %rax
-	addq	$40, %rsp
+	addq	$24, %rsp
 	.cfi_def_cfa_offset 56
 	popq	%rbx
 	.cfi_def_cfa_offset 48
@@ -1203,467 +1303,919 @@ hashbrown::raw::RawTable<T,A>::reserve_rehash:
 	popq	%rbp
 	.cfi_def_cfa_offset 8
 	retq
-.LBB13_4:
-	.cfi_def_cfa_offset 96
-	movl	$8, %ecx
+.LBB12_12:
+	.cfi_def_cfa_offset 80
+	movq	%r15, %rax
+	shrq	$61, %rax
+	jne	.LBB12_36
+	movq	%rbp, (%rsp)
+	shlq	$3, %r15
+	movl	$1, %edi
+	cmpq	$14, %r15
+	jb	.LBB12_15
+	movabsq	$2635249153387078803, %rcx
+	movq	%r15, %rax
 	mulq	%rcx
-	jno	.LBB13_5
+	subq	%rdx, %r15
+	shrq	%r15
+	addq	%rdx, %r15
+	shrq	$2, %r15
+	decq	%r15
+	bsrq	%r15, %rcx
+	notl	%ecx
+	movq	$-1, %rdi
+	shrq	%cl, %rdi
+	incq	%rdi
+.LBB12_15:
+	movl	$24, %ecx
+	movq	%rdi, %rax
+	mulq	%rcx
+	jo	.LBB12_38
+.LBB12_16:
+	movq	%rax, %rbp
+	addq	$15, %rbp
+	andq	$-16, %rbp
+	leaq	16(%rdi), %rdx
+	movq	%rbp, %r14
+	addq	%rdx, %r14
+	jb	.LBB12_38
+	movabsq	$-9223372036854775807, %r13
+	leaq	-17(%r13), %rax
+	cmpq	%rax, %r14
+	ja	.LBB12_38
+	testq	%r14, %r14
+	movq	%rsi, 8(%rsp)
+	je	.LBB12_41
+	movq	__rust_no_alloc_shim_is_unstable@GOTPCREL(%rip), %rax
+	movzbl	(%rax), %eax
+	movl	$16, %esi
+	movq	%rdi, 16(%rsp)
+	movq	%r14, %rdi
+	movq	%rdx, %r15
+	callq	*__rust_alloc@GOTPCREL(%rip)
+	movq	%r15, %rdx
+	movq	16(%rsp), %rdi
+	movq	%rax, %r15
+	testq	%rax, %rax
+	jne	.LBB12_42
+	movl	$16, %esi
+	movl	$1, %edi
+	movq	%r14, %rdx
+	callq	*hashbrown::raw::Fallibility::alloc_err@GOTPCREL(%rip)
+	jmp	.LBB12_39
+.LBB12_21:
+	movdqu	(%r13), %xmm0
+	movdqu	%xmm0, (%r13,%r12)
+.LBB12_22:
+	movabsq	$5871781006564002453, %rax
+	leaq	-24(%r13), %rcx
+	xorl	%edx, %edx
+	jmp	.LBB12_25
+	.p2align	4, 0x90
+.LBB12_23:
+	shrq	$57, %r9
+	leaq	-16(%rdx), %rsi
+	andq	%rbx, %rsi
+	movb	%r9b, (%r13,%rdx)
+	movb	%r9b, 16(%rsi,%r13)
+.LBB12_24:
+	leaq	1(%rdx), %rsi
+	cmpq	%rbx, %rdx
+	movq	%rsi, %rdx
+	je	.LBB12_11
+.LBB12_25:
+	cmpb	$-128, (%r13,%rdx)
+	jne	.LBB12_24
+	leaq	(,%rdx,8), %rsi
+	leaq	(%rsi,%rsi,2), %rdi
+	movq	%r13, %rsi
+	subq	%rdi, %rsi
+	addq	$-24, %rsi
+	movq	%rdx, %rdi
+	negq	%rdi
+	leaq	(%rdi,%rdi,2), %rdi
+	leaq	(%rcx,%rdi,8), %rdi
+	.p2align	4, 0x90
+.LBB12_27:
+	movq	(%rdi), %r9
+	imulq	%rax, %r9
+	movq	%r9, %r8
+	andq	%rbx, %r8
+	movdqu	(%r13,%r8), %xmm0
+	pmovmskb	%xmm0, %r10d
+	movq	%r8, %r11
+	testl	%r10d, %r10d
+	jne	.LBB12_30
+	movl	$16, %r14d
+	movq	%r8, %r11
+	.p2align	4, 0x90
+.LBB12_29:
+	addq	%r14, %r11
+	andq	%rbx, %r11
+	movdqu	(%r13,%r11), %xmm0
+	pmovmskb	%xmm0, %r10d
+	addq	$16, %r14
+	testl	%r10d, %r10d
+	je	.LBB12_29
+.LBB12_30:
+	rep		bsfl	%r10d, %r10d
+	addq	%r11, %r10
+	andq	%rbx, %r10
+	cmpb	$0, (%r13,%r10)
+	js	.LBB12_32
+	movdqa	(%r13), %xmm0
+	pmovmskb	%xmm0, %r10d
+	rep		bsfl	%r10d, %r10d
+.LBB12_32:
+	movq	%rdx, %r11
+	subq	%r8, %r11
+	movq	%r10, %r14
+	subq	%r8, %r14
+	xorq	%r11, %r14
+	andq	%rbx, %r14
+	cmpq	$16, %r14
+	jb	.LBB12_23
+	leaq	(,%r10,8), %r8
+	leaq	(%r8,%r8,2), %r8
+	negq	%r8
+	addq	%r13, %r8
+	addq	$-24, %r8
+	movzbl	(%r13,%r10), %r11d
+	shrq	$57, %r9
+	leaq	-16(%r10), %r14
+	andq	%rbx, %r14
+	movb	%r9b, (%r13,%r10)
+	movb	%r9b, 16(%r14,%r13)
+	cmpb	$-1, %r11b
+	je	.LBB12_35
+	movzbl	(%rsi), %r9d
+	movzbl	(%r8), %r10d
+	movb	%r10b, (%rsi)
+	movb	%r9b, (%r8)
+	movzbl	1(%rsi), %r9d
+	movzbl	1(%r8), %r10d
+	movb	%r10b, 1(%rsi)
+	movb	%r9b, 1(%r8)
+	movzbl	2(%rsi), %r9d
+	movzbl	2(%r8), %r10d
+	movb	%r10b, 2(%rsi)
+	movb	%r9b, 2(%r8)
+	movzbl	3(%rsi), %r9d
+	movzbl	3(%r8), %r10d
+	movb	%r10b, 3(%rsi)
+	movb	%r9b, 3(%r8)
+	movzbl	4(%rsi), %r9d
+	movzbl	4(%r8), %r10d
+	movb	%r10b, 4(%rsi)
+	movb	%r9b, 4(%r8)
+	movzbl	5(%rsi), %r9d
+	movzbl	5(%r8), %r10d
+	movb	%r10b, 5(%rsi)
+	movb	%r9b, 5(%r8)
+	movzbl	6(%rsi), %r9d
+	movzbl	6(%r8), %r10d
+	movb	%r10b, 6(%rsi)
+	movb	%r9b, 6(%r8)
+	movzbl	7(%rsi), %r9d
+	movzbl	7(%r8), %r10d
+	movb	%r10b, 7(%rsi)
+	movb	%r9b, 7(%r8)
+	movzbl	8(%rsi), %r9d
+	movzbl	8(%r8), %r10d
+	movb	%r10b, 8(%rsi)
+	movb	%r9b, 8(%r8)
+	movzbl	9(%rsi), %r9d
+	movzbl	9(%r8), %r10d
+	movb	%r10b, 9(%rsi)
+	movb	%r9b, 9(%r8)
+	movzbl	10(%rsi), %r9d
+	movzbl	10(%r8), %r10d
+	movb	%r10b, 10(%rsi)
+	movb	%r9b, 10(%r8)
+	movzbl	11(%rsi), %r9d
+	movzbl	11(%r8), %r10d
+	movb	%r10b, 11(%rsi)
+	movb	%r9b, 11(%r8)
+	movzbl	12(%rsi), %r9d
+	movzbl	12(%r8), %r10d
+	movb	%r10b, 12(%rsi)
+	movb	%r9b, 12(%r8)
+	movzbl	13(%rsi), %r9d
+	movzbl	13(%r8), %r10d
+	movb	%r10b, 13(%rsi)
+	movb	%r9b, 13(%r8)
+	movzbl	14(%rsi), %r9d
+	movzbl	14(%r8), %r10d
+	movb	%r10b, 14(%rsi)
+	movb	%r9b, 14(%r8)
+	movzbl	15(%rsi), %r9d
+	movzbl	15(%r8), %r10d
+	movb	%r10b, 15(%rsi)
+	movb	%r9b, 15(%r8)
+	movzbl	16(%rsi), %r9d
+	movzbl	16(%r8), %r10d
+	movb	%r10b, 16(%rsi)
+	movb	%r9b, 16(%r8)
+	movzbl	17(%rsi), %r9d
+	movzbl	17(%r8), %r10d
+	movb	%r10b, 17(%rsi)
+	movb	%r9b, 17(%r8)
+	movzbl	18(%rsi), %r9d
+	movzbl	18(%r8), %r10d
+	movb	%r10b, 18(%rsi)
+	movb	%r9b, 18(%r8)
+	movzbl	19(%rsi), %r9d
+	movzbl	19(%r8), %r10d
+	movb	%r10b, 19(%rsi)
+	movb	%r9b, 19(%r8)
+	movzbl	20(%rsi), %r9d
+	movzbl	20(%r8), %r10d
+	movb	%r10b, 20(%rsi)
+	movb	%r9b, 20(%r8)
+	movzbl	21(%rsi), %r9d
+	movzbl	21(%r8), %r10d
+	movb	%r10b, 21(%rsi)
+	movb	%r9b, 21(%r8)
+	movzbl	22(%rsi), %r9d
+	movzbl	22(%r8), %r10d
+	movb	%r10b, 22(%rsi)
+	movb	%r9b, 22(%r8)
+	movzbl	23(%rsi), %r9d
+	movzbl	23(%r8), %r10d
+	movb	%r10b, 23(%rsi)
+	movb	%r9b, 23(%r8)
+	jmp	.LBB12_27
+	.p2align	4, 0x90
+.LBB12_35:
+	leaq	-16(%rdx), %rdi
+	andq	%rbx, %rdi
+	movb	$-1, (%r13,%rdx)
+	movb	$-1, 16(%rdi,%r13)
+	movq	16(%rsi), %rdi
+	movq	%rdi, 16(%r8)
+	movdqu	(%rsi), %xmm0
+	movdqu	%xmm0, (%r8)
+	jmp	.LBB12_24
+.LBB12_36:
+	movq	%rsi, %r14
 	movl	$1, %edi
 	callq	*hashbrown::raw::Fallibility::capacity_overflow@GOTPCREL(%rip)
-	movq	%rax, %r8
-	movq	%rdx, %r12
+	movq	%rax, %r13
 	movabsq	$-9223372036854775807, %rax
-	cmpq	%rax, %rdx
-	jne	.LBB13_28
-	jmp	.LBB13_7
-.LBB13_5:
-	movq	%rax, %rcx
-	movabsq	$2635249153387078803, %rdx
-	mulq	%rdx
-	subq	%rdx, %rcx
-	shrq	%rcx
-	addq	%rdx, %rcx
-	shrq	$2, %rcx
-	decq	%rcx
-	bsrq	%rcx, %rcx
-	xorl	$63, %ecx
-	movq	$-1, %r8
-	shrq	%cl, %r8
-	incq	%r8
-.LBB13_7:
-	movl	$16, %ecx
-	movq	%r8, %rax
+	cmpq	%rax, %r13
+	jne	.LBB12_40
+	movq	%rdx, %rdi
+	movq	%rbp, (%rsp)
+	movq	%r14, %rsi
+	movl	$24, %ecx
+	movq	%rdi, %rax
 	mulq	%rcx
-	jo	.LBB13_1
-	movq	%rax, %rbp
-	leaq	16(%r8), %rdx
-	movq	%rax, %r12
-	addq	%rdx, %r12
-	jb	.LBB13_1
-	je	.LBB13_10
-	movl	$16, %esi
-	movq	%r12, %rdi
-	movq	%r8, 8(%rsp)
-	movq	%rdx, 16(%rsp)
-	callq	*__rust_alloc@GOTPCREL(%rip)
-	movq	16(%rsp), %rdx
-	movq	8(%rsp), %r8
-	testq	%rax, %rax
-	jne	.LBB13_11
-	movl	$16, %edx
-	movl	$1, %edi
-	movq	%r12, %rsi
-	callq	*hashbrown::raw::Fallibility::alloc_err@GOTPCREL(%rip)
-	movq	%rdx, %r12
-	jmp	.LBB13_28
-.LBB13_10:
-	movl	$16, %eax
-.LBB13_11:
-	movabsq	$-9223372036854775807, %r12
-	movq	%r13, 16(%rsp)
-	movq	%rbx, 8(%rsp)
-	leaq	-1(%r8), %r13
-	movq	%r8, %rcx
-	shrq	$3, %rcx
-	andq	$-8, %r8
-	subq	%rcx, %r8
-	cmpq	$8, %r13
-	cmovbq	%r13, %r8
-	addq	%rax, %rbp
-	movq	%rbp, %rdi
+	jno	.LBB12_16
+	jmp	.LBB12_38
+.LBB12_41:
+	movl	$16, %r15d
+.LBB12_42:
+	leaq	-1(%rdi), %r14
+	movq	%rdi, %rax
+	shrq	$3, %rax
+	andq	$-8, %rdi
+	subq	%rax, %rdi
+	cmpq	$8, %r14
+	cmovbq	%r14, %rdi
+	addq	%rbp, %r15
+	movq	%rdi, %rbp
+	movq	%r15, %rdi
 	movl	$255, %esi
-	movq	%r8, %rbx
 	callq	*memset@GOTPCREL(%rip)
-	movq	8(%rsp), %rcx
-	subq	%rcx, %rbx
-	movq	16(%rsp), %rdx
-	movq	%rdx, %rax
-	testq	%rdx, %rdx
-	je	.LBB13_12
-	movq	%rbx, %r11
-	movq	24(%r15), %rdi
-	leaq	-16(%rdi), %r9
-	xorl	%ecx, %ecx
-	movabsq	$5871781006564002453, %r8
-	jmp	.LBB13_17
+	subq	8(%rsp), %rbp
+	movq	(%rsp), %r11
+	movq	(%r11), %rdi
+	cmpq	$-1, %rbx
+	je	.LBB12_53
+	movabsq	$5871781006564002453, %rax
+	leaq	-24(%rdi), %rcx
+	xorl	%edx, %edx
+	jmp	.LBB12_46
 	.p2align	4, 0x90
-.LBB13_23:
-	shrq	$57, %r10
-	leaq	-16(%rbx), %rsi
-	andq	%r13, %rsi
-	movb	%r10b, (%rbp,%rbx)
-	movb	%r10b, 16(%rsi,%rbp)
-	movq	%rcx, %rdx
-	notq	%rdx
-	shlq	$4, %rdx
-	notq	%rbx
-	shlq	$4, %rbx
-	movdqu	(%rdi,%rdx), %xmm0
-	movdqu	%xmm0, (%rbp,%rbx)
-.LBB13_24:
-	leaq	1(%rcx), %rdx
-	cmpq	%r14, %rcx
-	movq	%rdx, %rcx
-	je	.LBB13_25
-.LBB13_17:
-	cmpb	$0, (%rdi,%rcx)
-	js	.LBB13_24
-	movq	%rcx, %rsi
-	shlq	$4, %rsi
-	movq	%r9, %rdx
-	subq	%rsi, %rdx
-	movq	(%rdx), %r10
-	imulq	%r8, %r10
-	movq	%r10, %rsi
-	andq	%r13, %rsi
-	movdqu	(%rbp,%rsi), %xmm0
-	pmovmskb	%xmm0, %edx
-	testl	%edx, %edx
-	jne	.LBB13_21
-	movl	$16, %ebx
+.LBB12_44:
+	shrq	$57, %rsi
+	leaq	-16(%r9), %r8
+	andq	%r14, %r8
+	movb	%sil, (%r15,%r9)
+	movb	%sil, 16(%r8,%r15)
+	leaq	(,%rdx,8), %rsi
+	leaq	(%rsi,%rsi,2), %rsi
+	movq	%rdi, %r8
+	subq	%rsi, %r8
+	shlq	$3, %r9
+	leaq	(%r9,%r9,2), %rsi
+	movq	%r15, %r9
+	subq	%rsi, %r9
+	negq	%rsi
+	movdqu	-24(%r8), %xmm0
+	movdqu	%xmm0, -24(%r15,%rsi)
+	movq	-8(%r8), %rsi
+	movq	%rsi, -8(%r9)
+.LBB12_45:
+	leaq	1(%rdx), %rsi
+	cmpq	%rbx, %rdx
+	movq	%rsi, %rdx
+	je	.LBB12_52
+.LBB12_46:
+	cmpb	$0, (%rdi,%rdx)
+	js	.LBB12_45
+	movq	%rdx, %rsi
+	negq	%rsi
+	leaq	(%rsi,%rsi,2), %rsi
+	movq	(%rcx,%rsi,8), %rsi
+	imulq	%rax, %rsi
+	movq	%rsi, %r8
+	andq	%r14, %r8
+	movdqu	(%r15,%r8), %xmm0
+	pmovmskb	%xmm0, %r9d
+	testl	%r9d, %r9d
+	jne	.LBB12_50
+	movl	$16, %r10d
 	.p2align	4, 0x90
-.LBB13_20:
-	addq	%rbx, %rsi
-	andq	%r13, %rsi
-	movdqu	(%rbp,%rsi), %xmm0
-	pmovmskb	%xmm0, %edx
-	addq	$16, %rbx
-	testl	%edx, %edx
-	je	.LBB13_20
-.LBB13_21:
-	bsfw	%dx, %dx
-	movzwl	%dx, %ebx
-	addq	%rsi, %rbx
-	andq	%r13, %rbx
-	cmpb	$0, (%rbp,%rbx)
-	js	.LBB13_23
-	movdqa	(%rbp), %xmm0
-	pmovmskb	%xmm0, %edx
-	bsfw	%dx, %dx
-	movzwl	%dx, %ebx
-	jmp	.LBB13_23
-.LBB13_25:
-	movq	%r13, (%r15)
-	movq	%r11, 8(%r15)
-	movq	8(%rsp), %rcx
-	movq	%rcx, 16(%r15)
-	movq	%rbp, 24(%r15)
-	testq	%r14, %r14
-	jne	.LBB13_26
-	jmp	.LBB13_28
-.LBB13_12:
-	movq	24(%r15), %rdi
-	movq	%r13, (%r15)
-	movq	%rbx, 8(%r15)
-	movq	%rcx, 16(%r15)
-	movq	%rbp, 24(%r15)
-.LBB13_26:
-	movl	$16, %ecx
+.LBB12_49:
+	addq	%r10, %r8
+	andq	%r14, %r8
+	movdqu	(%r15,%r8), %xmm0
+	pmovmskb	%xmm0, %r9d
+	addq	$16, %r10
+	testl	%r9d, %r9d
+	je	.LBB12_49
+.LBB12_50:
+	rep		bsfl	%r9d, %r9d
+	addq	%r8, %r9
+	andq	%r14, %r9
+	cmpb	$0, (%r15,%r9)
+	js	.LBB12_44
+	movdqa	(%r15), %xmm0
+	pmovmskb	%xmm0, %r8d
+	rep		bsfl	%r8d, %r9d
+	jmp	.LBB12_44
+.LBB12_52:
+	movq	%r15, (%r11)
+	movq	%r14, 8(%r11)
+	movq	%rbp, 16(%r11)
+	testq	%rbx, %rbx
+	jne	.LBB12_54
+	jmp	.LBB12_40
+.LBB12_53:
+	movq	%r15, (%r11)
+	movq	%r14, 8(%r11)
+	movq	%rbp, 16(%r11)
+.LBB12_54:
+	movl	$24, %ecx
+	movq	%r12, %rax
 	mulq	%rcx
-	addq	%rax, %r14
-	addq	$17, %r14
-	je	.LBB13_28
+	addq	$15, %rax
+	andq	$-16, %rax
+	addq	%rax, %rbx
+	addq	$17, %rbx
+	je	.LBB12_40
 	subq	%rax, %rdi
 	movl	$16, %edx
-	movq	%r14, %rsi
+	movq	%rbx, %rsi
 	callq	*__rust_dealloc@GOTPCREL(%rip)
-	jmp	.LBB13_28
+	jmp	.LBB12_40
+.Lfunc_end12:
+	.size	hashbrown::raw::RawTable<T,A>::reserve_rehash, .Lfunc_end12-hashbrown::raw::RawTable<T,A>::reserve_rehash
+	.cfi_endproc
+
+	.section	.rodata.cst16,"aM",@progbits,16
+	.p2align	4, 0x0
+.LCPI13_0:
+	.zero	16,128
+	.section	".text.unlikely.hashbrown::raw::RawTable<T,A>::reserve_rehash","ax",@progbits
+	.p2align	4, 0x90
+	.type	hashbrown::raw::RawTable<T,A>::reserve_rehash,@function
+hashbrown::raw::RawTable<T,A>::reserve_rehash:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	pushq	%r15
+	.cfi_def_cfa_offset 24
+	pushq	%r14
+	.cfi_def_cfa_offset 32
+	pushq	%r13
+	.cfi_def_cfa_offset 40
+	pushq	%r12
+	.cfi_def_cfa_offset 48
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 80
+	.cfi_offset %rbx, -56
+	.cfi_offset %r12, -48
+	.cfi_offset %r13, -40
+	.cfi_offset %r14, -32
+	.cfi_offset %r15, -24
+	.cfi_offset %rbp, -16
+	movq	24(%rdi), %rsi
+	movq	%rsi, %rax
+	incq	%rax
+	jne	.LBB13_2
+.LBB13_38:
+	movl	$1, %edi
+	callq	*hashbrown::raw::Fallibility::capacity_overflow@GOTPCREL(%rip)
+.LBB13_39:
+	movq	%rax, %r13
+	jmp	.LBB13_40
+.LBB13_2:
+	movq	%rdi, %rbp
+	movq	8(%rdi), %rbx
+	leaq	1(%rbx), %r12
+	movq	%r12, %rcx
+	shrq	$3, %rcx
+	movq	%r12, %r15
+	andq	$-8, %r15
+	subq	%rcx, %r15
+	cmpq	$8, %rbx
+	cmovbq	%rbx, %r15
+	movq	%r15, %rcx
+	shrq	%rcx
+	cmpq	%rcx, %rax
+	jbe	.LBB13_5
+	incq	%r15
+	cmpq	%r15, %rax
+	cmovaq	%rax, %r15
+	cmpq	$8, %r15
+	jae	.LBB13_12
+	movq	%rbp, (%rsp)
+	xorl	%eax, %eax
+	cmpq	$4, %r15
+	setae	%al
+	leaq	4(,%rax,4), %rdi
+	movl	$24, %ecx
+	movq	%rdi, %rax
+	mulq	%rcx
+	jno	.LBB13_16
+	jmp	.LBB13_38
+.LBB13_5:
+	movq	(%rbp), %r13
+	movq	%r12, %rcx
+	shrq	$4, %rcx
+	xorl	%eax, %eax
+	testb	$15, %r12b
+	setne	%al
+	addq	%rcx, %rax
+	je	.LBB13_8
+	movdqa	.LCPI13_0(%rip), %xmm0
+	movq	%r13, %rcx
+	.p2align	4, 0x90
+.LBB13_7:
+	pxor	%xmm1, %xmm1
+	pcmpgtb	(%rcx), %xmm1
+	por	%xmm0, %xmm1
+	movdqa	%xmm1, (%rcx)
+	addq	$16, %rcx
+	decq	%rax
+	jne	.LBB13_7
+.LBB13_8:
+	cmpq	$16, %r12
+	movq	%rsi, 8(%rsp)
+	jae	.LBB13_21
+	leaq	16(%r13), %rdi
+	movq	%r13, %rsi
+	movq	%r12, %rdx
+	callq	*memmove@GOTPCREL(%rip)
+	cmpq	$-1, %rbx
+	jne	.LBB13_22
+	xorl	%r15d, %r15d
+.LBB13_11:
+	movabsq	$-9223372036854775807, %r13
+	subq	8(%rsp), %r15
+	movq	%r15, 16(%rbp)
+.LBB13_40:
+	movq	%r13, %rax
+	addq	$24, %rsp
+	.cfi_def_cfa_offset 56
+	popq	%rbx
+	.cfi_def_cfa_offset 48
+	popq	%r12
+	.cfi_def_cfa_offset 40
+	popq	%r13
+	.cfi_def_cfa_offset 32
+	popq	%r14
+	.cfi_def_cfa_offset 24
+	popq	%r15
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	retq
+.LBB13_12:
+	.cfi_def_cfa_offset 80
+	movq	%r15, %rax
+	shrq	$61, %rax
+	jne	.LBB13_36
+	movq	%rbp, (%rsp)
+	shlq	$3, %r15
+	movl	$1, %edi
+	cmpq	$14, %r15
+	jb	.LBB13_15
+	movabsq	$2635249153387078803, %rcx
+	movq	%r15, %rax
+	mulq	%rcx
+	subq	%rdx, %r15
+	shrq	%r15
+	addq	%rdx, %r15
+	shrq	$2, %r15
+	decq	%r15
+	bsrq	%r15, %rcx
+	notl	%ecx
+	movq	$-1, %rdi
+	shrq	%cl, %rdi
+	incq	%rdi
+.LBB13_15:
+	movl	$24, %ecx
+	movq	%rdi, %rax
+	mulq	%rcx
+	jo	.LBB13_38
+.LBB13_16:
+	movq	%rax, %rbp
+	addq	$15, %rbp
+	andq	$-16, %rbp
+	leaq	16(%rdi), %rdx
+	movq	%rbp, %r14
+	addq	%rdx, %r14
+	jb	.LBB13_38
+	movabsq	$-9223372036854775807, %r13
+	leaq	-17(%r13), %rax
+	cmpq	%rax, %r14
+	ja	.LBB13_38
+	testq	%r14, %r14
+	movq	%rsi, 8(%rsp)
+	je	.LBB13_41
+	movq	__rust_no_alloc_shim_is_unstable@GOTPCREL(%rip), %rax
+	movzbl	(%rax), %eax
+	movl	$16, %esi
+	movq	%rdi, 16(%rsp)
+	movq	%r14, %rdi
+	movq	%rdx, %r15
+	callq	*__rust_alloc@GOTPCREL(%rip)
+	movq	%r15, %rdx
+	movq	16(%rsp), %rdi
+	movq	%rax, %r15
+	testq	%rax, %rax
+	jne	.LBB13_42
+	movl	$16, %esi
+	movl	$1, %edi
+	movq	%r14, %rdx
+	callq	*hashbrown::raw::Fallibility::alloc_err@GOTPCREL(%rip)
+	jmp	.LBB13_39
+.LBB13_21:
+	movdqu	(%r13), %xmm0
+	movdqu	%xmm0, (%r13,%r12)
+.LBB13_22:
+	movabsq	$5871781006564002453, %rax
+	leaq	-24(%r13), %rcx
+	xorl	%edx, %edx
+	jmp	.LBB13_25
+	.p2align	4, 0x90
+.LBB13_23:
+	shrq	$57, %r9
+	leaq	-16(%rdx), %rsi
+	andq	%rbx, %rsi
+	movb	%r9b, (%r13,%rdx)
+	movb	%r9b, 16(%rsi,%r13)
+.LBB13_24:
+	leaq	1(%rdx), %rsi
+	cmpq	%rbx, %rdx
+	movq	%rsi, %rdx
+	je	.LBB13_11
+.LBB13_25:
+	cmpb	$-128, (%r13,%rdx)
+	jne	.LBB13_24
+	leaq	(,%rdx,8), %rsi
+	leaq	(%rsi,%rsi,2), %rdi
+	movq	%r13, %rsi
+	subq	%rdi, %rsi
+	addq	$-24, %rsi
+	movq	%rdx, %rdi
+	negq	%rdi
+	leaq	(%rdi,%rdi,2), %rdi
+	leaq	(%rcx,%rdi,8), %rdi
+	.p2align	4, 0x90
+.LBB13_27:
+	movq	(%rdi), %r9
+	imulq	%rax, %r9
+	movq	%r9, %r8
+	andq	%rbx, %r8
+	movdqu	(%r13,%r8), %xmm0
+	pmovmskb	%xmm0, %r10d
+	movq	%r8, %r11
+	testl	%r10d, %r10d
+	jne	.LBB13_30
+	movl	$16, %r14d
+	movq	%r8, %r11
+	.p2align	4, 0x90
+.LBB13_29:
+	addq	%r14, %r11
+	andq	%rbx, %r11
+	movdqu	(%r13,%r11), %xmm0
+	pmovmskb	%xmm0, %r10d
+	addq	$16, %r14
+	testl	%r10d, %r10d
+	je	.LBB13_29
+.LBB13_30:
+	rep		bsfl	%r10d, %r10d
+	addq	%r11, %r10
+	andq	%rbx, %r10
+	cmpb	$0, (%r13,%r10)
+	js	.LBB13_32
+	movdqa	(%r13), %xmm0
+	pmovmskb	%xmm0, %r10d
+	rep		bsfl	%r10d, %r10d
+.LBB13_32:
+	movq	%rdx, %r11
+	subq	%r8, %r11
+	movq	%r10, %r14
+	subq	%r8, %r14
+	xorq	%r11, %r14
+	andq	%rbx, %r14
+	cmpq	$16, %r14
+	jb	.LBB13_23
+	leaq	(,%r10,8), %r8
+	leaq	(%r8,%r8,2), %r8
+	negq	%r8
+	addq	%r13, %r8
+	addq	$-24, %r8
+	movzbl	(%r13,%r10), %r11d
+	shrq	$57, %r9
+	leaq	-16(%r10), %r14
+	andq	%rbx, %r14
+	movb	%r9b, (%r13,%r10)
+	movb	%r9b, 16(%r14,%r13)
+	cmpb	$-1, %r11b
+	je	.LBB13_35
+	movzbl	(%rsi), %r9d
+	movzbl	(%r8), %r10d
+	movb	%r10b, (%rsi)
+	movb	%r9b, (%r8)
+	movzbl	1(%rsi), %r9d
+	movzbl	1(%r8), %r10d
+	movb	%r10b, 1(%rsi)
+	movb	%r9b, 1(%r8)
+	movzbl	2(%rsi), %r9d
+	movzbl	2(%r8), %r10d
+	movb	%r10b, 2(%rsi)
+	movb	%r9b, 2(%r8)
+	movzbl	3(%rsi), %r9d
+	movzbl	3(%r8), %r10d
+	movb	%r10b, 3(%rsi)
+	movb	%r9b, 3(%r8)
+	movzbl	4(%rsi), %r9d
+	movzbl	4(%r8), %r10d
+	movb	%r10b, 4(%rsi)
+	movb	%r9b, 4(%r8)
+	movzbl	5(%rsi), %r9d
+	movzbl	5(%r8), %r10d
+	movb	%r10b, 5(%rsi)
+	movb	%r9b, 5(%r8)
+	movzbl	6(%rsi), %r9d
+	movzbl	6(%r8), %r10d
+	movb	%r10b, 6(%rsi)
+	movb	%r9b, 6(%r8)
+	movzbl	7(%rsi), %r9d
+	movzbl	7(%r8), %r10d
+	movb	%r10b, 7(%rsi)
+	movb	%r9b, 7(%r8)
+	movzbl	8(%rsi), %r9d
+	movzbl	8(%r8), %r10d
+	movb	%r10b, 8(%rsi)
+	movb	%r9b, 8(%r8)
+	movzbl	9(%rsi), %r9d
+	movzbl	9(%r8), %r10d
+	movb	%r10b, 9(%rsi)
+	movb	%r9b, 9(%r8)
+	movzbl	10(%rsi), %r9d
+	movzbl	10(%r8), %r10d
+	movb	%r10b, 10(%rsi)
+	movb	%r9b, 10(%r8)
+	movzbl	11(%rsi), %r9d
+	movzbl	11(%r8), %r10d
+	movb	%r10b, 11(%rsi)
+	movb	%r9b, 11(%r8)
+	movzbl	12(%rsi), %r9d
+	movzbl	12(%r8), %r10d
+	movb	%r10b, 12(%rsi)
+	movb	%r9b, 12(%r8)
+	movzbl	13(%rsi), %r9d
+	movzbl	13(%r8), %r10d
+	movb	%r10b, 13(%rsi)
+	movb	%r9b, 13(%r8)
+	movzbl	14(%rsi), %r9d
+	movzbl	14(%r8), %r10d
+	movb	%r10b, 14(%rsi)
+	movb	%r9b, 14(%r8)
+	movzbl	15(%rsi), %r9d
+	movzbl	15(%r8), %r10d
+	movb	%r10b, 15(%rsi)
+	movb	%r9b, 15(%r8)
+	movzbl	16(%rsi), %r9d
+	movzbl	16(%r8), %r10d
+	movb	%r10b, 16(%rsi)
+	movb	%r9b, 16(%r8)
+	movzbl	17(%rsi), %r9d
+	movzbl	17(%r8), %r10d
+	movb	%r10b, 17(%rsi)
+	movb	%r9b, 17(%r8)
+	movzbl	18(%rsi), %r9d
+	movzbl	18(%r8), %r10d
+	movb	%r10b, 18(%rsi)
+	movb	%r9b, 18(%r8)
+	movzbl	19(%rsi), %r9d
+	movzbl	19(%r8), %r10d
+	movb	%r10b, 19(%rsi)
+	movb	%r9b, 19(%r8)
+	movzbl	20(%rsi), %r9d
+	movzbl	20(%r8), %r10d
+	movb	%r10b, 20(%rsi)
+	movb	%r9b, 20(%r8)
+	movzbl	21(%rsi), %r9d
+	movzbl	21(%r8), %r10d
+	movb	%r10b, 21(%rsi)
+	movb	%r9b, 21(%r8)
+	movzbl	22(%rsi), %r9d
+	movzbl	22(%r8), %r10d
+	movb	%r10b, 22(%rsi)
+	movb	%r9b, 22(%r8)
+	movzbl	23(%rsi), %r9d
+	movzbl	23(%r8), %r10d
+	movb	%r10b, 23(%rsi)
+	movb	%r9b, 23(%r8)
+	jmp	.LBB13_27
+	.p2align	4, 0x90
+.LBB13_35:
+	leaq	-16(%rdx), %rdi
+	andq	%rbx, %rdi
+	movb	$-1, (%r13,%rdx)
+	movb	$-1, 16(%rdi,%r13)
+	movq	16(%rsi), %rdi
+	movq	%rdi, 16(%r8)
+	movdqu	(%rsi), %xmm0
+	movdqu	%xmm0, (%r8)
+	jmp	.LBB13_24
+.LBB13_36:
+	movq	%rsi, %r14
+	movl	$1, %edi
+	callq	*hashbrown::raw::Fallibility::capacity_overflow@GOTPCREL(%rip)
+	movq	%rax, %r13
+	movabsq	$-9223372036854775807, %rax
+	cmpq	%rax, %r13
+	jne	.LBB13_40
+	movq	%rdx, %rdi
+	movq	%rbp, (%rsp)
+	movq	%r14, %rsi
+	movl	$24, %ecx
+	movq	%rdi, %rax
+	mulq	%rcx
+	jno	.LBB13_16
+	jmp	.LBB13_38
+.LBB13_41:
+	movl	$16, %r15d
+.LBB13_42:
+	leaq	-1(%rdi), %r14
+	movq	%rdi, %rax
+	shrq	$3, %rax
+	andq	$-8, %rdi
+	subq	%rax, %rdi
+	cmpq	$8, %r14
+	cmovbq	%r14, %rdi
+	addq	%rbp, %r15
+	movq	%rdi, %rbp
+	movq	%r15, %rdi
+	movl	$255, %esi
+	callq	*memset@GOTPCREL(%rip)
+	subq	8(%rsp), %rbp
+	movq	(%rsp), %r11
+	movq	(%r11), %rdi
+	cmpq	$-1, %rbx
+	je	.LBB13_53
+	movabsq	$5871781006564002453, %rax
+	leaq	-24(%rdi), %rcx
+	xorl	%edx, %edx
+	jmp	.LBB13_46
+	.p2align	4, 0x90
+.LBB13_44:
+	shrq	$57, %rsi
+	leaq	-16(%r9), %r8
+	andq	%r14, %r8
+	movb	%sil, (%r15,%r9)
+	movb	%sil, 16(%r8,%r15)
+	leaq	(,%rdx,8), %rsi
+	leaq	(%rsi,%rsi,2), %rsi
+	movq	%rdi, %r8
+	subq	%rsi, %r8
+	shlq	$3, %r9
+	leaq	(%r9,%r9,2), %rsi
+	movq	%r15, %r9
+	subq	%rsi, %r9
+	negq	%rsi
+	movdqu	-24(%r8), %xmm0
+	movdqu	%xmm0, -24(%r15,%rsi)
+	movq	-8(%r8), %rsi
+	movq	%rsi, -8(%r9)
+.LBB13_45:
+	leaq	1(%rdx), %rsi
+	cmpq	%rbx, %rdx
+	movq	%rsi, %rdx
+	je	.LBB13_52
+.LBB13_46:
+	cmpb	$0, (%rdi,%rdx)
+	js	.LBB13_45
+	movq	%rdx, %rsi
+	negq	%rsi
+	leaq	(%rsi,%rsi,2), %rsi
+	movq	(%rcx,%rsi,8), %rsi
+	imulq	%rax, %rsi
+	movq	%rsi, %r8
+	andq	%r14, %r8
+	movdqu	(%r15,%r8), %xmm0
+	pmovmskb	%xmm0, %r9d
+	testl	%r9d, %r9d
+	jne	.LBB13_50
+	movl	$16, %r10d
+	.p2align	4, 0x90
+.LBB13_49:
+	addq	%r10, %r8
+	andq	%r14, %r8
+	movdqu	(%r15,%r8), %xmm0
+	pmovmskb	%xmm0, %r9d
+	addq	$16, %r10
+	testl	%r9d, %r9d
+	je	.LBB13_49
+.LBB13_50:
+	rep		bsfl	%r9d, %r9d
+	addq	%r8, %r9
+	andq	%r14, %r9
+	cmpb	$0, (%r15,%r9)
+	js	.LBB13_44
+	movdqa	(%r15), %xmm0
+	pmovmskb	%xmm0, %r8d
+	rep		bsfl	%r8d, %r9d
+	jmp	.LBB13_44
+.LBB13_52:
+	movq	%r15, (%r11)
+	movq	%r14, 8(%r11)
+	movq	%rbp, 16(%r11)
+	testq	%rbx, %rbx
+	jne	.LBB13_54
+	jmp	.LBB13_40
+.LBB13_53:
+	movq	%r15, (%r11)
+	movq	%r14, 8(%r11)
+	movq	%rbp, 16(%r11)
+.LBB13_54:
+	movl	$24, %ecx
+	movq	%r12, %rax
+	mulq	%rcx
+	addq	$15, %rax
+	andq	$-16, %rax
+	addq	%rax, %rbx
+	addq	$17, %rbx
+	je	.LBB13_40
+	subq	%rax, %rdi
+	movl	$16, %edx
+	movq	%rbx, %rsi
+	callq	*__rust_dealloc@GOTPCREL(%rip)
+	jmp	.LBB13_40
 .Lfunc_end13:
 	.size	hashbrown::raw::RawTable<T,A>::reserve_rehash, .Lfunc_end13-hashbrown::raw::RawTable<T,A>::reserve_rehash
 	.cfi_endproc
 
-	.section	".text.unlikely.hashbrown::raw::RawTable<T,A>::reserve_rehash","ax",@progbits
-	.p2align	4, 0x90
-	.type	hashbrown::raw::RawTable<T,A>::reserve_rehash,@function
-hashbrown::raw::RawTable<T,A>::reserve_rehash:
-	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	pushq	%r15
-	.cfi_def_cfa_offset 24
-	pushq	%r14
-	.cfi_def_cfa_offset 32
-	pushq	%r13
-	.cfi_def_cfa_offset 40
-	pushq	%r12
-	.cfi_def_cfa_offset 48
-	pushq	%rbx
-	.cfi_def_cfa_offset 56
-	subq	$40, %rsp
-	.cfi_def_cfa_offset 96
-	.cfi_offset %rbx, -56
-	.cfi_offset %r12, -48
-	.cfi_offset %r13, -40
-	.cfi_offset %r14, -32
-	.cfi_offset %r15, -24
-	.cfi_offset %rbp, -16
-	movq	%rsi, 24(%rsp)
-	leaq	24(%rsp), %rax
-	movq	%rax, 32(%rsp)
-	movq	16(%rdi), %rbx
-	movq	%rbx, %rcx
-	incq	%rcx
-	jne	.LBB14_2
-.LBB14_1:
-	movl	$1, %edi
-	callq	*hashbrown::raw::Fallibility::capacity_overflow@GOTPCREL(%rip)
-	movq	%rdx, %r12
-	jmp	.LBB14_28
-.LBB14_2:
-	movq	%rdi, %r15
-	movq	(%rdi), %r14
-	leaq	1(%r14), %r13
-	movq	%r13, %rdx
-	shrq	$3, %rdx
-	movq	%r13, %rax
-	andq	$-8, %rax
-	subq	%rdx, %rax
-	cmpq	$8, %r14
-	cmovbq	%r14, %rax
-	movq	%rax, %rdx
-	shrq	%rdx
-	cmpq	%rdx, %rcx
-	jbe	.LBB14_15
-	incq	%rax
-	cmpq	%rax, %rcx
-	cmovaq	%rcx, %rax
-	cmpq	$8, %rax
-	jae	.LBB14_4
-	xorl	%ecx, %ecx
-	cmpq	$4, %rax
-	setae	%cl
-	leaq	4(,%rcx,4), %r8
-	jmp	.LBB14_7
-.LBB14_15:
-	movabsq	$-9223372036854775807, %r12
-	leaq	hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}}(%rip), %rdx
-	leaq	32(%rsp), %rsi
-	movq	%r15, %rdi
-	callq	hashbrown::raw::RawTableInner<A>::rehash_in_place
-.LBB14_28:
-	movq	%r12, %rax
-	addq	$40, %rsp
-	.cfi_def_cfa_offset 56
-	popq	%rbx
-	.cfi_def_cfa_offset 48
-	popq	%r12
-	.cfi_def_cfa_offset 40
-	popq	%r13
-	.cfi_def_cfa_offset 32
-	popq	%r14
-	.cfi_def_cfa_offset 24
-	popq	%r15
-	.cfi_def_cfa_offset 16
-	popq	%rbp
-	.cfi_def_cfa_offset 8
-	retq
-.LBB14_4:
-	.cfi_def_cfa_offset 96
-	movl	$8, %ecx
-	mulq	%rcx
-	jno	.LBB14_5
-	movl	$1, %edi
-	callq	*hashbrown::raw::Fallibility::capacity_overflow@GOTPCREL(%rip)
-	movq	%rax, %r8
-	movq	%rdx, %r12
-	movabsq	$-9223372036854775807, %rax
-	cmpq	%rax, %rdx
-	jne	.LBB14_28
-	jmp	.LBB14_7
-.LBB14_5:
-	movq	%rax, %rcx
-	movabsq	$2635249153387078803, %rdx
-	mulq	%rdx
-	subq	%rdx, %rcx
-	shrq	%rcx
-	addq	%rdx, %rcx
-	shrq	$2, %rcx
-	decq	%rcx
-	bsrq	%rcx, %rcx
-	xorl	$63, %ecx
-	movq	$-1, %r8
-	shrq	%cl, %r8
-	incq	%r8
-.LBB14_7:
-	movl	$16, %ecx
-	movq	%r8, %rax
-	mulq	%rcx
-	jo	.LBB14_1
-	movq	%rax, %rbp
-	leaq	16(%r8), %rdx
-	movq	%rax, %r12
-	addq	%rdx, %r12
-	jb	.LBB14_1
-	je	.LBB14_10
-	movl	$16, %esi
-	movq	%r12, %rdi
-	movq	%r8, 8(%rsp)
-	movq	%rdx, 16(%rsp)
-	callq	*__rust_alloc@GOTPCREL(%rip)
-	movq	16(%rsp), %rdx
-	movq	8(%rsp), %r8
-	testq	%rax, %rax
-	jne	.LBB14_11
-	movl	$16, %edx
-	movl	$1, %edi
-	movq	%r12, %rsi
-	callq	*hashbrown::raw::Fallibility::alloc_err@GOTPCREL(%rip)
-	movq	%rdx, %r12
-	jmp	.LBB14_28
-.LBB14_10:
-	movl	$16, %eax
-.LBB14_11:
-	movabsq	$-9223372036854775807, %r12
-	movq	%r13, 16(%rsp)
-	movq	%rbx, 8(%rsp)
-	leaq	-1(%r8), %r13
-	movq	%r8, %rcx
-	shrq	$3, %rcx
-	andq	$-8, %r8
-	subq	%rcx, %r8
-	cmpq	$8, %r13
-	cmovbq	%r13, %r8
-	addq	%rax, %rbp
-	movq	%rbp, %rdi
-	movl	$255, %esi
-	movq	%r8, %rbx
-	callq	*memset@GOTPCREL(%rip)
-	movq	8(%rsp), %rcx
-	subq	%rcx, %rbx
-	movq	16(%rsp), %rdx
-	movq	%rdx, %rax
-	testq	%rdx, %rdx
-	je	.LBB14_12
-	movq	%rbx, %r11
-	movq	24(%r15), %rdi
-	leaq	-16(%rdi), %r9
-	xorl	%ecx, %ecx
-	movabsq	$5871781006564002453, %r8
-	jmp	.LBB14_17
-	.p2align	4, 0x90
-.LBB14_23:
-	shrq	$57, %r10
-	leaq	-16(%rbx), %rsi
-	andq	%r13, %rsi
-	movb	%r10b, (%rbp,%rbx)
-	movb	%r10b, 16(%rsi,%rbp)
-	movq	%rcx, %rdx
-	notq	%rdx
-	shlq	$4, %rdx
-	notq	%rbx
-	shlq	$4, %rbx
-	movdqu	(%rdi,%rdx), %xmm0
-	movdqu	%xmm0, (%rbp,%rbx)
-.LBB14_24:
-	leaq	1(%rcx), %rdx
-	cmpq	%r14, %rcx
-	movq	%rdx, %rcx
-	je	.LBB14_25
-.LBB14_17:
-	cmpb	$0, (%rdi,%rcx)
-	js	.LBB14_24
-	movq	%rcx, %rsi
-	shlq	$4, %rsi
-	movq	%r9, %rdx
-	subq	%rsi, %rdx
-	movq	(%rdx), %r10
-	imulq	%r8, %r10
-	movq	%r10, %rsi
-	andq	%r13, %rsi
-	movdqu	(%rbp,%rsi), %xmm0
-	pmovmskb	%xmm0, %edx
-	testl	%edx, %edx
-	jne	.LBB14_21
-	movl	$16, %ebx
-	.p2align	4, 0x90
-.LBB14_20:
-	addq	%rbx, %rsi
-	andq	%r13, %rsi
-	movdqu	(%rbp,%rsi), %xmm0
-	pmovmskb	%xmm0, %edx
-	addq	$16, %rbx
-	testl	%edx, %edx
-	je	.LBB14_20
-.LBB14_21:
-	bsfw	%dx, %dx
-	movzwl	%dx, %ebx
-	addq	%rsi, %rbx
-	andq	%r13, %rbx
-	cmpb	$0, (%rbp,%rbx)
-	js	.LBB14_23
-	movdqa	(%rbp), %xmm0
-	pmovmskb	%xmm0, %edx
-	bsfw	%dx, %dx
-	movzwl	%dx, %ebx
-	jmp	.LBB14_23
-.LBB14_25:
-	movq	%r13, (%r15)
-	movq	%r11, 8(%r15)
-	movq	8(%rsp), %rcx
-	movq	%rcx, 16(%r15)
-	movq	%rbp, 24(%r15)
-	testq	%r14, %r14
-	jne	.LBB14_26
-	jmp	.LBB14_28
-.LBB14_12:
-	movq	24(%r15), %rdi
-	movq	%r13, (%r15)
-	movq	%rbx, 8(%r15)
-	movq	%rcx, 16(%r15)
-	movq	%rbp, 24(%r15)
-.LBB14_26:
-	movl	$16, %ecx
-	mulq	%rcx
-	addq	%rax, %r14
-	addq	$17, %r14
-	je	.LBB14_28
-	subq	%rax, %rdi
-	movl	$16, %edx
-	movq	%r14, %rsi
-	callq	*__rust_dealloc@GOTPCREL(%rip)
-	jmp	.LBB14_28
-.Lfunc_end14:
-	.size	hashbrown::raw::RawTable<T,A>::reserve_rehash, .Lfunc_end14-hashbrown::raw::RawTable<T,A>::reserve_rehash
-	.cfi_endproc
-
-	.section	".text.hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}}","ax",@progbits
-	.p2align	4, 0x90
-	.type	hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}},@function
-hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}}:
-	.cfi_startproc
-	movq	24(%rsi), %rcx
-	shlq	$4, %rdx
-	subq	%rdx, %rcx
-	movabsq	$5871781006564002453, %rax
-	imulq	-16(%rcx), %rax
-	retq
-.Lfunc_end15:
-	.size	hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}}, .Lfunc_end15-hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}}
-	.cfi_endproc
-
-	.section	".text.hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}}","ax",@progbits
-	.p2align	4, 0x90
-	.type	hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}},@function
-hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}}:
-	.cfi_startproc
-	movq	24(%rsi), %rcx
-	shlq	$4, %rdx
-	subq	%rdx, %rcx
-	movabsq	$5871781006564002453, %rax
-	imulq	-16(%rcx), %rax
-	retq
-.Lfunc_end16:
-	.size	hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}}, .Lfunc_end16-hashbrown::raw::RawTable<T,A>::reserve_rehash::{{closure}}
-	.cfi_endproc
-
 	.section	.rodata.cst16,"aM",@progbits,16
-	.p2align	4
-.LCPI17_0:
-	.zero	16,128
-	.section	".text.hashbrown::raw::RawTableInner<A>::rehash_in_place","ax",@progbits
+	.p2align	4, 0x0
+.LCPI14_0:
+	.zero	16,112
+.LCPI14_1:
+	.byte	105
+	.byte	51
+	.byte	104
+	.byte	2
+	.byte	49
+	.byte	129
+	.byte	124
+	.byte	228
+	.byte	114
+	.byte	145
+	.byte	45
+	.byte	182
+	.byte	77
+	.byte	72
+	.byte	48
+	.byte	191
+.LCPI14_2:
+	.zero	16,11
+.LCPI14_3:
+	.zero	16,125
+	.section	.text.world_insert_or_spawn_batch,"ax",@progbits
+	.globl	world_insert_or_spawn_batch
 	.p2align	4, 0x90
-	.type	hashbrown::raw::RawTableInner<A>::rehash_in_place,@function
-hashbrown::raw::RawTableInner<A>::rehash_in_place:
+	.type	world_insert_or_spawn_batch,@function
+world_insert_or_spawn_batch:
 .Lfunc_begin0:
 	.cfi_startproc
 	.cfi_personality 155, DW.ref.rust_eh_personality
@@ -1680,329 +2232,8 @@ hashbrown::raw::RawTableInner<A>::rehash_in_place:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
 	.cfi_def_cfa_offset 56
-	subq	$40, %rsp
-	.cfi_def_cfa_offset 96
-	.cfi_offset %rbx, -56
-	.cfi_offset %r12, -48
-	.cfi_offset %r13, -40
-	.cfi_offset %r14, -32
-	.cfi_offset %r15, -24
-	.cfi_offset %rbp, -16
-	movq	%rdx, %r14
-	movq	%rsi, %r15
-	movq	%rdi, %r12
-	movq	(%rdi), %rdx
-	movq	24(%rdi), %rsi
-	incq	%rdx
-	xorl	%eax, %eax
-	movdqa	.LCPI17_0(%rip), %xmm0
-	xorl	%edi, %edi
-	jmp	.LBB17_1
-	.p2align	4, 0x90
-.LBB17_6:
-	cmpq	%rdx, %rax
-	movq	%rax, %rcx
-	adcq	$0, %rcx
-	cmpq	%rdx, %rax
-	jae	.LBB17_7
-.LBB17_5:
-	pxor	%xmm1, %xmm1
-	pcmpgtb	(%rsi,%rax), %xmm1
-	por	%xmm0, %xmm1
-	movdqa	%xmm1, (%rsi,%rax)
-	movb	$1, %dil
-	movq	%rcx, %rax
-.LBB17_1:
-	testb	$1, %dil
-	je	.LBB17_6
-	addq	$15, %rax
-	jb	.LBB17_7
-	cmpq	%rdx, %rax
-	jae	.LBB17_7
-	leaq	1(%rax), %rcx
-	jmp	.LBB17_5
-.LBB17_7:
-	cmpq	$16, %rdx
-	jae	.LBB17_8
-	leaq	16(%rsi), %rdi
-	callq	*memmove@GOTPCREL(%rip)
-	jmp	.LBB17_10
-.LBB17_8:
-	movdqu	(%rsi), %xmm0
-	movdqu	%xmm0, (%rsi,%rdx)
-.LBB17_10:
-	movq	$0, 16(%rsp)
-	movq	$16, 24(%rsp)
-	movq	%r12, 32(%rsp)
-	movq	(%r12), %rax
-	movq	%rax, 8(%rsp)
-	cmpq	$-1, %rax
-	je	.LBB17_11
-	xorl	%r13d, %r13d
-	jmp	.LBB17_15
-	.p2align	4, 0x90
-.LBB17_24:
-	shrq	$57, %rax
-	leaq	-16(%r13), %rsi
-	andq	%rsi, %rdx
-	movb	%al, (%rcx,%r13)
-	movb	%al, 16(%rdx,%rcx)
-.LBB17_28:
-	leaq	1(%r13), %rax
-	cmpq	8(%rsp), %r13
-	movq	%rax, %r13
-	je	.LBB17_12
-.LBB17_15:
-	movq	24(%r12), %rbp
-	cmpb	$-128, (%rbp,%r13)
-	jne	.LBB17_28
-	movq	%r13, %rax
-	notq	%rax
-	shlq	$4, %rax
-	addq	%rax, %rbp
-	.p2align	4, 0x90
-.LBB17_17:
-.Ltmp0:
-	movq	%r15, %rdi
-	movq	%r12, %rsi
-	movq	%r13, %rdx
-	callq	*%r14
-.Ltmp1:
-	movq	(%r12), %rdx
-	movq	24(%r12), %rcx
-	movq	%rdx, %r8
-	andq	%rax, %r8
-	movdqu	(%rcx,%r8), %xmm0
-	pmovmskb	%xmm0, %edi
-	movq	%r8, %rsi
-	testl	%edi, %edi
-	jne	.LBB17_21
-	movl	$16, %ebx
-	movq	%r8, %rsi
-	.p2align	4, 0x90
-.LBB17_20:
-	addq	%rbx, %rsi
-	andq	%rdx, %rsi
-	movdqu	(%rcx,%rsi), %xmm0
-	pmovmskb	%xmm0, %edi
-	addq	$16, %rbx
-	testl	%edi, %edi
-	je	.LBB17_20
-.LBB17_21:
-	bsfw	%di, %di
-	movzwl	%di, %ebx
-	addq	%rsi, %rbx
-	andq	%rdx, %rbx
-	cmpb	$0, (%rcx,%rbx)
-	js	.LBB17_23
-	movdqa	(%rcx), %xmm0
-	pmovmskb	%xmm0, %esi
-	bsfw	%si, %si
-	movzwl	%si, %ebx
-.LBB17_23:
-	movq	%r13, %rsi
-	subq	%r8, %rsi
-	movq	%rbx, %rdi
-	subq	%r8, %rdi
-	xorq	%rsi, %rdi
-	andq	%rdx, %rdi
-	cmpq	$15, %rdi
-	jbe	.LBB17_24
-	movq	%rbx, %rsi
-	notq	%rsi
-	shlq	$4, %rsi
-	addq	%rcx, %rsi
-	movzbl	(%rcx,%rbx), %r8d
-	shrq	$57, %rax
-	leaq	-16(%rbx), %rdi
-	andq	%rdx, %rdi
-	movb	%al, (%rcx,%rbx)
-	movb	%al, 16(%rdi,%rcx)
-	cmpb	$-1, %r8b
-	je	.LBB17_27
-	movzbl	(%rbp), %eax
-	movzbl	(%rsi), %ecx
-	movb	%cl, (%rbp)
-	movb	%al, (%rsi)
-	movzbl	1(%rbp), %eax
-	movzbl	1(%rsi), %ecx
-	movb	%cl, 1(%rbp)
-	movb	%al, 1(%rsi)
-	movzbl	2(%rbp), %eax
-	movzbl	2(%rsi), %ecx
-	movb	%cl, 2(%rbp)
-	movb	%al, 2(%rsi)
-	movzbl	3(%rbp), %eax
-	movzbl	3(%rsi), %ecx
-	movb	%cl, 3(%rbp)
-	movb	%al, 3(%rsi)
-	movzbl	4(%rbp), %eax
-	movzbl	4(%rsi), %ecx
-	movb	%cl, 4(%rbp)
-	movb	%al, 4(%rsi)
-	movzbl	5(%rbp), %eax
-	movzbl	5(%rsi), %ecx
-	movb	%cl, 5(%rbp)
-	movb	%al, 5(%rsi)
-	movzbl	6(%rbp), %eax
-	movzbl	6(%rsi), %ecx
-	movb	%cl, 6(%rbp)
-	movb	%al, 6(%rsi)
-	movzbl	7(%rbp), %eax
-	movzbl	7(%rsi), %ecx
-	movb	%cl, 7(%rbp)
-	movb	%al, 7(%rsi)
-	movzbl	8(%rbp), %eax
-	movzbl	8(%rsi), %ecx
-	movb	%cl, 8(%rbp)
-	movb	%al, 8(%rsi)
-	movzbl	9(%rbp), %eax
-	movzbl	9(%rsi), %ecx
-	movb	%cl, 9(%rbp)
-	movb	%al, 9(%rsi)
-	movzbl	10(%rbp), %eax
-	movzbl	10(%rsi), %ecx
-	movb	%cl, 10(%rbp)
-	movb	%al, 10(%rsi)
-	movzbl	11(%rbp), %eax
-	movzbl	11(%rsi), %ecx
-	movb	%cl, 11(%rbp)
-	movb	%al, 11(%rsi)
-	movzbl	12(%rbp), %eax
-	movzbl	12(%rsi), %ecx
-	movb	%cl, 12(%rbp)
-	movb	%al, 12(%rsi)
-	movzbl	13(%rbp), %eax
-	movzbl	13(%rsi), %ecx
-	movb	%cl, 13(%rbp)
-	movb	%al, 13(%rsi)
-	movzbl	14(%rbp), %eax
-	movzbl	14(%rsi), %ecx
-	movb	%cl, 14(%rbp)
-	movb	%al, 14(%rsi)
-	movzbl	15(%rbp), %eax
-	movzbl	15(%rsi), %ecx
-	movb	%cl, 15(%rbp)
-	movb	%al, 15(%rsi)
-	jmp	.LBB17_17
-	.p2align	4, 0x90
-.LBB17_27:
-	movq	24(%r12), %rax
-	leaq	-16(%r13), %rcx
-	andq	(%r12), %rcx
-	movb	$-1, (%rax,%r13)
-	movb	$-1, 16(%rcx,%rax)
-	movdqu	(%rbp), %xmm0
-	movdqu	%xmm0, (%rsi)
-	jmp	.LBB17_28
-.LBB17_12:
-	movq	(%r12), %rcx
-	leaq	1(%rcx), %rax
-	movq	%rax, %rdx
-	shrq	$3, %rdx
-	andq	$-8, %rax
-	subq	%rdx, %rax
-	jmp	.LBB17_13
-.LBB17_11:
-	movq	$-1, %rcx
-	xorl	%eax, %eax
-.LBB17_13:
-	cmpq	$8, %rcx
-	cmovbq	%rcx, %rax
-	subq	16(%r12), %rax
-	movq	%rax, 8(%r12)
-	addq	$40, %rsp
-	.cfi_def_cfa_offset 56
-	popq	%rbx
-	.cfi_def_cfa_offset 48
-	popq	%r12
-	.cfi_def_cfa_offset 40
-	popq	%r13
-	.cfi_def_cfa_offset 32
-	popq	%r14
-	.cfi_def_cfa_offset 24
-	popq	%r15
-	.cfi_def_cfa_offset 16
-	popq	%rbp
-	.cfi_def_cfa_offset 8
-	retq
-.LBB17_29:
-	.cfi_def_cfa_offset 96
-.Ltmp2:
-	movq	%rax, %rbx
-.Ltmp3:
-	leaq	16(%rsp), %rdi
-	callq	core::ptr::drop_in_place<hashbrown::scopeguard::ScopeGuard<&mut hashbrown::raw::RawTableInner<alloc::alloc::Global>,hashbrown::raw::RawTableInner<alloc::alloc::Global>::rehash_in_place::{{closure}}>>
-.Ltmp4:
-	movq	%rbx, %rdi
-	callq	_Unwind_Resume@PLT
-	ud2
-.LBB17_31:
-.Ltmp5:
-	callq	*core::panicking::panic_cannot_unwind@GOTPCREL(%rip)
-	ud2
-.Lfunc_end17:
-	.size	hashbrown::raw::RawTableInner<A>::rehash_in_place, .Lfunc_end17-hashbrown::raw::RawTableInner<A>::rehash_in_place
-	.cfi_endproc
-	.section	".gcc_except_table.hashbrown::raw::RawTableInner<A>::rehash_in_place","a",@progbits
-	.p2align	2
-GCC_except_table17:
-.Lexception0:
-	.byte	255
-	.byte	255
-	.byte	1
-	.uleb128 .Lcst_end0-.Lcst_begin0
-.Lcst_begin0:
-	.uleb128 .Lfunc_begin0-.Lfunc_begin0
-	.uleb128 .Ltmp0-.Lfunc_begin0
-	.byte	0
-	.byte	0
-	.uleb128 .Ltmp0-.Lfunc_begin0
-	.uleb128 .Ltmp1-.Ltmp0
-	.uleb128 .Ltmp2-.Lfunc_begin0
-	.byte	0
-	.uleb128 .Ltmp3-.Lfunc_begin0
-	.uleb128 .Ltmp4-.Ltmp3
-	.uleb128 .Ltmp5-.Lfunc_begin0
-	.byte	0
-	.uleb128 .Ltmp4-.Lfunc_begin0
-	.uleb128 .Lfunc_end17-.Ltmp4
-	.byte	0
-	.byte	0
-.Lcst_end0:
-	.p2align	2
-
-	.section	.rodata.cst16,"aM",@progbits,16
-	.p2align	4
-.LCPI18_0:
-	.zero	16,88
-.LCPI18_1:
-	.zero	16,93
-.LCPI18_2:
-	.zero	16,103
-	.section	.text.world_insert_or_spawn_batch,"ax",@progbits
-	.globl	world_insert_or_spawn_batch
-	.p2align	4, 0x90
-	.type	world_insert_or_spawn_batch,@function
-world_insert_or_spawn_batch:
-.Lfunc_begin1:
-	.cfi_startproc
-	.cfi_personality 155, DW.ref.rust_eh_personality
-	.cfi_lsda 27, .Lexception1
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	pushq	%r15
-	.cfi_def_cfa_offset 24
-	pushq	%r14
-	.cfi_def_cfa_offset 32
-	pushq	%r13
-	.cfi_def_cfa_offset 40
-	pushq	%r12
-	.cfi_def_cfa_offset 48
-	pushq	%rbx
-	.cfi_def_cfa_offset 56
-	subq	$456, %rsp
-	.cfi_def_cfa_offset 512
+	subq	$392, %rsp
+	.cfi_def_cfa_offset 448
 	.cfi_offset %rbx, -56
 	.cfi_offset %r12, -48
 	.cfi_offset %r13, -40
@@ -2011,457 +2242,454 @@ world_insert_or_spawn_batch:
 	.cfi_offset %rbp, -16
 	movq	%rdi, %r14
 	movq	(%rsi), %rax
-	movq	8(%rsi), %rcx
-	movq	16(%rsi), %rdx
-	shlq	$4, %rdx
-	addq	%rcx, %rdx
-	movq	%rcx, 432(%rsp)
-	movq	%rax, 408(%rsp)
-	movq	%rcx, 416(%rsp)
-	movq	%rdx, 424(%rsp)
-.Ltmp6:
+	movq	%rax, 184(%rsp)
+	movq	8(%rsi), %rax
+	movq	%rax, 328(%rsp)
+	movq	16(%rsi), %r13
+.Ltmp0:
 	callq	*bevy_ecs::world::World::flush@GOTPCREL(%rip)
-.Ltmp7:
-	movabsq	$-5717993199360751243, %r15
-	movabsq	$372905292693039969, %r13
-	movl	888(%r14), %eax
-	movl	%eax, 60(%rsp)
-	leaq	472(%r14), %rax
-	movq	%rax, 64(%rsp)
-	leaq	160(%r14), %rax
-	movq	%rax, 168(%rsp)
-	leaq	720(%r14), %r12
-	leaq	688(%r14), %rdi
-	movq	688(%r14), %r9
-	movq	712(%r14), %rbp
-	xorl	%r8d, %r8d
-	movdqa	.LCPI18_0(%rip), %xmm0
+.Ltmp1:
+	movq	%r13, %rax
+	shlq	$4, %rax
+	addq	184(%rsp), %rax
+	movq	%rax, 352(%rsp)
+	movabsq	$-2270317404999776739, %r12
+	movl	760(%r14), %eax
+	movl	%eax, 68(%rsp)
+	leaq	488(%r14), %rbp
+	leaq	64(%r14), %rax
+	movq	%rax, 72(%rsp)
+	leaq	216(%r14), %rax
+	movq	%rax, 200(%rsp)
+	leaq	512(%r14), %rdi
+	movq	512(%r14), %rax
+	movq	520(%r14), %rcx
+	leaq	-24(%rax), %rdx
+	xorl	%esi, %esi
+	movdqa	.LCPI14_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movq	%r15, %rsi
+	movdqa	.LCPI14_1(%rip), %xmm2
+	movq	%r12, %r8
 	movq	%r14, 16(%rsp)
-.LBB18_2:
-	andq	%r9, %rsi
-	movdqu	(%rbp,%rsi), %xmm2
-	movdqa	%xmm2, %xmm3
-	pcmpeqb	%xmm0, %xmm3
-	pmovmskb	%xmm3, %ebx
+.LBB14_2:
+	andq	%rcx, %r8
+	movdqu	(%rax,%r8), %xmm3
+	movdqa	%xmm3, %xmm4
+	pcmpeqb	%xmm0, %xmm4
+	pmovmskb	%xmm4, %r9d
 	.p2align	4, 0x90
-.LBB18_3:
-	testw	%bx, %bx
-	je	.LBB18_4
-	bsfw	%bx, %cx
-	movzwl	%cx, %edx
-	leal	-1(%rbx), %eax
-	andl	%ebx, %eax
-	addq	%rsi, %rdx
-	andq	%r9, %rdx
-	shlq	$4, %rdx
-	movq	%rbp, %rcx
-	subq	%rdx, %rcx
-	movl	%eax, %ebx
-	cmpq	%r13, -16(%rcx)
-	jne	.LBB18_3
-	jmp	.LBB18_14
+.LBB14_3:
+	testw	%r9w, %r9w
+	je	.LBB14_5
+	leal	-1(%r9), %r11d
+	andl	%r9d, %r11d
+	rep		bsfl	%r9d, %r9d
+	addq	%r8, %r9
+	andq	%rcx, %r9
+	negq	%r9
+	leaq	(%r9,%r9,2), %r10
+	movdqu	(%rdx,%r10,8), %xmm4
+	pcmpeqb	%xmm2, %xmm4
+	pmovmskb	%xmm4, %ebx
+	movl	%r11d, %r9d
+	cmpl	$65535, %ebx
+	jne	.LBB14_3
+	jmp	.LBB14_7
 	.p2align	4, 0x90
-.LBB18_4:
-	pcmpeqb	%xmm1, %xmm2
-	pmovmskb	%xmm2, %ecx
-	testl	%ecx, %ecx
-	jne	.LBB18_6
-	addq	%r8, %rsi
-	addq	$16, %rsi
+.LBB14_5:
+	pcmpeqb	%xmm1, %xmm3
+	pmovmskb	%xmm3, %r9d
+	testl	%r9d, %r9d
+	jne	.LBB14_47
+	addq	%rsi, %r8
 	addq	$16, %r8
-	jmp	.LBB18_2
-.LBB18_14:
+	addq	$16, %rsi
+	jmp	.LBB14_2
+.LBB14_7:
+	leaq	(%rax,%r10,8), %rcx
 	addq	$-8, %rcx
-.LBB18_15:
+.LBB14_8:
 	movq	(%rcx), %rsi
 	shlq	$5, %rsi
-	addq	728(%r14), %rsi
-	leaq	64(%r14), %rcx
-.Ltmp43:
-	movl	60(%rsp), %eax
+	addq	488(%r14), %rsi
+	leaq	152(%r14), %rcx
+.Ltmp37:
+	movl	68(%rsp), %eax
 	movl	%eax, (%rsp)
-	leaq	240(%rsp), %rdi
-	movq	%rsi, 40(%rsp)
+	leaq	80(%rsp), %rdi
+	movq	%rsi, 48(%rsp)
 	movq	%r14, %rdx
-	movq	%rcx, 368(%rsp)
-	movq	64(%rsp), %r8
-	movq	168(%rsp), %r9
+	movq	%rcx, 192(%rsp)
+	movq	72(%rsp), %r8
+	movq	200(%rsp), %r9
 	callq	*bevy_ecs::bundle::BundleInfo::get_bundle_spawner@GOTPCREL(%rip)
-.Ltmp44:
-	movups	240(%rsp), %xmm0
-	movups	256(%rsp), %xmm1
-	movdqu	272(%rsp), %xmm2
-	movdqa	%xmm2, 112(%rsp)
-	movaps	%xmm1, 96(%rsp)
-	movaps	%xmm0, 80(%rsp)
-	movq	$3, 128(%rsp)
-	movq	$0, 216(%rsp)
-	movq	$4, 224(%rsp)
-	movq	$0, 232(%rsp)
-	movdqu	408(%rsp), %xmm0
-	movdqu	424(%rsp), %xmm1
-	movdqa	%xmm0, 176(%rsp)
-	movdqa	%xmm1, 192(%rsp)
-	movq	184(%rsp), %r13
-	movq	192(%rsp), %rax
-	movq	%rax, 32(%rsp)
-	cmpq	%rax, %r13
-	je	.LBB18_88
-	addq	$16, %r13
-	leaq	80(%rsp), %r15
-	jmp	.LBB18_18
+.Ltmp38:
+	movdqu	80(%rsp), %xmm0
+	movdqu	96(%rsp), %xmm1
+	movdqu	112(%rsp), %xmm2
+	movdqu	%xmm2, 280(%rsp)
+	movdqu	%xmm1, 264(%rsp)
+	movdqu	%xmm0, 248(%rsp)
+	movq	$3, 240(%rsp)
+	movq	$4, 208(%rsp)
+	pxor	%xmm0, %xmm0
+	movdqu	%xmm0, 216(%rsp)
+	testq	%r13, %r13
+	movq	352(%rsp), %r13
+	je	.LBB14_38
+	movq	184(%rsp), %rbx
+	jmp	.LBB14_13
 	.p2align	4, 0x90
-.LBB18_102:
-	movq	224(%rsp), %rax
-	movl	%r12d, (%rax,%rsi,8)
-	movl	%r14d, 4(%rax,%rsi,8)
+.LBB14_11:
+	movq	208(%rsp), %rax
+	movl	%r14d, (%rax,%rsi,8)
+	movl	%r15d, 4(%rax,%rsi,8)
 	incq	%rsi
-	movq	%rsi, 232(%rsp)
-.LBB18_103:
-	leaq	-16(%r13), %rax
-	addq	$16, %r13
-	addq	$16, %rax
-	cmpq	32(%rsp), %rax
-	je	.LBB18_88
-.LBB18_18:
-	movl	-16(%r13), %r12d
-	movl	-12(%r13), %r14d
-	movss	-8(%r13), %xmm0
+	movq	%rsi, 224(%rsp)
+.LBB14_12:
+	addq	$16, %rbx
+	cmpq	%r13, %rbx
+	je	.LBB14_38
+.LBB14_13:
+	movl	(%rbx), %r14d
+	movl	4(%rbx), %r15d
+	movss	8(%rbx), %xmm0
 	movss	%xmm0, 24(%rsp)
-	movd	-4(%r13), %xmm0
-	movd	%xmm0, 72(%rsp)
-.Ltmp46:
-	movq	%r15, %rdi
+	movd	12(%rbx), %xmm0
+	movd	%xmm0, 40(%rsp)
+.Ltmp40:
+	leaq	240(%rsp), %rdi
 	callq	*bevy_ecs::world::World::insert_or_spawn_batch::SpawnOrInsert::entities@GOTPCREL(%rip)
-.Ltmp47:
-.Ltmp48:
-	leaq	384(%rsp), %rdi
+.Ltmp41:
+.Ltmp42:
+	leaq	160(%rsp), %rdi
 	movq	%rax, %rsi
-	movl	%r12d, %edx
-	movl	%r14d, %ecx
-	callq	*bevy_ecs::entity::Entities::alloc_at_without_replacement@GOTPCREL(%rip)
-.Ltmp49:
-	movl	384(%rsp), %eax
-	testq	%rax, %rax
-	je	.LBB18_94
-	cmpl	$1, %eax
-	jne	.LBB18_99
-	cmpl	$3, 128(%rsp)
-	jne	.LBB18_104
-	movq	104(%rsp), %rbp
-.Ltmp58:
-	movq	%rbp, %rdi
-	movl	%r12d, %esi
 	movl	%r14d, %edx
-	callq	*bevy_ecs::storage::table::Table::allocate@GOTPCREL(%rip)
-.Ltmp59:
-	movl	%eax, %r15d
-	movq	80(%rsp), %rbx
-	movq	136(%rbx), %rsi
-	movq	%rsi, %rax
-	cmpq	120(%rbx), %rsi
-	movq	%rsi, 336(%rsp)
-	jne	.LBB18_27
-.Ltmp60:
-	leaq	120(%rbx), %rdi
-	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
-.Ltmp61:
-	movq	136(%rbx), %rax
-.LBB18_27:
-	movq	128(%rbx), %rcx
-	leaq	(%rax,%rax,2), %rdx
-	movl	%r12d, (%rcx,%rdx,4)
-	movl	%r14d, 4(%rcx,%rdx,4)
-	movl	%r15d, 8(%rcx,%rdx,4)
-	incq	%rax
-	movq	%rax, 136(%rbx)
-	movl	144(%rbx), %eax
-	movl	%eax, 52(%rsp)
-	movl	148(%rbx), %eax
-	movl	%eax, 56(%rsp)
-	movq	96(%rsp), %rax
-	movl	120(%rsp), %ecx
-	movl	%ecx, 364(%rsp)
-	movss	24(%rsp), %xmm0
-	movss	%xmm0, 240(%rsp)
-	movq	16(%rax), %rax
-	movq	%rax, 24(%rsp)
-	movq	(%rax), %rax
-	movq	(%rbp), %rbx
-	movq	32(%rbp), %rcx
-	movq	%rcx, 376(%rsp)
-	shlq	$4, %rax
-	movq	8(%rcx,%rax), %rax
 	movl	%r15d, %ecx
-	movl	%r15d, 328(%rsp)
-	leaq	(%rax,%rax,2), %r15
-	shlq	$5, %r15
-	movl	%ecx, %r12d
-	movq	(%rbx,%r15), %rdx
-	movq	%rdx, %rdi
-	imulq	%r12, %rdi
-	addq	40(%rbx,%r15), %rdi
-	leaq	240(%rsp), %rsi
-	movq	memcpy@GOTPCREL(%rip), %rbp
-	callq	*%rbp
-	movq	%rbp, %r8
-	movq	56(%rbx,%r15), %rax
-	movl	364(%rsp), %ecx
-	movl	%ecx, (%rax,%r12,4)
-	movq	80(%rbx,%r15), %rax
-	movl	%ecx, (%rax,%r12,4)
-	movl	%ecx, %r15d
-	movd	72(%rsp), %xmm0
-	movd	%xmm0, 240(%rsp)
-	movq	24(%rsp), %rax
-	movq	8(%rax), %rax
+	callq	*bevy_ecs::entity::Entities::alloc_at_without_replacement@GOTPCREL(%rip)
+.Ltmp43:
+	movl	160(%rsp), %eax
+	cmpq	$2, %rax
+	je	.LBB14_23
+	cmpl	$1, %eax
+	jne	.LBB14_26
+	cmpl	$3, 240(%rsp)
+	jne	.LBB14_29
+	movq	272(%rsp), %rbp
+.Ltmp52:
+	movq	%rbp, %rdi
+	movl	%r14d, %esi
+	movl	%r15d, %edx
+	callq	*bevy_ecs::storage::table::Table::allocate@GOTPCREL(%rip)
+.Ltmp53:
+	movl	%eax, %r13d
+	movq	248(%rsp), %r12
+	movq	88(%r12), %rsi
+	movq	%rsi, %rax
+	cmpq	80(%r12), %rsi
+	movq	%rsi, 344(%rsp)
+	jne	.LBB14_22
+.Ltmp54:
+	leaq	72(%r12), %rdi
+	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
+.Ltmp55:
+	movq	88(%r12), %rax
+.LBB14_22:
+	movq	72(%r12), %rcx
+	leaq	(%rax,%rax,2), %rdx
+	movl	%r14d, (%rcx,%rdx,4)
+	movl	%r15d, 4(%rcx,%rdx,4)
+	movl	%r13d, 8(%rcx,%rdx,4)
+	incq	%rax
+	movq	%rax, 88(%r12)
+	movl	144(%r12), %eax
+	movl	%eax, 60(%rsp)
+	movl	148(%r12), %eax
+	movl	%eax, 64(%rsp)
+	movq	264(%rsp), %rax
+	movq	%rax, 336(%rsp)
+	movl	288(%rsp), %ecx
+	movl	%ecx, 32(%rsp)
+	movss	24(%rsp), %xmm0
+	movss	%xmm0, 80(%rsp)
+	movq	(%rax), %rax
+	movq	(%rax), %rax
+	movl	%r13d, %edx
+	movl	%r13d, 56(%rsp)
+	movq	(%rbp), %r13
+	movq	32(%rbp), %rcx
 	shlq	$4, %rax
-	movq	376(%rsp), %rcx
 	movq	8(%rcx,%rax), %rax
-	leaq	(%rax,%rax,2), %rbp
-	shlq	$5, %rbp
-	movq	(%rbx,%rbp), %rdx
+	leaq	(%rax,%rax,2), %r14
+	shlq	$5, %r14
+	movl	%edx, %r12d
+	movq	8(%r13,%r14), %rdx
 	movq	%rdx, %rdi
 	imulq	%r12, %rdi
-	addq	40(%rbx,%rbp), %rdi
-	leaq	240(%rsp), %rsi
-	callq	*%r8
-	movq	56(%rbx,%rbp), %rax
-	movl	%r15d, (%rax,%r12,4)
-	movq	80(%rbx,%rbp), %rax
-	movl	%r15d, (%rax,%r12,4)
-	leaq	80(%rsp), %r15
-	movq	88(%rsp), %rax
-	movq	16(%rax), %rax
-	leaq	(%r14,%r14,4), %rcx
-	movl	52(%rsp), %edx
+	addq	16(%r13,%r14), %rdi
+	leaq	80(%rsp), %rsi
+	callq	*memcpy@GOTPCREL(%rip)
+	movq	48(%r13,%r14), %rax
+	movl	32(%rsp), %ecx
+	movl	%ecx, (%rax,%r12,4)
+	movq	72(%r13,%r14), %rax
+	movl	%ecx, (%rax,%r12,4)
+	movd	40(%rsp), %xmm0
+	movd	%xmm0, 80(%rsp)
+	movq	336(%rsp), %rax
+	movq	(%rax), %rax
+	movq	8(%rax), %rax
+	movq	(%rbp), %r14
+	movq	32(%rbp), %rcx
+	shlq	$4, %rax
+	movq	8(%rcx,%rax), %rax
+	leaq	(%rax,%rax,2), %r13
+	shlq	$5, %r13
+	movq	8(%r14,%r13), %rdx
+	movq	%rdx, %rdi
+	imulq	%r12, %rdi
+	addq	16(%r14,%r13), %rdi
+	leaq	80(%rsp), %rsi
+	callq	*memcpy@GOTPCREL(%rip)
+	movq	48(%r14,%r13), %rax
+	movl	32(%rsp), %ecx
+	movl	%ecx, (%rax,%r12,4)
+	movq	72(%r14,%r13), %rax
+	movq	352(%rsp), %r13
+	movl	%ecx, (%rax,%r12,4)
+	movq	256(%rsp), %rax
+	movq	(%rax), %rax
+	leaq	(%r15,%r15,4), %rcx
+	movl	60(%rsp), %edx
 	movl	%edx, 4(%rax,%rcx,4)
-	movq	336(%rsp), %rdx
+	movq	344(%rsp), %rdx
 	movl	%edx, 8(%rax,%rcx,4)
-	movl	56(%rsp), %edx
+	movl	64(%rsp), %edx
 	movl	%edx, 12(%rax,%rcx,4)
-	movl	328(%rsp), %edx
+	movl	56(%rsp), %edx
 	movl	%edx, 16(%rax,%rcx,4)
-	jmp	.LBB18_103
+	jmp	.LBB14_12
 	.p2align	4, 0x90
-.LBB18_94:
-	movl	388(%rsp), %ebx
-	cmpl	$3, 128(%rsp)
-	je	.LBB18_96
-	cmpl	160(%rsp), %ebx
-	jne	.LBB18_96
-	movl	%ebx, 240(%rsp)
-	leaq	392(%rsp), %rcx
+.LBB14_23:
+	movq	224(%rsp), %rsi
+	cmpq	216(%rsp), %rsi
+	jne	.LBB14_11
+.Ltmp44:
+	leaq	208(%rsp), %rdi
+	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
+.Ltmp45:
+	movq	224(%rsp), %rsi
+	jmp	.LBB14_11
+	.p2align	4, 0x90
+.LBB14_26:
+	movl	164(%rsp), %ebp
+	cmpl	$3, 240(%rsp)
+	je	.LBB14_35
+	cmpl	320(%rsp), %ebp
+	jne	.LBB14_35
+	movl	%ebp, 80(%rsp)
+	leaq	168(%rsp), %rcx
 	movl	8(%rcx), %eax
-	leaq	244(%rsp), %rdx
+	leaq	84(%rsp), %rdx
 	movl	%eax, 8(%rdx)
 	movq	(%rcx), %rax
 	movq	%rax, (%rdx)
-.Ltmp66:
-	leaq	344(%rsp), %rdi
-	movq	%r15, %rsi
-	movl	%r12d, %edx
-	movl	%r14d, %ecx
-	leaq	240(%rsp), %r8
+.Ltmp60:
+	leaq	360(%rsp), %rdi
+	leaq	240(%rsp), %rsi
+	movl	%r14d, %edx
+	movl	%r15d, %ecx
+	leaq	80(%rsp), %r8
 	movd	24(%rsp), %xmm0
-	movd	72(%rsp), %xmm1
+	movd	40(%rsp), %xmm1
 	callq	bevy_ecs::bundle::BundleInserter::insert
-.Ltmp67:
-	jmp	.LBB18_103
-	.p2align	4, 0x90
-.LBB18_99:
-	movq	232(%rsp), %rsi
-	cmpq	216(%rsp), %rsi
-	jne	.LBB18_102
+.Ltmp61:
+	jmp	.LBB14_12
+.LBB14_29:
+.Ltmp46:
+	movl	68(%rsp), %eax
+	movl	%eax, (%rsp)
+	leaq	80(%rsp), %rdi
+	movq	48(%rsp), %rsi
+	movq	16(%rsp), %rdx
+	movq	192(%rsp), %rcx
+	movq	72(%rsp), %r8
+	movq	200(%rsp), %r9
+	callq	*bevy_ecs::bundle::BundleInfo::get_bundle_spawner@GOTPCREL(%rip)
+.Ltmp47:
+	movq	104(%rsp), %rbp
+.Ltmp48:
+	movq	%rbp, %rdi
+	movl	%r14d, %esi
+	movl	%r15d, %edx
+	callq	*bevy_ecs::storage::table::Table::allocate@GOTPCREL(%rip)
+.Ltmp49:
+	movl	%eax, %r13d
+	movq	80(%rsp), %r12
+	movq	88(%r12), %rsi
+	movq	%rsi, %rax
+	cmpq	80(%r12), %rsi
+	movq	%rsi, 344(%rsp)
+	jne	.LBB14_34
 .Ltmp50:
-	leaq	216(%rsp), %rdi
+	leaq	72(%r12), %rdi
 	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
 .Ltmp51:
-	movq	232(%rsp), %rsi
-	jmp	.LBB18_102
-.LBB18_104:
-.Ltmp52:
-	movl	60(%rsp), %eax
-	movl	%eax, (%rsp)
-	leaq	240(%rsp), %rdi
-	movq	40(%rsp), %rsi
-	movq	16(%rsp), %rdx
-	movq	368(%rsp), %rcx
-	movq	64(%rsp), %r8
-	movq	168(%rsp), %r9
-	callq	*bevy_ecs::bundle::BundleInfo::get_bundle_spawner@GOTPCREL(%rip)
-.Ltmp53:
-	movq	264(%rsp), %rbp
-.Ltmp54:
-	movq	%rbp, %rdi
-	movl	%r12d, %esi
-	movl	%r14d, %edx
-	callq	*bevy_ecs::storage::table::Table::allocate@GOTPCREL(%rip)
-.Ltmp55:
-	movl	%eax, %r15d
-	movq	240(%rsp), %rbx
-	movq	136(%rbx), %rsi
-	movq	%rsi, %rax
-	cmpq	120(%rbx), %rsi
-	movq	%rsi, 32(%rsp)
-	jne	.LBB18_109
-.Ltmp56:
-	leaq	120(%rbx), %rdi
-	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
-.Ltmp57:
-	movq	136(%rbx), %rax
-.LBB18_109:
-	movq	128(%rbx), %rcx
+	movq	88(%r12), %rax
+.LBB14_34:
+	movq	72(%r12), %rcx
 	leaq	(%rax,%rax,2), %rdx
-	movl	%r12d, (%rcx,%rdx,4)
-	movl	%r14d, 4(%rcx,%rdx,4)
-	movl	%r15d, 8(%rcx,%rdx,4)
+	movl	%r14d, (%rcx,%rdx,4)
+	movl	%r15d, 4(%rcx,%rdx,4)
+	movl	%r13d, 8(%rcx,%rdx,4)
 	incq	%rax
-	movq	%rax, 136(%rbx)
-	movl	144(%rbx), %eax
-	movl	%eax, 56(%rsp)
-	movl	148(%rbx), %eax
-	movl	%eax, 336(%rsp)
-	movq	256(%rsp), %rax
-	movl	280(%rsp), %r12d
+	movq	%rax, 88(%r12)
+	movl	144(%r12), %eax
+	movl	%eax, 60(%rsp)
+	movl	148(%r12), %eax
+	movl	%eax, 64(%rsp)
+	movq	96(%rsp), %rax
+	movq	%rax, 336(%rsp)
+	movl	120(%rsp), %ecx
+	movl	%ecx, 32(%rsp)
 	movss	24(%rsp), %xmm0
-	movss	%xmm0, 344(%rsp)
-	movq	16(%rax), %rax
-	movq	%rax, 24(%rsp)
+	movss	%xmm0, 360(%rsp)
 	movq	(%rax), %rax
-	movl	%r15d, %ecx
-	movl	%r15d, 52(%rsp)
-	movq	(%rbp), %r15
-	movq	32(%rbp), %rdx
-	movq	%rdx, 328(%rsp)
+	movq	(%rax), %rax
+	movl	%r13d, %edx
+	movl	%r13d, 56(%rsp)
+	movq	(%rbp), %r13
+	movq	32(%rbp), %rcx
 	shlq	$4, %rax
-	movq	8(%rdx,%rax), %rax
-	leaq	(%rax,%rax,2), %rbx
-	shlq	$5, %rbx
-	movl	%ecx, %ebp
-	movq	(%r15,%rbx), %rdx
-	movq	%rdx, %rdi
-	imulq	%rbp, %rdi
-	addq	40(%r15,%rbx), %rdi
-	leaq	344(%rsp), %rsi
-	callq	*memcpy@GOTPCREL(%rip)
-	movq	56(%r15,%rbx), %rax
-	movl	%r12d, (%rax,%rbp,4)
-	movq	80(%r15,%rbx), %rax
-	movl	%r12d, (%rax,%rbp,4)
-	movss	72(%rsp), %xmm0
-	movss	%xmm0, 344(%rsp)
-	movq	24(%rsp), %rax
-	movq	8(%rax), %rax
-	shlq	$4, %rax
-	movq	328(%rsp), %rcx
 	movq	8(%rcx,%rax), %rax
-	leaq	(%rax,%rax,2), %rbx
-	shlq	$5, %rbx
-	movq	(%r15,%rbx), %rdx
+	leaq	(%rax,%rax,2), %r14
+	shlq	$5, %r14
+	movl	%edx, %r12d
+	movq	8(%r13,%r14), %rdx
 	movq	%rdx, %rdi
-	imulq	%rbp, %rdi
-	addq	40(%r15,%rbx), %rdi
-	leaq	344(%rsp), %rsi
+	imulq	%r12, %rdi
+	addq	16(%r13,%r14), %rdi
+	leaq	360(%rsp), %rsi
 	callq	*memcpy@GOTPCREL(%rip)
-	movq	56(%r15,%rbx), %rax
-	movl	%r12d, (%rax,%rbp,4)
-	movq	80(%r15,%rbx), %rax
-	leaq	80(%rsp), %r15
-	movl	%r12d, (%rax,%rbp,4)
-	movq	248(%rsp), %rax
-	movq	16(%rax), %rax
-	leaq	(%r14,%r14,4), %rcx
-	movl	56(%rsp), %edx
+	movq	48(%r13,%r14), %rax
+	movl	32(%rsp), %ecx
+	movl	%ecx, (%rax,%r12,4)
+	movq	72(%r13,%r14), %rax
+	movl	%ecx, (%rax,%r12,4)
+	movss	40(%rsp), %xmm0
+	movss	%xmm0, 360(%rsp)
+	movq	336(%rsp), %rax
+	movq	(%rax), %rax
+	movq	8(%rax), %rax
+	movq	(%rbp), %r14
+	movq	32(%rbp), %rcx
+	shlq	$4, %rax
+	movq	8(%rcx,%rax), %rax
+	leaq	(%rax,%rax,2), %r13
+	shlq	$5, %r13
+	movq	8(%r14,%r13), %rdx
+	movq	%rdx, %rdi
+	imulq	%r12, %rdi
+	addq	16(%r14,%r13), %rdi
+	leaq	360(%rsp), %rsi
+	callq	*memcpy@GOTPCREL(%rip)
+	movq	48(%r14,%r13), %rax
+	movl	32(%rsp), %ecx
+	movl	%ecx, (%rax,%r12,4)
+	movq	72(%r14,%r13), %rax
+	movq	352(%rsp), %r13
+	movl	%ecx, (%rax,%r12,4)
+	movq	88(%rsp), %rax
+	movq	(%rax), %rax
+	leaq	(%r15,%r15,4), %rcx
+	movl	60(%rsp), %edx
 	movl	%edx, 4(%rax,%rcx,4)
-	movq	32(%rsp), %rdx
+	movq	344(%rsp), %rdx
 	movl	%edx, 8(%rax,%rcx,4)
-	movl	336(%rsp), %edx
+	movl	64(%rsp), %edx
 	movl	%edx, 12(%rax,%rcx,4)
-	movl	52(%rsp), %edx
+	movl	56(%rsp), %edx
 	movl	%edx, 16(%rax,%rcx,4)
-	movdqu	240(%rsp), %xmm0
-	movdqu	256(%rsp), %xmm1
-	movdqu	272(%rsp), %xmm2
-	movdqa	%xmm2, 112(%rsp)
-	movdqa	%xmm1, 96(%rsp)
-	movdqa	%xmm0, 80(%rsp)
-	movq	$3, 128(%rsp)
-	movq	192(%rsp), %rax
-	movq	%rax, 32(%rsp)
-	jmp	.LBB18_103
-.LBB18_96:
-.Ltmp62:
-	movl	60(%rsp), %eax
+	movdqu	80(%rsp), %xmm0
+	movdqu	96(%rsp), %xmm1
+	movdqu	112(%rsp), %xmm2
+	leaq	248(%rsp), %rax
+	movdqu	%xmm2, 32(%rax)
+	movdqu	%xmm1, 16(%rax)
+	movdqu	%xmm0, (%rax)
+	movq	$3, 240(%rsp)
+	jmp	.LBB14_12
+.LBB14_35:
+.Ltmp56:
+	movl	68(%rsp), %eax
 	movl	%eax, 8(%rsp)
-	movl	%ebx, (%rsp)
-	leaq	240(%rsp), %rdi
-	movq	40(%rsp), %rsi
+	movl	%ebp, (%rsp)
+	leaq	80(%rsp), %rdi
+	movq	48(%rsp), %rsi
 	movq	16(%rsp), %rdx
-	movq	368(%rsp), %rcx
-	movq	64(%rsp), %r8
-	movq	168(%rsp), %r9
+	movq	192(%rsp), %rcx
+	movq	72(%rsp), %r8
+	movq	200(%rsp), %r9
 	callq	*bevy_ecs::bundle::BundleInfo::get_bundle_inserter@GOTPCREL(%rip)
-.Ltmp63:
-	movl	%ebx, 344(%rsp)
-	leaq	392(%rsp), %rcx
+.Ltmp57:
+	movl	%ebp, 360(%rsp)
+	leaq	168(%rsp), %rcx
 	movl	8(%rcx), %eax
-	leaq	348(%rsp), %rdx
+	leaq	364(%rsp), %rdx
 	movl	%eax, 8(%rdx)
 	movq	(%rcx), %rax
 	movq	%rax, (%rdx)
-.Ltmp64:
-	leaq	440(%rsp), %rdi
-	leaq	240(%rsp), %rsi
-	movl	%r12d, %edx
-	movl	%r14d, %ecx
-	leaq	344(%rsp), %r8
+.Ltmp58:
+	leaq	376(%rsp), %rdi
+	leaq	80(%rsp), %rsi
+	movl	%r14d, %edx
+	movl	%r15d, %ecx
+	leaq	360(%rsp), %r8
 	movd	24(%rsp), %xmm0
-	movd	72(%rsp), %xmm1
+	movd	40(%rsp), %xmm1
 	callq	bevy_ecs::bundle::BundleInserter::insert
-.Ltmp65:
-	movups	240(%rsp), %xmm0
-	movdqu	256(%rsp), %xmm1
-	movdqu	272(%rsp), %xmm2
-	movdqu	288(%rsp), %xmm3
-	movaps	%xmm0, 80(%rsp)
-	movdqa	%xmm1, 96(%rsp)
-	movdqa	%xmm2, 112(%rsp)
-	movdqa	%xmm3, 128(%rsp)
-	movdqu	304(%rsp), %xmm0
-	movdqa	%xmm0, 144(%rsp)
-	movl	%ebx, 160(%rsp)
-	jmp	.LBB18_103
-.LBB18_88:
-	movq	176(%rsp), %rsi
+.Ltmp59:
+	movups	80(%rsp), %xmm0
+	movdqu	96(%rsp), %xmm1
+	movdqu	112(%rsp), %xmm2
+	movdqu	128(%rsp), %xmm3
+	movaps	%xmm0, 240(%rsp)
+	movdqa	%xmm1, 256(%rsp)
+	movdqa	%xmm2, 272(%rsp)
+	movdqa	%xmm3, 288(%rsp)
+	movdqu	144(%rsp), %xmm0
+	movdqa	%xmm0, 304(%rsp)
+	movl	%ebp, 320(%rsp)
+	jmp	.LBB14_12
+.LBB14_38:
+	movq	328(%rsp), %rsi
 	testq	%rsi, %rsi
-	je	.LBB18_90
-	movq	200(%rsp), %rdi
+	je	.LBB14_40
 	shlq	$4, %rsi
 	movl	$4, %edx
+	movq	184(%rsp), %rdi
 	callq	*__rust_dealloc@GOTPCREL(%rip)
-.LBB18_90:
-	cmpq	$0, 232(%rsp)
-	movq	216(%rsp), %rsi
-	je	.LBB18_91
-	movq	224(%rsp), %rdi
+.LBB14_40:
+	cmpq	$0, 224(%rsp)
+	je	.LBB14_43
+	movq	208(%rsp), %rdi
 	testq	%rdi, %rdi
-	je	.LBB18_118
+	je	.LBB14_46
+	movq	216(%rsp), %rsi
 	testq	%rsi, %rsi
-	jne	.LBB18_117
-	jmp	.LBB18_118
-.LBB18_91:
+	jne	.LBB14_45
+	jmp	.LBB14_46
+.LBB14_43:
+	movq	216(%rsp), %rsi
 	testq	%rsi, %rsi
-	je	.LBB18_118
-	movq	224(%rsp), %rdi
-.LBB18_117:
+	je	.LBB14_46
+	movq	208(%rsp), %rdi
+.LBB14_45:
 	shlq	$3, %rsi
 	movl	$4, %edx
 	callq	*__rust_dealloc@GOTPCREL(%rip)
-.LBB18_118:
-	addq	$456, %rsp
+.LBB14_46:
+	addq	$392, %rsp
 	.cfi_def_cfa_offset 56
 	popq	%rbx
 	.cfi_def_cfa_offset 48
@@ -2476,640 +2704,675 @@ world_insert_or_spawn_batch:
 	popq	%rbp
 	.cfi_def_cfa_offset 8
 	retq
-.LBB18_6:
-	.cfi_def_cfa_offset 512
-	cmpq	$0, 696(%r14)
-	jne	.LBB18_8
-.Ltmp8:
-	movq	%rdi, %rsi
+.LBB14_47:
+	.cfi_def_cfa_offset 448
+	cmpq	$0, 528(%r14)
+	jne	.LBB14_49
+.Ltmp2:
 	callq	hashbrown::raw::RawTable<T,A>::reserve_rehash
-.Ltmp9:
-.LBB18_8:
-	movabsq	$-4960261354937240200, %rsi
+.Ltmp3:
+.LBB14_49:
+	movabsq	$-7532331098027703284, %rbx
 	movq	%r14, %rcx
-	movabsq	$172711937178008, %r14
-	movq	$0, 176(%rsp)
-	movq	$8, 184(%rsp)
-	movq	$0, 192(%rsp)
-	leaq	536(%rcx), %rax
+	movabsq	$-2929124292082964719, %r15
+	movabsq	$1704093552351749861, %r14
+	movq	$8, 160(%rsp)
+	pxor	%xmm0, %xmm0
+	movdqu	%xmm0, 168(%rsp)
+	leaq	88(%rcx), %rax
 	movq	%rax, 32(%rsp)
-	movq	472(%rcx), %rax
-	movq	496(%rcx), %rcx
-	xorl	%r8d, %r8d
-	movdqa	.LCPI18_1(%rip), %xmm0
+	movq	88(%rcx), %rax
+	movq	96(%rcx), %rcx
+	leaq	-24(%rax), %rdx
+	xorl	%esi, %esi
+	movdqa	.LCPI14_2(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-.LBB18_9:
-	andq	%rax, %rsi
-	movdqu	(%rcx,%rsi), %xmm2
+	movq	%r14, %rdi
+.LBB14_50:
+	andq	%rcx, %rdi
+	movdqu	(%rax,%rdi), %xmm2
 	movdqa	%xmm2, %xmm3
 	pcmpeqb	%xmm0, %xmm3
-	pmovmskb	%xmm3, %ebp
+	pmovmskb	%xmm3, %r8d
 	.p2align	4, 0x90
-.LBB18_10:
-	testw	%bp, %bp
-	je	.LBB18_11
-	bsfw	%bp, %di
-	movzwl	%di, %edx
-	leal	-1(%rbp), %ebx
-	andl	%ebp, %ebx
-	addq	%rsi, %rdx
-	andq	%rax, %rdx
-	shlq	$4, %rdx
-	movq	%rcx, %rdi
-	subq	%rdx, %rdi
-	movl	%ebx, %ebp
-	cmpq	%r14, -16(%rdi)
-	jne	.LBB18_10
-	jmp	.LBB18_42
-.LBB18_11:
+.LBB14_51:
+	testw	%r8w, %r8w
+	je	.LBB14_53
+	leal	-1(%r8), %r10d
+	andl	%r8d, %r10d
+	rep		bsfl	%r8d, %r8d
+	addq	%rdi, %r8
+	andq	%rcx, %r8
+	negq	%r8
+	leaq	(%r8,%r8,2), %r9
+	movq	8(%rdx,%r9,8), %r8
+	xorq	%rbx, %r8
+	movq	(%rdx,%r9,8), %r11
+	xorq	%r15, %r11
+	orq	%r8, %r11
+	movl	%r10d, %r8d
+	jne	.LBB14_51
+	jmp	.LBB14_55
+.LBB14_53:
 	pcmpeqb	%xmm1, %xmm2
-	pmovmskb	%xmm2, %edi
-	testl	%edi, %edi
-	jne	.LBB18_28
-	addq	%r8, %rsi
+	pmovmskb	%xmm2, %r8d
+	testl	%r8d, %r8d
+	jne	.LBB14_66
+	addq	%rsi, %rdi
+	addq	$16, %rdi
 	addq	$16, %rsi
-	addq	$16, %r8
-	jmp	.LBB18_9
-.LBB18_42:
-	addq	$-8, %rdi
-.LBB18_43:
-	movq	(%rdi), %rbp
-.Ltmp20:
-	leaq	176(%rsp), %rdi
+	jmp	.LBB14_50
+.LBB14_55:
+	leaq	(%rax,%r9,8), %rcx
+	addq	$-8, %rcx
+.LBB14_56:
+	movq	(%rcx), %r15
+.Ltmp14:
+	leaq	160(%rsp), %rdi
 	xorl	%esi, %esi
 	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
-.Ltmp21:
-	movabsq	$-3597755997830336113, %rsi
-	movabsq	$4607038733241984659, %r14
-	movq	184(%rsp), %rcx
-	movq	192(%rsp), %rax
-	movq	%rcx, 24(%rsp)
-	movq	%rbp, (%rcx,%rax,8)
-	incq	%rax
-	movq	%rax, 72(%rsp)
-	movq	%rax, 192(%rsp)
-	movq	16(%rsp), %rcx
-	movq	472(%rcx), %rax
-	movq	496(%rcx), %rcx
-	xorl	%r8d, %r8d
-	movdqa	.LCPI18_2(%rip), %xmm0
+.Ltmp15:
+	movabsq	$5161047740968808003, %rbx
+	movabsq	$3893310790289506856, %r14
+	movabsq	$-300519420924227256, %rdi
+	movq	160(%rsp), %rax
+	movq	176(%rsp), %rcx
+	movq	%rax, 24(%rsp)
+	movq	%r15, (%rax,%rcx,8)
+	incq	%rcx
+	movq	%rcx, 40(%rsp)
+	movq	%rcx, 176(%rsp)
+	movq	16(%rsp), %r15
+	movq	88(%r15), %rax
+	movq	96(%r15), %rcx
+	leaq	-24(%rax), %rdx
+	xorl	%esi, %esi
+	movdqa	.LCPI14_3(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-.LBB18_45:
-	andq	%rax, %rsi
-	movdqu	(%rcx,%rsi), %xmm2
+.LBB14_58:
+	andq	%rcx, %rdi
+	movdqu	(%rax,%rdi), %xmm2
 	movdqa	%xmm2, %xmm3
 	pcmpeqb	%xmm0, %xmm3
-	pmovmskb	%xmm3, %ebp
+	pmovmskb	%xmm3, %r8d
 	.p2align	4, 0x90
-.LBB18_46:
-	testw	%bp, %bp
-	je	.LBB18_47
-	bsfw	%bp, %di
-	movzwl	%di, %edx
-	leal	-1(%rbp), %ebx
-	andl	%ebp, %ebx
-	addq	%rsi, %rdx
-	andq	%rax, %rdx
-	shlq	$4, %rdx
-	movq	%rcx, %rdi
-	subq	%rdx, %rdi
-	movl	%ebx, %ebp
-	cmpq	%r14, -16(%rdi)
-	jne	.LBB18_46
-	jmp	.LBB18_67
-.LBB18_47:
+.LBB14_59:
+	testw	%r8w, %r8w
+	je	.LBB14_61
+	leal	-1(%r8), %r10d
+	andl	%r8d, %r10d
+	rep		bsfl	%r8d, %r8d
+	addq	%rdi, %r8
+	andq	%rcx, %r8
+	negq	%r8
+	leaq	(%r8,%r8,2), %r9
+	movq	8(%rdx,%r9,8), %r8
+	xorq	%rbx, %r8
+	movq	(%rdx,%r9,8), %r11
+	xorq	%r14, %r11
+	orq	%r8, %r11
+	movl	%r10d, %r8d
+	jne	.LBB14_59
+	jmp	.LBB14_63
+.LBB14_61:
 	pcmpeqb	%xmm1, %xmm2
-	pmovmskb	%xmm2, %edi
-	testl	%edi, %edi
-	jne	.LBB18_53
-	addq	%r8, %rsi
+	pmovmskb	%xmm2, %r8d
+	testl	%r8d, %r8d
+	jne	.LBB14_80
+	addq	%rsi, %rdi
+	addq	$16, %rdi
 	addq	$16, %rsi
-	addq	$16, %r8
-	jmp	.LBB18_45
-.LBB18_67:
-	addq	$-8, %rdi
-	movq	16(%rsp), %r14
-.LBB18_68:
-	movq	(%rdi), %rbx
-	movq	72(%rsp), %rsi
-	cmpq	176(%rsp), %rsi
-	movq	24(%rsp), %rcx
-	jne	.LBB18_71
-.Ltmp32:
-	leaq	176(%rsp), %rdi
+	jmp	.LBB14_58
+.LBB14_63:
+	leaq	(%rax,%r9,8), %rcx
+	addq	$-8, %rcx
+	movq	(%rcx), %rbx
+	movq	40(%rsp), %rsi
+	cmpq	168(%rsp), %rsi
+	jne	.LBB14_94
+.LBB14_64:
+.Ltmp26:
+	leaq	160(%rsp), %rdi
 	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
-.Ltmp33:
-	movq	184(%rsp), %rcx
+.Ltmp27:
+	movq	160(%rsp), %rcx
+	movq	176(%rsp), %rsi
+	movq	16(%rsp), %r15
+	jmp	.LBB14_95
+.LBB14_66:
+	movq	16(%rsp), %rax
+	cmpq	$0, 104(%rax)
+	jne	.LBB14_68
+.Ltmp4:
+	movq	32(%rsp), %rdi
+	callq	hashbrown::raw::RawTable<T,A>::reserve_rehash
+.Ltmp5:
+.LBB14_68:
+	movq	16(%rsp), %rax
+	movq	80(%rax), %rsi
+	movq	$1, 80(%rsp)
+	movq	%rbx, 96(%rsp)
+	movq	%r15, 88(%rsp)
+	movq	$4, 104(%rsp)
+	movq	$4, 112(%rsp)
+	movq	$0, 120(%rsp)
+	leaq	.Lanon.ec88cfe8160c27a9dec3209ea7295488.4(%rip), %rax
+	movq	%rax, 128(%rsp)
+	movq	$30, 136(%rsp)
+	movq	$0, 144(%rsp)
+	movw	$256, 152(%rsp)
+.Ltmp6:
+	leaq	240(%rsp), %rdi
+	leaq	80(%rsp), %rdx
+	movq	%rsi, 40(%rsp)
+	callq	*bevy_ecs::component::ComponentInfo::new@GOTPCREL(%rip)
+.Ltmp7:
+	cmpb	$0, 312(%rsp)
+	je	.LBB14_71
+.Ltmp8:
+	leaq	240(%rsp), %rsi
+	movq	200(%rsp), %rdi
+	callq	*bevy_ecs::storage::sparse_set::SparseSets::get_or_insert@GOTPCREL(%rip)
+.Ltmp9:
+.LBB14_71:
+	movups	240(%rsp), %xmm0
+	movdqu	256(%rsp), %xmm1
+	movaps	%xmm0, 80(%rsp)
+	movdqa	%xmm1, 96(%rsp)
+	movq	272(%rsp), %rax
+	movq	%rax, 112(%rsp)
+	movq	280(%rsp), %rax
+	movq	%rax, 48(%rsp)
+	movq	288(%rsp), %rax
+	movq	%rax, 24(%rsp)
+	movups	312(%rsp), %xmm0
+	movaps	%xmm0, 224(%rsp)
+	movdqu	296(%rsp), %xmm0
+	movdqa	%xmm0, 208(%rsp)
+	movq	40(%rsp), %rcx
+	movq	%rcx, %rax
+	movq	16(%rsp), %rdi
+	cmpq	72(%rdi), %rcx
+	jne	.LBB14_74
+.Ltmp11:
+	movq	72(%rsp), %rdi
+	movq	40(%rsp), %rsi
+	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
+.Ltmp12:
+	movq	16(%rsp), %rdi
+	movq	80(%rdi), %rax
+.LBB14_74:
+	movq	64(%rdi), %rcx
+	imulq	$88, %rax, %rdx
+	movq	112(%rsp), %rsi
+	movq	%rsi, 32(%rcx,%rdx)
+	movaps	80(%rsp), %xmm0
+	movaps	96(%rsp), %xmm1
+	movups	%xmm1, 16(%rcx,%rdx)
+	movups	%xmm0, (%rcx,%rdx)
+	movq	48(%rsp), %rsi
+	movq	%rsi, 40(%rcx,%rdx)
+	movq	24(%rsp), %rsi
+	movq	%rsi, 48(%rcx,%rdx)
+	movaps	208(%rsp), %xmm0
+	movdqa	224(%rsp), %xmm1
+	movups	%xmm0, 56(%rcx,%rdx)
+	movdqu	%xmm1, 72(%rcx,%rdx)
+	incq	%rax
+	movq	%rax, 80(%rdi)
+	movq	88(%rdi), %rax
+	movq	96(%rdi), %rcx
+	andq	%rcx, %r14
+	movdqu	(%rax,%r14), %xmm0
+	pmovmskb	%xmm0, %edx
+	testl	%edx, %edx
+	jne	.LBB14_77
+	movl	$16, %esi
+.LBB14_76:
+	addq	%rsi, %r14
+	andq	%rcx, %r14
+	movdqu	(%rax,%r14), %xmm0
+	pmovmskb	%xmm0, %edx
+	addq	$16, %rsi
+	testl	%edx, %edx
+	je	.LBB14_76
+.LBB14_77:
+	rep		bsfl	%edx, %edx
+	addq	%r14, %rdx
+	andq	%rcx, %rdx
+	movzbl	(%rax,%rdx), %esi
+	testb	%sil, %sil
+	js	.LBB14_79
+	movdqa	(%rax), %xmm0
+	pmovmskb	%xmm0, %edx
+	rep		bsfl	%edx, %edx
+	movzbl	(%rax,%rdx), %esi
+.LBB14_79:
+	leaq	-16(%rdx), %rdi
+	andq	%rcx, %rdi
+	movb	$11, (%rax,%rdx)
+	movb	$11, 16(%rdi,%rax)
+	negq	%rdx
+	andb	$1, %sil
+	movzbl	%sil, %ecx
+	movq	16(%rsp), %rsi
+	subq	%rcx, 104(%rsi)
+	leaq	(%rdx,%rdx,2), %rdx
+	movq	%r15, -24(%rax,%rdx,8)
+	movq	%rbx, -16(%rax,%rdx,8)
+	leaq	(%rax,%rdx,8), %rcx
+	addq	$-8, %rcx
+	movq	40(%rsp), %rdi
+	movq	%rdi, -8(%rax,%rdx,8)
+	incq	112(%rsi)
+	jmp	.LBB14_56
+.LBB14_80:
+	cmpq	$0, 104(%r15)
+	jne	.LBB14_82
+.Ltmp16:
+	movq	32(%rsp), %rdi
+	callq	hashbrown::raw::RawTable<T,A>::reserve_rehash
+.Ltmp17:
+.LBB14_82:
+	movq	16(%rsp), %rax
+	movq	80(%rax), %rsi
+	movq	$1, 80(%rsp)
+	movq	%rbx, 96(%rsp)
+	movq	%r14, 88(%rsp)
+	movq	$4, 104(%rsp)
+	movq	$4, 112(%rsp)
+	movq	$0, 120(%rsp)
+	leaq	.Lanon.ec88cfe8160c27a9dec3209ea7295488.5(%rip), %rax
+	movq	%rax, 128(%rsp)
+	movq	$30, 136(%rsp)
+	movq	$0, 144(%rsp)
+	movw	$256, 152(%rsp)
+.Ltmp18:
+	leaq	240(%rsp), %rdi
+	leaq	80(%rsp), %rdx
+	movq	%rsi, 32(%rsp)
+	callq	*bevy_ecs::component::ComponentInfo::new@GOTPCREL(%rip)
+.Ltmp19:
+	cmpb	$0, 312(%rsp)
+	je	.LBB14_85
+.Ltmp20:
+	leaq	240(%rsp), %rsi
+	movq	200(%rsp), %rdi
+	callq	*bevy_ecs::storage::sparse_set::SparseSets::get_or_insert@GOTPCREL(%rip)
+.Ltmp21:
+.LBB14_85:
+	movups	240(%rsp), %xmm0
+	movdqu	256(%rsp), %xmm1
+	movaps	%xmm0, 80(%rsp)
+	movdqa	%xmm1, 96(%rsp)
+	movq	272(%rsp), %rax
+	movq	%rax, 112(%rsp)
+	movq	280(%rsp), %rax
+	movq	%rax, 192(%rsp)
+	movq	288(%rsp), %rax
+	movq	%rax, 48(%rsp)
+	movups	312(%rsp), %xmm0
+	movaps	%xmm0, 224(%rsp)
+	movdqu	296(%rsp), %xmm0
+	movdqa	%xmm0, 208(%rsp)
+	movq	32(%rsp), %rcx
+	movq	%rcx, %rax
+	movq	16(%rsp), %r15
+	cmpq	72(%r15), %rcx
+	jne	.LBB14_88
+.Ltmp23:
+	movq	72(%rsp), %rdi
+	movq	32(%rsp), %rsi
+	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
+.Ltmp24:
+	movq	80(%r15), %rax
+.LBB14_88:
+	movq	64(%r15), %rcx
+	imulq	$88, %rax, %rdx
+	movq	112(%rsp), %rsi
+	movq	%rsi, 32(%rcx,%rdx)
+	movaps	80(%rsp), %xmm0
+	movaps	96(%rsp), %xmm1
+	movups	%xmm1, 16(%rcx,%rdx)
+	movups	%xmm0, (%rcx,%rdx)
 	movq	192(%rsp), %rsi
-	movq	16(%rsp), %r14
-.LBB18_71:
+	movq	%rsi, 40(%rcx,%rdx)
+	movq	48(%rsp), %rsi
+	movq	%rsi, 48(%rcx,%rdx)
+	movaps	208(%rsp), %xmm0
+	movdqa	224(%rsp), %xmm1
+	movups	%xmm0, 56(%rcx,%rdx)
+	movdqu	%xmm1, 72(%rcx,%rdx)
+	incq	%rax
+	movq	%rax, 80(%r15)
+	movq	88(%r15), %rax
+	movq	96(%r15), %rcx
+	movabsq	$-300519420924227256, %rdi
+	andq	%rcx, %rdi
+	movdqu	(%rax,%rdi), %xmm0
+	pmovmskb	%xmm0, %edx
+	testl	%edx, %edx
+	jne	.LBB14_91
+	movl	$16, %esi
+.LBB14_90:
+	addq	%rsi, %rdi
+	andq	%rcx, %rdi
+	movdqu	(%rax,%rdi), %xmm0
+	pmovmskb	%xmm0, %edx
+	addq	$16, %rsi
+	testl	%edx, %edx
+	je	.LBB14_90
+.LBB14_91:
+	rep		bsfl	%edx, %edx
+	addq	%rdi, %rdx
+	andq	%rcx, %rdx
+	movzbl	(%rax,%rdx), %esi
+	testb	%sil, %sil
+	js	.LBB14_93
+	movdqa	(%rax), %xmm0
+	pmovmskb	%xmm0, %edx
+	rep		bsfl	%edx, %edx
+	movzbl	(%rax,%rdx), %esi
+.LBB14_93:
+	leaq	-16(%rdx), %rdi
+	andq	%rcx, %rdi
+	movb	$125, (%rax,%rdx)
+	movb	$125, 16(%rdi,%rax)
+	negq	%rdx
+	andb	$1, %sil
+	movzbl	%sil, %ecx
+	subq	%rcx, 104(%r15)
+	leaq	(%rdx,%rdx,2), %rdx
+	movq	%r14, -24(%rax,%rdx,8)
+	movq	%rbx, -16(%rax,%rdx,8)
+	leaq	(%rax,%rdx,8), %rcx
+	addq	$-8, %rcx
+	movq	32(%rsp), %rsi
+	movq	%rsi, -8(%rax,%rdx,8)
+	incq	112(%r15)
+	movq	(%rcx), %rbx
+	movq	40(%rsp), %rsi
+	cmpq	168(%rsp), %rsi
+	je	.LBB14_64
+.LBB14_94:
+	movq	24(%rsp), %rcx
+.LBB14_95:
 	movq	%rbx, (%rcx,%rsi,8)
 	incq	%rsi
-	movq	%rsi, 192(%rsp)
-	movq	736(%r14), %rbp
+	movq	%rsi, 176(%rsp)
+	movq	504(%r15), %rbx
 	movq	%rsi, 96(%rsp)
-	movdqu	176(%rsp), %xmm0
+	movdqu	160(%rsp), %xmm0
 	movdqa	%xmm0, 80(%rsp)
-.Ltmp38:
+.Ltmp32:
 	leaq	.Lanon.ec88cfe8160c27a9dec3209ea7295488.2(%rip), %rsi
 	leaq	240(%rsp), %rdi
 	leaq	80(%rsp), %r8
 	movl	$64, %edx
-	movq	64(%rsp), %rcx
-	movq	%rbp, %r9
+	movq	72(%rsp), %rcx
+	movq	%rbx, %r9
 	callq	*bevy_ecs::bundle::BundleInfo::new@GOTPCREL(%rip)
-.Ltmp39:
-	movdqu	240(%rsp), %xmm0
-	movdqu	256(%rsp), %xmm1
-	movdqa	%xmm1, 96(%rsp)
-	movdqa	%xmm0, 80(%rsp)
-	movq	736(%r14), %rsi
-	cmpq	720(%r14), %rsi
-	jne	.LBB18_75
-.Ltmp40:
-	movq	%r12, %rdi
+.Ltmp33:
+	movq	%r15, %rax
+	movq	240(%rsp), %r15
+	movq	248(%rsp), %r14
+	movq	504(%rax), %rsi
+	cmpq	496(%rax), %rsi
+	jne	.LBB14_99
+.Ltmp34:
+	movq	%rbp, %rdi
 	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
-.Ltmp41:
-	movq	736(%r14), %rsi
-.LBB18_75:
-	movq	728(%r14), %rax
+.Ltmp35:
+	movq	16(%rsp), %rdi
+	movq	504(%rdi), %rsi
+	jmp	.LBB14_100
+.LBB14_99:
+	movq	16(%rsp), %rdi
+.LBB14_100:
+	movq	488(%rdi), %rax
 	movq	%rsi, %rcx
 	shlq	$5, %rcx
-	movups	240(%rsp), %xmm0
-	movdqu	256(%rsp), %xmm1
-	movdqu	%xmm1, 16(%rax,%rcx)
-	movups	%xmm0, (%rax,%rcx)
+	movq	%r15, (%rax,%rcx)
+	movq	%r14, 8(%rax,%rcx)
+	movups	256(%rsp), %xmm0
+	movups	%xmm0, 16(%rax,%rcx)
 	incq	%rsi
-	movq	%rsi, 736(%r14)
-	movq	688(%r14), %rcx
-	movq	712(%r14), %rax
-	andq	%rcx, %r15
-	movdqu	(%rax,%r15), %xmm0
+	movq	%rsi, 504(%rdi)
+	movq	512(%rdi), %rax
+	movq	520(%rdi), %rcx
+	andq	%rcx, %r12
+	movdqu	(%rax,%r12), %xmm0
 	pmovmskb	%xmm0, %edx
 	testl	%edx, %edx
-	jne	.LBB18_78
+	movq	%rdi, %r14
+	jne	.LBB14_103
 	movl	$16, %esi
 	.p2align	4, 0x90
-.LBB18_77:
-	addq	%rsi, %r15
-	andq	%rcx, %r15
-	movdqu	(%rax,%r15), %xmm0
+.LBB14_102:
+	addq	%rsi, %r12
+	andq	%rcx, %r12
+	movdqu	(%rax,%r12), %xmm0
 	pmovmskb	%xmm0, %edx
 	addq	$16, %rsi
 	testl	%edx, %edx
-	je	.LBB18_77
-.LBB18_78:
-	bsfw	%dx, %dx
-	movzwl	%dx, %edx
-	addq	%r15, %rdx
+	je	.LBB14_102
+.LBB14_103:
+	rep		bsfl	%edx, %edx
+	addq	%r12, %rdx
 	andq	%rcx, %rdx
-	movzbl	(%rax,%rdx), %ebx
-	testb	%bl, %bl
-	js	.LBB18_80
+	movzbl	(%rax,%rdx), %esi
+	testb	%sil, %sil
+	js	.LBB14_105
 	movdqa	(%rax), %xmm0
 	pmovmskb	%xmm0, %edx
-	bsfw	%dx, %dx
-	movzwl	%dx, %edx
-	movzbl	(%rax,%rdx), %ebx
-.LBB18_80:
-	leaq	-16(%rdx), %rsi
-	andq	%rcx, %rsi
-	movb	$88, (%rax,%rdx)
-	movb	$88, 16(%rsi,%rax)
-	shlq	$4, %rdx
-	movq	%rax, %rcx
-	andb	$1, %bl
-	movzbl	%bl, %esi
-	subq	%rsi, 696(%r14)
-	subq	%rdx, %rcx
+	rep		bsfl	%edx, %edx
+	movzbl	(%rax,%rdx), %esi
+.LBB14_105:
+	leaq	-16(%rdx), %rdi
+	andq	%rcx, %rdi
+	movb	$112, (%rax,%rdx)
+	movb	$112, 16(%rdi,%rax)
 	negq	%rdx
-	movq	%r13, -16(%rax,%rdx)
-	movq	%rbp, -8(%rcx)
+	leaq	(%rdx,%rdx,2), %rdx
+	andb	$1, %sil
+	movzbl	%sil, %ecx
+	subq	%rcx, 528(%r14)
+	movabsq	$-1982567688456096919, %rcx
+	movq	%rcx, -24(%rax,%rdx,8)
+	movabsq	$-4670153314977083022, %rcx
+	movq	%rcx, -16(%rax,%rdx,8)
+	leaq	(%rax,%rdx,8), %rcx
 	addq	$-8, %rcx
-	incq	704(%r14)
-	jmp	.LBB18_15
-.LBB18_28:
-	movq	16(%rsp), %rax
-	cmpq	$0, 480(%rax)
-	jne	.LBB18_30
-.Ltmp10:
-	movq	64(%rsp), %rdi
-	movq	%rdi, %rsi
-	callq	hashbrown::raw::RawTable<T,A>::reserve_rehash
-.Ltmp11:
-.LBB18_30:
-	movq	16(%rsp), %rax
-	movq	552(%rax), %rbp
-	movq	$0, 80(%rsp)
-	leaq	.Lanon.ec88cfe8160c27a9dec3209ea7295488.0(%rip), %rax
-	movq	%rax, 88(%rsp)
-	movq	$30, 96(%rsp)
-	movq	$4, 112(%rsp)
-	movq	$4, 120(%rsp)
-	movq	$1, 128(%rsp)
-	movq	%r14, 136(%rsp)
-	movq	$0, 144(%rsp)
-	movw	$256, 152(%rsp)
-.Ltmp12:
-	leaq	240(%rsp), %rdi
-	leaq	80(%rsp), %rdx
-	movq	%rbp, %rsi
-	movq	%rdx, 40(%rsp)
-	callq	*bevy_ecs::component::ComponentInfo::new@GOTPCREL(%rip)
-.Ltmp13:
-	cmpb	$0, 312(%rsp)
-	je	.LBB18_32
-.Ltmp14:
-	leaq	240(%rsp), %rbx
-	movq	168(%rsp), %rdi
-	movq	%rbx, %rsi
-	callq	*bevy_ecs::storage::sparse_set::SparseSets::get_or_insert@GOTPCREL(%rip)
-.Ltmp15:
-.LBB18_32:
-	movq	320(%rsp), %rax
-	movq	%rax, 160(%rsp)
-	movups	304(%rsp), %xmm0
-	movaps	%xmm0, 144(%rsp)
-	movdqu	240(%rsp), %xmm0
-	movdqu	256(%rsp), %xmm1
-	movdqu	272(%rsp), %xmm2
-	movdqu	288(%rsp), %xmm3
-	movdqa	%xmm3, 128(%rsp)
-	movdqa	%xmm2, 112(%rsp)
-	movdqa	%xmm1, 96(%rsp)
-	movdqa	%xmm0, 80(%rsp)
-	movq	%rbp, %rax
-	movq	32(%rsp), %rcx
-	cmpq	(%rcx), %rbp
-	jne	.LBB18_35
-.Ltmp17:
-	movq	32(%rsp), %rdi
-	movq	%rbp, %rsi
-	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
-.Ltmp18:
-	movq	16(%rsp), %rax
-	movq	552(%rax), %rax
-.LBB18_35:
-	movq	16(%rsp), %rdi
-	movq	544(%rdi), %rcx
-	imulq	$88, %rax, %rdx
-	movq	160(%rsp), %rsi
-	movq	%rsi, 80(%rcx,%rdx)
-	movaps	144(%rsp), %xmm0
-	movups	%xmm0, 64(%rcx,%rdx)
-	movaps	80(%rsp), %xmm0
-	movdqa	96(%rsp), %xmm1
-	movdqa	112(%rsp), %xmm2
-	movdqa	128(%rsp), %xmm3
-	movdqu	%xmm3, 48(%rcx,%rdx)
-	movdqu	%xmm2, 32(%rcx,%rdx)
-	movdqu	%xmm1, 16(%rcx,%rdx)
-	movups	%xmm0, (%rcx,%rdx)
-	incq	%rax
-	movq	%rax, 552(%rdi)
-	movq	472(%rdi), %rcx
-	movq	496(%rdi), %rax
-	movabsq	$-4960261354937240200, %rdi
-	andq	%rcx, %rdi
-	movdqu	(%rax,%rdi), %xmm0
-	pmovmskb	%xmm0, %edx
-	testl	%edx, %edx
-	jne	.LBB18_38
-	movl	$16, %esi
-.LBB18_37:
-	addq	%rsi, %rdi
-	andq	%rcx, %rdi
-	movdqu	(%rax,%rdi), %xmm0
-	pmovmskb	%xmm0, %edx
-	addq	$16, %rsi
-	testl	%edx, %edx
-	je	.LBB18_37
-.LBB18_38:
-	bsfw	%dx, %dx
-	movzwl	%dx, %edx
-	addq	%rdi, %rdx
-	andq	%rcx, %rdx
-	movzbl	(%rax,%rdx), %esi
-	testb	%sil, %sil
-	js	.LBB18_40
-	movdqa	(%rax), %xmm0
-	pmovmskb	%xmm0, %edx
-	bsfw	%dx, %dx
-	movzwl	%dx, %edx
-	movzbl	(%rax,%rdx), %esi
-.LBB18_40:
-	leaq	-16(%rdx), %rdi
-	andq	%rcx, %rdi
-	movb	$93, (%rax,%rdx)
-	movb	$93, 16(%rdi,%rax)
-	shlq	$4, %rdx
-	movq	%rax, %rdi
-	andb	$1, %sil
-	movzbl	%sil, %ecx
-	movq	16(%rsp), %rsi
-	subq	%rcx, 480(%rsi)
-	subq	%rdx, %rdi
-	negq	%rdx
-	movq	%r14, -16(%rax,%rdx)
-	movq	%rbp, -8(%rdi)
-	addq	$-8, %rdi
-	incq	488(%rsi)
-	jmp	.LBB18_43
-.LBB18_53:
-	movq	16(%rsp), %rax
-	cmpq	$0, 480(%rax)
-	jne	.LBB18_55
-.Ltmp22:
-	movq	64(%rsp), %rdi
-	movq	%rdi, %rsi
-	callq	hashbrown::raw::RawTable<T,A>::reserve_rehash
-.Ltmp23:
-.LBB18_55:
-	movq	16(%rsp), %rax
-	movq	552(%rax), %rbx
-	movq	$0, 80(%rsp)
-	leaq	.Lanon.ec88cfe8160c27a9dec3209ea7295488.1(%rip), %rax
-	movq	%rax, 88(%rsp)
-	movq	$30, 96(%rsp)
-	movq	$4, 112(%rsp)
-	movq	$4, 120(%rsp)
-	movq	$1, 128(%rsp)
-	movq	%r14, 136(%rsp)
-	movq	$0, 144(%rsp)
-	movw	$256, 152(%rsp)
-.Ltmp24:
-	leaq	240(%rsp), %rdi
-	leaq	80(%rsp), %rdx
-	movq	%rbx, %rsi
-	movq	%rdx, 40(%rsp)
-	callq	*bevy_ecs::component::ComponentInfo::new@GOTPCREL(%rip)
+	movq	%rbx, -8(%rax,%rdx,8)
+	incq	536(%r14)
+	jmp	.LBB14_8
+.LBB14_106:
 .Ltmp25:
-	cmpb	$0, 312(%rsp)
-	je	.LBB18_57
-.Ltmp26:
-	leaq	240(%rsp), %rbp
-	movq	168(%rsp), %rdi
-	movq	%rbp, %rsi
-	callq	*bevy_ecs::storage::sparse_set::SparseSets::get_or_insert@GOTPCREL(%rip)
-.Ltmp27:
-.LBB18_57:
-	movq	320(%rsp), %rax
-	movq	%rax, 160(%rsp)
-	movups	304(%rsp), %xmm0
-	movaps	%xmm0, 144(%rsp)
-	movdqu	240(%rsp), %xmm0
-	movdqu	256(%rsp), %xmm1
-	movdqu	272(%rsp), %xmm2
-	movdqu	288(%rsp), %xmm3
-	movdqa	%xmm3, 128(%rsp)
-	movdqa	%xmm2, 112(%rsp)
-	movdqa	%xmm1, 96(%rsp)
-	movdqa	%xmm0, 80(%rsp)
-	movq	%rbx, %rax
-	movq	32(%rsp), %rdi
-	cmpq	(%rdi), %rbx
-	jne	.LBB18_60
-.Ltmp29:
-	movq	%rbx, %rsi
-	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
-.Ltmp30:
-	movq	16(%rsp), %rax
-	movq	552(%rax), %rax
-.LBB18_60:
-	movq	16(%rsp), %rdi
-	movq	544(%rdi), %rcx
-	imulq	$88, %rax, %rdx
-	movq	160(%rsp), %rsi
-	movq	%rsi, 80(%rcx,%rdx)
-	movaps	144(%rsp), %xmm0
-	movups	%xmm0, 64(%rcx,%rdx)
-	movaps	80(%rsp), %xmm0
-	movdqa	96(%rsp), %xmm1
-	movdqa	112(%rsp), %xmm2
-	movdqa	128(%rsp), %xmm3
-	movdqu	%xmm3, 48(%rcx,%rdx)
-	movdqu	%xmm2, 32(%rcx,%rdx)
-	movdqu	%xmm1, 16(%rcx,%rdx)
-	movups	%xmm0, (%rcx,%rdx)
-	incq	%rax
-	movq	%rax, 552(%rdi)
-	movq	472(%rdi), %rcx
-	movq	496(%rdi), %rax
-	movabsq	$-3597755997830336113, %rdi
-	andq	%rcx, %rdi
-	movdqu	(%rax,%rdi), %xmm0
-	pmovmskb	%xmm0, %edx
-	testl	%edx, %edx
-	jne	.LBB18_63
-	movl	$16, %esi
-.LBB18_62:
-	addq	%rsi, %rdi
-	andq	%rcx, %rdi
-	movdqu	(%rax,%rdi), %xmm0
-	pmovmskb	%xmm0, %edx
-	addq	$16, %rsi
-	testl	%edx, %edx
-	je	.LBB18_62
-.LBB18_63:
-	bsfw	%dx, %dx
-	movzwl	%dx, %edx
-	addq	%rdi, %rdx
-	andq	%rcx, %rdx
-	movzbl	(%rax,%rdx), %esi
-	testb	%sil, %sil
-	js	.LBB18_65
-	movdqa	(%rax), %xmm0
-	pmovmskb	%xmm0, %edx
-	bsfw	%dx, %dx
-	movzwl	%dx, %edx
-	movzbl	(%rax,%rdx), %esi
-.LBB18_65:
-	leaq	-16(%rdx), %rdi
-	andq	%rcx, %rdi
-	movb	$103, (%rax,%rdx)
-	movb	$103, 16(%rdi,%rax)
-	shlq	$4, %rdx
-	movq	%rax, %rdi
-	andb	$1, %sil
-	movzbl	%sil, %ecx
-	movq	16(%rsp), %rsi
-	subq	%rcx, 480(%rsi)
-	subq	%rdx, %rdi
-	negq	%rdx
-	movq	%r14, -16(%rax,%rdx)
-	movq	%rsi, %r14
-	movq	%rbx, -8(%rdi)
-	addq	$-8, %rdi
-	incq	488(%rsi)
-	jmp	.LBB18_68
-.LBB18_82:
-.Ltmp31:
-	movq	%rax, %rbx
-	jmp	.LBB18_52
-.LBB18_50:
-.Ltmp19:
-	movq	%rax, %rbx
-	jmp	.LBB18_52
-.LBB18_83:
-.Ltmp28:
-	movq	%rax, %rbx
-	movq	%rbp, 40(%rsp)
-	jmp	.LBB18_52
-.LBB18_51:
-.Ltmp16:
-	movq	%rbx, %rcx
-	movq	%rax, %rbx
-	movq	%rcx, 40(%rsp)
-.LBB18_52:
-	movq	40(%rsp), %rdi
+	movq	%rax, %r13
+	movq	192(%rsp), %rdi
+	movq	48(%rsp), %rsi
+	jmp	.LBB14_109
+.LBB14_107:
+.Ltmp13:
+	movq	%rax, %r13
+	movq	48(%rsp), %rdi
+	movq	24(%rsp), %rsi
+	jmp	.LBB14_111
+.LBB14_108:
+.Ltmp22:
+	movq	%rax, %r13
+	movq	280(%rsp), %rdi
+	movq	288(%rsp), %rsi
+.LBB14_109:
 	callq	core::ptr::drop_in_place<bevy_ecs::component::ComponentInfo>
-	jmp	.LBB18_86
-.LBB18_84:
-.Ltmp42:
-	movq	%rax, %rbx
-	leaq	80(%rsp), %rdi
-	callq	core::ptr::drop_in_place<bevy_ecs::bundle::BundleInfo>
-	jmp	.LBB18_113
-.LBB18_85:
-.Ltmp34:
-	movq	%rax, %rbx
-.LBB18_86:
-.Ltmp35:
-	leaq	176(%rsp), %rdi
-	callq	core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::component::ComponentId>>
+	jmp	.LBB14_115
+.LBB14_110:
+.Ltmp10:
+	movq	%rax, %r13
+	movq	280(%rsp), %rdi
+	movq	288(%rsp), %rsi
+.LBB14_111:
+	callq	core::ptr::drop_in_place<bevy_ecs::component::ComponentInfo>
+	movl	$8, %eax
+	jmp	.LBB14_114
+.LBB14_112:
 .Ltmp36:
-	jmp	.LBB18_113
-.LBB18_87:
-.Ltmp37:
+	movq	%rax, %r13
+	movq	%r15, %rdi
+	movq	%r14, %rsi
+	callq	core::ptr::drop_in_place<bevy_ecs::bundle::BundleInfo>
+	jmp	.LBB14_118
+.LBB14_113:
+.Ltmp28:
+	movq	%rax, %r13
+	movq	160(%rsp), %rax
+.LBB14_114:
+	movq	%rax, 24(%rsp)
+.LBB14_115:
+	movq	168(%rsp), %rsi
+.Ltmp29:
+	movq	24(%rsp), %rdi
+	callq	core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::component::ComponentId>>
+.Ltmp30:
+	jmp	.LBB14_118
+.LBB14_116:
+.Ltmp31:
 	callq	*core::panicking::panic_cannot_unwind@GOTPCREL(%rip)
 	ud2
-.LBB18_112:
-.Ltmp45:
-	movq	%rax, %rbx
-.LBB18_113:
-	leaq	408(%rsp), %rdi
+.LBB14_117:
+.Ltmp39:
+	movq	%rax, %r13
+.LBB14_118:
+	movq	184(%rsp), %rdi
+	movq	328(%rsp), %rsi
 	callq	core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<(bevy_ecs::entity::Entity,(world_insert_or_spawn_batch::A,world_insert_or_spawn_batch::B))>>
-	jmp	.LBB18_114
-.LBB18_93:
-.Ltmp68:
-	movq	%rax, %rbx
-	movq	%r13, 184(%rsp)
-	leaq	176(%rsp), %rdi
+	jmp	.LBB14_120
+.LBB14_119:
+.Ltmp62:
+	movq	%rax, %r13
+	movq	184(%rsp), %rdi
+	movq	328(%rsp), %rsi
 	callq	core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<(bevy_ecs::entity::Entity,(world_insert_or_spawn_batch::A,world_insert_or_spawn_batch::B))>>
-.Ltmp69:
-	leaq	216(%rsp), %rdi
+	movq	208(%rsp), %rdi
+	movq	216(%rsp), %rsi
+.Ltmp63:
 	callq	core::ptr::drop_in_place<alloc::vec::Vec<bevy_ecs::entity::Entity>>
-.Ltmp70:
-.LBB18_114:
-	movq	%rbx, %rdi
+.Ltmp64:
+.LBB14_120:
+	movq	%r13, %rdi
 	callq	_Unwind_Resume@PLT
 	ud2
-.LBB18_111:
-.Ltmp71:
+.LBB14_121:
+.Ltmp65:
 	callq	*core::panicking::panic_cannot_unwind@GOTPCREL(%rip)
 	ud2
-.Lfunc_end18:
-	.size	world_insert_or_spawn_batch, .Lfunc_end18-world_insert_or_spawn_batch
+.Lfunc_end14:
+	.size	world_insert_or_spawn_batch, .Lfunc_end14-world_insert_or_spawn_batch
 	.cfi_endproc
 	.section	.gcc_except_table.world_insert_or_spawn_batch,"a",@progbits
-	.p2align	2
-GCC_except_table18:
-.Lexception1:
+	.p2align	2, 0x0
+GCC_except_table14:
+.Lexception0:
 	.byte	255
-	.byte	255
+	.byte	155
+	.uleb128 .Lttbase0-.Lttbaseref0
+.Lttbaseref0:
 	.byte	1
-	.uleb128 .Lcst_end1-.Lcst_begin1
-.Lcst_begin1:
-	.uleb128 .Ltmp6-.Lfunc_begin1
-	.uleb128 .Ltmp44-.Ltmp6
-	.uleb128 .Ltmp45-.Lfunc_begin1
+	.uleb128 .Lcst_end0-.Lcst_begin0
+.Lcst_begin0:
+	.uleb128 .Ltmp0-.Lfunc_begin0
+	.uleb128 .Ltmp38-.Ltmp0
+	.uleb128 .Ltmp39-.Lfunc_begin0
 	.byte	0
-	.uleb128 .Ltmp46-.Lfunc_begin1
-	.uleb128 .Ltmp61-.Ltmp46
-	.uleb128 .Ltmp68-.Lfunc_begin1
+	.uleb128 .Ltmp40-.Lfunc_begin0
+	.uleb128 .Ltmp55-.Ltmp40
+	.uleb128 .Ltmp62-.Lfunc_begin0
 	.byte	0
-	.uleb128 .Ltmp61-.Lfunc_begin1
-	.uleb128 .Ltmp66-.Ltmp61
-	.byte	0
-	.byte	0
-	.uleb128 .Ltmp66-.Lfunc_begin1
-	.uleb128 .Ltmp57-.Ltmp66
-	.uleb128 .Ltmp68-.Lfunc_begin1
-	.byte	0
-	.uleb128 .Ltmp57-.Lfunc_begin1
-	.uleb128 .Ltmp62-.Ltmp57
+	.uleb128 .Ltmp55-.Lfunc_begin0
+	.uleb128 .Ltmp44-.Ltmp55
 	.byte	0
 	.byte	0
-	.uleb128 .Ltmp62-.Lfunc_begin1
-	.uleb128 .Ltmp65-.Ltmp62
-	.uleb128 .Ltmp68-.Lfunc_begin1
+	.uleb128 .Ltmp44-.Lfunc_begin0
+	.uleb128 .Ltmp51-.Ltmp44
+	.uleb128 .Ltmp62-.Lfunc_begin0
 	.byte	0
-	.uleb128 .Ltmp8-.Lfunc_begin1
+	.uleb128 .Ltmp51-.Lfunc_begin0
+	.uleb128 .Ltmp56-.Ltmp51
+	.byte	0
+	.byte	0
+	.uleb128 .Ltmp56-.Lfunc_begin0
+	.uleb128 .Ltmp59-.Ltmp56
+	.uleb128 .Ltmp62-.Lfunc_begin0
+	.byte	0
+	.uleb128 .Ltmp2-.Lfunc_begin0
+	.uleb128 .Ltmp3-.Ltmp2
+	.uleb128 .Ltmp39-.Lfunc_begin0
+	.byte	0
+	.uleb128 .Ltmp14-.Lfunc_begin0
+	.uleb128 .Ltmp7-.Ltmp14
+	.uleb128 .Ltmp28-.Lfunc_begin0
+	.byte	0
+	.uleb128 .Ltmp8-.Lfunc_begin0
 	.uleb128 .Ltmp9-.Ltmp8
-	.uleb128 .Ltmp45-.Lfunc_begin1
+	.uleb128 .Ltmp10-.Lfunc_begin0
 	.byte	0
-	.uleb128 .Ltmp20-.Lfunc_begin1
-	.uleb128 .Ltmp33-.Ltmp20
-	.uleb128 .Ltmp34-.Lfunc_begin1
+	.uleb128 .Ltmp11-.Lfunc_begin0
+	.uleb128 .Ltmp12-.Ltmp11
+	.uleb128 .Ltmp13-.Lfunc_begin0
 	.byte	0
-	.uleb128 .Ltmp38-.Lfunc_begin1
-	.uleb128 .Ltmp39-.Ltmp38
-	.uleb128 .Ltmp45-.Lfunc_begin1
+	.uleb128 .Ltmp16-.Lfunc_begin0
+	.uleb128 .Ltmp19-.Ltmp16
+	.uleb128 .Ltmp28-.Lfunc_begin0
 	.byte	0
-	.uleb128 .Ltmp40-.Lfunc_begin1
-	.uleb128 .Ltmp41-.Ltmp40
-	.uleb128 .Ltmp42-.Lfunc_begin1
+	.uleb128 .Ltmp20-.Lfunc_begin0
+	.uleb128 .Ltmp21-.Ltmp20
+	.uleb128 .Ltmp22-.Lfunc_begin0
 	.byte	0
-	.uleb128 .Ltmp10-.Lfunc_begin1
-	.uleb128 .Ltmp13-.Ltmp10
-	.uleb128 .Ltmp34-.Lfunc_begin1
+	.uleb128 .Ltmp23-.Lfunc_begin0
+	.uleb128 .Ltmp24-.Ltmp23
+	.uleb128 .Ltmp25-.Lfunc_begin0
 	.byte	0
-	.uleb128 .Ltmp14-.Lfunc_begin1
-	.uleb128 .Ltmp15-.Ltmp14
-	.uleb128 .Ltmp16-.Lfunc_begin1
+	.uleb128 .Ltmp32-.Lfunc_begin0
+	.uleb128 .Ltmp33-.Ltmp32
+	.uleb128 .Ltmp39-.Lfunc_begin0
 	.byte	0
-	.uleb128 .Ltmp17-.Lfunc_begin1
-	.uleb128 .Ltmp18-.Ltmp17
-	.uleb128 .Ltmp19-.Lfunc_begin1
+	.uleb128 .Ltmp34-.Lfunc_begin0
+	.uleb128 .Ltmp35-.Ltmp34
+	.uleb128 .Ltmp36-.Lfunc_begin0
 	.byte	0
-	.uleb128 .Ltmp22-.Lfunc_begin1
-	.uleb128 .Ltmp25-.Ltmp22
-	.uleb128 .Ltmp34-.Lfunc_begin1
-	.byte	0
-	.uleb128 .Ltmp26-.Lfunc_begin1
-	.uleb128 .Ltmp27-.Ltmp26
-	.uleb128 .Ltmp28-.Lfunc_begin1
-	.byte	0
-	.uleb128 .Ltmp29-.Lfunc_begin1
+	.uleb128 .Ltmp29-.Lfunc_begin0
 	.uleb128 .Ltmp30-.Ltmp29
-	.uleb128 .Ltmp31-.Lfunc_begin1
-	.byte	0
-	.uleb128 .Ltmp35-.Lfunc_begin1
-	.uleb128 .Ltmp36-.Ltmp35
-	.uleb128 .Ltmp37-.Lfunc_begin1
-	.byte	0
-	.uleb128 .Ltmp69-.Lfunc_begin1
-	.uleb128 .Ltmp70-.Ltmp69
-	.uleb128 .Ltmp71-.Lfunc_begin1
-	.byte	0
-	.uleb128 .Ltmp70-.Lfunc_begin1
-	.uleb128 .Lfunc_end18-.Ltmp70
+	.uleb128 .Ltmp31-.Lfunc_begin0
+	.byte	1
+	.uleb128 .Ltmp63-.Lfunc_begin0
+	.uleb128 .Ltmp64-.Ltmp63
+	.uleb128 .Ltmp65-.Lfunc_begin0
+	.byte	1
+	.uleb128 .Ltmp64-.Lfunc_begin0
+	.uleb128 .Lfunc_end14-.Ltmp64
 	.byte	0
 	.byte	0
-.Lcst_end1:
-	.p2align	2
+.Lcst_end0:
+	.byte	127
+	.byte	0
+	.p2align	2, 0x0
+.Lttbase0:
+	.byte	0
+	.p2align	2, 0x0
 
 	.type	.Lanon.ec88cfe8160c27a9dec3209ea7295488.0,@object
 	.section	.rodata..Lanon.ec88cfe8160c27a9dec3209ea7295488.0,"a",@progbits
 .Lanon.ec88cfe8160c27a9dec3209ea7295488.0:
-	.ascii	"world_insert_or_spawn_batch::A"
-	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.0, 30
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/0607116/crates/bevy_ecs/src/archetype.rs"
+	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.0, 95
 
 	.type	.Lanon.ec88cfe8160c27a9dec3209ea7295488.1,@object
-	.section	.rodata..Lanon.ec88cfe8160c27a9dec3209ea7295488.1,"a",@progbits
+	.section	.data.rel.ro..Lanon.ec88cfe8160c27a9dec3209ea7295488.1,"aw",@progbits
+	.p2align	3, 0x0
 .Lanon.ec88cfe8160c27a9dec3209ea7295488.1:
-	.ascii	"world_insert_or_spawn_batch::B"
-	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.1, 30
+	.quad	.Lanon.ec88cfe8160c27a9dec3209ea7295488.0
+	.asciz	"_\000\000\000\000\000\000\000\260\001\000\000\t\000\000"
+	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.1, 24
 
 	.type	.Lanon.ec88cfe8160c27a9dec3209ea7295488.2,@object
 	.section	.rodata..Lanon.ec88cfe8160c27a9dec3209ea7295488.2,"a",@progbits
@@ -3118,31 +3381,29 @@ GCC_except_table18:
 	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.2, 64
 
 	.type	.Lanon.ec88cfe8160c27a9dec3209ea7295488.3,@object
-	.section	.rodata..Lanon.ec88cfe8160c27a9dec3209ea7295488.3,"a",@progbits
+	.section	.data.rel.ro..Lanon.ec88cfe8160c27a9dec3209ea7295488.3,"aw",@progbits
+	.p2align	3, 0x0
 .Lanon.ec88cfe8160c27a9dec3209ea7295488.3:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/2ec38d1/crates/bevy_ecs/src/archetype.rs"
-	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.3, 95
+	.quad	.Lanon.ec88cfe8160c27a9dec3209ea7295488.0
+	.asciz	"_\000\000\000\000\000\000\000\333\001\000\000\026\000\000"
+	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.3, 24
 
 	.type	.Lanon.ec88cfe8160c27a9dec3209ea7295488.4,@object
-	.section	.data.rel.ro..Lanon.ec88cfe8160c27a9dec3209ea7295488.4,"aw",@progbits
-	.p2align	3
+	.section	.rodata..Lanon.ec88cfe8160c27a9dec3209ea7295488.4,"a",@progbits
 .Lanon.ec88cfe8160c27a9dec3209ea7295488.4:
-	.quad	.Lanon.ec88cfe8160c27a9dec3209ea7295488.3
-	.asciz	"_\000\000\000\000\000\000\000\255\001\000\000\t\000\000"
-	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.4, 24
+	.ascii	"world_insert_or_spawn_batch::A"
+	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.4, 30
 
 	.type	.Lanon.ec88cfe8160c27a9dec3209ea7295488.5,@object
-	.section	.data.rel.ro..Lanon.ec88cfe8160c27a9dec3209ea7295488.5,"aw",@progbits
-	.p2align	3
+	.section	.rodata..Lanon.ec88cfe8160c27a9dec3209ea7295488.5,"a",@progbits
 .Lanon.ec88cfe8160c27a9dec3209ea7295488.5:
-	.quad	.Lanon.ec88cfe8160c27a9dec3209ea7295488.3
-	.asciz	"_\000\000\000\000\000\000\000\330\001\000\000\026\000\000"
-	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.5, 24
+	.ascii	"world_insert_or_spawn_batch::B"
+	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.5, 30
 
 	.hidden	DW.ref.rust_eh_personality
 	.weak	DW.ref.rust_eh_personality
 	.section	.data.DW.ref.rust_eh_personality,"aGw",@progbits,DW.ref.rust_eh_personality,comdat
-	.p2align	3
+	.p2align	3, 0x0
 	.type	DW.ref.rust_eh_personality,@object
 	.size	DW.ref.rust_eh_personality, 8
 DW.ref.rust_eh_personality:

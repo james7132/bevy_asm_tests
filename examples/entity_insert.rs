@@ -7,6 +7,6 @@ pub struct A(f32);
 pub struct B(f32);
 
 #[no_mangle]
-fn entity_insert(mut entity: EntityMut<'_>, component: A) {
+fn entity_insert(mut entity: EntityWorldMut<'_>, component: A) {
     entity.insert(component);
 }

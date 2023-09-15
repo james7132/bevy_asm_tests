@@ -8,6 +8,6 @@ pub struct A(f32);
 pub struct B(f32);
 
 #[no_mangle]
-fn entity_remove(mut entity: EntityMut<'_>) {
+fn entity_remove(mut entity: EntityWorldMut<'_>) {
     black_box(entity.remove::<A>());
 }

@@ -1,5 +1,5 @@
 	.text
-	.file	"query_for_each_sparse.1ebd88e1-cgu.0"
+	.file	"query_for_each_sparse.a2c07d60da66cf9-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4, 0x90
@@ -18,82 +18,100 @@ query_for_each:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
 	.cfi_def_cfa_offset 56
-	subq	$16, %rsp
-	.cfi_def_cfa_offset 72
 	.cfi_offset %rbx, -56
 	.cfi_offset %r12, -48
 	.cfi_offset %r13, -40
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
+	movq	(%rdi), %rsi
 	movq	8(%rdi), %rax
-	movq	328(%rax), %r9
+	movq	296(%rsi), %rdx
+	movq	304(%rsi), %r8
+	movq	264(%rax), %r9
+	movq	280(%rax), %r10
+	xorl	%ecx, %ecx
+	cmpq	%rdx, %r10
+	jbe	.LBB0_5
 	testq	%r9, %r9
-	je	.LBB0_6
-	movq	(%rdi), %rcx
-	movl	20(%rdi), %r11d
-	movq	336(%rax), %rdx
-	movq	344(%rax), %rsi
-	movq	168(%rcx), %rdi
-	movq	%rcx, 8(%rsp)
-	movq	216(%rcx), %rbx
+	je	.LBB0_5
 	shlq	$4, %rdx
-	movq	8(%rbx,%rdx), %rdx
-	leaq	(%rdx,%rdx,8), %rcx
+	cmpq	$0, (%r9,%rdx)
+	je	.LBB0_3
+	movq	8(%r9,%rdx), %rcx
+	leaq	(%rcx,%rcx,8), %rcx
 	shlq	$4, %rcx
-	leaq	(%rdi,%rcx), %r8
-	shlq	$4, %rsi
-	movq	8(%rbx,%rsi), %rsi
-	leaq	(%rsi,%rsi,8), %rbx
-	shlq	$4, %rbx
-	leaq	(%rdi,%rbx), %r13
-	movq	320(%rax), %r10
-	leaq	(%r10,%r9,4), %rax
-	movq	%rax, (%rsp)
-	leaq	(%rdi,%rcx), %r15
-	addq	$128, %r15
-	leaq	(%rdi,%rbx), %r12
-	addq	$128, %r12
-	jmp	.LBB0_3
-	.p2align	4, 0x90
-.LBB0_2:
-	cmpq	(%rsp), %r10
-	je	.LBB0_6
-.LBB0_3:
-	movl	(%r10), %ecx
-	addq	$4, %r10
-	movq	8(%rsp), %rax
-	movq	144(%rax), %r14
-	imulq	$152, %rcx, %rbx
-	movq	136(%r14,%rbx), %rcx
-	testq	%rcx, %rcx
-	je	.LBB0_2
-	movq	128(%r14,%rbx), %rbx
-	addq	$4, %rbx
-	.p2align	4, 0x90
+	addq	216(%rax), %rcx
 .LBB0_5:
-	movl	(%rbx), %eax
-	movq	(%r15), %rdi
-	movl	4(%rdi,%rax,8), %edi
-	movq	(%r8), %rsi
-	imulq	%rdi, %rsi
-	movq	40(%r8), %rdx
-	movq	80(%r8), %r14
-	movq	(%r12), %rbp
-	movq	40(%r13), %r9
-	movl	4(%rbp,%rax,8), %eax
-	imulq	(%r13), %rax
-	movss	(%r9,%rax), %xmm0
-	movl	%r11d, (%r14,%rdi,4)
-	addss	(%rdx,%rsi), %xmm0
-	movss	%xmm0, (%rdx,%rsi)
-	addq	$12, %rbx
-	decq	%rcx
-	jne	.LBB0_5
-	jmp	.LBB0_2
+	xorl	%edx, %edx
+	cmpq	%r8, %r10
+	jbe	.LBB0_10
 .LBB0_6:
-	addq	$16, %rsp
-	.cfi_def_cfa_offset 56
+	testq	%r9, %r9
+	je	.LBB0_10
+	shlq	$4, %r8
+	cmpq	$0, (%r9,%r8)
+	je	.LBB0_8
+	movq	8(%r9,%r8), %rdx
+	leaq	(%rdx,%rdx,8), %rdx
+	shlq	$4, %rdx
+	addq	216(%rax), %rdx
+	jmp	.LBB0_10
+.LBB0_3:
+	xorl	%ecx, %ecx
+	xorl	%edx, %edx
+	cmpq	%r8, %r10
+	ja	.LBB0_6
+	jmp	.LBB0_10
+.LBB0_8:
+	xorl	%edx, %edx
+.LBB0_10:
+	movq	288(%rsi), %r8
+	testq	%r8, %r8
+	je	.LBB0_16
+	movl	20(%rdi), %edi
+	movq	272(%rsi), %rsi
+	leaq	(%rsi,%r8,4), %r8
+	jmp	.LBB0_13
+	.p2align	4, 0x90
+.LBB0_12:
+	cmpq	%r8, %rsi
+	je	.LBB0_16
+.LBB0_13:
+	movl	(%rsi), %r10d
+	addq	$4, %rsi
+	imulq	$152, %r10, %r11
+	addq	152(%rax), %r11
+	cmpq	%r10, 168(%rax)
+	movl	$0, %r9d
+	cmovbeq	%r9, %r11
+	movq	88(%r11), %r10
+	testq	%r10, %r10
+	je	.LBB0_12
+	movq	72(%r11), %r11
+	addq	$4, %r11
+	.p2align	4, 0x90
+.LBB0_15:
+	movl	(%r11), %ebx
+	movq	120(%rcx), %r14
+	movl	4(%r14,%rbx,8), %r14d
+	movq	8(%rcx), %r15
+	imulq	%r14, %r15
+	movq	16(%rcx), %r12
+	movq	72(%rcx), %r13
+	movq	16(%rdx), %rbp
+	movq	120(%rdx), %r9
+	movl	4(%r9,%rbx,8), %r9d
+	imulq	8(%rdx), %r9
+	movss	(%rbp,%r9), %xmm0
+	movl	%edi, (%r13,%r14,4)
+	addss	(%r12,%r15), %xmm0
+	movss	%xmm0, (%r12,%r15)
+	addq	$12, %r11
+	decq	%r10
+	jne	.LBB0_15
+	jmp	.LBB0_12
+.LBB0_16:
 	popq	%rbx
 	.cfi_def_cfa_offset 48
 	popq	%r12
