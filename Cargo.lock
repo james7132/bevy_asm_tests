@@ -76,7 +76,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs"
 version = "0.12.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#060711669903306c59eaea427498948992f0e768"
+source = "git+https://github.com/JoJoJet/bevy?branch=optimize_validate_world#c9f9133ed48cff8637de7daa9edb0e0fe980e2a7"
 dependencies = [
  "async-channel",
  "bevy_ecs_macros",
@@ -96,7 +96,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs_macros"
 version = "0.12.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#060711669903306c59eaea427498948992f0e768"
+source = "git+https://github.com/JoJoJet/bevy?branch=optimize_validate_world#c9f9133ed48cff8637de7daa9edb0e0fe980e2a7"
 dependencies = [
  "bevy_macro_utils",
  "proc-macro2",
@@ -107,7 +107,7 @@ dependencies = [
 [[package]]
 name = "bevy_macro_utils"
 version = "0.12.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#060711669903306c59eaea427498948992f0e768"
+source = "git+https://github.com/JoJoJet/bevy?branch=optimize_validate_world#c9f9133ed48cff8637de7daa9edb0e0fe980e2a7"
 dependencies = [
  "quote",
  "rustc-hash",
@@ -118,12 +118,12 @@ dependencies = [
 [[package]]
 name = "bevy_ptr"
 version = "0.12.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#060711669903306c59eaea427498948992f0e768"
+source = "git+https://github.com/JoJoJet/bevy?branch=optimize_validate_world#c9f9133ed48cff8637de7daa9edb0e0fe980e2a7"
 
 [[package]]
 name = "bevy_reflect"
 version = "0.12.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#060711669903306c59eaea427498948992f0e768"
+source = "git+https://github.com/JoJoJet/bevy?branch=optimize_validate_world#c9f9133ed48cff8637de7daa9edb0e0fe980e2a7"
 dependencies = [
  "bevy_ptr",
  "bevy_reflect_derive",
@@ -139,7 +139,7 @@ dependencies = [
 [[package]]
 name = "bevy_reflect_derive"
 version = "0.12.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#060711669903306c59eaea427498948992f0e768"
+source = "git+https://github.com/JoJoJet/bevy?branch=optimize_validate_world#c9f9133ed48cff8637de7daa9edb0e0fe980e2a7"
 dependencies = [
  "bevy_macro_utils",
  "bit-set",
@@ -152,7 +152,7 @@ dependencies = [
 [[package]]
 name = "bevy_tasks"
 version = "0.12.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#060711669903306c59eaea427498948992f0e768"
+source = "git+https://github.com/JoJoJet/bevy?branch=optimize_validate_world#c9f9133ed48cff8637de7daa9edb0e0fe980e2a7"
 dependencies = [
  "async-channel",
  "async-executor",
@@ -165,7 +165,7 @@ dependencies = [
 [[package]]
 name = "bevy_utils"
 version = "0.12.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#060711669903306c59eaea427498948992f0e768"
+source = "git+https://github.com/JoJoJet/bevy?branch=optimize_validate_world#c9f9133ed48cff8637de7daa9edb0e0fe980e2a7"
 dependencies = [
  "ahash",
  "bevy_utils_proc_macros",
@@ -181,7 +181,7 @@ dependencies = [
 [[package]]
 name = "bevy_utils_proc_macros"
 version = "0.12.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#060711669903306c59eaea427498948992f0e768"
+source = "git+https://github.com/JoJoJet/bevy?branch=optimize_validate_world#c9f9133ed48cff8637de7daa9edb0e0fe980e2a7"
 dependencies = [
  "proc-macro2",
  "quote",

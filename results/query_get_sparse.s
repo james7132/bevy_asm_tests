@@ -1,5 +1,5 @@
 	.text
-	.file	"query_get_sparse.f9f8140f1ab0139b-cgu.0"
+	.file	"query_get_sparse.d04918bef90d0fe6-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4, 0x90

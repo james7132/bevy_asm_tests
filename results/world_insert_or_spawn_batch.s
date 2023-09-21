@@ -1,5 +1,5 @@
 	.text
-	.file	"world_insert_or_spawn_batch.42d8dff60e736b49-cgu.0"
+	.file	"world_insert_or_spawn_batch.bb1a85a00ff01800-cgu.0"
 	.section	".text.core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<(bevy_ecs::entity::Entity,(world_insert_or_spawn_batch::A,world_insert_or_spawn_batch::B))>>","ax",@progbits
 	.p2align	4, 0x90
 	.type	core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<(bevy_ecs::entity::Entity,(world_insert_or_spawn_batch::A,world_insert_or_spawn_batch::B))>>,@function
@@ -259,16 +259,17 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$5, %rsi
 	movl	$4, %r14d
 	cmovaeq	%rsi, %r14
-	movabsq	$104811045873349726, %rcx
 	xorl	%esi, %esi
-	cmpq	%rcx, %r14
-	setb	%sil
-	imulq	$88, %r14, %rdx
+	movq	%r14, %rcx
+	shrq	$58, %rcx
+	sete	%sil
+	movq	%r14, %rdx
+	shlq	$5, %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB7_3
 	movq	(%rbx), %rcx
-	imulq	$88, %rax, %rax
+	shlq	$5, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -341,16 +342,16 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$5, %rsi
 	movl	$4, %r14d
 	cmovaeq	%rsi, %r14
+	movabsq	$104811045873349726, %rcx
 	xorl	%esi, %esi
-	movq	%r14, %rcx
-	shrq	$60, %rcx
-	sete	%sil
-	leaq	(,%r14,8), %rdx
+	cmpq	%rcx, %r14
+	setb	%sil
+	imulq	$88, %r14, %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB8_3
 	movq	(%rbx), %rcx
-	shlq	$3, %rax
+	imulq	$88, %rax, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -425,17 +426,16 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmovaeq	%rsi, %r14
 	xorl	%esi, %esi
 	movq	%r14, %rcx
-	shrq	$58, %rcx
+	shrq	$60, %rcx
 	sete	%sil
-	movq	%r14, %rdx
-	shlq	$5, %rdx
-	shlq	$3, %rsi
+	leaq	(,%r14,8), %rdx
+	shlq	$2, %rsi
 	testq	%rax, %rax
 	je	.LBB9_3
 	movq	(%rbx), %rcx
-	shlq	$5, %rax
+	shlq	$3, %rax
 	movq	%rcx, 8(%rsp)
-	movq	$8, 16(%rsp)
+	movq	$4, 16(%rsp)
 	movq	%rax, 24(%rsp)
 	jmp	.LBB9_4
 .LBB9_3:
@@ -511,13 +511,13 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	shrq	$60, %rcx
 	sete	%sil
 	leaq	(,%r14,8), %rdx
-	shlq	$2, %rsi
+	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB10_3
 	movq	(%rbx), %rcx
 	shlq	$3, %rax
 	movq	%rcx, 8(%rsp)
-	movq	$4, 16(%rsp)
+	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
 	jmp	.LBB10_4
 .LBB10_3:
@@ -2189,28 +2189,28 @@ hashbrown::raw::RawTable<T,A>::reserve_rehash:
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI14_0:
-	.zero	16,112
+	.zero	16,103
 .LCPI14_1:
-	.byte	105
-	.byte	51
-	.byte	104
-	.byte	2
-	.byte	49
-	.byte	129
-	.byte	124
-	.byte	228
-	.byte	114
-	.byte	145
-	.byte	45
-	.byte	182
-	.byte	77
-	.byte	72
-	.byte	48
-	.byte	191
+	.byte	150
+	.byte	101
+	.byte	94
+	.byte	52
+	.byte	240
+	.byte	159
+	.byte	119
+	.byte	58
+	.byte	239
+	.byte	31
+	.byte	177
+	.byte	171
+	.byte	213
+	.byte	46
+	.byte	138
+	.byte	156
 .LCPI14_2:
-	.zero	16,11
+	.zero	16,3
 .LCPI14_3:
-	.zero	16,125
+	.zero	16,126
 	.section	.text.world_insert_or_spawn_batch,"ax",@progbits
 	.globl	world_insert_or_spawn_batch
 	.p2align	4, 0x90
@@ -2253,7 +2253,7 @@ world_insert_or_spawn_batch:
 	shlq	$4, %rax
 	addq	184(%rsp), %rax
 	movq	%rax, 352(%rsp)
-	movabsq	$-2270317404999776739, %r12
+	movabsq	$-3568677092711924658, %r12
 	movl	760(%r14), %eax
 	movl	%eax, 68(%rsp)
 	leaq	488(%r14), %rbp
@@ -2712,10 +2712,10 @@ world_insert_or_spawn_batch:
 	callq	hashbrown::raw::RawTable<T,A>::reserve_rehash
 .Ltmp3:
 .LBB14_49:
-	movabsq	$-7532331098027703284, %rbx
+	movabsq	$19979787217326158, %rbx
 	movq	%r14, %rcx
-	movabsq	$-2929124292082964719, %r15
-	movabsq	$1704093552351749861, %r14
+	movabsq	$-735620314498484544, %r15
+	movabsq	$512786625045126592, %r14
 	movq	$8, 160(%rsp)
 	pxor	%xmm0, %xmm0
 	movdqu	%xmm0, 168(%rsp)
@@ -2772,9 +2772,9 @@ world_insert_or_spawn_batch:
 	xorl	%esi, %esi
 	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
 .Ltmp15:
-	movabsq	$5161047740968808003, %rbx
-	movabsq	$3893310790289506856, %r14
-	movabsq	$-300519420924227256, %rdi
+	movabsq	$-4171830141351967397, %rbx
+	movabsq	$616562911678838443, %r14
+	movabsq	$-244722698453483641, %rdi
 	movq	160(%rsp), %rax
 	movq	176(%rsp), %rcx
 	movq	%rax, 24(%rsp)
@@ -2856,7 +2856,7 @@ world_insert_or_spawn_batch:
 	movq	$4, 104(%rsp)
 	movq	$4, 112(%rsp)
 	movq	$0, 120(%rsp)
-	leaq	.Lanon.ec88cfe8160c27a9dec3209ea7295488.4(%rip), %rax
+	leaq	.Lanon.ec88cfe8160c27a9dec3209ea7295488.5(%rip), %rax
 	movq	%rax, 128(%rsp)
 	movq	$30, 136(%rsp)
 	movq	$0, 144(%rsp)
@@ -2950,8 +2950,8 @@ world_insert_or_spawn_batch:
 .LBB14_79:
 	leaq	-16(%rdx), %rdi
 	andq	%rcx, %rdi
-	movb	$11, (%rax,%rdx)
-	movb	$11, 16(%rdi,%rax)
+	movb	$3, (%rax,%rdx)
+	movb	$3, 16(%rdi,%rax)
 	negq	%rdx
 	andb	$1, %sil
 	movzbl	%sil, %ecx
@@ -2982,7 +2982,7 @@ world_insert_or_spawn_batch:
 	movq	$4, 104(%rsp)
 	movq	$4, 112(%rsp)
 	movq	$0, 120(%rsp)
-	leaq	.Lanon.ec88cfe8160c27a9dec3209ea7295488.5(%rip), %rax
+	leaq	.Lanon.ec88cfe8160c27a9dec3209ea7295488.4(%rip), %rax
 	movq	%rax, 128(%rsp)
 	movq	$30, 136(%rsp)
 	movq	$0, 144(%rsp)
@@ -3047,7 +3047,7 @@ world_insert_or_spawn_batch:
 	movq	%rax, 80(%r15)
 	movq	88(%r15), %rax
 	movq	96(%r15), %rcx
-	movabsq	$-300519420924227256, %rdi
+	movabsq	$-244722698453483641, %rdi
 	andq	%rcx, %rdi
 	movdqu	(%rax,%rdi), %xmm0
 	pmovmskb	%xmm0, %edx
@@ -3076,8 +3076,8 @@ world_insert_or_spawn_batch:
 .LBB14_93:
 	leaq	-16(%rdx), %rdi
 	andq	%rcx, %rdi
-	movb	$125, (%rax,%rdx)
-	movb	$125, 16(%rdi,%rax)
+	movb	$126, (%rax,%rdx)
+	movb	$126, 16(%rdi,%rax)
 	negq	%rdx
 	andb	$1, %sil
 	movzbl	%sil, %ecx
@@ -3170,16 +3170,16 @@ world_insert_or_spawn_batch:
 .LBB14_105:
 	leaq	-16(%rdx), %rdi
 	andq	%rcx, %rdi
-	movb	$112, (%rax,%rdx)
-	movb	$112, 16(%rdi,%rax)
+	movb	$103, (%rax,%rdx)
+	movb	$103, 16(%rdi,%rax)
 	negq	%rdx
 	leaq	(%rdx,%rdx,2), %rdx
 	andb	$1, %sil
 	movzbl	%sil, %ecx
 	subq	%rcx, 528(%r14)
-	movabsq	$-1982567688456096919, %rcx
+	movabsq	$4213011830447957398, %rcx
 	movq	%rcx, -24(%rax,%rdx,8)
-	movabsq	$-4670153314977083022, %rcx
+	movabsq	$-7166864361763299345, %rcx
 	movq	%rcx, -16(%rax,%rdx,8)
 	leaq	(%rax,%rdx,8), %rcx
 	addq	$-8, %rcx
@@ -3363,7 +3363,7 @@ GCC_except_table14:
 	.type	.Lanon.ec88cfe8160c27a9dec3209ea7295488.0,@object
 	.section	.rodata..Lanon.ec88cfe8160c27a9dec3209ea7295488.0,"a",@progbits
 .Lanon.ec88cfe8160c27a9dec3209ea7295488.0:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/0607116/crates/bevy_ecs/src/archetype.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-41530a2346942c86/c9f9133/crates/bevy_ecs/src/archetype.rs"
 	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.0, 95
 
 	.type	.Lanon.ec88cfe8160c27a9dec3209ea7295488.1,@object
@@ -3391,13 +3391,13 @@ GCC_except_table14:
 	.type	.Lanon.ec88cfe8160c27a9dec3209ea7295488.4,@object
 	.section	.rodata..Lanon.ec88cfe8160c27a9dec3209ea7295488.4,"a",@progbits
 .Lanon.ec88cfe8160c27a9dec3209ea7295488.4:
-	.ascii	"world_insert_or_spawn_batch::A"
+	.ascii	"world_insert_or_spawn_batch::B"
 	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.4, 30
 
 	.type	.Lanon.ec88cfe8160c27a9dec3209ea7295488.5,@object
 	.section	.rodata..Lanon.ec88cfe8160c27a9dec3209ea7295488.5,"a",@progbits
 .Lanon.ec88cfe8160c27a9dec3209ea7295488.5:
-	.ascii	"world_insert_or_spawn_batch::B"
+	.ascii	"world_insert_or_spawn_batch::A"
 	.size	.Lanon.ec88cfe8160c27a9dec3209ea7295488.5, 30
 
 	.hidden	DW.ref.rust_eh_personality
