@@ -55,6 +55,30 @@ name = "query_get_sparse"
 crate-type = ["lib"]
 
 [[example]]
+name = "query_state_iter"
+crate-type = ["lib"]
+
+[[example]]
+name = "query_state_iter_sparse"
+crate-type = ["lib"]
+
+[[example]]
+name = "query_state_for_each"
+crate-type = ["lib"]
+
+[[example]]
+name = "query_state_for_each_sparse"
+crate-type = ["lib"]
+
+[[example]]
+name = "query_state_get"
+crate-type = ["lib"]
+
+[[example]]
+name = "query_state_get_sparse"
+crate-type = ["lib"]
+
+[[example]]
 name = "world_get"
 crate-type = ["lib"]
 
