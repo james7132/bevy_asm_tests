@@ -1,5 +1,5 @@
 	.text
-	.file	"query_get_sparse.f9f8140f1ab0139b-cgu.0"
+	.file	"query_get_sparse.c892acd05c3bad2b-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4, 0x90
@@ -21,8 +21,8 @@ query_get:
 	cmpq	%r10, %r9
 	je	.LBB0_10
 	movq	(%rdi), %rdi
-	movq	%r9, %r10
-	shrq	$5, %r10
+	movl	%r9d, %r10d
+	shrl	$5, %r10d
 	cmpq	64(%rdi), %r10
 	jae	.LBB0_13
 	movq	48(%rdi), %r11
@@ -127,4 +127,5 @@ query_get:
 	.size	query_get, .Lfunc_end0-query_get
 	.cfi_endproc
 
+	.ident	"rustc version 1.73.0 (cc66ad468 2023-10-03)"
 	.section	".note.GNU-stack","",@progbits

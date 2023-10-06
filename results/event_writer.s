@@ -1,5 +1,5 @@
 	.text
-	.file	"event_writer.accc283909383b7e-cgu.0"
+	.file	"event_writer.d3438e895887aabf-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function
@@ -206,4 +206,5 @@ event_writer:
 	.size	event_writer, .Lfunc_end2-event_writer
 	.cfi_endproc
 
+	.ident	"rustc version 1.73.0 (cc66ad468 2023-10-03)"
 	.section	".note.GNU-stack","",@progbits

@@ -1,29 +1,11 @@
 	.text
-	.file	"query_for_each_sparse.a2c07d60da66cf9-cgu.0"
+	.file	"query_for_each_sparse.d9d02d68416a0a1-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4, 0x90
 	.type	query_for_each,@function
 query_for_each:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	pushq	%r15
-	.cfi_def_cfa_offset 24
-	pushq	%r14
-	.cfi_def_cfa_offset 32
-	pushq	%r13
-	.cfi_def_cfa_offset 40
-	pushq	%r12
-	.cfi_def_cfa_offset 48
-	pushq	%rbx
-	.cfi_def_cfa_offset 56
-	.cfi_offset %rbx, -56
-	.cfi_offset %r12, -48
-	.cfi_offset %r13, -40
-	.cfi_offset %r14, -32
-	.cfi_offset %r15, -24
-	.cfi_offset %rbp, -16
 	movq	(%rdi), %rsi
 	movq	8(%rdi), %rax
 	movq	296(%rsi), %rdx
@@ -66,6 +48,24 @@ query_for_each:
 .LBB0_8:
 	xorl	%edx, %edx
 .LBB0_10:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	pushq	%r15
+	.cfi_def_cfa_offset 24
+	pushq	%r14
+	.cfi_def_cfa_offset 32
+	pushq	%r13
+	.cfi_def_cfa_offset 40
+	pushq	%r12
+	.cfi_def_cfa_offset 48
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset %rbx, -56
+	.cfi_offset %r12, -48
+	.cfi_offset %r13, -40
+	.cfi_offset %r14, -32
+	.cfi_offset %r15, -24
+	.cfi_offset %rbp, -16
 	movq	288(%rsi), %r8
 	testq	%r8, %r8
 	je	.LBB0_16
@@ -75,11 +75,11 @@ query_for_each:
 	jmp	.LBB0_13
 	.p2align	4, 0x90
 .LBB0_12:
+	addq	$4, %rsi
 	cmpq	%r8, %rsi
 	je	.LBB0_16
 .LBB0_13:
 	movl	(%rsi), %r10d
-	addq	$4, %rsi
 	imulq	$152, %r10, %r11
 	addq	152(%rax), %r11
 	cmpq	%r10, 168(%rax)
@@ -129,4 +129,5 @@ query_for_each:
 	.size	query_for_each, .Lfunc_end0-query_for_each
 	.cfi_endproc
 
+	.ident	"rustc version 1.73.0 (cc66ad468 2023-10-03)"
 	.section	".note.GNU-stack","",@progbits

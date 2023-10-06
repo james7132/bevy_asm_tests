@@ -1,26 +1,26 @@
 	.text
-	.file	"world_get.a84ac0076faecf36-cgu.0"
+	.file	"world_get.9d86c3e9c49e3774-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,119
+	.zero	16,48
 .LCPI0_1:
-	.byte	33
-	.byte	71
-	.byte	57
-	.byte	155
-	.byte	89
-	.byte	59
-	.byte	8
-	.byte	110
-	.byte	64
-	.byte	154
-	.byte	130
-	.byte	94
-	.byte	109
-	.byte	206
-	.byte	136
-	.byte	231
+	.byte	14
+	.byte	11
+	.byte	76
+	.byte	125
+	.byte	81
+	.byte	24
+	.byte	113
+	.byte	157
+	.byte	162
+	.byte	19
+	.byte	139
+	.byte	209
+	.byte	137
+	.byte	50
+	.byte	104
+	.byte	92
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -67,7 +67,7 @@ world_get:
 	movq	88(%rdi), %r9
 	movq	96(%rdi), %r10
 	leaq	-24(%r9), %r11
-	movabsq	$-1209748388455665611, %rbx
+	movabsq	$7001132719976282918, %rbx
 	xorl	%esi, %esi
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -183,7 +183,8 @@ world_get:
 	.p2align	3, 0x0
 .Lanon.155300dae0580fe2c3564be8a13f3f51.1:
 	.quad	.Lanon.155300dae0580fe2c3564be8a13f3f51.0
-	.asciz	"m\000\000\000\000\000\000\000y\003\000\000\t\000\000"
+	.asciz	"m\000\000\000\000\000\000\000y\003\000\000*\000\000"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.1, 24
 
+	.ident	"rustc version 1.73.0 (cc66ad468 2023-10-03)"
 	.section	".note.GNU-stack","",@progbits
