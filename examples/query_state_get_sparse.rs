@@ -10,6 +10,6 @@ pub struct A(f32);
 pub struct B(f32);
 
 #[no_mangle]
-fn query_get(mut query: QueryState<(&mut A, &B)>, entity: Entity, world: &mut World) {
+fn query_state_get(query: &mut QueryState<(&mut A, &B)>, entity: Entity, world: &mut World) {
     let _ = black_box(query.get_mut(world, entity));
 }

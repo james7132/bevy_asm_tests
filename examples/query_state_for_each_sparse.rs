@@ -9,7 +9,7 @@ pub struct A(f32);
 pub struct B(f32);
 
 #[no_mangle]
-fn query_for_each(mut query: QueryState<(&mut A, &B)>, world: &mut World) {
+fn query_for_each(query: &mut QueryState<(&mut A, &B)>, world: &mut World) {
     query.for_each_mut(world, |(mut a, b)| {
         a.0 += b.0;
     })
