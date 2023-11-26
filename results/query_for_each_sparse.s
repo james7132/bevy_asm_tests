@@ -1,5 +1,5 @@
 	.text
-	.file	"query_for_each_sparse.d9d02d68416a0a1-cgu.0"
+	.file	"query_for_each_sparse.a13ccb022c4bcb42-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4, 0x90
@@ -89,7 +89,6 @@ query_for_each:
 	testq	%r10, %r10
 	je	.LBB0_12
 	movq	72(%r11), %r11
-	addq	$4, %r11
 	.p2align	4, 0x90
 .LBB0_15:
 	movl	(%r11), %ebx
@@ -107,7 +106,7 @@ query_for_each:
 	movl	%edi, (%r13,%r14,4)
 	addss	(%r12,%r15), %xmm0
 	movss	%xmm0, (%r12,%r15)
-	addq	$12, %r11
+	addq	$16, %r11
 	decq	%r10
 	jne	.LBB0_15
 	jmp	.LBB0_12
@@ -129,5 +128,5 @@ query_for_each:
 	.size	query_for_each, .Lfunc_end0-query_for_each
 	.cfi_endproc
 
-	.ident	"rustc version 1.73.0 (cc66ad468 2023-10-03)"
+	.ident	"rustc version 1.74.0 (79e9716c9 2023-11-13)"
 	.section	".note.GNU-stack","",@progbits

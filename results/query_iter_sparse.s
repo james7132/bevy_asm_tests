@@ -1,5 +1,5 @@
 	.text
-	.file	"query_iter_sparse.b996b199395a2267-cgu.0"
+	.file	"query_iter_sparse.5a30dc0c37023ff5-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4, 0x90
@@ -105,10 +105,11 @@ query_iter:
 	movq	72(%r14), %r11
 	xorl	%ebx, %ebx
 .LBB0_18:
-	leaq	(%rbx,%rbx,2), %r14
-	movl	4(%r11,%r14,4), %r12d
-	cmpq	%r12, 136(%rcx)
-	jbe	.LBB0_22
+	movq	%rbx, %r14
+	shlq	$4, %r14
+	movl	(%r11,%r14), %r12d
+	cmpq	136(%rcx), %r12
+	jae	.LBB0_22
 	movq	120(%rcx), %r13
 	movl	$0, %r15d
 	testq	%r13, %r13
@@ -126,8 +127,8 @@ query_iter:
 .LBB0_22:
 	xorl	%r15d, %r15d
 .LBB0_23:
-	cmpq	%r12, 136(%rdx)
-	jbe	.LBB0_11
+	cmpq	136(%rdx), %r12
+	jae	.LBB0_11
 	movq	120(%rdx), %rbp
 	movl	$0, %r13d
 	testq	%rbp, %rbp
@@ -158,9 +159,9 @@ query_iter:
 
 	.type	.Lanon.a01df851b6197f632189e2f0fa818bdd.0,@object
 	.section	.rodata..Lanon.a01df851b6197f632189e2f0fa818bdd.0,"a",@progbits
-	.p2align	2, 0x0
+	.p2align	3, 0x0
 .Lanon.a01df851b6197f632189e2f0fa818bdd.0:
 	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.0, 0
 
-	.ident	"rustc version 1.73.0 (cc66ad468 2023-10-03)"
+	.ident	"rustc version 1.74.0 (79e9716c9 2023-11-13)"
 	.section	".note.GNU-stack","",@progbits

@@ -1,26 +1,26 @@
 	.text
-	.file	"world_get_sparse.90926cde45fae5dd-cgu.0"
+	.file	"world_get_sparse.dbace3322a8cc06e-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,107
+	.zero	16,41
 .LCPI0_1:
-	.byte	74
-	.byte	69
-	.byte	69
-	.byte	217
+	.byte	72
+	.byte	13
+	.byte	224
 	.byte	91
-	.byte	218
-	.byte	180
-	.byte	175
-	.byte	207
-	.byte	17
-	.byte	247
-	.byte	110
-	.byte	92
-	.byte	38
+	.byte	212
+	.byte	93
+	.byte	214
+	.byte	53
+	.byte	253
+	.byte	72
 	.byte	117
-	.byte	225
+	.byte	220
+	.byte	71
+	.byte	226
+	.byte	5
+	.byte	31
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -42,9 +42,10 @@ world_get:
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
-	movl	%edx, %r8d
-	cmpq	%r8, 16(%rdi)
-	jbe	.LBB0_17
+	movl	%esi, %r8d
+	cmpq	16(%rdi), %r8
+	jae	.LBB0_17
+	shrq	$32, %rsi
 	movq	(%rdi), %rax
 	leaq	(%r8,%r8,4), %rcx
 	cmpl	%esi, (%rax,%rcx,4)
@@ -58,7 +59,7 @@ world_get:
 	movq	88(%rdi), %rsi
 	movq	96(%rdi), %r9
 	leaq	-24(%rsi), %r10
-	movabsq	$-2976764344603625454, %r11
+	movabsq	$6030043304978844392, %r11
 	xorl	%edx, %edx
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -113,8 +114,8 @@ world_get:
 	leaq	(%rdx,%rdx,8), %r10
 	shlq	$4, %r10
 	xorl	%edx, %edx
-	cmpq	%r8, 136(%rdi,%r10)
-	jbe	.LBB0_18
+	cmpq	136(%rdi,%r10), %r8
+	jae	.LBB0_18
 	movq	120(%rdi,%r10), %r11
 	testq	%r11, %r11
 	je	.LBB0_19
@@ -157,5 +158,5 @@ world_get:
 	.size	world_get, .Lfunc_end0-world_get
 	.cfi_endproc
 
-	.ident	"rustc version 1.73.0 (cc66ad468 2023-10-03)"
+	.ident	"rustc version 1.74.0 (79e9716c9 2023-11-13)"
 	.section	".note.GNU-stack","",@progbits

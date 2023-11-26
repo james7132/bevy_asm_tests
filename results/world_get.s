@@ -1,26 +1,26 @@
 	.text
-	.file	"world_get.9d86c3e9c49e3774-cgu.0"
+	.file	"world_get.26af15293d8e95b2-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,48
+	.zero	16,120
 .LCPI0_1:
-	.byte	14
-	.byte	11
-	.byte	76
-	.byte	125
-	.byte	81
-	.byte	24
-	.byte	113
-	.byte	157
+	.byte	155
+	.byte	80
+	.byte	244
 	.byte	162
-	.byte	19
-	.byte	139
-	.byte	209
-	.byte	137
-	.byte	50
-	.byte	104
-	.byte	92
+	.byte	233
+	.byte	142
+	.byte	13
+	.byte	220
+	.byte	194
+	.byte	155
+	.byte	213
+	.byte	252
+	.byte	56
+	.byte	43
+	.byte	80
+	.byte	229
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -47,16 +47,17 @@ world_get:
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
-	movl	%edx, %ecx
-	cmpq	%rcx, 16(%rdi)
-	jbe	.LBB0_15
-	movq	(%rdi), %rax
-	leaq	(%rcx,%rcx,4), %rcx
-	cmpl	%esi, (%rax,%rcx,4)
+	movl	%esi, %eax
+	cmpq	16(%rdi), %rax
+	jae	.LBB0_15
+	shrq	$32, %rsi
+	movq	(%rdi), %rcx
+	leaq	(%rax,%rax,4), %rax
+	cmpl	%esi, (%rcx,%rax,4)
 	jne	.LBB0_15
-	cmpl	$-1, 4(%rax,%rcx,4)
+	cmpl	$-1, 4(%rcx,%rax,4)
 	je	.LBB0_15
-	leaq	(%rax,%rcx,4), %rcx
+	leaq	(%rcx,%rax,4), %rcx
 	addq	$4, %rcx
 	movl	8(%rcx), %eax
 	movl	12(%rcx), %r8d
@@ -67,7 +68,7 @@ world_get:
 	movq	88(%rdi), %r9
 	movq	96(%rdi), %r10
 	leaq	-24(%r9), %r11
-	movabsq	$7001132719976282918, %rbx
+	movabsq	$-1021572880444491721, %rbx
 	xorl	%esi, %esi
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -175,7 +176,7 @@ world_get:
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.0,@object
 	.section	.rodata..Lanon.155300dae0580fe2c3564be8a13f3f51.0,"a",@progbits
 .Lanon.155300dae0580fe2c3564be8a13f3f51.0:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/0607116/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/89d652b/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.0, 109
 
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.1,@object
@@ -183,8 +184,8 @@ world_get:
 	.p2align	3, 0x0
 .Lanon.155300dae0580fe2c3564be8a13f3f51.1:
 	.quad	.Lanon.155300dae0580fe2c3564be8a13f3f51.0
-	.asciz	"m\000\000\000\000\000\000\000y\003\000\000*\000\000"
+	.asciz	"m\000\000\000\000\000\000\000\201\003\000\000*\000\000"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.1, 24
 
-	.ident	"rustc version 1.73.0 (cc66ad468 2023-10-03)"
+	.ident	"rustc version 1.74.0 (79e9716c9 2023-11-13)"
 	.section	".note.GNU-stack","",@progbits

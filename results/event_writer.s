@@ -1,5 +1,5 @@
 	.text
-	.file	"event_writer.d3438e895887aabf-cgu.0"
+	.file	"event_writer.13c52e2cb6009815-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function
@@ -102,14 +102,14 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	shlq	$4, %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
-	je	.LBB1_3
+	je	.LBB1_2
 	movq	(%rbx), %rcx
 	shlq	$4, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
 	jmp	.LBB1_4
-.LBB1_3:
+.LBB1_2:
 	movq	$0, 16(%rsp)
 .LBB1_4:
 	leaq	32(%rsp), %rdi
@@ -193,6 +193,8 @@ event_writer:
 	movq	%rsi, 48(%rbx)
 	incq	%rax
 	movq	%rax, 64(%rbx)
+	movq	%r14, (%rsp)
+	movq	%rsp, %rax
 	#APP
 	#NO_APP
 	addq	$8, %rsp
@@ -206,5 +208,5 @@ event_writer:
 	.size	event_writer, .Lfunc_end2-event_writer
 	.cfi_endproc
 
-	.ident	"rustc version 1.73.0 (cc66ad468 2023-10-03)"
+	.ident	"rustc version 1.74.0 (79e9716c9 2023-11-13)"
 	.section	".note.GNU-stack","",@progbits
