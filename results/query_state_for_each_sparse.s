@@ -1,5 +1,5 @@
 	.text
-	.file	"query_state_for_each_sparse.604ae688cdd631f7-cgu.0"
+	.file	"query_state_for_each_sparse.27a0a96e81b08674-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function
@@ -519,21 +519,21 @@ query_for_each:
 	movl	760(%r8), %edx
 	movq	272(%r14), %rsi
 	leaq	(%rsi,%rdi,4), %rdi
-	jmp	.LBB3_50
+	jmp	.LBB3_49
 	.p2align	4, 0x90
-.LBB3_49:
+.LBB3_52:
 	addq	$4, %rsi
 	cmpq	%rdi, %rsi
 	je	.LBB3_53
-.LBB3_50:
+.LBB3_49:
 	movl	(%rsi), %r8d
 	imulq	$152, %r8, %r9
 	movq	88(%rbp,%r9), %r8
 	testq	%r8, %r8
-	je	.LBB3_49
+	je	.LBB3_52
 	movq	72(%rbp,%r9), %r9
 	.p2align	4, 0x90
-.LBB3_52:
+.LBB3_51:
 	movl	(%r9), %r10d
 	movq	120(%rax), %r11
 	movl	4(%r11,%r10,8), %r11d
@@ -551,8 +551,8 @@ query_for_each:
 	movss	%xmm0, (%r14,%rbx)
 	addq	$16, %r9
 	decq	%r8
-	jne	.LBB3_52
-	jmp	.LBB3_49
+	jne	.LBB3_51
+	jmp	.LBB3_52
 .LBB3_53:
 	addq	$232, %rsp
 	.cfi_def_cfa_offset 56
@@ -699,7 +699,7 @@ query_for_each:
 	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.8,@object
 	.section	.rodata..Lanon.0d252a227dcf2249288cd9db6e2d5b21.8,"a",@progbits
 .Lanon.0d252a227dcf2249288cd9db6e2d5b21.8:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/89d652b/crates/bevy_ecs/src/query/state.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/381bfbb/crates/bevy_ecs/src/query/state.rs"
 	.size	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.8, 97
 
 	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.9,@object

@@ -1,26 +1,26 @@
 	.text
-	.file	"world_get_sparse.dbace3322a8cc06e-cgu.0"
+	.file	"world_get_sparse.614bcafd18e309f7-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,41
+	.zero	16,27
 .LCPI0_1:
-	.byte	72
-	.byte	13
-	.byte	224
-	.byte	91
-	.byte	212
-	.byte	93
-	.byte	214
-	.byte	53
-	.byte	253
-	.byte	72
-	.byte	117
-	.byte	220
-	.byte	71
-	.byte	226
-	.byte	5
-	.byte	31
+	.byte	170
+	.byte	128
+	.byte	125
+	.byte	11
+	.byte	18
+	.byte	130
+	.byte	97
+	.byte	155
+	.byte	87
+	.byte	110
+	.byte	151
+	.byte	128
+	.byte	7
+	.byte	184
+	.byte	167
+	.byte	175
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -59,7 +59,7 @@ world_get:
 	movq	88(%rdi), %rsi
 	movq	96(%rdi), %r9
 	leaq	-24(%rsi), %r10
-	movabsq	$6030043304978844392, %r11
+	movabsq	$3893979522405926642, %r11
 	xorl	%edx, %edx
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
