@@ -1,5 +1,5 @@
 	.text
-	.file	"query_get_sparse.f61122c38a47bdd2-cgu.0"
+	.file	"query_get_sparse.d0576944a70b359d-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4, 0x90
@@ -146,5 +146,5 @@ query_get:
 	.size	query_get, .Lfunc_end0-query_get
 	.cfi_endproc
 
-	.ident	"rustc version 1.74.0 (79e9716c9 2023-11-13)"
+	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
 	.section	".note.GNU-stack","",@progbits

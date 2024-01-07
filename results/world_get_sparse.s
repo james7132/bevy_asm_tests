@@ -1,26 +1,26 @@
 	.text
-	.file	"world_get_sparse.dbace3322a8cc06e-cgu.0"
+	.file	"world_get_sparse.43df649f2dda5680-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,41
+	.zero	16,121
 .LCPI0_1:
-	.byte	72
-	.byte	13
-	.byte	224
+	.byte	232
+	.byte	41
+	.byte	234
+	.byte	25
+	.byte	247
+	.byte	98
+	.byte	85
+	.byte	41
+	.byte	51
+	.byte	78
+	.byte	14
+	.byte	149
 	.byte	91
-	.byte	212
-	.byte	93
-	.byte	214
-	.byte	53
-	.byte	253
-	.byte	72
-	.byte	117
-	.byte	220
-	.byte	71
-	.byte	226
-	.byte	5
-	.byte	31
+	.byte	210
+	.byte	64
+	.byte	208
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -59,7 +59,7 @@ world_get:
 	movq	88(%rdi), %rsi
 	movq	96(%rdi), %r9
 	leaq	-24(%rsi), %r10
-	movabsq	$6030043304978844392, %r11
+	movabsq	$-959201672750599160, %r11
 	xorl	%edx, %edx
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -158,5 +158,5 @@ world_get:
 	.size	world_get, .Lfunc_end0-world_get
 	.cfi_endproc
 
-	.ident	"rustc version 1.74.0 (79e9716c9 2023-11-13)"
+	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
 	.section	".note.GNU-stack","",@progbits

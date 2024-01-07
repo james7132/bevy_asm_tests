@@ -1,5 +1,5 @@
 	.text
-	.file	"event_reader.a8563a8c55e2ba2-cgu.0"
+	.file	"event_reader.ab5f48c180cdf0f7-cgu.0"
 	.section	.text.event_reader,"ax",@progbits
 	.globl	event_reader
 	.p2align	4, 0x90
@@ -77,5 +77,5 @@ event_reader:
 .Lanon.5729158841f6a0a43c5f462d65065398.0:
 	.size	.Lanon.5729158841f6a0a43c5f462d65065398.0, 0
 
-	.ident	"rustc version 1.74.0 (79e9716c9 2023-11-13)"
+	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
 	.section	".note.GNU-stack","",@progbits

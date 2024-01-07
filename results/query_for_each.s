@@ -1,5 +1,5 @@
 	.text
-	.file	"query_for_each.be4c3b3d2679d155-cgu.0"
+	.file	"query_for_each.b73be2819c83b950-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4, 0x90
@@ -10,86 +10,128 @@ query_for_each:
 	.cfi_def_cfa_offset 16
 	pushq	%r14
 	.cfi_def_cfa_offset 24
-	pushq	%r13
-	.cfi_def_cfa_offset 32
-	pushq	%r12
-	.cfi_def_cfa_offset 40
 	pushq	%rbx
-	.cfi_def_cfa_offset 48
-	.cfi_offset %rbx, -48
-	.cfi_offset %r12, -40
-	.cfi_offset %r13, -32
+	.cfi_def_cfa_offset 32
+	subq	$48, %rsp
+	.cfi_def_cfa_offset 80
+	.cfi_offset %rbx, -32
 	.cfi_offset %r14, -24
 	.cfi_offset %r15, -16
-	movq	(%rdi), %r8
-	movq	264(%r8), %rsi
-	testq	%rsi, %rsi
-	je	.LBB0_6
-	movq	8(%rdi), %rax
-	movl	20(%rdi), %ecx
-	movq	248(%r8), %rdx
-	leaq	(%rdx,%rsi,4), %rsi
-	movq	296(%r8), %rdi
-	movq	304(%r8), %r8
-	xorl	%r9d, %r9d
-	shlq	$4, %rdi
-	shlq	$4, %r8
-	jmp	.LBB0_3
+	movq	(%rdi), %rax
+	movq	264(%rax), %r8
+	testq	%r8, %r8
+	je	.LBB0_7
+	movq	8(%rdi), %rcx
+	movl	20(%rdi), %edx
+	movq	248(%rax), %rsi
+	leaq	(%rsi,%r8,4), %rdi
+	xorl	%r8d, %r8d
+	jmp	.LBB0_2
 	.p2align	4, 0x90
+.LBB0_6:
+	addq	$4, %rsi
+	cmpq	%rdi, %rsi
+	je	.LBB0_7
 .LBB0_2:
-	addq	$4, %rdx
-	cmpq	%rsi, %rdx
+	movl	(%rsi), %r9d
+	leaq	(%r9,%r9,8), %r10
+	shlq	$3, %r10
+	addq	288(%rcx), %r10
+	cmpq	%r9, 304(%rcx)
+	cmovbeq	%r8, %r10
+	movq	64(%r10), %r9
+	movq	%r9, %r11
+	shrq	$32, %r11
+	jne	.LBB0_8
+	testq	%r9, %r9
 	je	.LBB0_6
-.LBB0_3:
-	movl	(%rdx), %r10d
-	leaq	(%r10,%r10,8), %r11
-	shlq	$3, %r11
-	addq	288(%rax), %r11
-	cmpq	%r10, 304(%rax)
-	cmovbeq	%r9, %r11
-	movq	64(%r11), %r10
-	testq	%r10, %r10
-	je	.LBB0_2
-	movq	(%r11), %r14
-	movq	32(%r11), %r15
-	movq	8(%r15,%rdi), %r11
-	leaq	(%r11,%r11,2), %rbx
+	movq	296(%rax), %r11
+	movq	304(%rax), %rbx
+	movq	(%r10), %r14
+	movq	32(%r10), %r15
+	shlq	$4, %r11
+	movq	8(%r15,%r11), %r10
+	leaq	(%r10,%r10,2), %r11
+	shlq	$5, %r11
+	movq	16(%r14,%r11), %r10
+	movq	72(%r14,%r11), %r11
+	shlq	$4, %rbx
+	movq	8(%r15,%rbx), %rbx
+	leaq	(%rbx,%rbx,2), %rbx
 	shlq	$5, %rbx
-	movq	16(%r14,%rbx), %r11
-	movq	72(%r14,%rbx), %rbx
-	movq	8(%r15,%r8), %r15
-	leaq	(%r15,%r15,2), %r15
-	shlq	$5, %r15
-	movq	16(%r14,%r15), %r14
-	xorl	%r15d, %r15d
+	movq	16(%r14,%rbx), %rbx
+	xorl	%r14d, %r14d
 	.p2align	4, 0x90
 .LBB0_5:
-	movl	%r15d, %r12d
-	shlq	$2, %r12
-	movss	(%r14,%r12), %xmm0
-	movl	%ecx, (%rbx,%r12)
-	addss	(%r11,%r12), %xmm0
-	leaq	1(%r15), %r13
-	movss	%xmm0, (%r11,%r12)
-	movq	%r13, %r15
-	cmpq	%r13, %r10
+	movss	(%rbx,%r14,4), %xmm0
+	movl	%edx, (%r11,%r14,4)
+	addss	(%r10,%r14,4), %xmm0
+	movss	%xmm0, (%r10,%r14,4)
+	leaq	1(%r14), %r15
+	movq	%r15, %r14
+	cmpq	%r15, %r9
 	jne	.LBB0_5
-	jmp	.LBB0_2
-.LBB0_6:
-	popq	%rbx
-	.cfi_def_cfa_offset 40
-	popq	%r12
+	jmp	.LBB0_6
+.LBB0_7:
+	addq	$48, %rsp
 	.cfi_def_cfa_offset 32
-	popq	%r13
+	popq	%rbx
 	.cfi_def_cfa_offset 24
 	popq	%r14
 	.cfi_def_cfa_offset 16
 	popq	%r15
 	.cfi_def_cfa_offset 8
 	retq
+.LBB0_8:
+	.cfi_def_cfa_offset 80
+	leaq	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.2(%rip), %rax
+	movq	%rax, (%rsp)
+	movq	$1, 8(%rsp)
+	leaq	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.0(%rip), %rax
+	movq	%rax, 16(%rsp)
+	xorps	%xmm0, %xmm0
+	movups	%xmm0, 24(%rsp)
+	leaq	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.4(%rip), %rsi
+	movq	%rsp, %rdi
+	callq	*core::panicking::panic_fmt@GOTPCREL(%rip)
+	ud2
 .Lfunc_end0:
 	.size	query_for_each, .Lfunc_end0-query_for_each
 	.cfi_endproc
 
-	.ident	"rustc version 1.74.0 (79e9716c9 2023-11-13)"
+	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.0,@object
+	.section	.rodata..Lanon.0d252a227dcf2249288cd9db6e2d5b21.0,"a",@progbits
+	.p2align	3, 0x0
+.Lanon.0d252a227dcf2249288cd9db6e2d5b21.0:
+	.size	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.0, 0
+
+	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.1,@object
+	.section	.rodata..Lanon.0d252a227dcf2249288cd9db6e2d5b21.1,"a",@progbits
+.Lanon.0d252a227dcf2249288cd9db6e2d5b21.1:
+	.ascii	"TableRow is only valid up to u32::MAX"
+	.size	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.1, 37
+
+	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.2,@object
+	.section	.data.rel.ro..Lanon.0d252a227dcf2249288cd9db6e2d5b21.2,"aw",@progbits
+	.p2align	3, 0x0
+.Lanon.0d252a227dcf2249288cd9db6e2d5b21.2:
+	.quad	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.1
+	.asciz	"%\000\000\000\000\000\000"
+	.size	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.2, 16
+
+	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.3,@object
+	.section	.rodata..Lanon.0d252a227dcf2249288cd9db6e2d5b21.3,"a",@progbits
+.Lanon.0d252a227dcf2249288cd9db6e2d5b21.3:
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/101037d/crates/bevy_ecs/src/query/iter.rs"
+	.size	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.3, 96
+
+	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.4,@object
+	.section	.data.rel.ro..Lanon.0d252a227dcf2249288cd9db6e2d5b21.4,"aw",@progbits
+	.p2align	3, 0x0
+.Lanon.0d252a227dcf2249288cd9db6e2d5b21.4:
+	.quad	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.3
+	.asciz	"`\000\000\000\000\000\000\000m\000\000\000\t\000\000"
+	.size	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.4, 24
+
+	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
 	.section	".note.GNU-stack","",@progbits

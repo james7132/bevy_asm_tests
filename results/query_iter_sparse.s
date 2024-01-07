@@ -1,5 +1,5 @@
 	.text
-	.file	"query_iter_sparse.5a30dc0c37023ff5-cgu.0"
+	.file	"query_iter_sparse.b5d07e3791aa4243-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4, 0x90
@@ -163,5 +163,5 @@ query_iter:
 .Lanon.a01df851b6197f632189e2f0fa818bdd.0:
 	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.0, 0
 
-	.ident	"rustc version 1.74.0 (79e9716c9 2023-11-13)"
+	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
 	.section	".note.GNU-stack","",@progbits

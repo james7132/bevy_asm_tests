@@ -1,5 +1,5 @@
 	.text
-	.file	"query_iter.9f15a1e3161b8cbc-cgu.0"
+	.file	"query_iter.107d1eadaf975a7a-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4, 0x90
@@ -36,7 +36,7 @@ query_iter:
 	.p2align	4, 0x90
 .LBB0_3:
 	cmpq	%rdi, %rsi
-	je	.LBB0_8
+	je	.LBB0_9
 	movl	(%rsi), %r9d
 	addq	$4, %rsi
 	cmpq	%r9, %r14
@@ -63,20 +63,21 @@ query_iter:
 	jmp	.LBB0_6
 	.p2align	4, 0x90
 .LBB0_7:
+	movq	%r14, %r15
+	shrq	$32, %r15
+	jne	.LBB0_10
 	testq	%r10, %r10
-	je	.LBB0_8
+	je	.LBB0_9
 .LBB0_6:
-	movl	%r14d, %r15d
-	shlq	$2, %r15
+	movss	(%rbx,%r14,4), %xmm0
+	movl	%edx, (%r11,%r14,4)
+	addss	(%r10,%r14,4), %xmm0
+	movss	%xmm0, (%r10,%r14,4)
 	incq	%r14
-	movss	(%rbx,%r15), %xmm0
-	movl	%edx, (%r11,%r15)
-	addss	(%r10,%r15), %xmm0
-	movss	%xmm0, (%r10,%r15)
 	cmpq	%r9, %r14
 	jne	.LBB0_7
 	jmp	.LBB0_2
-.LBB0_8:
+.LBB0_9:
 	popq	%rbx
 	.cfi_def_cfa_offset 24
 	popq	%r14
@@ -84,9 +85,36 @@ query_iter:
 	popq	%r15
 	.cfi_def_cfa_offset 8
 	retq
+.LBB0_10:
+	.cfi_def_cfa_offset 32
+	leaq	.Lanon.a01df851b6197f632189e2f0fa818bdd.0(%rip), %rdi
+	leaq	.Lanon.a01df851b6197f632189e2f0fa818bdd.2(%rip), %rdx
+	movl	$48, %esi
+	callq	*core::panicking::panic@GOTPCREL(%rip)
+	ud2
 .Lfunc_end0:
 	.size	query_iter, .Lfunc_end0-query_iter
 	.cfi_endproc
 
-	.ident	"rustc version 1.74.0 (79e9716c9 2023-11-13)"
+	.type	.Lanon.a01df851b6197f632189e2f0fa818bdd.0,@object
+	.section	.rodata..Lanon.a01df851b6197f632189e2f0fa818bdd.0,"a",@progbits
+.Lanon.a01df851b6197f632189e2f0fa818bdd.0:
+	.ascii	"assertion failed: index as u32 as usize == index"
+	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.0, 48
+
+	.type	.Lanon.a01df851b6197f632189e2f0fa818bdd.1,@object
+	.section	.rodata..Lanon.a01df851b6197f632189e2f0fa818bdd.1,"a",@progbits
+.Lanon.a01df851b6197f632189e2f0fa818bdd.1:
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/101037d/crates/bevy_ecs/src/storage/table.rs"
+	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.1, 99
+
+	.type	.Lanon.a01df851b6197f632189e2f0fa818bdd.2,@object
+	.section	.data.rel.ro..Lanon.a01df851b6197f632189e2f0fa818bdd.2,"aw",@progbits
+	.p2align	3, 0x0
+.Lanon.a01df851b6197f632189e2f0fa818bdd.2:
+	.quad	.Lanon.a01df851b6197f632189e2f0fa818bdd.1
+	.asciz	"c\000\000\000\000\000\000\000w\000\000\000\t\000\000"
+	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.2, 24
+
+	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
 	.section	".note.GNU-stack","",@progbits
