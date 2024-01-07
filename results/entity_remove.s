@@ -1,5 +1,5 @@
 	.text
-	.file	"entity_remove.82f440fdf82b91e3-cgu.0"
+	.file	"entity_remove.6a3298c185170b13-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function
@@ -177,16 +177,16 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$5, %rsi
 	movl	$4, %r14d
 	cmovaeq	%rsi, %r14
-	movabsq	$104811045873349726, %rcx
 	xorl	%esi, %esi
-	cmpq	%rcx, %r14
-	setb	%sil
-	imulq	$88, %r14, %rdx
+	movq	%r14, %rcx
+	shrq	$60, %rcx
+	sete	%sil
+	leaq	(,%r14,8), %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB2_2
 	movq	(%rbx), %rcx
-	imulq	$88, %rax, %rax
+	shlq	$3, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -259,16 +259,16 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$5, %rsi
 	movl	$4, %r14d
 	cmovaeq	%rsi, %r14
+	movabsq	$104811045873349726, %rcx
 	xorl	%esi, %esi
-	movq	%r14, %rcx
-	shrq	$60, %rcx
-	sete	%sil
-	leaq	(,%r14,8), %rdx
+	cmpq	%rcx, %r14
+	setb	%sil
+	imulq	$88, %r14, %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB3_2
 	movq	(%rbx), %rcx
-	shlq	$3, %rax
+	imulq	$88, %rax, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -1377,7 +1377,7 @@ hashbrown::raw::RawTable<T,A>::reserve_rehash:
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI6_0:
-	.zero	16,89
+	.zero	16,96
 	.section	.text.entity_remove,"ax",@progbits
 	.globl	entity_remove
 	.p2align	4, 0x90
@@ -1408,9 +1408,9 @@ entity_remove:
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
 	movq	%rdi, %rbx
-	movabsq	$928610914451687489, %r13
-	movabsq	$8332355225601883321, %r14
-	movabsq	$-5519242058426674771, %r15
+	movabsq	$2270136800884433907, %r13
+	movabsq	$-7806743575647614592, %r14
+	movabsq	$-4539066646449191040, %r15
 	movq	(%rdi), %rbp
 	leaq	488(%rbp), %rax
 	movq	%rax, 16(%rsp)
@@ -1632,8 +1632,8 @@ entity_remove:
 .LBB6_37:
 	leaq	-16(%rsi), %r8
 	andq	%rdx, %r8
-	movb	$89, (%rcx,%rsi)
-	movb	$89, 16(%r8,%rcx)
+	movb	$96, (%rcx,%rsi)
+	movb	$96, 16(%r8,%rcx)
 	andb	$1, %dil
 	movzbl	%dil, %edx
 	subq	%rdx, 528(%rbp)
@@ -1717,8 +1717,8 @@ entity_remove:
 .LBB6_25:
 	leaq	-16(%rsi), %rdi
 	andq	%rcx, %rdi
-	movb	$89, (%rax,%rsi)
-	movb	$89, 16(%rdi,%rax)
+	movb	$96, (%rax,%rsi)
+	movb	$96, 16(%rdi,%rax)
 	andb	$1, %dl
 	movzbl	%dl, %ecx
 	subq	%rcx, 104(%rbp)

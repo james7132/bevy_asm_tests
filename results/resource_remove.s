@@ -1,41 +1,41 @@
 	.text
-	.file	"resource_remove.2f558a79ef3c90d4-cgu.0"
+	.file	"resource_remove.146620489622aabb-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,87
+	.zero	16,70
 .LCPI0_1:
-	.byte	12
-	.byte	67
-	.byte	206
-	.byte	32
-	.byte	122
-	.byte	20
-	.byte	238
-	.byte	95
-	.byte	131
-	.byte	60
-	.byte	245
-	.byte	121
-	.byte	234
-	.byte	178
-	.byte	198
-	.byte	46
+	.byte	24
+	.byte	74
+	.byte	41
+	.byte	208
+	.byte	136
+	.byte	222
+	.byte	243
+	.byte	197
+	.byte	130
+	.byte	113
+	.byte	225
+	.byte	167
+	.byte	188
+	.byte	21
+	.byte	184
+	.byte	168
 	.section	.text.resource_insert,"ax",@progbits
 	.globl	resource_insert
 	.p2align	4, 0x90
 	.type	resource_insert,@function
 resource_insert:
 	.cfi_startproc
+	cmpq	$0, 144(%rdi)
+	je	.LBB0_16
 	pushq	%rbx
 	.cfi_def_cfa_offset 16
 	.cfi_offset %rbx, -16
-	cmpq	$0, 144(%rdi)
-	je	.LBB0_25
 	movq	120(%rdi), %rax
 	movq	128(%rdi), %rcx
 	leaq	-24(%rax), %rdx
-	movabsq	$-5808392769495663108, %rsi
+	movabsq	$-8249507442797506568, %rsi
 	xorl	%r8d, %r8d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -69,7 +69,7 @@ resource_insert:
 	pcmpeqb	%xmm1, %xmm3
 	pmovmskb	%xmm3, %r9d
 	testl	%r9d, %r9d
-	jne	.LBB0_25
+	jne	.LBB0_20
 	addq	%r8, %rsi
 	addq	$16, %rsi
 	addq	$16, %r8
@@ -78,104 +78,81 @@ resource_insert:
 	movq	-8(%rax,%r10,8), %rdx
 	xorl	%eax, %eax
 	cmpq	%rdx, 408(%rdi)
-	jbe	.LBB0_15
+	jbe	.LBB0_19
 	movq	392(%rdi), %rsi
 	testq	%rsi, %rsi
-	je	.LBB0_15
+	je	.LBB0_19
 	shlq	$4, %rdx
 	cmpq	$0, (%rsi,%rdx)
-	je	.LBB0_15
+	je	.LBB0_19
 	movq	344(%rdi), %rcx
 	movq	8(%rsi,%rdx), %rdx
-	movq	%rdx, %rsi
-	shlq	$7, %rsi
-	leaq	(%rsi,%rdx,8), %rdx
+	leaq	(%rdx,%rdx,2), %rdx
+	shlq	$5, %rdx
 	movq	32(%rcx,%rdx), %rsi
 	testq	%rsi, %rsi
-	je	.LBB0_15
+	je	.LBB0_19
 	addq	%rdx, %rcx
-	movq	16(%rcx), %rax
+	movq	16(%rcx), %rdx
 	decq	%rsi
-	je	.LBB0_20
+	je	.LBB0_17
 	movq	8(%rcx), %rdi
 	testq	%rdi, %rdi
-	je	.LBB0_20
-	movq	%rdi, %rdx
-	imulq	%rsi, %rdx
-	leaq	(%rax,%rdx), %r8
+	je	.LBB0_17
+	movq	%rdi, %rax
+	imulq	%rsi, %rax
+	leaq	(%rdx,%rax), %r8
 	xorl	%r9d, %r9d
 	.p2align	4, 0x90
 .LBB0_14:
-	movzbl	(%rax,%r9), %r10d
+	movzbl	(%rdx,%r9), %r10d
 	movzbl	(%r8,%r9), %r11d
-	movb	%r11b, (%rax,%r9)
+	movb	%r11b, (%rdx,%r9)
 	movb	%r10b, (%r8,%r9)
 	incq	%r9
 	cmpq	%r9, %rdi
 	jne	.LBB0_14
-	jmp	.LBB0_21
-.LBB0_15:
-	popq	%rbx
-	.cfi_def_cfa_offset 8
-	retq
-.LBB0_20:
-	.cfi_def_cfa_offset 16
-	xorl	%edx, %edx
-.LBB0_21:
 	movq	%rsi, 32(%rcx)
-	movq	64(%rcx), %rsi
-	testq	%rsi, %rsi
-	je	.LBB0_26
-	movq	48(%rcx), %rdi
-	movl	-4(%rdi,%rsi,4), %r8d
-	decq	%rsi
-	movl	%r8d, (%rdi)
-	movq	%rsi, 64(%rcx)
-	movq	88(%rcx), %rsi
-	testq	%rsi, %rsi
-	je	.LBB0_26
-	movq	72(%rcx), %rdi
-	movl	-4(%rdi,%rsi,4), %r8d
-	decq	%rsi
-	movl	%r8d, (%rdi)
-	movq	%rsi, 88(%rcx)
-	testq	%rax, %rax
-	je	.LBB0_25
-	movss	(%rax,%rdx), %xmm0
+	movss	(%rdx,%rax), %xmm0
 	movl	$1, %eax
 	popq	%rbx
 	.cfi_def_cfa_offset 8
+	.cfi_restore %rbx
 	retq
-.LBB0_25:
+.LBB0_16:
+	xorl	%eax, %eax
+	retq
+.LBB0_17:
 	.cfi_def_cfa_offset 16
+	.cfi_offset %rbx, -16
+	movq	%rsi, 32(%rcx)
+	xorl	%eax, %eax
+	testq	%rdx, %rdx
+	je	.LBB0_19
+	movss	(%rdx,%rax), %xmm0
+	movl	$1, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 8
+	.cfi_restore %rbx
+	retq
+.LBB0_19:
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbx, -16
+	popq	%rbx
+	.cfi_def_cfa_offset 8
+	.cfi_restore %rbx
+	retq
+.LBB0_20:
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbx, -16
 	xorl	%eax, %eax
 	popq	%rbx
 	.cfi_def_cfa_offset 8
+	.cfi_restore %rbx
 	retq
-.LBB0_26:
-	.cfi_def_cfa_offset 16
-	leaq	.Lanon.7389e6565b10821dad2f4dd8892551e5.1(%rip), %rdx
-	xorl	%edi, %edi
-	xorl	%esi, %esi
-	callq	*alloc::vec::Vec<T,A>::swap_remove::assert_failed@GOTPCREL(%rip)
-	ud2
 .Lfunc_end0:
 	.size	resource_insert, .Lfunc_end0-resource_insert
 	.cfi_endproc
-
-	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.0,@object
-	.section	.rodata..Lanon.7389e6565b10821dad2f4dd8892551e5.0,"a",@progbits
-.Lanon.7389e6565b10821dad2f4dd8892551e5.0:
-	.ascii	"/rustc/82e1608dfa6e0b5569232559e3d385fea5a93112/library/alloc/src/vec/mod.rs"
-	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.0, 76
-
-	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.1,@object
-	.section	.data.rel.ro..Lanon.7389e6565b10821dad2f4dd8892551e5.1,"aw",@progbits
-	.p2align	3, 0x0
-.Lanon.7389e6565b10821dad2f4dd8892551e5.1:
-	.quad	.Lanon.7389e6565b10821dad2f4dd8892551e5.0
-	.asciz	"L\000\000\000\000\000\000\000\262\005\000\000\r\000\000"
-	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.1, 24
 
 	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
 	.section	".note.GNU-stack","",@progbits
