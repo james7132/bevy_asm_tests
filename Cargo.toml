@@ -79,6 +79,18 @@ name = "query_state_get_sparse"
 crate-type = ["lib"]
 
 [[example]]
+name = "resource_get"
+crate-type = ["lib"]
+
+[[example]]
+name = "resource_insert"
+crate-type = ["lib"]
+
+[[example]]
+name = "resource_remove"
+crate-type = ["lib"]
+
+[[example]]
 name = "world_get"
 crate-type = ["lib"]
 
