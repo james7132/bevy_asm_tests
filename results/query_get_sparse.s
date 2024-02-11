@@ -1,5 +1,5 @@
 	.text
-	.file	"query_get_sparse.d0576944a70b359d-cgu.0"
+	.file	"query_get_sparse.1054bcb5c0decc97-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4, 0x90
@@ -37,8 +37,8 @@ query_get:
 	movl	(%rbx,%r10,4), %r9d
 	btl	%r11d, %r9d
 	jae	.LBB0_13
-	movq	296(%rdi), %rsi
-	movq	304(%rdi), %rdi
+	movq	392(%rdi), %rsi
+	movq	400(%rdi), %rdi
 	movq	264(%r8), %r10
 	movq	280(%r8), %r11
 	xorl	%r9d, %r9d

@@ -1,26 +1,26 @@
 	.text
-	.file	"world_get.b2fb6f12a178c5ab-cgu.0"
+	.file	"world_get.77e19e82d6fceb32-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,105
+	.zero	16,110
 .LCPI0_1:
-	.byte	154
-	.byte	3
-	.byte	214
-	.byte	218
-	.byte	143
+	.byte	198
+	.byte	73
+	.byte	61
+	.byte	171
+	.byte	60
+	.byte	242
+	.byte	160
+	.byte	221
+	.byte	54
+	.byte	81
+	.byte	31
+	.byte	55
+	.byte	66
+	.byte	138
 	.byte	5
-	.byte	37
-	.byte	212
-	.byte	28
-	.byte	78
-	.byte	12
-	.byte	67
-	.byte	6
-	.byte	225
-	.byte	51
-	.byte	39
+	.byte	167
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -47,43 +47,45 @@ world_get:
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
-	movl	%esi, %eax
-	cmpq	16(%rdi), %rax
-	jae	.LBB0_15
+	movl	%esi, %ecx
+	cmpq	16(%rdi), %rcx
+	jae	.LBB0_16
 	shrq	$32, %rsi
-	movq	(%rdi), %rcx
-	leaq	(%rax,%rax,4), %rax
-	cmpl	%esi, (%rcx,%rax,4)
-	jne	.LBB0_15
-	cmpl	$-1, 4(%rcx,%rax,4)
-	je	.LBB0_15
-	leaq	(%rcx,%rax,4), %rcx
+	movq	(%rdi), %rax
+	leaq	(%rcx,%rcx,4), %rcx
+	cmpl	%esi, (%rax,%rcx,4)
+	jne	.LBB0_16
+	cmpl	$-1, 4(%rax,%rcx,4)
+	je	.LBB0_16
+	testq	%rsi, %rsi
+	je	.LBB0_16
+	leaq	(%rax,%rcx,4), %rcx
 	addq	$4, %rcx
 	movl	8(%rcx), %eax
 	movl	12(%rcx), %r8d
 	movl	764(%rdi), %edx
 	movl	760(%rdi), %ecx
 	cmpq	$0, 112(%rdi)
-	je	.LBB0_15
+	je	.LBB0_16
 	movq	88(%rdi), %r9
 	movq	96(%rdi), %r10
 	leaq	-24(%r9), %r11
-	movabsq	$-3206225016674313054, %rbx
+	movabsq	$-2476713452668892730, %rbx
 	xorl	%esi, %esi
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
 	movdqa	.LCPI0_1(%rip), %xmm2
 	xorl	%r14d, %r14d
-.LBB0_5:
+.LBB0_6:
 	andq	%r10, %rbx
 	movdqu	(%r9,%rbx), %xmm3
 	movdqa	%xmm3, %xmm4
 	pcmpeqb	%xmm0, %xmm4
 	pmovmskb	%xmm4, %r15d
 	.p2align	4, 0x90
-.LBB0_6:
+.LBB0_7:
 	testw	%r15w, %r15w
-	je	.LBB0_8
+	je	.LBB0_9
 	leal	-1(%r15), %ebp
 	andl	%r15d, %ebp
 	rep		bsfl	%r15d, %r15d
@@ -96,33 +98,33 @@ world_get:
 	pmovmskb	%xmm4, %r13d
 	movl	%ebp, %r15d
 	cmpl	$65535, %r13d
-	jne	.LBB0_6
-	jmp	.LBB0_10
-.LBB0_8:
+	jne	.LBB0_7
+	jmp	.LBB0_11
+.LBB0_9:
 	pcmpeqb	%xmm1, %xmm3
 	pmovmskb	%xmm3, %ebp
 	testl	%ebp, %ebp
-	jne	.LBB0_16
+	jne	.LBB0_17
 	addq	%r14, %rbx
 	addq	$16, %rbx
 	addq	$16, %r14
-	jmp	.LBB0_5
-.LBB0_10:
+	jmp	.LBB0_6
+.LBB0_11:
 	movq	304(%rdi), %rsi
 	cmpq	%rax, %rsi
-	jbe	.LBB0_19
+	jbe	.LBB0_20
 	movq	-8(%r9,%r12,8), %r9
 	movq	288(%rdi), %rdi
 	leaq	(%rax,%rax,8), %r10
 	xorl	%esi, %esi
 	cmpq	%r9, 40(%rdi,%r10,8)
-	jbe	.LBB0_16
+	jbe	.LBB0_17
 	movq	32(%rdi,%r10,8), %r11
 	testq	%r11, %r11
-	je	.LBB0_17
+	je	.LBB0_18
 	shlq	$4, %r9
 	cmpq	$0, (%r11,%r9)
-	je	.LBB0_15
+	je	.LBB0_16
 	leaq	(%rdi,%r10,8), %rax
 	movq	(%rax), %rdi
 	movq	8(%r11,%r9), %rax
@@ -135,11 +137,11 @@ world_get:
 	movq	48(%rdi,%r9), %rax
 	addq	%r8, %rax
 	addq	72(%rdi,%r9), %r8
-	jmp	.LBB0_17
-.LBB0_15:
-	xorl	%esi, %esi
+	jmp	.LBB0_18
 .LBB0_16:
+	xorl	%esi, %esi
 .LBB0_17:
+.LBB0_18:
 	movq	%rsi, 8(%rsp)
 	movq	%rax, 16(%rsp)
 	movq	%r8, 24(%rsp)
@@ -163,7 +165,7 @@ world_get:
 	popq	%rbp
 	.cfi_def_cfa_offset 8
 	retq
-.LBB0_19:
+.LBB0_20:
 	.cfi_def_cfa_offset 96
 	leaq	.Lanon.155300dae0580fe2c3564be8a13f3f51.1(%rip), %rdx
 	movq	%rax, %rdi
@@ -176,7 +178,7 @@ world_get:
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.0,@object
 	.section	.rodata..Lanon.155300dae0580fe2c3564be8a13f3f51.0,"a",@progbits
 .Lanon.155300dae0580fe2c3564be8a13f3f51.0:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/101037d/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/94ab84e/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.0, 109
 
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.1,@object
@@ -184,7 +186,7 @@ world_get:
 	.p2align	3, 0x0
 .Lanon.155300dae0580fe2c3564be8a13f3f51.1:
 	.quad	.Lanon.155300dae0580fe2c3564be8a13f3f51.0
-	.asciz	"m\000\000\000\000\000\000\000\200\003\000\000*\000\000"
+	.asciz	"m\000\000\000\000\000\000\000\230\003\000\000*\000\000"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.1, 24
 
 	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"

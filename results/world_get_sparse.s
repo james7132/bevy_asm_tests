@@ -1,26 +1,26 @@
 	.text
-	.file	"world_get_sparse.43df649f2dda5680-cgu.0"
+	.file	"world_get_sparse.aa6ad80649dc7508-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,121
+	.zero	16,117
 .LCPI0_1:
-	.byte	232
-	.byte	41
-	.byte	234
-	.byte	25
-	.byte	247
-	.byte	98
-	.byte	85
-	.byte	41
-	.byte	51
-	.byte	78
-	.byte	14
-	.byte	149
-	.byte	91
-	.byte	210
-	.byte	64
-	.byte	208
+	.byte	117
+	.byte	159
+	.byte	242
+	.byte	76
+	.byte	141
+	.byte	88
+	.byte	166
+	.byte	235
+	.byte	233
+	.byte	106
+	.byte	120
+	.byte	3
+	.byte	248
+	.byte	89
+	.byte	16
+	.byte	241
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -44,37 +44,40 @@ world_get:
 	.cfi_offset %rbp, -16
 	movl	%esi, %r8d
 	cmpq	16(%rdi), %r8
-	jae	.LBB0_17
+	jae	.LBB0_18
 	shrq	$32, %rsi
 	movq	(%rdi), %rax
 	leaq	(%r8,%r8,4), %rcx
 	cmpl	%esi, (%rax,%rcx,4)
-	jne	.LBB0_17
+	jne	.LBB0_18
+	xorl	%edx, %edx
+	testq	%rsi, %rsi
+	je	.LBB0_19
 	cmpl	$-1, 4(%rax,%rcx,4)
-	je	.LBB0_17
+	je	.LBB0_20
 	movl	764(%rdi), %ecx
 	movl	760(%rdi), %eax
 	cmpq	$0, 112(%rdi)
-	je	.LBB0_17
+	je	.LBB0_18
 	movq	88(%rdi), %rsi
 	movq	96(%rdi), %r9
 	leaq	-24(%rsi), %r10
-	movabsq	$-959201672750599160, %r11
+	movabsq	$-1466387264757915787, %r11
 	xorl	%edx, %edx
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
 	movdqa	.LCPI0_1(%rip), %xmm2
 	xorl	%ebx, %ebx
-.LBB0_5:
+.LBB0_6:
 	andq	%r9, %r11
 	movdqu	(%rsi,%r11), %xmm3
 	movdqa	%xmm3, %xmm4
 	pcmpeqb	%xmm0, %xmm4
 	pmovmskb	%xmm4, %r14d
 	.p2align	4, 0x90
-.LBB0_6:
+.LBB0_7:
 	testw	%r14w, %r14w
-	je	.LBB0_8
+	je	.LBB0_9
 	leal	-1(%r14), %ebp
 	andl	%r14d, %ebp
 	rep		bsfl	%r14d, %r14d
@@ -87,40 +90,40 @@ world_get:
 	pmovmskb	%xmm4, %r12d
 	movl	%ebp, %r14d
 	cmpl	$65535, %r12d
-	jne	.LBB0_6
-	jmp	.LBB0_10
-.LBB0_8:
+	jne	.LBB0_7
+	jmp	.LBB0_11
+.LBB0_9:
 	pcmpeqb	%xmm1, %xmm3
 	pmovmskb	%xmm3, %ebp
 	testl	%ebp, %ebp
-	jne	.LBB0_18
+	jne	.LBB0_19
 	addq	%rbx, %r11
 	addq	$16, %r11
 	addq	$16, %rbx
-	jmp	.LBB0_5
-.LBB0_10:
+	jmp	.LBB0_6
+.LBB0_11:
 	movq	-8(%rsi,%r15,8), %r10
 	xorl	%edx, %edx
 	cmpq	%r10, 280(%rdi)
-	jbe	.LBB0_18
+	jbe	.LBB0_19
 	movq	264(%rdi), %r11
 	testq	%r11, %r11
-	je	.LBB0_19
+	je	.LBB0_20
 	shlq	$4, %r10
 	cmpq	$0, (%r11,%r10)
-	je	.LBB0_17
+	je	.LBB0_18
 	movq	216(%rdi), %rdi
 	movq	8(%r11,%r10), %rdx
 	leaq	(%rdx,%rdx,8), %r10
 	shlq	$4, %r10
 	xorl	%edx, %edx
 	cmpq	136(%rdi,%r10), %r8
-	jae	.LBB0_18
+	jae	.LBB0_19
 	movq	120(%rdi,%r10), %r11
 	testq	%r11, %r11
-	je	.LBB0_19
+	je	.LBB0_20
 	cmpl	$0, (%r11,%r8,8)
-	je	.LBB0_17
+	je	.LBB0_18
 	addq	%r10, %rdi
 	movl	4(%r11,%r8,8), %esi
 	movq	8(%rdi), %rdx
@@ -130,11 +133,11 @@ world_get:
 	movq	48(%rdi), %r9
 	addq	%rsi, %r9
 	addq	72(%rdi), %rsi
-	jmp	.LBB0_19
-.LBB0_17:
-	xorl	%edx, %edx
+	jmp	.LBB0_20
 .LBB0_18:
+	xorl	%edx, %edx
 .LBB0_19:
+.LBB0_20:
 	movq	%rdx, -32(%rsp)
 	movq	%r9, -24(%rsp)
 	movq	%rsi, -16(%rsp)

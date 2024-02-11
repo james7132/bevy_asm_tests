@@ -1,5 +1,5 @@
 	.text
-	.file	"query_for_each.b73be2819c83b950-cgu.0"
+	.file	"query_for_each.f5f1c53f5ca6fd24-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4, 0x90
@@ -18,12 +18,12 @@ query_for_each:
 	.cfi_offset %r14, -24
 	.cfi_offset %r15, -16
 	movq	(%rdi), %rax
-	movq	264(%rax), %r8
+	movq	360(%rax), %r8
 	testq	%r8, %r8
 	je	.LBB0_7
 	movq	8(%rdi), %rcx
 	movl	20(%rdi), %edx
-	movq	248(%rax), %rsi
+	movq	344(%rax), %rsi
 	leaq	(%rsi,%r8,4), %rdi
 	xorl	%r8d, %r8d
 	jmp	.LBB0_2
@@ -45,8 +45,8 @@ query_for_each:
 	jne	.LBB0_8
 	testq	%r9, %r9
 	je	.LBB0_6
-	movq	296(%rax), %r11
-	movq	304(%rax), %rbx
+	movq	392(%rax), %r11
+	movq	400(%rax), %rbx
 	movq	(%r10), %r14
 	movq	32(%r10), %r15
 	shlq	$4, %r11
@@ -122,7 +122,7 @@ query_for_each:
 	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.3,@object
 	.section	.rodata..Lanon.0d252a227dcf2249288cd9db6e2d5b21.3,"a",@progbits
 .Lanon.0d252a227dcf2249288cd9db6e2d5b21.3:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/101037d/crates/bevy_ecs/src/query/iter.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/94ab84e/crates/bevy_ecs/src/query/iter.rs"
 	.size	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.3, 96
 
 	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.4,@object

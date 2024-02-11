@@ -1,5 +1,5 @@
 	.text
-	.file	"query_iter_sparse.b5d07e3791aa4243-cgu.0"
+	.file	"query_iter_sparse.819e67125e34a4e7-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4, 0x90
@@ -8,8 +8,8 @@ query_iter:
 	.cfi_startproc
 	movq	(%rdi), %r8
 	movq	8(%rdi), %rax
-	movq	296(%r8), %rdx
-	movq	304(%r8), %rsi
+	movq	392(%r8), %rdx
+	movq	400(%r8), %rsi
 	movq	264(%rax), %r9
 	movq	280(%rax), %r10
 	xorl	%ecx, %ecx
@@ -67,8 +67,8 @@ query_iter:
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
 	movl	20(%rdi), %esi
-	movq	272(%r8), %rdi
-	movq	288(%r8), %r8
+	movq	368(%r8), %rdi
+	movq	384(%r8), %r8
 	leaq	(%rdi,%r8,4), %r8
 	leaq	.Lanon.a01df851b6197f632189e2f0fa818bdd.0(%rip), %r11
 	xorl	%r9d, %r9d
