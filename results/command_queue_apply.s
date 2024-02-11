@@ -1,5 +1,5 @@
 	.text
-	.file	"command_queue_apply.5f9937fbc5516212-cgu.0"
+	.file	"command_queue_apply.4bb41cbbdd0c62c2-cgu.0"
 	.section	.text.command_queue_apply,"ax",@progbits
 	.globl	command_queue_apply
 	.p2align	4, 0x90
@@ -24,14 +24,12 @@ command_queue_apply:
 	movq	%rdi, %r14
 	movq	%rsi, %rdi
 	callq	*bevy_ecs::world::World::flush@GOTPCREL(%rip)
-	movq	%rbx, (%rsp)
 	movq	(%r14), %r15
 	movq	16(%r14), %r12
 	movq	$0, 16(%r14)
 	testq	%r12, %r12
 	jle	.LBB0_3
 	addq	%r15, %r12
-	movq	%rsp, %rbx
 	.p2align	4, 0x90
 .LBB0_2:
 	leaq	8(%r15), %rdi
