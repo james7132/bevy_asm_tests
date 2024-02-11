@@ -11,6 +11,10 @@ opt-level = 3
 lto = "fat"
 
 [[example]]
+name = "command_queue_apply"
+crate-type = ["lib"]
+
+[[example]]
 name = "entity_insert"
 crate-type = ["lib"]
 
