@@ -1,26 +1,26 @@
 	.text
-	.file	"world_get.77e19e82d6fceb32-cgu.0"
+	.file	"world_get.4b565250ce9c9095-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,110
+	.zero	16,35
 .LCPI0_1:
-	.byte	198
-	.byte	73
-	.byte	61
-	.byte	171
-	.byte	60
-	.byte	242
-	.byte	160
-	.byte	221
-	.byte	54
-	.byte	81
-	.byte	31
-	.byte	55
+	.byte	140
 	.byte	66
-	.byte	138
-	.byte	5
-	.byte	167
+	.byte	230
+	.byte	210
+	.byte	187
+	.byte	157
+	.byte	28
+	.byte	70
+	.byte	173
+	.byte	109
+	.byte	93
+	.byte	227
+	.byte	151
+	.byte	130
+	.byte	98
+	.byte	227
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -51,7 +51,7 @@ world_get:
 	cmpq	16(%rdi), %rcx
 	jae	.LBB0_16
 	shrq	$32, %rsi
-	movq	(%rdi), %rax
+	movq	8(%rdi), %rax
 	leaq	(%rcx,%rcx,4), %rcx
 	cmpl	%esi, (%rax,%rcx,4)
 	jne	.LBB0_16
@@ -70,7 +70,7 @@ world_get:
 	movq	88(%rdi), %r9
 	movq	96(%rdi), %r10
 	leaq	-24(%r9), %r11
-	movabsq	$-2476713452668892730, %rbx
+	movabsq	$5052086312025604748, %rbx
 	xorl	%esi, %esi
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -114,18 +114,19 @@ world_get:
 	cmpq	%rax, %rsi
 	jbe	.LBB0_20
 	movq	-8(%r9,%r12,8), %r9
-	movq	288(%rdi), %rdi
+	movq	296(%rdi), %rdi
 	leaq	(%rax,%rax,8), %r10
 	xorl	%esi, %esi
-	cmpq	%r9, 40(%rdi,%r10,8)
+	cmpq	%r9, 64(%rdi,%r10,8)
 	jbe	.LBB0_17
-	movq	32(%rdi,%r10,8), %r11
+	movq	56(%rdi,%r10,8), %r11
 	testq	%r11, %r11
 	je	.LBB0_18
 	shlq	$4, %r9
 	cmpq	$0, (%r11,%r9)
 	je	.LBB0_16
 	leaq	(%rdi,%r10,8), %rax
+	addq	$24, %rax
 	movq	(%rax), %rdi
 	movq	8(%r11,%r9), %rax
 	leaq	(%rax,%rax,2), %r9
@@ -134,9 +135,9 @@ world_get:
 	imulq	%r8, %rsi
 	addq	16(%rdi,%r9), %rsi
 	shlq	$2, %r8
-	movq	48(%rdi,%r9), %rax
+	movq	56(%rdi,%r9), %rax
 	addq	%r8, %rax
-	addq	72(%rdi,%r9), %r8
+	addq	80(%rdi,%r9), %r8
 	jmp	.LBB0_18
 .LBB0_16:
 	xorl	%esi, %esi
@@ -170,7 +171,6 @@ world_get:
 	leaq	.Lanon.155300dae0580fe2c3564be8a13f3f51.1(%rip), %rdx
 	movq	%rax, %rdi
 	callq	*core::panicking::panic_bounds_check@GOTPCREL(%rip)
-	ud2
 .Lfunc_end0:
 	.size	world_get, .Lfunc_end0-world_get
 	.cfi_endproc
@@ -189,5 +189,5 @@ world_get:
 	.asciz	"m\000\000\000\000\000\000\000\230\003\000\000*\000\000"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.1, 24
 
-	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
+	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
 	.section	".note.GNU-stack","",@progbits

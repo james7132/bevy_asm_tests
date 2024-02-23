@@ -1,5 +1,5 @@
 	.text
-	.file	"query_iter_sparse.819e67125e34a4e7-cgu.0"
+	.file	"query_iter_sparse.735e0ae1430484a6-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4, 0x90
@@ -10,7 +10,7 @@ query_iter:
 	movq	8(%rdi), %rax
 	movq	392(%r8), %rdx
 	movq	400(%r8), %rsi
-	movq	264(%rax), %r9
+	movq	272(%rax), %r9
 	movq	280(%rax), %r10
 	xorl	%ecx, %ecx
 	cmpq	%rdx, %r10
@@ -23,7 +23,7 @@ query_iter:
 	movq	8(%r9,%rdx), %rcx
 	leaq	(%rcx,%rcx,8), %rcx
 	shlq	$4, %rcx
-	addq	216(%rax), %rcx
+	addq	224(%rax), %rcx
 .LBB0_4:
 	xorl	%edx, %edx
 	cmpq	%rsi, %r10
@@ -37,7 +37,7 @@ query_iter:
 	movq	8(%r9,%rsi), %rdx
 	leaq	(%rdx,%rdx,8), %rdx
 	shlq	$4, %rdx
-	addq	216(%rax), %rdx
+	addq	224(%rax), %rdx
 	jmp	.LBB0_10
 .LBB0_8:
 	xorl	%ecx, %ecx
@@ -67,7 +67,7 @@ query_iter:
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
 	movl	20(%rdi), %esi
-	movq	368(%r8), %rdi
+	movq	376(%r8), %rdi
 	movq	384(%r8), %r8
 	leaq	(%rdi,%r8,4), %r8
 	leaq	.Lanon.a01df851b6197f632189e2f0fa818bdd.0(%rip), %r11
@@ -87,7 +87,7 @@ query_iter:
 .LBB0_13:
 	cmpq	%r10, %rbx
 	jne	.LBB0_18
-	movq	152(%rax), %r11
+	movq	160(%rax), %r11
 	movq	168(%rax), %rbx
 	.p2align	4, 0x90
 .LBB0_15:
@@ -102,7 +102,7 @@ query_iter:
 	movq	88(%r14), %r10
 	testq	%r10, %r10
 	je	.LBB0_15
-	movq	72(%r14), %r11
+	movq	80(%r14), %r11
 	xorl	%ebx, %ebx
 .LBB0_18:
 	movq	%rbx, %r14
@@ -110,7 +110,7 @@ query_iter:
 	movl	(%r11,%r14), %r12d
 	cmpq	136(%rcx), %r12
 	jae	.LBB0_22
-	movq	120(%rcx), %r13
+	movq	128(%rcx), %r13
 	movl	$0, %r15d
 	testq	%r13, %r13
 	je	.LBB0_23
@@ -121,7 +121,7 @@ query_iter:
 	imulq	%r14, %r15
 	addq	16(%rcx), %r15
 	shlq	$2, %r14
-	addq	72(%rcx), %r14
+	addq	80(%rcx), %r14
 	jmp	.LBB0_23
 	.p2align	4, 0x90
 .LBB0_22:
@@ -129,7 +129,7 @@ query_iter:
 .LBB0_23:
 	cmpq	136(%rdx), %r12
 	jae	.LBB0_11
-	movq	120(%rdx), %rbp
+	movq	128(%rdx), %rbp
 	movl	$0, %r13d
 	testq	%rbp, %rbp
 	je	.LBB0_12
@@ -163,5 +163,5 @@ query_iter:
 .Lanon.a01df851b6197f632189e2f0fa818bdd.0:
 	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.0, 0
 
-	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
+	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
 	.section	".note.GNU-stack","",@progbits

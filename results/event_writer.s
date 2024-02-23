@@ -1,5 +1,5 @@
 	.text
-	.file	"event_writer.5a02ea54f87138e8-cgu.0"
+	.file	"event_writer.4a8db3b56363d69f-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function
@@ -87,7 +87,7 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	incq	%rsi
 	je	.LBB1_10
 	movq	%rdi, %rbx
-	movq	8(%rdi), %rax
+	movq	(%rdi), %rax
 	leaq	(%rax,%rax), %rcx
 	cmpq	%rsi, %rcx
 	cmovaq	%rcx, %rsi
@@ -103,7 +103,7 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB1_2
-	movq	(%rbx), %rcx
+	movq	8(%rbx), %rcx
 	shlq	$4, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
@@ -130,8 +130,8 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	retq
 .LBB1_5:
 	.cfi_def_cfa_offset 80
-	movq	%rdi, (%rbx)
-	movq	%r14, 8(%rbx)
+	movq	%rdi, 8(%rbx)
+	movq	%r14, (%rbx)
 	addq	$56, %rsp
 	.cfi_def_cfa_offset 24
 	popq	%rbx
@@ -145,11 +145,9 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	jne	.LBB1_9
 .LBB1_10:
 	callq	*alloc::raw_vec::capacity_overflow@GOTPCREL(%rip)
-	ud2
 .LBB1_9:
 	movq	48(%rsp), %rsi
 	callq	*alloc::alloc::handle_alloc_error@GOTPCREL(%rip)
-	ud2
 .Lfunc_end1:
 	.size	alloc::raw_vec::RawVec<T,A>::reserve_for_push, .Lfunc_end1-alloc::raw_vec::RawVec<T,A>::reserve_for_push
 	.cfi_endproc
@@ -174,7 +172,7 @@ event_writer:
 	movq	(%rdi), %rbx
 	movq	48(%rbx), %rsi
 	movq	64(%rbx), %r14
-	cmpq	40(%rbx), %rsi
+	cmpq	32(%rbx), %rsi
 	jne	.LBB2_1
 	leaq	32(%rbx), %rdi
 	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
@@ -184,7 +182,7 @@ event_writer:
 .LBB2_1:
 	movq	%r14, %rax
 .LBB2_3:
-	movq	32(%rbx), %rcx
+	movq	40(%rbx), %rcx
 	movq	%rsi, %rdx
 	shlq	$4, %rdx
 	movq	%r14, (%rcx,%rdx)
@@ -208,5 +206,5 @@ event_writer:
 	.size	event_writer, .Lfunc_end2-event_writer
 	.cfi_endproc
 
-	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
+	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
 	.section	".note.GNU-stack","",@progbits

@@ -1,5 +1,5 @@
 	.text
-	.file	"query_for_each.f5f1c53f5ca6fd24-cgu.0"
+	.file	"query_for_each.a6e5d0bfa368d881-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4, 0x90
@@ -18,28 +18,28 @@ query_for_each:
 	.cfi_offset %r14, -24
 	.cfi_offset %r15, -16
 	movq	(%rdi), %rax
-	movq	360(%rax), %r8
-	testq	%r8, %r8
+	movq	360(%rax), %rsi
+	testq	%rsi, %rsi
 	je	.LBB0_7
-	movq	8(%rdi), %rcx
-	movl	20(%rdi), %edx
-	movq	344(%rax), %rsi
-	leaq	(%rsi,%r8,4), %rdi
+	movl	20(%rdi), %ecx
+	movq	352(%rax), %rdx
+	leaq	(%rdx,%rsi,4), %rsi
+	movq	8(%rdi), %rdi
 	xorl	%r8d, %r8d
 	jmp	.LBB0_2
 	.p2align	4, 0x90
 .LBB0_6:
-	addq	$4, %rsi
-	cmpq	%rdi, %rsi
+	addq	$4, %rdx
+	cmpq	%rsi, %rdx
 	je	.LBB0_7
 .LBB0_2:
-	movl	(%rsi), %r9d
+	movl	(%rdx), %r9d
 	leaq	(%r9,%r9,8), %r10
 	shlq	$3, %r10
-	addq	288(%rcx), %r10
-	cmpq	%r9, 304(%rcx)
+	addq	296(%rdi), %r10
+	cmpq	%r9, 304(%rdi)
 	cmovbeq	%r8, %r10
-	movq	64(%r10), %r9
+	movq	16(%r10), %r9
 	movq	%r9, %r11
 	shrq	$32, %r11
 	jne	.LBB0_8
@@ -47,14 +47,14 @@ query_for_each:
 	je	.LBB0_6
 	movq	392(%rax), %r11
 	movq	400(%rax), %rbx
-	movq	(%r10), %r14
-	movq	32(%r10), %r15
+	movq	24(%r10), %r14
+	movq	56(%r10), %r15
 	shlq	$4, %r11
 	movq	8(%r15,%r11), %r10
 	leaq	(%r10,%r10,2), %r11
 	shlq	$5, %r11
 	movq	16(%r14,%r11), %r10
-	movq	72(%r14,%r11), %r11
+	movq	80(%r14,%r11), %r11
 	shlq	$4, %rbx
 	movq	8(%r15,%rbx), %rbx
 	leaq	(%rbx,%rbx,2), %rbx
@@ -64,7 +64,7 @@ query_for_each:
 	.p2align	4, 0x90
 .LBB0_5:
 	movss	(%rbx,%r14,4), %xmm0
-	movl	%edx, (%r11,%r14,4)
+	movl	%ecx, (%r11,%r14,4)
 	addss	(%r10,%r14,4), %xmm0
 	movss	%xmm0, (%r10,%r14,4)
 	leaq	1(%r14), %r15
@@ -94,7 +94,6 @@ query_for_each:
 	leaq	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.4(%rip), %rsi
 	movq	%rsp, %rdi
 	callq	*core::panicking::panic_fmt@GOTPCREL(%rip)
-	ud2
 .Lfunc_end0:
 	.size	query_for_each, .Lfunc_end0-query_for_each
 	.cfi_endproc
@@ -133,5 +132,5 @@ query_for_each:
 	.asciz	"`\000\000\000\000\000\000\000m\000\000\000\t\000\000"
 	.size	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.4, 24
 
-	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
+	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
 	.section	".note.GNU-stack","",@progbits

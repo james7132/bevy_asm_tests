@@ -1,5 +1,5 @@
 	.text
-	.file	"event_reader.92b72be344c12012-cgu.0"
+	.file	"event_reader.12eae482a087c066-cgu.0"
 	.section	.text.event_reader,"ax",@progbits
 	.globl	event_reader
 	.p2align	4, 0x90
@@ -17,7 +17,7 @@ event_reader:
 	cmovbq	%r9, %r10
 	movq	%rdx, %rdi
 	shlq	$4, %rdi
-	addq	(%r8), %rdi
+	addq	8(%r8), %rdi
 	movq	16(%r8), %rcx
 	subq	%rdx, %rcx
 	cmovbq	%r9, %rcx
@@ -26,7 +26,7 @@ event_reader:
 	cmovbq	%r11, %rdi
 	movq	%r10, %rsi
 	shlq	$4, %rsi
-	addq	32(%r8), %rsi
+	addq	40(%r8), %rsi
 	cmpq	%rdx, %r10
 	cmovaq	%r11, %rsi
 	subq	%r10, %rdx
@@ -77,5 +77,5 @@ event_reader:
 .Lanon.5729158841f6a0a43c5f462d65065398.0:
 	.size	.Lanon.5729158841f6a0a43c5f462d65065398.0, 0
 
-	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
+	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
 	.section	".note.GNU-stack","",@progbits

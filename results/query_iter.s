@@ -1,5 +1,5 @@
 	.text
-	.file	"query_iter.1d738217b811356c-cgu.0"
+	.file	"query_iter.f33d68e8da3fdf64-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4, 0x90
@@ -18,7 +18,7 @@ query_iter:
 	movq	(%rdi), %rax
 	movq	8(%rdi), %rcx
 	movl	20(%rdi), %edx
-	movq	344(%rax), %rsi
+	movq	352(%rax), %rsi
 	movq	360(%rax), %rdi
 	leaq	(%rsi,%rdi,4), %rdi
 	xorl	%r8d, %r8d
@@ -29,10 +29,10 @@ query_iter:
 	cmpq	%r9, %r14
 	jne	.LBB0_7
 .LBB0_2:
-	movq	288(%rcx), %r11
+	movq	296(%rcx), %rbx
 	movq	304(%rcx), %r14
-	movq	392(%rax), %r10
-	movq	400(%rax), %rbx
+	movq	392(%rax), %r11
+	movq	400(%rax), %r10
 	.p2align	4, 0x90
 .LBB0_3:
 	cmpq	%rdi, %rsi
@@ -41,24 +41,24 @@ query_iter:
 	addq	$4, %rsi
 	cmpq	%r9, %r14
 	leaq	(%r9,%r9,8), %r9
-	leaq	(%r11,%r9,8), %r15
+	leaq	(%rbx,%r9,8), %r15
 	cmovbeq	%r8, %r15
-	movq	64(%r15), %r9
+	movq	16(%r15), %r9
 	testq	%r9, %r9
 	je	.LBB0_3
-	movq	32(%r15), %r14
+	movq	56(%r15), %rbx
+	shlq	$4, %r11
+	movq	8(%rbx,%r11), %r11
 	shlq	$4, %r10
-	movq	(%r15), %r15
-	movq	8(%r14,%r10), %r10
-	leaq	(%r10,%r10,2), %r11
+	movq	8(%rbx,%r10), %rbx
+	movq	24(%r15), %r14
+	leaq	(%r11,%r11,2), %r11
 	shlq	$5, %r11
-	movq	16(%r15,%r11), %r10
-	movq	72(%r15,%r11), %r11
-	shlq	$4, %rbx
-	movq	8(%r14,%rbx), %rbx
+	movq	16(%r14,%r11), %r10
+	movq	80(%r14,%r11), %r11
 	leaq	(%rbx,%rbx,2), %rbx
 	shlq	$5, %rbx
-	movq	16(%r15,%rbx), %rbx
+	movq	16(%r14,%rbx), %rbx
 	xorl	%r14d, %r14d
 	jmp	.LBB0_6
 	.p2align	4, 0x90
@@ -91,7 +91,6 @@ query_iter:
 	leaq	.Lanon.a01df851b6197f632189e2f0fa818bdd.2(%rip), %rdx
 	movl	$48, %esi
 	callq	*core::panicking::panic@GOTPCREL(%rip)
-	ud2
 .Lfunc_end0:
 	.size	query_iter, .Lfunc_end0-query_iter
 	.cfi_endproc
@@ -116,5 +115,5 @@ query_iter:
 	.asciz	"c\000\000\000\000\000\000\000w\000\000\000\t\000\000"
 	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.2, 24
 
-	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
+	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
 	.section	".note.GNU-stack","",@progbits

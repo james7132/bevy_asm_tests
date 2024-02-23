@@ -1,5 +1,5 @@
 	.text
-	.file	"query_for_each_sparse.5dd74537c6235e1-cgu.0"
+	.file	"query_for_each_sparse.57f54433f6de8e7d-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4, 0x90
@@ -10,7 +10,7 @@ query_for_each:
 	movq	8(%rdi), %rax
 	movq	392(%rsi), %rdx
 	movq	400(%rsi), %r8
-	movq	264(%rax), %r9
+	movq	272(%rax), %r9
 	movq	280(%rax), %r10
 	xorl	%ecx, %ecx
 	cmpq	%rdx, %r10
@@ -23,7 +23,7 @@ query_for_each:
 	movq	8(%r9,%rdx), %rcx
 	leaq	(%rcx,%rcx,8), %rcx
 	shlq	$4, %rcx
-	addq	216(%rax), %rcx
+	addq	224(%rax), %rcx
 .LBB0_5:
 	xorl	%edx, %edx
 	cmpq	%r8, %r10
@@ -37,7 +37,7 @@ query_for_each:
 	movq	8(%r9,%r8), %rdx
 	leaq	(%rdx,%rdx,8), %rdx
 	shlq	$4, %rdx
-	addq	216(%rax), %rdx
+	addq	224(%rax), %rdx
 	jmp	.LBB0_10
 .LBB0_3:
 	xorl	%ecx, %ecx
@@ -70,7 +70,7 @@ query_for_each:
 	testq	%r8, %r8
 	je	.LBB0_16
 	movl	20(%rdi), %edi
-	movq	368(%rsi), %rsi
+	movq	376(%rsi), %rsi
 	leaq	(%rsi,%r8,4), %r8
 	jmp	.LBB0_12
 	.p2align	4, 0x90
@@ -81,25 +81,25 @@ query_for_each:
 .LBB0_12:
 	movl	(%rsi), %r10d
 	imulq	$152, %r10, %r11
-	addq	152(%rax), %r11
+	addq	160(%rax), %r11
 	cmpq	%r10, 168(%rax)
 	movl	$0, %r9d
 	cmovbeq	%r9, %r11
 	movq	88(%r11), %r10
 	testq	%r10, %r10
 	je	.LBB0_15
-	movq	72(%r11), %r11
+	movq	80(%r11), %r11
 	.p2align	4, 0x90
 .LBB0_14:
 	movl	(%r11), %ebx
-	movq	120(%rcx), %r14
+	movq	128(%rcx), %r14
 	movl	4(%r14,%rbx,8), %r14d
 	movq	8(%rcx), %r15
 	imulq	%r14, %r15
 	movq	16(%rcx), %r12
-	movq	72(%rcx), %r13
+	movq	80(%rcx), %r13
 	movq	16(%rdx), %rbp
-	movq	120(%rdx), %r9
+	movq	128(%rdx), %r9
 	movl	4(%r9,%rbx,8), %r9d
 	imulq	8(%rdx), %r9
 	movss	(%rbp,%r9), %xmm0
@@ -128,5 +128,5 @@ query_for_each:
 	.size	query_for_each, .Lfunc_end0-query_for_each
 	.cfi_endproc
 
-	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
+	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
 	.section	".note.GNU-stack","",@progbits

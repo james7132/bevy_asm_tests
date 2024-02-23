@@ -1,5 +1,5 @@
 	.text
-	.file	"command_queue_apply.5f9937fbc5516212-cgu.0"
+	.file	"command_queue_apply.5dac65a04ccdf8ce-cgu.0"
 	.section	.text.command_queue_apply,"ax",@progbits
 	.globl	command_queue_apply
 	.p2align	4, 0x90
@@ -25,7 +25,7 @@ command_queue_apply:
 	movq	%rsi, %rdi
 	callq	*bevy_ecs::world::World::flush@GOTPCREL(%rip)
 	movq	%rbx, (%rsp)
-	movq	(%r14), %r15
+	movq	8(%r14), %r15
 	movq	16(%r14), %r12
 	movq	$0, 16(%r14)
 	testq	%r12, %r12
@@ -57,5 +57,5 @@ command_queue_apply:
 	.size	command_queue_apply, .Lfunc_end0-command_queue_apply
 	.cfi_endproc
 
-	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
+	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
 	.section	".note.GNU-stack","",@progbits

@@ -8,7 +8,7 @@ changes Bevy ECS on main.
 
 Currently, the tests are only built in release mode, with LTO enabled, for
 `x86_64-unknown-linux-gnu` using the latest stable Rust toolchain and standard library
-(currently 1.74). Please file an issue asking if you would like to test against other
+(currently 1.76). Please file an issue asking if you would like to test against other
 platforms or toolchains.
 
 The source code for each example case can be found in the `examples/` directory, and

@@ -1,26 +1,26 @@
 	.text
-	.file	"resource_remove.f29ad67da05a8b77-cgu.0"
+	.file	"resource_remove.9394ac9250d8d38d-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,52
+	.zero	16,29
 .LCPI0_1:
-	.byte	34
-	.byte	209
-	.byte	115
-	.byte	8
-	.byte	165
-	.byte	252
-	.byte	190
-	.byte	104
-	.byte	211
-	.byte	6
-	.byte	168
-	.byte	43
-	.byte	126
-	.byte	108
-	.byte	112
-	.byte	232
+	.byte	250
+	.byte	117
+	.byte	187
+	.byte	45
+	.byte	216
+	.byte	28
+	.byte	124
+	.byte	58
+	.byte	250
+	.byte	39
+	.byte	25
+	.byte	36
+	.byte	94
+	.byte	229
+	.byte	170
+	.byte	239
 	.section	.text.resource_insert,"ax",@progbits
 	.globl	resource_insert
 	.p2align	4, 0x90
@@ -35,7 +35,7 @@ resource_insert:
 	movq	120(%rdi), %rax
 	movq	128(%rdi), %rcx
 	leaq	-24(%rax), %rdx
-	movabsq	$7547747811261141282, %rsi
+	movabsq	$4214275066117715450, %rsi
 	xorl	%r8d, %r8d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -79,13 +79,13 @@ resource_insert:
 	xorl	%eax, %eax
 	cmpq	%rdx, 408(%rdi)
 	jbe	.LBB0_19
-	movq	392(%rdi), %rsi
+	movq	400(%rdi), %rsi
 	testq	%rsi, %rsi
 	je	.LBB0_19
 	shlq	$4, %rdx
 	cmpq	$0, (%rsi,%rdx)
 	je	.LBB0_19
-	movq	344(%rdi), %rcx
+	movq	352(%rdi), %rcx
 	movq	8(%rsi,%rdx), %rdx
 	leaq	(%rdx,%rdx,2), %rdx
 	shlq	$5, %rdx
@@ -154,5 +154,5 @@ resource_insert:
 	.size	resource_insert, .Lfunc_end0-resource_insert
 	.cfi_endproc
 
-	.ident	"rustc version 1.75.0 (82e1608df 2023-12-21)"
+	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
 	.section	".note.GNU-stack","",@progbits
