@@ -1,26 +1,26 @@
 	.text
-	.file	"world_get.421e65fb7169e603-cgu.0"
+	.file	"world_get.a5f98468d62accb2-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,61
+	.zero	16,90
 .LCPI0_1:
-	.byte	134
-	.byte	12
-	.byte	222
-	.byte	35
-	.byte	51
-	.byte	10
-	.byte	114
-	.byte	123
-	.byte	241
-	.byte	133
-	.byte	234
-	.byte	26
-	.byte	97
-	.byte	2
-	.byte	25
-	.byte	110
+	.byte	137
+	.byte	168
+	.byte	229
+	.byte	173
+	.byte	81
+	.byte	190
+	.byte	70
+	.byte	181
+	.byte	200
+	.byte	145
+	.byte	63
+	.byte	250
+	.byte	105
+	.byte	1
+	.byte	47
+	.byte	203
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -70,7 +70,7 @@ world_get:
 	movq	88(%rdi), %r9
 	movq	96(%rdi), %r10
 	leaq	-24(%r9), %r11
-	movabsq	$8895183428771515526, %rbx
+	movabsq	$-5384407046455711607, %rbx
 	xorl	%esi, %esi
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -113,22 +113,22 @@ world_get:
 	movq	304(%rdi), %rsi
 	cmpq	%rax, %rsi
 	jbe	.LBB0_20
-	movq	-8(%r9,%r12,8), %r9
+	movq	-8(%r9,%r12,8), %r10
 	movq	296(%rdi), %rdi
-	leaq	(%rax,%rax,8), %r10
+	leaq	(%rax,%rax,8), %r9
 	xorl	%esi, %esi
-	cmpq	%r9, 64(%rdi,%r10,8)
+	cmpq	%r10, 64(%rdi,%r9,8)
 	jbe	.LBB0_17
-	movq	56(%rdi,%r10,8), %r11
+	movq	56(%rdi,%r9,8), %r11
 	testq	%r11, %r11
 	je	.LBB0_18
-	shlq	$4, %r9
-	cmpq	$0, (%r11,%r9)
+	movq	(%r11,%r10,8), %rax
+	testq	%rax, %rax
 	je	.LBB0_16
-	leaq	(%rdi,%r10,8), %rax
-	addq	$24, %rax
-	movq	(%rax), %rdi
-	movq	8(%r11,%r9), %rax
+	leaq	(%rdi,%r9,8), %rsi
+	addq	$24, %rsi
+	movq	(%rsi), %rdi
+	notq	%rax
 	leaq	(%rax,%rax,2), %r9
 	shlq	$5, %r9
 	movq	8(%rdi,%r9), %rsi
@@ -178,7 +178,7 @@ world_get:
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.0,@object
 	.section	.rodata..Lanon.155300dae0580fe2c3564be8a13f3f51.0,"a",@progbits
 .Lanon.155300dae0580fe2c3564be8a13f3f51.0:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/2701188/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/56a7685/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.0, 109
 
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.1,@object

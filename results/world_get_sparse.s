@@ -1,26 +1,26 @@
 	.text
-	.file	"world_get_sparse.ae9e40302931d87-cgu.0"
+	.file	"world_get_sparse.437a40b839b49f84-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,20
+	.zero	16,38
 .LCPI0_1:
-	.byte	224
-	.byte	62
-	.byte	50
-	.byte	1
-	.byte	44
-	.byte	176
-	.byte	205
-	.byte	41
-	.byte	139
-	.byte	43
-	.byte	246
-	.byte	10
-	.byte	95
-	.byte	225
-	.byte	114
-	.byte	145
+	.byte	54
+	.byte	248
+	.byte	239
+	.byte	144
+	.byte	0
+	.byte	66
+	.byte	187
+	.byte	76
+	.byte	64
+	.byte	66
+	.byte	155
+	.byte	192
+	.byte	253
+	.byte	113
+	.byte	242
+	.byte	16
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -62,7 +62,7 @@ world_get:
 	movq	88(%rdi), %rsi
 	movq	96(%rdi), %r9
 	leaq	-24(%rsi), %r10
-	movabsq	$3012257428825849568, %r11
+	movabsq	$5529085537726494774, %r11
 	xorl	%edx, %edx
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -109,11 +109,11 @@ world_get:
 	movq	272(%rdi), %r11
 	testq	%r11, %r11
 	je	.LBB0_20
-	shlq	$4, %r10
-	cmpq	$0, (%r11,%r10)
+	movq	(%r11,%r10,8), %rdx
+	testq	%rdx, %rdx
 	je	.LBB0_18
 	movq	224(%rdi), %rdi
-	movq	8(%r11,%r10), %rdx
+	notq	%rdx
 	leaq	(%rdx,%rdx,8), %r10
 	shlq	$4, %r10
 	xorl	%edx, %edx

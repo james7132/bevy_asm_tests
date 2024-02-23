@@ -1,5 +1,5 @@
 	.text
-	.file	"query_get_sparse.1a8e5aef354730ea-cgu.0"
+	.file	"query_get_sparse.fb23eebebb7ab50f-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4, 0x90
@@ -46,10 +46,10 @@ query_get:
 	jbe	.LBB0_16
 	testq	%r10, %r10
 	je	.LBB0_16
-	shlq	$4, %rsi
-	cmpq	$0, (%r10,%rsi)
+	movq	(%r10,%rsi,8), %rsi
+	testq	%rsi, %rsi
 	je	.LBB0_15
-	movq	8(%r10,%rsi), %rsi
+	notq	%rsi
 	leaq	(%rsi,%rsi,8), %r9
 	shlq	$4, %r9
 	addq	224(%r8), %r9
@@ -88,10 +88,10 @@ query_get:
 	jbe	.LBB0_21
 	testq	%r10, %r10
 	je	.LBB0_21
-	shlq	$4, %rdi
-	cmpq	$0, (%r10,%rdi)
+	movq	(%r10,%rdi,8), %rsi
+	testq	%rsi, %rsi
 	je	.LBB0_20
-	movq	8(%r10,%rdi), %rsi
+	notq	%rsi
 	leaq	(%rsi,%rsi,8), %rsi
 	shlq	$4, %rsi
 	addq	224(%r8), %rsi

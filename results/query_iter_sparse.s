@@ -1,5 +1,5 @@
 	.text
-	.file	"query_iter_sparse.37eddd5afdc18781-cgu.0"
+	.file	"query_iter_sparse.38f6db9e7c89b606-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4, 0x90
@@ -17,10 +17,10 @@ query_iter:
 	jbe	.LBB0_4
 	testq	%r9, %r9
 	je	.LBB0_4
-	shlq	$4, %rdx
-	cmpq	$0, (%r9,%rdx)
+	movq	(%r9,%rdx,8), %rcx
+	testq	%rcx, %rcx
 	je	.LBB0_8
-	movq	8(%r9,%rdx), %rcx
+	notq	%rcx
 	leaq	(%rcx,%rcx,8), %rcx
 	shlq	$4, %rcx
 	addq	224(%rax), %rcx
@@ -31,10 +31,10 @@ query_iter:
 .LBB0_5:
 	testq	%r9, %r9
 	je	.LBB0_10
-	shlq	$4, %rsi
-	cmpq	$0, (%r9,%rsi)
+	movq	(%r9,%rsi,8), %rdx
+	testq	%rdx, %rdx
 	je	.LBB0_9
-	movq	8(%r9,%rsi), %rdx
+	notq	%rdx
 	leaq	(%rdx,%rdx,8), %rdx
 	shlq	$4, %rdx
 	addq	224(%rax), %rdx

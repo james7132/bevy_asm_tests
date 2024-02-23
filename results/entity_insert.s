@@ -1,5 +1,5 @@
 	.text
-	.file	"entity_insert.d436241fb43ad779-cgu.0"
+	.file	"entity_insert.970f06c1484fe6f-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function
@@ -94,17 +94,16 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$5, %rsi
 	movl	$4, %r14d
 	cmovaeq	%rsi, %r14
+	movabsq	$104811045873349726, %rcx
 	xorl	%esi, %esi
-	movq	%r14, %rcx
-	shrq	$58, %rcx
-	sete	%sil
-	movq	%r14, %rdx
-	shlq	$5, %rdx
+	cmpq	%rcx, %r14
+	setb	%sil
+	imulq	$88, %r14, %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB1_2
 	movq	8(%rbx), %rcx
-	shlq	$5, %rax
+	imulq	$88, %rax, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -175,16 +174,17 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$5, %rsi
 	movl	$4, %r14d
 	cmovaeq	%rsi, %r14
-	movabsq	$104811045873349726, %rcx
 	xorl	%esi, %esi
-	cmpq	%rcx, %r14
-	setb	%sil
-	imulq	$88, %r14, %rdx
+	movq	%r14, %rcx
+	shrq	$58, %rcx
+	sete	%sil
+	movq	%r14, %rdx
+	shlq	$5, %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB2_2
 	movq	8(%rbx), %rcx
-	imulq	$88, %rax, %rax
+	shlq	$5, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -1398,7 +1398,7 @@ hashbrown::raw::inner::RawTable<T,A>::reserve_rehash:
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI7_0:
-	.zero	16,29
+	.zero	16,34
 	.section	.text.entity_insert,"ax",@progbits
 	.globl	entity_insert
 	.p2align	4, 0x90
@@ -1429,8 +1429,8 @@ entity_insert:
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
 	movss	%xmm0, 4(%rsp)
-	movabsq	$-1575265730374717256, %r12
-	movabsq	$4286417166700965122, %rbx
+	movabsq	$537721330589770166, %r12
+	movabsq	$5025804693211550775, %rbx
 	movq	%rbx, %r13
 	movq	%rdi, 16(%rsp)
 	movq	(%rdi), %r14
@@ -1580,10 +1580,10 @@ entity_insert:
 	movq	56(%rdx), %rsi
 	testq	%rsi, %rsi
 	je	.LBB7_67
-	shlq	$4, %rcx
-	cmpq	$0, (%rsi,%rcx)
+	movq	(%rsi,%rcx,8), %rcx
+	testq	%rcx, %rcx
 	je	.LBB7_65
-	movq	8(%rsi,%rcx), %rcx
+	notq	%rcx
 	leaq	(%rcx,%rcx,2), %r12
 	shlq	$5, %r12
 	addq	24(%rdx), %r12
@@ -1772,8 +1772,8 @@ entity_insert:
 	subq	%rcx, 528(%r14)
 	leaq	-16(%rax), %rcx
 	andq	%rbp, %rcx
-	movb	$29, (%r15,%rax)
-	movb	$29, 16(%rcx,%r15)
+	movb	$34, (%r15,%rax)
+	movb	$34, 16(%rcx,%r15)
 	incq	536(%r14)
 	negq	%rax
 	leaq	(%rax,%rax,2), %rax
@@ -1848,10 +1848,10 @@ entity_insert:
 	movq	56(%rdx), %rsi
 	testq	%rsi, %rsi
 	je	.LBB7_99
-	shlq	$4, %rcx
-	cmpq	$0, (%rsi,%rcx)
+	movq	(%rsi,%rcx,8), %rcx
+	testq	%rcx, %rcx
 	je	.LBB7_97
-	movq	8(%rsi,%rcx), %rcx
+	notq	%rcx
 	leaq	(%rcx,%rcx,2), %r12
 	shlq	$5, %r12
 	addq	24(%rdx), %r12
@@ -1991,10 +1991,10 @@ entity_insert:
 	movq	56(%rsi), %rdx
 	testq	%rdx, %rdx
 	je	.LBB7_125
-	shlq	$4, %rcx
-	cmpq	$0, (%rdx,%rcx)
+	movq	(%rdx,%rcx,8), %rcx
+	testq	%rcx, %rcx
 	je	.LBB7_123
-	movq	8(%rdx,%rcx), %rcx
+	notq	%rcx
 	leaq	(%rcx,%rcx,2), %r13
 	shlq	$5, %r13
 	addq	24(%rsi), %r13
@@ -2147,8 +2147,8 @@ entity_insert:
 	subq	%rsi, 104(%r14)
 	leaq	-16(%rdx), %rsi
 	andq	%rcx, %rsi
-	movb	$29, (%rax,%rdx)
-	movb	$29, 16(%rsi,%rax)
+	movb	$34, (%rax,%rdx)
+	movb	$34, 16(%rsi,%rax)
 	incq	112(%r14)
 	negq	%rdx
 	leaq	(%rdx,%rdx,2), %rcx
@@ -2300,7 +2300,7 @@ GCC_except_table7:
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.2,@object
 	.section	.rodata..Lanon.83959b72e5b8236df4a28836bf490603.2,"a",@progbits
 .Lanon.83959b72e5b8236df4a28836bf490603.2:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/2701188/crates/bevy_ecs/src/archetype.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/56a7685/crates/bevy_ecs/src/archetype.rs"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.2, 95
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.3,@object
