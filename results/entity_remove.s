@@ -1,5 +1,5 @@
 	.text
-	.file	"entity_remove.c08b9deb544af4f1-cgu.0"
+	.file	"entity_remove.527dcf53f3a27b14-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function
@@ -96,15 +96,14 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmovaeq	%rsi, %r14
 	xorl	%esi, %esi
 	movq	%r14, %rcx
-	shrq	$58, %rcx
+	shrq	$60, %rcx
 	sete	%sil
-	movq	%r14, %rdx
-	shlq	$5, %rdx
+	leaq	(,%r14,8), %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB1_2
 	movq	8(%rbx), %rcx
-	shlq	$5, %rax
+	shlq	$3, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -257,14 +256,15 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmovaeq	%rsi, %r14
 	xorl	%esi, %esi
 	movq	%r14, %rcx
-	shrq	$60, %rcx
+	shrq	$58, %rcx
 	sete	%sil
-	leaq	(,%r14,8), %rdx
+	movq	%r14, %rdx
+	shlq	$5, %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB3_2
 	movq	8(%rbx), %rcx
-	shlq	$3, %rax
+	shlq	$5, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -1317,7 +1317,7 @@ hashbrown::raw::inner::RawTable<T,A>::reserve_rehash:
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI6_0:
-	.zero	16,55
+	.zero	16,19
 	.section	.text.entity_remove,"ax",@progbits
 	.globl	entity_remove
 	.p2align	4, 0x90
@@ -1347,8 +1347,8 @@ entity_remove:
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
-	movabsq	$8722327786113039941, %r13
-	movabsq	$8048812109101784369, %rbx
+	movabsq	$5506350314595642904, %r13
+	movabsq	$2745385085385384826, %rbx
 	movq	%rbx, %r12
 	movq	%rdi, 104(%rsp)
 	movq	(%rdi), %rbp
@@ -1579,8 +1579,8 @@ entity_remove:
 	subq	%rcx, 528(%rbp)
 	leaq	-16(%rax), %rcx
 	andq	%r15, %rcx
-	movb	$55, (%r14,%rax)
-	movb	$55, 16(%rcx,%r14)
+	movb	$19, (%r14,%rax)
+	movb	$19, 16(%rcx,%r14)
 	incq	536(%rbp)
 	negq	%rax
 	leaq	(%rax,%rax,2), %rax
@@ -1688,8 +1688,8 @@ entity_remove:
 	subq	%rsi, 104(%rbp)
 	leaq	-16(%rdx), %rsi
 	andq	%rcx, %rsi
-	movb	$55, (%rax,%rdx)
-	movb	$55, 16(%rsi,%rax)
+	movb	$19, (%rax,%rdx)
+	movb	$19, 16(%rsi,%rax)
 	incq	112(%rbp)
 	negq	%rdx
 	leaq	(%rdx,%rdx,2), %rcx

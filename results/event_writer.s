@@ -1,5 +1,5 @@
 	.text
-	.file	"event_writer.4a8db3b56363d69f-cgu.0"
+	.file	"event_writer.8775b734076eefb2-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function

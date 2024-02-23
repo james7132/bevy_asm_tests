@@ -1,26 +1,26 @@
 	.text
-	.file	"world_get.4b565250ce9c9095-cgu.0"
+	.file	"world_get.5b1d4747beeaa444-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,35
+	.zero	16,102
 .LCPI0_1:
-	.byte	140
-	.byte	66
-	.byte	230
-	.byte	210
-	.byte	187
-	.byte	157
-	.byte	28
-	.byte	70
-	.byte	173
-	.byte	109
-	.byte	93
-	.byte	227
-	.byte	151
 	.byte	130
-	.byte	98
-	.byte	227
+	.byte	130
+	.byte	117
+	.byte	242
+	.byte	160
+	.byte	53
+	.byte	30
+	.byte	205
+	.byte	71
+	.byte	100
+	.byte	153
+	.byte	102
+	.byte	164
+	.byte	129
+	.byte	183
+	.byte	167
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -70,7 +70,7 @@ world_get:
 	movq	88(%rdi), %r9
 	movq	96(%rdi), %r10
 	leaq	-24(%r9), %r11
-	movabsq	$5052086312025604748, %rbx
+	movabsq	$-3666434081254178174, %rbx
 	xorl	%esi, %esi
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -178,15 +178,15 @@ world_get:
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.0,@object
 	.section	.rodata..Lanon.155300dae0580fe2c3564be8a13f3f51.0,"a",@progbits
 .Lanon.155300dae0580fe2c3564be8a13f3f51.0:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/94ab84e/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
-	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.0, 109
+	.ascii	"/home/james/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_ecs-0.13.0/src/world/unsafe_world_cell.rs"
+	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.0, 111
 
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.1,@object
 	.section	.data.rel.ro..Lanon.155300dae0580fe2c3564be8a13f3f51.1,"aw",@progbits
 	.p2align	3, 0x0
 .Lanon.155300dae0580fe2c3564be8a13f3f51.1:
 	.quad	.Lanon.155300dae0580fe2c3564be8a13f3f51.0
-	.asciz	"m\000\000\000\000\000\000\000\230\003\000\000*\000\000"
+	.asciz	"o\000\000\000\000\000\000\000\230\003\000\000*\000\000"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.1, 24
 
 	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"

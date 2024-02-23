@@ -1,5 +1,5 @@
 	.text
-	.file	"query_iter.f33d68e8da3fdf64-cgu.0"
+	.file	"query_iter.82a1047857a9a7dd-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4, 0x90
@@ -104,15 +104,15 @@ query_iter:
 	.type	.Lanon.a01df851b6197f632189e2f0fa818bdd.1,@object
 	.section	.rodata..Lanon.a01df851b6197f632189e2f0fa818bdd.1,"a",@progbits
 .Lanon.a01df851b6197f632189e2f0fa818bdd.1:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/94ab84e/crates/bevy_ecs/src/storage/table.rs"
-	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.1, 99
+	.ascii	"/home/james/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_ecs-0.13.0/src/storage/table.rs"
+	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.1, 101
 
 	.type	.Lanon.a01df851b6197f632189e2f0fa818bdd.2,@object
 	.section	.data.rel.ro..Lanon.a01df851b6197f632189e2f0fa818bdd.2,"aw",@progbits
 	.p2align	3, 0x0
 .Lanon.a01df851b6197f632189e2f0fa818bdd.2:
 	.quad	.Lanon.a01df851b6197f632189e2f0fa818bdd.1
-	.asciz	"c\000\000\000\000\000\000\000w\000\000\000\t\000\000"
+	.asciz	"e\000\000\000\000\000\000\000w\000\000\000\t\000\000"
 	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.2, 24
 
 	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"

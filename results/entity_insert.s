@@ -1,5 +1,5 @@
 	.text
-	.file	"entity_insert.ea5b5a7ab98fa6c-cgu.0"
+	.file	"entity_insert.f99bae3c5b880de7-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function
@@ -96,15 +96,14 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmovaeq	%rsi, %r14
 	xorl	%esi, %esi
 	movq	%r14, %rcx
-	shrq	$58, %rcx
+	shrq	$60, %rcx
 	sete	%sil
-	movq	%r14, %rdx
-	shlq	$5, %rdx
+	leaq	(,%r14,8), %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB1_2
 	movq	8(%rbx), %rcx
-	shlq	$5, %rax
+	shlq	$3, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -175,16 +174,16 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$5, %rsi
 	movl	$4, %r14d
 	cmovaeq	%rsi, %r14
+	movabsq	$104811045873349726, %rcx
 	xorl	%esi, %esi
-	movq	%r14, %rcx
-	shrq	$60, %rcx
-	sete	%sil
-	leaq	(,%r14,8), %rdx
+	cmpq	%rcx, %r14
+	setb	%sil
+	imulq	$88, %r14, %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB2_2
 	movq	8(%rbx), %rcx
-	shlq	$3, %rax
+	imulq	$88, %rax, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -255,16 +254,17 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$5, %rsi
 	movl	$4, %r14d
 	cmovaeq	%rsi, %r14
-	movabsq	$104811045873349726, %rcx
 	xorl	%esi, %esi
-	cmpq	%rcx, %r14
-	setb	%sil
-	imulq	$88, %r14, %rdx
+	movq	%r14, %rcx
+	shrq	$59, %rcx
+	sete	%sil
+	movq	%r14, %rdx
+	shlq	$4, %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB3_2
 	movq	8(%rbx), %rcx
-	imulq	$88, %rax, %rax
+	shlq	$4, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -337,15 +337,15 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmovaeq	%rsi, %r14
 	xorl	%esi, %esi
 	movq	%r14, %rcx
-	shrq	$59, %rcx
+	shrq	$58, %rcx
 	sete	%sil
 	movq	%r14, %rdx
-	shlq	$4, %rdx
+	shlq	$5, %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB4_2
 	movq	8(%rbx), %rcx
-	shlq	$4, %rax
+	shlq	$5, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -1429,8 +1429,8 @@ entity_insert:
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
 	movss	%xmm0, 4(%rsp)
-	movabsq	$-5625745631856551065, %r12
-	movabsq	$6868962992238278726, %rbx
+	movabsq	$-4353337284533066640, %r12
+	movabsq	$6784154772209109042, %rbx
 	movq	%rbx, %r13
 	movq	%rdi, 16(%rsp)
 	movq	(%rdi), %r14
@@ -2300,15 +2300,15 @@ GCC_except_table7:
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.2,@object
 	.section	.rodata..Lanon.83959b72e5b8236df4a28836bf490603.2,"a",@progbits
 .Lanon.83959b72e5b8236df4a28836bf490603.2:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/94ab84e/crates/bevy_ecs/src/archetype.rs"
-	.size	.Lanon.83959b72e5b8236df4a28836bf490603.2, 95
+	.ascii	"/home/james/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_ecs-0.13.0/src/archetype.rs"
+	.size	.Lanon.83959b72e5b8236df4a28836bf490603.2, 97
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.3,@object
 	.section	.data.rel.ro..Lanon.83959b72e5b8236df4a28836bf490603.3,"aw",@progbits
 	.p2align	3, 0x0
 .Lanon.83959b72e5b8236df4a28836bf490603.3:
 	.quad	.Lanon.83959b72e5b8236df4a28836bf490603.2
-	.asciz	"_\000\000\000\000\000\000\000\275\001\000\000\026\000\000"
+	.asciz	"a\000\000\000\000\000\000\000\275\001\000\000\026\000\000"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.3, 24
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.4,@object
@@ -2322,7 +2322,7 @@ GCC_except_table7:
 	.p2align	3, 0x0
 .Lanon.83959b72e5b8236df4a28836bf490603.5:
 	.quad	.Lanon.83959b72e5b8236df4a28836bf490603.2
-	.asciz	"_\000\000\000\000\000\000\000\350\001\000\000#\000\000"
+	.asciz	"a\000\000\000\000\000\000\000\350\001\000\000#\000\000"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.5, 24
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.6,@object

@@ -1,5 +1,5 @@
 	.text
-	.file	"query_get.5815aa0fb479c831-cgu.0"
+	.file	"query_get.666a9edb6db0a3c2-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4, 0x90

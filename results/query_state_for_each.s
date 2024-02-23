@@ -1,5 +1,5 @@
 	.text
-	.file	"query_state_for_each.1884e77d9434eec5-cgu.0"
+	.file	"query_state_for_each.f420be805e02f277-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function
@@ -893,29 +893,29 @@ query_state_for_each:
 	.type	.Lanon.6dae6fee9a6576153fd5b36d700139f2.11,@object
 	.section	.rodata..Lanon.6dae6fee9a6576153fd5b36d700139f2.11,"a",@progbits
 .Lanon.6dae6fee9a6576153fd5b36d700139f2.11:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/94ab84e/crates/bevy_ecs/src/query/iter.rs"
-	.size	.Lanon.6dae6fee9a6576153fd5b36d700139f2.11, 96
+	.ascii	"/home/james/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_ecs-0.13.0/src/query/iter.rs"
+	.size	.Lanon.6dae6fee9a6576153fd5b36d700139f2.11, 98
 
 	.type	.Lanon.6dae6fee9a6576153fd5b36d700139f2.12,@object
 	.section	.data.rel.ro..Lanon.6dae6fee9a6576153fd5b36d700139f2.12,"aw",@progbits
 	.p2align	3, 0x0
 .Lanon.6dae6fee9a6576153fd5b36d700139f2.12:
 	.quad	.Lanon.6dae6fee9a6576153fd5b36d700139f2.11
-	.asciz	"`\000\000\000\000\000\000\000m\000\000\000\t\000\000"
+	.asciz	"b\000\000\000\000\000\000\000m\000\000\000\t\000\000"
 	.size	.Lanon.6dae6fee9a6576153fd5b36d700139f2.12, 24
 
 	.type	.Lanon.6dae6fee9a6576153fd5b36d700139f2.13,@object
 	.section	.rodata..Lanon.6dae6fee9a6576153fd5b36d700139f2.13,"a",@progbits
 .Lanon.6dae6fee9a6576153fd5b36d700139f2.13:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/94ab84e/crates/bevy_ecs/src/query/state.rs"
-	.size	.Lanon.6dae6fee9a6576153fd5b36d700139f2.13, 97
+	.ascii	"/home/james/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_ecs-0.13.0/src/query/state.rs"
+	.size	.Lanon.6dae6fee9a6576153fd5b36d700139f2.13, 99
 
 	.type	.Lanon.6dae6fee9a6576153fd5b36d700139f2.14,@object
 	.section	.data.rel.ro..Lanon.6dae6fee9a6576153fd5b36d700139f2.14,"aw",@progbits
 	.p2align	3, 0x0
 .Lanon.6dae6fee9a6576153fd5b36d700139f2.14:
 	.quad	.Lanon.6dae6fee9a6576153fd5b36d700139f2.13
-	.asciz	"a\000\000\000\000\000\000\000\016\001\000\000%\000\000"
+	.asciz	"c\000\000\000\000\000\000\000\016\001\000\000%\000\000"
 	.size	.Lanon.6dae6fee9a6576153fd5b36d700139f2.14, 24
 
 	.type	.Lanon.6dae6fee9a6576153fd5b36d700139f2.15,@object
@@ -923,7 +923,7 @@ query_state_for_each:
 	.p2align	3, 0x0
 .Lanon.6dae6fee9a6576153fd5b36d700139f2.15:
 	.quad	.Lanon.6dae6fee9a6576153fd5b36d700139f2.13
-	.asciz	"a\000\000\000\000\000\000\000\t\001\000\000\016\000\000"
+	.asciz	"c\000\000\000\000\000\000\000\t\001\000\000\016\000\000"
 	.size	.Lanon.6dae6fee9a6576153fd5b36d700139f2.15, 24
 
 	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
