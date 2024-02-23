@@ -1,26 +1,26 @@
 	.text
-	.file	"resource_remove.f2b83eaec73690f-cgu.0"
+	.file	"resource_remove.fe56fd7925fc8b6f-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,45
+	.zero	16,98
 .LCPI0_1:
-	.byte	110
-	.byte	223
-	.byte	78
-	.byte	76
-	.byte	114
-	.byte	145
-	.byte	179
-	.byte	90
-	.byte	171
-	.byte	112
-	.byte	150
-	.byte	120
-	.byte	126
-	.byte	134
-	.byte	59
-	.byte	60
+	.byte	244
+	.byte	102
+	.byte	243
+	.byte	146
+	.byte	72
+	.byte	85
+	.byte	89
+	.byte	197
+	.byte	89
+	.byte	45
+	.byte	88
+	.byte	89
+	.byte	6
+	.byte	129
+	.byte	200
+	.byte	87
 	.section	.text.resource_insert,"ax",@progbits
 	.globl	resource_insert
 	.p2align	4, 0x90
@@ -35,7 +35,7 @@ resource_insert:
 	movq	120(%rdi), %rax
 	movq	128(%rdi), %rcx
 	leaq	-24(%rax), %rdx
-	movabsq	$6535727404337258350, %rsi
+	movabsq	$-4226253005119068428, %rsi
 	xorl	%r8d, %r8d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1

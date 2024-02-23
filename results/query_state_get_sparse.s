@@ -1,5 +1,5 @@
 	.text
-	.file	"query_state_get_sparse.3fb61dd792160e47-cgu.0"
+	.file	"query_state_get_sparse.c482f98d255dce3a-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function
@@ -942,15 +942,15 @@ query_state_get:
 	.type	.Lanon.df18cc41ae9ddb601fc5a42c06362435.9,@object
 	.section	.rodata..Lanon.df18cc41ae9ddb601fc5a42c06362435.9,"a",@progbits
 .Lanon.df18cc41ae9ddb601fc5a42c06362435.9:
-	.ascii	"/home/james/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_ecs-0.13.0/src/query/state.rs"
-	.size	.Lanon.df18cc41ae9ddb601fc5a42c06362435.9, 99
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/2701188/crates/bevy_ecs/src/query/state.rs"
+	.size	.Lanon.df18cc41ae9ddb601fc5a42c06362435.9, 97
 
 	.type	.Lanon.df18cc41ae9ddb601fc5a42c06362435.10,@object
 	.section	.data.rel.ro..Lanon.df18cc41ae9ddb601fc5a42c06362435.10,"aw",@progbits
 	.p2align	3, 0x0
 .Lanon.df18cc41ae9ddb601fc5a42c06362435.10:
 	.quad	.Lanon.df18cc41ae9ddb601fc5a42c06362435.9
-	.asciz	"c\000\000\000\000\000\000\000\016\001\000\000%\000\000"
+	.asciz	"a\000\000\000\000\000\000\000\r\001\000\000%\000\000"
 	.size	.Lanon.df18cc41ae9ddb601fc5a42c06362435.10, 24
 
 	.type	.Lanon.df18cc41ae9ddb601fc5a42c06362435.11,@object
@@ -958,7 +958,7 @@ query_state_get:
 	.p2align	3, 0x0
 .Lanon.df18cc41ae9ddb601fc5a42c06362435.11:
 	.quad	.Lanon.df18cc41ae9ddb601fc5a42c06362435.9
-	.asciz	"c\000\000\000\000\000\000\000\t\001\000\000\016\000\000"
+	.asciz	"a\000\000\000\000\000\000\000\b\001\000\000\016\000\000"
 	.size	.Lanon.df18cc41ae9ddb601fc5a42c06362435.11, 24
 
 	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"

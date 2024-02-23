@@ -1,5 +1,5 @@
 	.text
-	.file	"resource_insert.3f1386b8ef19bdbb-cgu.0"
+	.file	"resource_insert.aac6385c31cd39f9-cgu.0"
 	.section	".text.<&T as core::fmt::Display>::fmt","ax",@progbits
 	.p2align	4, 0x90
 	.type	<&T as core::fmt::Display>::fmt,@function
@@ -191,16 +191,16 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$5, %rsi
 	movl	$4, %r14d
 	cmovaeq	%rsi, %r14
-	movabsq	$104811045873349726, %rcx
 	xorl	%esi, %esi
-	cmpq	%rcx, %r14
-	setb	%sil
-	imulq	$88, %r14, %rdx
+	movq	%r14, %rcx
+	shrq	$60, %rcx
+	sete	%sil
+	leaq	(,%r14,8), %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB3_2
 	movq	8(%rbx), %rcx
-	imulq	$88, %rax, %rax
+	shlq	$3, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -271,16 +271,16 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$5, %rsi
 	movl	$4, %r14d
 	cmovaeq	%rsi, %r14
+	movabsq	$104811045873349726, %rcx
 	xorl	%esi, %esi
-	movq	%r14, %rcx
-	shrq	$60, %rcx
-	sete	%sil
-	leaq	(,%r14,8), %rdx
+	cmpq	%rcx, %r14
+	setb	%sil
+	imulq	$88, %r14, %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB4_2
 	movq	8(%rbx), %rcx
-	shlq	$3, %rax
+	imulq	$88, %rax, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -899,7 +899,7 @@ hashbrown::raw::inner::RawTable<T,A>::reserve_rehash:
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI7_0:
-	.zero	16,120
+	.zero	16,113
 	.section	.text.resource_insert,"ax",@progbits
 	.globl	resource_insert
 	.p2align	4, 0x90
@@ -930,8 +930,8 @@ resource_insert:
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
 	movq	%rdi, %rbx
-	movabsq	$2122693452315163974, %r14
-	movabsq	$-1125604904107772000, %r12
+	movabsq	$-6921847066145076660, %r14
+	movabsq	$-2043061543111480909, %r12
 	movq	%r12, %r15
 	addq	$64, %rdi
 	movq	120(%rbx), %rax
@@ -1269,8 +1269,8 @@ resource_insert:
 	subq	%rsi, 136(%rbx)
 	leaq	-16(%rdx), %rsi
 	andq	%rcx, %rsi
-	movb	$120, (%rax,%rdx)
-	movb	$120, 16(%rsi,%rax)
+	movb	$113, (%rax,%rdx)
+	movb	$113, 16(%rsi,%rax)
 	incq	144(%rbx)
 	negq	%rdx
 	leaq	(%rdx,%rdx,2), %rcx
@@ -1513,15 +1513,15 @@ GCC_except_table7:
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.1,@object
 	.section	.rodata..Lanon.7389e6565b10821dad2f4dd8892551e5.1,"a",@progbits
 .Lanon.7389e6565b10821dad2f4dd8892551e5.1:
-	.ascii	"/home/james/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_ecs-0.13.0/src/storage/sparse_set.rs"
-	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.1, 106
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/2701188/crates/bevy_ecs/src/storage/sparse_set.rs"
+	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.1, 104
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.2,@object
 	.section	.data.rel.ro..Lanon.7389e6565b10821dad2f4dd8892551e5.2,"aw",@progbits
 	.p2align	3, 0x0
 .Lanon.7389e6565b10821dad2f4dd8892551e5.2:
 	.quad	.Lanon.7389e6565b10821dad2f4dd8892551e5.1
-	.asciz	"j\000\000\000\000\000\000\000L\000\000\000\024\000\000"
+	.asciz	"h\000\000\000\000\000\000\000L\000\000\000\024\000\000"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.2, 24
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.3,@object
@@ -1533,15 +1533,15 @@ GCC_except_table7:
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.4,@object
 	.section	.rodata..Lanon.7389e6565b10821dad2f4dd8892551e5.4,"a",@progbits
 .Lanon.7389e6565b10821dad2f4dd8892551e5.4:
-	.ascii	"/home/james/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_ecs-0.13.0/src/storage/resource.rs"
-	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.4, 104
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/2701188/crates/bevy_ecs/src/storage/resource.rs"
+	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.4, 102
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.5,@object
 	.section	.data.rel.ro..Lanon.7389e6565b10821dad2f4dd8892551e5.5,"aw",@progbits
 	.p2align	3, 0x0
 .Lanon.7389e6565b10821dad2f4dd8892551e5.5:
 	.quad	.Lanon.7389e6565b10821dad2f4dd8892551e5.4
-	.asciz	"h\000\000\000\000\000\000\0005\001\000\000D\000\000"
+	.asciz	"f\000\000\000\000\000\000\0009\001\000\000D\000\000"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.5, 24
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.6,@object
@@ -1571,7 +1571,7 @@ GCC_except_table7:
 	.p2align	3, 0x0
 .Lanon.7389e6565b10821dad2f4dd8892551e5.9:
 	.quad	.Lanon.7389e6565b10821dad2f4dd8892551e5.4
-	.asciz	"h\000\000\000\000\000\000\0007\001\000\000\021\000\000"
+	.asciz	"f\000\000\000\000\000\000\000;\001\000\000\021\000\000"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.9, 24
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.10,@object
