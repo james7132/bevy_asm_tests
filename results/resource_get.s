@@ -1,26 +1,26 @@
 	.text
-	.file	"resource_get.6f6a4a8f15016c8e-cgu.0"
+	.file	"resource_get.6d4a0522fbdd4189-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,47
+	.zero	16,57
 .LCPI0_1:
-	.byte	125
-	.byte	178
-	.byte	41
-	.byte	81
-	.byte	237
-	.byte	205
-	.byte	105
-	.byte	94
-	.byte	50
-	.byte	7
+	.byte	124
+	.byte	0
+	.byte	89
+	.byte	165
+	.byte	116
+	.byte	89
 	.byte	44
-	.byte	51
-	.byte	77
-	.byte	22
-	.byte	119
-	.byte	35
+	.byte	114
+	.byte	12
+	.byte	174
+	.byte	61
+	.byte	216
+	.byte	200
+	.byte	89
+	.byte	106
+	.byte	73
 	.section	.text.resource_get,"ax",@progbits
 	.globl	resource_get
 	.p2align	4, 0x90
@@ -39,7 +39,7 @@ resource_get:
 	movq	120(%rsi), %rcx
 	movq	128(%rsi), %rdx
 	leaq	-24(%rcx), %rdi
-	movabsq	$6803195131272475261, %r8
+	movabsq	$8227048976824205436, %r8
 	xorl	%r9d, %r9d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -85,26 +85,26 @@ resource_get:
 	movq	400(%rsi), %rdx
 	testq	%rdx, %rdx
 	je	.LBB0_11
-	shlq	$4, %rcx
-	cmpq	$0, (%rdx,%rcx)
+	movq	(%rdx,%rcx,8), %rdx
+	testq	%rdx, %rdx
 	je	.LBB0_11
-	movq	352(%rsi), %rdi
-	movq	8(%rdx,%rcx), %rcx
-	leaq	(%rcx,%rcx,2), %rcx
-	shlq	$5, %rcx
-	cmpq	$0, 32(%rdi,%rcx)
+	movq	352(%rsi), %rcx
+	notq	%rdx
+	leaq	(%rdx,%rdx,2), %rdx
+	shlq	$5, %rdx
+	cmpq	$0, 32(%rcx,%rdx)
 	je	.LBB0_11
-	leaq	(%rdi,%rcx), %rdx
-	movq	16(%rdx), %rdx
-	leaq	(%rdi,%rcx), %r8
+	leaq	(%rcx,%rdx), %rdi
+	movq	16(%rdi), %rdi
+	leaq	(%rcx,%rdx), %r8
 	addq	$88, %r8
-	leaq	92(%rdi,%rcx), %rcx
-	movl	764(%rsi), %edi
-	movl	760(%rsi), %esi
-	movq	%rdx, (%rax)
+	leaq	92(%rcx,%rdx), %rcx
+	movl	852(%rsi), %edx
+	movl	848(%rsi), %esi
+	movq	%rdi, (%rax)
 	movq	%r8, 8(%rax)
 	movq	%rcx, 16(%rax)
-	movl	%edi, 24(%rax)
+	movl	%edx, 24(%rax)
 	movl	%esi, 28(%rax)
 	popq	%rbx
 	.cfi_def_cfa_offset 16

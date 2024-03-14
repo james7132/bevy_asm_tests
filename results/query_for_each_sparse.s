@@ -1,5 +1,5 @@
 	.text
-	.file	"query_for_each_sparse.1bfe6f2e58bb8548-cgu.0"
+	.file	"query_for_each_sparse.2898f8824120ded6-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4, 0x90
@@ -17,10 +17,10 @@ query_for_each:
 	jbe	.LBB0_5
 	testq	%r9, %r9
 	je	.LBB0_5
-	shlq	$4, %rdx
-	cmpq	$0, (%r9,%rdx)
+	movq	(%r9,%rdx,8), %rcx
+	testq	%rcx, %rcx
 	je	.LBB0_3
-	movq	8(%r9,%rdx), %rcx
+	notq	%rcx
 	leaq	(%rcx,%rcx,8), %rcx
 	shlq	$4, %rcx
 	addq	224(%rax), %rcx
@@ -31,10 +31,10 @@ query_for_each:
 .LBB0_6:
 	testq	%r9, %r9
 	je	.LBB0_10
-	shlq	$4, %r8
-	cmpq	$0, (%r9,%r8)
+	movq	(%r9,%r8,8), %rdx
+	testq	%rdx, %rdx
 	je	.LBB0_8
-	movq	8(%r9,%r8), %rdx
+	notq	%rdx
 	leaq	(%rdx,%rdx,8), %rdx
 	shlq	$4, %rdx
 	addq	224(%rax), %rdx
@@ -80,7 +80,8 @@ query_for_each:
 	je	.LBB0_16
 .LBB0_12:
 	movl	(%rsi), %r10d
-	imulq	$152, %r10, %r11
+	leaq	(%r10,%r10,4), %r11
+	shlq	$5, %r11
 	addq	160(%rax), %r11
 	cmpq	%r10, 168(%rax)
 	movl	$0, %r9d

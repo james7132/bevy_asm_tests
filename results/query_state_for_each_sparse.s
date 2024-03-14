@@ -1,5 +1,5 @@
 	.text
-	.file	"query_state_for_each_sparse.d5c30613bc219cd3-cgu.0"
+	.file	"query_state_for_each_sparse.f9fb002e5d84d7e5-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function
@@ -259,7 +259,7 @@ query_for_each:
 	.cfi_offset %rbp, -16
 	movq	%rsi, %rax
 	movq	%rdi, %r14
-	movq	752(%rsi), %rsi
+	movq	840(%rsi), %rsi
 	movq	(%rdi), %rdi
 	cmpq	%rsi, %rdi
 	jne	.LBB3_95
@@ -282,10 +282,10 @@ query_for_each:
 	jbe	.LBB3_82
 	testq	%rsi, %rsi
 	je	.LBB3_82
-	shlq	$4, %rcx
-	cmpq	$0, (%rsi,%rcx)
+	movq	(%rsi,%rcx,8), %rax
+	testq	%rax, %rax
 	je	.LBB3_80
-	movq	8(%rsi,%rcx), %rax
+	notq	%rax
 	leaq	(%rax,%rax,8), %rax
 	shlq	$4, %rax
 	addq	224(%r8), %rax
@@ -296,25 +296,27 @@ query_for_each:
 .LBB3_83:
 	testq	%rsi, %rsi
 	je	.LBB3_87
-	shlq	$4, %rdx
-	cmpq	$0, (%rsi,%rdx)
+	movq	(%rsi,%rdx,8), %rcx
+	testq	%rcx, %rcx
 	je	.LBB3_85
-	movq	8(%rsi,%rdx), %rcx
+	notq	%rcx
 	leaq	(%rcx,%rcx,8), %rcx
 	shlq	$4, %rcx
 	addq	224(%r8), %rcx
 	jmp	.LBB3_87
 .LBB3_3:
-	imulq	$152, %rsi, %r13
+	leaq	(%rsi,%rsi,4), %r13
+	shlq	$5, %r13
 	addq	%rbp, %r13
-	imulq	$152, %rdi, %r12
+	leaq	(%rdi,%rdi,4), %r12
+	shlq	$5, %r12
 	addq	%rbp, %r12
 	leaq	184(%r14), %rax
 	movq	%rax, 248(%rsp)
 	leaq	216(%r14), %rax
 	movq	%rax, 240(%rsp)
 	leaq	80(%r14), %rax
-	movq	%rax, 152(%rsp)
+	movq	%rax, 144(%rsp)
 	leaq	104(%r14), %rax
 	movq	%rax, 88(%rsp)
 	leaq	112(%r14), %rax
@@ -324,16 +326,16 @@ query_for_each:
 	leaq	48(%r14), %rax
 	movq	%rax, 208(%rsp)
 	leaq	72(%r14), %rax
-	movq	%rax, 144(%rsp)
+	movq	%rax, 136(%rsp)
 	leaq	368(%r14), %rax
 	movq	%rax, 192(%rsp)
 	leaq	16(%r14), %rax
 	movq	%rax, 200(%rsp)
 	leaq	40(%r14), %rax
-	movq	%rax, 136(%rsp)
+	movq	%rax, 128(%rsp)
 	leaq	344(%r14), %rax
 	movq	%rax, 184(%rsp)
-	movq	%r14, 128(%rsp)
+	movq	%r14, 120(%rsp)
 	movq	%rbp, 232(%rsp)
 	movq	%r13, 224(%rsp)
 	jmp	.LBB3_4
@@ -344,7 +346,7 @@ query_for_each:
 	movq	%rsi, 360(%r14)
 	.p2align	4, 0x90
 .LBB3_76:
-	addq	$152, %r12
+	addq	$160, %r12
 	cmpq	%r13, %r12
 	je	.LBB3_77
 .LBB3_4:
@@ -355,14 +357,12 @@ query_for_each:
 	movq	128(%r12), %r15
 	testq	%r15, %r15
 	je	.LBB3_76
-	shlq	$4, %rax
-	cmpq	$0, (%r15,%rax)
+	cmpq	$0, (%r15,%rax,8)
 	je	.LBB3_76
 	movq	400(%r14), %rax
 	cmpq	%rax, %rbx
 	jbe	.LBB3_76
-	shlq	$4, %rax
-	cmpq	$0, (%r15,%rax)
+	cmpq	$0, (%r15,%rax,8)
 	je	.LBB3_76
 	movq	336(%r14), %rax
 	testq	%rax, %rax
@@ -413,8 +413,7 @@ query_for_each:
 	jbe	.LBB3_31
 	leal	-1(%r8), %r11d
 	andl	%r8d, %r11d
-	shlq	$4, %r10
-	cmpq	$0, (%r15,%r10)
+	cmpq	$0, (%r15,%r10,8)
 	movl	%r11d, %r8d
 	jne	.LBB3_16
 	jmp	.LBB3_31
@@ -460,8 +459,7 @@ query_for_each:
 	orq	%r10, %r9
 	cmpq	%r9, %rbx
 	jbe	.LBB3_26
-	shlq	$4, %r9
-	cmpq	$0, (%r15,%r9)
+	cmpq	$0, (%r15,%r9,8)
 	je	.LBB3_26
 	.p2align	4, 0x90
 .LBB3_31:
@@ -469,7 +467,7 @@ query_for_each:
 	jne	.LBB3_11
 	jmp	.LBB3_76
 .LBB3_32:
-	movq	%r15, 96(%rsp)
+	movq	%r15, 160(%rsp)
 	movq	%rbx, 168(%rsp)
 	leaq	40(%rsp), %rdi
 	movq	248(%rsp), %rsi
@@ -481,9 +479,9 @@ query_for_each:
 	movq	56(%rsp), %rbx
 	movl	64(%rsp), %ebp
 	movq	72(%rsp), %rsi
-	movq	%rax, 120(%rsp)
+	movq	%rax, 112(%rsp)
 	movq	96(%rax), %rax
-	movq	%rax, 160(%rsp)
+	movq	%rax, 152(%rsp)
 	.p2align	4, 0x90
 .LBB3_33:
 	testl	%ebp, %ebp
@@ -517,21 +515,20 @@ query_for_each:
 	orq	%rcx, %rax
 	cmpq	%rax, 168(%rsp)
 	jbe	.LBB3_33
-	shlq	$4, %rax
-	movq	96(%rsp), %rcx
-	cmpq	$0, (%rcx,%rax)
-	je	.LBB3_33
-	movq	%rsi, 104(%rsp)
-	movq	96(%rsp), %rcx
-	movq	8(%rcx,%rax), %rax
-	shlq	$4, %rax
 	movq	160(%rsp), %rcx
+	movq	(%rcx,%rax,8), %rax
+	testq	%rax, %rax
+	je	.LBB3_33
+	movq	%rsi, 96(%rsp)
+	notq	%rax
+	shlq	$4, %rax
+	movq	152(%rsp), %rcx
 	movq	(%rcx,%rax), %rax
-	movq	%rax, 112(%rsp)
+	movq	%rax, 104(%rsp)
 	leaq	1(%rax), %rsi
-	movq	152(%rsp), %rdi
+	movq	144(%rsp), %rdi
 	callq	*fixedbitset::FixedBitSet::grow@GOTPCREL(%rip)
-	movq	112(%rsp), %rcx
+	movq	104(%rsp), %rcx
 	movq	%rcx, (%rsp)
 	movq	88(%rsp), %rax
 	cmpq	%rcx, (%rax)
@@ -541,7 +538,7 @@ query_for_each:
 	movq	88(%r14), %rdx
 	shrq	$5, %rcx
 	orl	%eax, (%rdx,%rcx,4)
-	movq	104(%rsp), %rsi
+	movq	96(%rsp), %rsi
 	jmp	.LBB3_33
 .LBB3_45:
 	movq	232(%r14), %rax
@@ -552,7 +549,7 @@ query_for_each:
 	leaq	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.5(%rip), %rbx
 	movl	$0, %ebp
 	testq	%rcx, %rcx
-	movq	120(%rsp), %r12
+	movq	112(%rsp), %r12
 	movq	fixedbitset::FixedBitSet::grow@GOTPCREL(%rip), %r15
 	je	.LBB3_49
 	decq	%rax
@@ -564,7 +561,7 @@ query_for_each:
 .LBB3_46:
 	leaq	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.5(%rip), %rbx
 	xorl	%ebp, %ebp
-	movq	120(%rsp), %r12
+	movq	112(%rsp), %r12
 	movq	fixedbitset::FixedBitSet::grow@GOTPCREL(%rip), %r15
 .LBB3_49:
 	xorl	%r14d, %r14d
@@ -588,18 +585,17 @@ query_for_each:
 	orq	%rcx, %rax
 	cmpq	%rax, 168(%rsp)
 	jbe	.LBB3_50
-	shlq	$4, %rax
-	movq	96(%rsp), %rcx
-	cmpq	$0, (%rcx,%rax)
-	je	.LBB3_50
-	movq	96(%rsp), %rcx
-	movq	8(%rcx,%rax), %rax
-	shlq	$4, %rax
 	movq	160(%rsp), %rcx
+	movq	(%rcx,%rax,8), %rax
+	testq	%rax, %rax
+	je	.LBB3_50
+	notq	%rax
+	shlq	$4, %rax
+	movq	152(%rsp), %rcx
 	movq	(%rcx,%rax), %r12
 	leaq	1(%r12), %rsi
-	movq	152(%rsp), %rdi
-	movq	%rsi, 112(%rsp)
+	movq	144(%rsp), %rdi
+	movq	%rsi, 104(%rsp)
 	callq	*%r15
 	movq	%r12, (%rsp)
 	movq	88(%rsp), %rax
@@ -609,30 +605,30 @@ query_for_each:
 	movq	%r12, %r15
 	shrq	$5, %r15
 	movq	%r12, %rcx
-	movq	%r12, 104(%rsp)
+	movq	%r12, 96(%rsp)
 	movl	$1, %r12d
 	shll	%cl, %r12d
-	movq	128(%rsp), %rax
+	movq	120(%rsp), %rax
 	movq	88(%rax), %rax
 	orl	%r12d, (%rax,%r15,4)
 	movq	256(%rsp), %rdi
-	movq	112(%rsp), %rsi
+	movq	104(%rsp), %rsi
 	callq	*%rdx
-	movq	128(%rsp), %rax
-	movq	104(%rsp), %rcx
+	movq	120(%rsp), %rax
+	movq	96(%rsp), %rcx
 	movq	%rcx, (%rsp)
 	cmpq	%rcx, 136(%rax)
 	jbe	.LBB3_57
 	movq	120(%rax), %rax
 	orl	%r12d, (%rax,%r15,4)
-	movq	120(%rsp), %r12
+	movq	112(%rsp), %r12
 	movq	fixedbitset::FixedBitSet::grow@GOTPCREL(%rip), %r15
 	jmp	.LBB3_50
 .LBB3_59:
 	movl	144(%r12), %r15d
 	movl	%r15d, %ebx
 	shrl	$5, %ebx
-	movq	128(%rsp), %r14
+	movq	120(%rsp), %r14
 	cmpq	64(%r14), %rbx
 	movq	232(%rsp), %rbp
 	movq	224(%rsp), %r13
@@ -648,7 +644,7 @@ query_for_each:
 	movq	208(%rsp), %rdi
 	callq	*fixedbitset::FixedBitSet::grow@GOTPCREL(%rip)
 	movq	%r15, (%rsp)
-	movq	144(%rsp), %rax
+	movq	136(%rsp), %rax
 	cmpq	%r15, (%rax)
 	jbe	.LBB3_63
 	movl	$1, %eax
@@ -684,7 +680,7 @@ query_for_each:
 	movq	200(%rsp), %rdi
 	callq	*fixedbitset::FixedBitSet::grow@GOTPCREL(%rip)
 	movq	%r15, (%rsp)
-	movq	136(%rsp), %rax
+	movq	128(%rsp), %rax
 	cmpq	%r15, (%rax)
 	jbe	.LBB3_72
 	movl	$1, %eax
@@ -711,7 +707,7 @@ query_for_each:
 	movq	384(%r14), %rdi
 	testq	%rdi, %rdi
 	je	.LBB3_93
-	movl	760(%r8), %edx
+	movl	848(%r8), %edx
 	movq	376(%r14), %rsi
 	leaq	(%rsi,%rdi,4), %rdi
 	jmp	.LBB3_89
@@ -722,7 +718,8 @@ query_for_each:
 	je	.LBB3_93
 .LBB3_89:
 	movl	(%rsi), %r8d
-	imulq	$152, %r8, %r9
+	leaq	(%r8,%r8,4), %r9
+	shlq	$5, %r9
 	movq	88(%rbp,%r9), %r8
 	testq	%r8, %r8
 	je	.LBB3_92
@@ -802,14 +799,14 @@ query_for_each:
 	movq	%rax, 8(%rsp)
 	movq	core::fmt::num::imp::<impl core::fmt::Display for usize>::fmt@GOTPCREL(%rip), %rax
 	movq	%rax, 16(%rsp)
-	movq	144(%rsp), %rcx
+	movq	136(%rsp), %rcx
 	jmp	.LBB3_64
 .LBB3_72:
 	movq	%rsp, %rax
 	movq	%rax, 8(%rsp)
 	movq	core::fmt::num::imp::<impl core::fmt::Display for usize>::fmt@GOTPCREL(%rip), %rax
 	movq	%rax, 16(%rsp)
-	movq	136(%rsp), %rcx
+	movq	128(%rsp), %rcx
 .LBB3_64:
 	movq	%rcx, 24(%rsp)
 	movq	%rax, 32(%rsp)
@@ -896,7 +893,7 @@ query_for_each:
 	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.9,@object
 	.section	.rodata..Lanon.0d252a227dcf2249288cd9db6e2d5b21.9,"a",@progbits
 .Lanon.0d252a227dcf2249288cd9db6e2d5b21.9:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/2701188/crates/bevy_ecs/src/query/state.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/d3e4432/crates/bevy_ecs/src/query/state.rs"
 	.size	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.9, 97
 
 	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.10,@object
@@ -904,7 +901,7 @@ query_for_each:
 	.p2align	3, 0x0
 .Lanon.0d252a227dcf2249288cd9db6e2d5b21.10:
 	.quad	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.9
-	.asciz	"a\000\000\000\000\000\000\000\r\001\000\000%\000\000"
+	.asciz	"a\000\000\000\000\000\000\000\026\001\000\000%\000\000"
 	.size	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.10, 24
 
 	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.11,@object
@@ -912,7 +909,7 @@ query_for_each:
 	.p2align	3, 0x0
 .Lanon.0d252a227dcf2249288cd9db6e2d5b21.11:
 	.quad	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.9
-	.asciz	"a\000\000\000\000\000\000\000\b\001\000\000\016\000\000"
+	.asciz	"a\000\000\000\000\000\000\000\021\001\000\000\016\000\000"
 	.size	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.11, 24
 
 	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"

@@ -1,5 +1,5 @@
 	.text
-	.file	"query_iter.8befdc756cef0089-cgu.0"
+	.file	"query_iter.96e582ed144f857a-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4, 0x90
@@ -47,10 +47,10 @@ query_iter:
 	testq	%r9, %r9
 	je	.LBB0_3
 	movq	56(%r15), %rbx
-	shlq	$4, %r11
-	movq	8(%rbx,%r11), %r11
-	shlq	$4, %r10
-	movq	8(%rbx,%r10), %rbx
+	movq	(%rbx,%r11,8), %r11
+	notq	%r11
+	movq	(%rbx,%r10,8), %rbx
+	notq	%rbx
 	movq	24(%r15), %r14
 	leaq	(%r11,%r11,2), %r11
 	shlq	$5, %r11
@@ -104,7 +104,7 @@ query_iter:
 	.type	.Lanon.a01df851b6197f632189e2f0fa818bdd.1,@object
 	.section	.rodata..Lanon.a01df851b6197f632189e2f0fa818bdd.1,"a",@progbits
 .Lanon.a01df851b6197f632189e2f0fa818bdd.1:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/2701188/crates/bevy_ecs/src/storage/table.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/d3e4432/crates/bevy_ecs/src/storage/table.rs"
 	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.1, 99
 
 	.type	.Lanon.a01df851b6197f632189e2f0fa818bdd.2,@object

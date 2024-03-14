@@ -1,5 +1,5 @@
 	.text
-	.file	"query_get.78aa81406b1f0c37-cgu.0"
+	.file	"query_get.9056f05f0507ce8e-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4, 0x90
@@ -57,12 +57,12 @@ query_get:
 	movq	400(%r9), %rsi
 	movq	24(%r10), %rdi
 	movq	56(%r10), %r9
-	shlq	$4, %rdx
-	movq	8(%r9,%rdx), %rdx
+	movq	(%r9,%rdx,8), %rdx
+	notq	%rdx
 	leaq	(%rdx,%rdx,2), %rdx
 	shlq	$5, %rdx
-	shlq	$4, %rsi
-	movq	8(%r9,%rsi), %rsi
+	movq	(%r9,%rsi,8), %rsi
+	notq	%rsi
 	leaq	(%rsi,%rsi,2), %rsi
 	shlq	$5, %rsi
 	shlq	$2, %r8
