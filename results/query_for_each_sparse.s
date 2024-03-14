@@ -1,5 +1,5 @@
 	.text
-	.file	"query_for_each_sparse.2898f8824120ded6-cgu.0"
+	.file	"query_for_each_sparse.8538eb54ce61801c-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4, 0x90
@@ -8,8 +8,8 @@ query_for_each:
 	.cfi_startproc
 	movq	(%rdi), %rsi
 	movq	8(%rdi), %rax
-	movq	392(%rsi), %rdx
-	movq	400(%rsi), %r8
+	movq	288(%rsi), %rdx
+	movq	296(%rsi), %r8
 	movq	272(%rax), %r9
 	movq	280(%rax), %r10
 	xorl	%ecx, %ecx
@@ -66,11 +66,11 @@ query_for_each:
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
-	movq	384(%rsi), %r8
+	movq	280(%rsi), %r8
 	testq	%r8, %r8
 	je	.LBB0_16
 	movl	20(%rdi), %edi
-	movq	376(%rsi), %rsi
+	movq	272(%rsi), %rsi
 	leaq	(%rsi,%r8,4), %r8
 	jmp	.LBB0_12
 	.p2align	4, 0x90
