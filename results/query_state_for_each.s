@@ -1,5 +1,5 @@
 	.text
-	.file	"query_state_for_each.2e68f9c15efb89ab-cgu.0"
+	.file	"query_state_for_each.badb37bb8974c495-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function
@@ -890,7 +890,7 @@ query_state_for_each:
 	.type	.Lanon.6dae6fee9a6576153fd5b36d700139f2.11,@object
 	.section	.rodata..Lanon.6dae6fee9a6576153fd5b36d700139f2.11,"a",@progbits
 .Lanon.6dae6fee9a6576153fd5b36d700139f2.11:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/d3e4432/crates/bevy_ecs/src/query/iter.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/6a08976/crates/bevy_ecs/src/query/iter.rs"
 	.size	.Lanon.6dae6fee9a6576153fd5b36d700139f2.11, 96
 
 	.type	.Lanon.6dae6fee9a6576153fd5b36d700139f2.12,@object
@@ -904,7 +904,7 @@ query_state_for_each:
 	.type	.Lanon.6dae6fee9a6576153fd5b36d700139f2.13,@object
 	.section	.rodata..Lanon.6dae6fee9a6576153fd5b36d700139f2.13,"a",@progbits
 .Lanon.6dae6fee9a6576153fd5b36d700139f2.13:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/d3e4432/crates/bevy_ecs/src/query/state.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/6a08976/crates/bevy_ecs/src/query/state.rs"
 	.size	.Lanon.6dae6fee9a6576153fd5b36d700139f2.13, 97
 
 	.type	.Lanon.6dae6fee9a6576153fd5b36d700139f2.14,@object
@@ -912,7 +912,7 @@ query_state_for_each:
 	.p2align	3, 0x0
 .Lanon.6dae6fee9a6576153fd5b36d700139f2.14:
 	.quad	.Lanon.6dae6fee9a6576153fd5b36d700139f2.13
-	.asciz	"a\000\000\000\000\000\000\000\026\001\000\000%\000\000"
+	.asciz	"a\000\000\000\000\000\000\000\016\001\000\000%\000\000"
 	.size	.Lanon.6dae6fee9a6576153fd5b36d700139f2.14, 24
 
 	.type	.Lanon.6dae6fee9a6576153fd5b36d700139f2.15,@object
@@ -920,7 +920,7 @@ query_state_for_each:
 	.p2align	3, 0x0
 .Lanon.6dae6fee9a6576153fd5b36d700139f2.15:
 	.quad	.Lanon.6dae6fee9a6576153fd5b36d700139f2.13
-	.asciz	"a\000\000\000\000\000\000\000\021\001\000\000\016\000\000"
+	.asciz	"a\000\000\000\000\000\000\000\t\001\000\000\016\000\000"
 	.size	.Lanon.6dae6fee9a6576153fd5b36d700139f2.15, 24
 
 	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"

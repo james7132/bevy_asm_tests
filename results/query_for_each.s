@@ -1,5 +1,5 @@
 	.text
-	.file	"query_for_each.dece338631b71fa-cgu.0"
+	.file	"query_for_each.fb734dd4e9663427-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4, 0x90
@@ -121,7 +121,7 @@ query_for_each:
 	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.3,@object
 	.section	.rodata..Lanon.0d252a227dcf2249288cd9db6e2d5b21.3,"a",@progbits
 .Lanon.0d252a227dcf2249288cd9db6e2d5b21.3:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/d3e4432/crates/bevy_ecs/src/query/iter.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/6a08976/crates/bevy_ecs/src/query/iter.rs"
 	.size	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.3, 96
 
 	.type	.Lanon.0d252a227dcf2249288cd9db6e2d5b21.4,@object

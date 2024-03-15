@@ -1,26 +1,26 @@
 	.text
-	.file	"world_get.95a16d68cbea52d0-cgu.0"
+	.file	"world_get.5afcb187f8fe8d6-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,48
+	.zero	16,24
 .LCPI0_1:
-	.byte	232
+	.byte	59
+	.byte	105
+	.byte	80
+	.byte	129
+	.byte	153
+	.byte	159
+	.byte	170
 	.byte	48
-	.byte	220
-	.byte	123
-	.byte	60
-	.byte	162
-	.byte	119
-	.byte	97
-	.byte	101
-	.byte	192
-	.byte	173
-	.byte	6
-	.byte	250
-	.byte	240
-	.byte	113
-	.byte	216
+	.byte	136
+	.byte	167
+	.byte	196
+	.byte	24
+	.byte	228
+	.byte	183
+	.byte	199
+	.byte	118
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -70,7 +70,7 @@ world_get:
 	movq	88(%rdi), %r9
 	movq	96(%rdi), %r10
 	leaq	-24(%r9), %r11
-	movabsq	$7023260524567343336, %rbx
+	movabsq	$3506790741509695803, %rbx
 	xorl	%esi, %esi
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -178,7 +178,7 @@ world_get:
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.0,@object
 	.section	.rodata..Lanon.155300dae0580fe2c3564be8a13f3f51.0,"a",@progbits
 .Lanon.155300dae0580fe2c3564be8a13f3f51.0:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/d3e4432/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/6a08976/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.0, 109
 
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.1,@object

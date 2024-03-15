@@ -81,7 +81,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs"
 version = "0.14.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d3e44325b45daf13087a6fe7a425b1744b5f2379"
+source = "git+https://github.com/james7132/bevy?branch=fetch-dense#6a08976784cb877bdf771f514e433a8728aa83f6"
 dependencies = [
  "bevy_ecs_macros",
  "bevy_ptr",
@@ -101,7 +101,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs_macros"
 version = "0.14.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d3e44325b45daf13087a6fe7a425b1744b5f2379"
+source = "git+https://github.com/james7132/bevy?branch=fetch-dense#6a08976784cb877bdf771f514e433a8728aa83f6"
 dependencies = [
  "bevy_macro_utils",
  "proc-macro2",
@@ -112,7 +112,7 @@ dependencies = [
 [[package]]
 name = "bevy_macro_utils"
 version = "0.14.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d3e44325b45daf13087a6fe7a425b1744b5f2379"
+source = "git+https://github.com/james7132/bevy?branch=fetch-dense#6a08976784cb877bdf771f514e433a8728aa83f6"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -124,12 +124,12 @@ dependencies = [
 [[package]]
 name = "bevy_ptr"
 version = "0.14.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d3e44325b45daf13087a6fe7a425b1744b5f2379"
+source = "git+https://github.com/james7132/bevy?branch=fetch-dense#6a08976784cb877bdf771f514e433a8728aa83f6"
 
 [[package]]
 name = "bevy_reflect"
 version = "0.14.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d3e44325b45daf13087a6fe7a425b1744b5f2379"
+source = "git+https://github.com/james7132/bevy?branch=fetch-dense#6a08976784cb877bdf771f514e433a8728aa83f6"
 dependencies = [
  "bevy_ptr",
  "bevy_reflect_derive",
@@ -144,7 +144,7 @@ dependencies = [
 [[package]]
 name = "bevy_reflect_derive"
 version = "0.14.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d3e44325b45daf13087a6fe7a425b1744b5f2379"
+source = "git+https://github.com/james7132/bevy?branch=fetch-dense#6a08976784cb877bdf771f514e433a8728aa83f6"
 dependencies = [
  "bevy_macro_utils",
  "proc-macro2",
@@ -156,7 +156,7 @@ dependencies = [
 [[package]]
 name = "bevy_tasks"
 version = "0.14.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d3e44325b45daf13087a6fe7a425b1744b5f2379"
+source = "git+https://github.com/james7132/bevy?branch=fetch-dense#6a08976784cb877bdf771f514e433a8728aa83f6"
 dependencies = [
  "async-channel",
  "async-executor",
@@ -169,7 +169,7 @@ dependencies = [
 [[package]]
 name = "bevy_utils"
 version = "0.14.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d3e44325b45daf13087a6fe7a425b1744b5f2379"
+source = "git+https://github.com/james7132/bevy?branch=fetch-dense#6a08976784cb877bdf771f514e433a8728aa83f6"
 dependencies = [
  "ahash",
  "bevy_utils_proc_macros",
@@ -183,7 +183,7 @@ dependencies = [
 [[package]]
 name = "bevy_utils_proc_macros"
 version = "0.14.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#d3e44325b45daf13087a6fe7a425b1744b5f2379"
+source = "git+https://github.com/james7132/bevy?branch=fetch-dense#6a08976784cb877bdf771f514e433a8728aa83f6"
 dependencies = [
  "proc-macro2",
  "quote",
