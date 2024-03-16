@@ -43,6 +43,14 @@ name = "query_iter_sparse"
 crate-type = ["lib"]
 
 [[example]]
+name = "query_iter_many"
+crate-type = ["lib"]
+
+[[example]]
+name = "query_iter_many_sparse"
+crate-type = ["lib"]
+
+[[example]]
 name = "query_for_each"
 crate-type = ["lib"]
 
