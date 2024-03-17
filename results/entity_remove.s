@@ -1796,7 +1796,7 @@ GCC_except_table6:
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.1,@object
 	.section	.rodata..Lanon.ddd9cd1641521d33379e20f985469fcb.1,"a",@progbits
 .Lanon.ddd9cd1641521d33379e20f985469fcb.1:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/da3e744/crates/bevy_ecs/src/component.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/6304b0f/crates/bevy_ecs/src/component.rs"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.1, 95
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.2,@object
