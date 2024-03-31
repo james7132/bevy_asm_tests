@@ -1,5 +1,5 @@
 	.text
-	.file	"resource_insert.b24bbcf3b0af2264-cgu.0"
+	.file	"resource_insert.7242a8dde3197bff-cgu.0"
 	.section	".text.<&T as core::fmt::Display>::fmt","ax",@progbits
 	.p2align	4, 0x90
 	.type	<&T as core::fmt::Display>::fmt,@function
@@ -108,16 +108,16 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$5, %rsi
 	movl	$4, %r14d
 	cmovaeq	%rsi, %r14
+	movabsq	$82351536043346213, %rcx
 	xorl	%esi, %esi
-	movq	%r14, %rcx
-	shrq	$60, %rcx
-	sete	%sil
-	leaq	(,%r14,8), %rdx
+	cmpq	%rcx, %r14
+	setb	%sil
+	imulq	$112, %r14, %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB2_2
 	movq	8(%rbx), %rcx
-	shlq	$3, %rax
+	imulq	$112, %rax, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -188,19 +188,16 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$5, %rsi
 	movl	$4, %r14d
 	cmovaeq	%rsi, %r14
-	movabsq	$96076792050570582, %rcx
 	xorl	%esi, %esi
-	cmpq	%rcx, %r14
-	setb	%sil
 	movq	%r14, %rcx
-	shlq	$5, %rcx
-	leaq	(%rcx,%rcx,2), %rdx
+	shrq	$60, %rcx
+	sete	%sil
+	leaq	(,%r14,8), %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB3_2
 	movq	8(%rbx), %rcx
-	shlq	$5, %rax
-	leaq	(%rax,%rax,2), %rax
+	shlq	$3, %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -271,16 +268,19 @@ alloc::raw_vec::RawVec<T,A>::reserve_for_push:
 	cmpq	$5, %rsi
 	movl	$4, %r14d
 	cmovaeq	%rsi, %r14
-	movabsq	$82351536043346213, %rcx
+	movabsq	$96076792050570582, %rcx
 	xorl	%esi, %esi
 	cmpq	%rcx, %r14
 	setb	%sil
-	imulq	$112, %r14, %rdx
+	movq	%r14, %rcx
+	shlq	$5, %rcx
+	leaq	(%rcx,%rcx,2), %rdx
 	shlq	$3, %rsi
 	testq	%rax, %rax
 	je	.LBB4_2
 	movq	8(%rbx), %rcx
-	imulq	$112, %rax, %rax
+	shlq	$5, %rax
+	leaq	(%rax,%rax,2), %rax
 	movq	%rcx, 8(%rsp)
 	movq	$8, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -898,7 +898,7 @@ hashbrown::raw::inner::RawTable<T,A>::reserve_rehash:
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI7_0:
-	.zero	16,113
+	.zero	16,9
 	.section	.text.resource_insert,"ax",@progbits
 	.globl	resource_insert
 	.p2align	4, 0x90
@@ -929,8 +929,8 @@ resource_insert:
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
 	movq	%rdi, %rbx
-	movabsq	$3436502675844485740, %r14
-	movabsq	$-2111201313024529587, %r12
+	movabsq	$9189752624521980435, %r14
+	movabsq	$1421347139460356968, %r12
 	movq	%r12, %r15
 	addq	$64, %rdi
 	movq	120(%rbx), %rax
@@ -1253,8 +1253,8 @@ resource_insert:
 	subq	%rsi, 136(%rbx)
 	leaq	-16(%rdx), %rsi
 	andq	%rcx, %rsi
-	movb	$113, (%rax,%rdx)
-	movb	$113, 16(%rsi,%rax)
+	movb	$9, (%rax,%rdx)
+	movb	$9, 16(%rsi,%rax)
 	incq	144(%rbx)
 	negq	%rdx
 	leaq	(%rdx,%rdx,2), %rcx
@@ -1532,7 +1532,7 @@ GCC_except_table7:
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.2,@object
 	.section	.rodata..Lanon.7389e6565b10821dad2f4dd8892551e5.2,"a",@progbits
 .Lanon.7389e6565b10821dad2f4dd8892551e5.2:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/01649f1/crates/bevy_ecs/src/storage/sparse_set.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/e5a4698/crates/bevy_ecs/src/storage/sparse_set.rs"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.2, 104
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.3,@object
@@ -1540,7 +1540,7 @@ GCC_except_table7:
 	.p2align	3, 0x0
 .Lanon.7389e6565b10821dad2f4dd8892551e5.3:
 	.quad	.Lanon.7389e6565b10821dad2f4dd8892551e5.2
-	.asciz	"h\000\000\000\000\000\000\000\336\001\000\000F\000\000"
+	.asciz	"h\000\000\000\000\000\000\000\347\001\000\000F\000\000"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.3, 24
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.4,@object
@@ -1548,13 +1548,13 @@ GCC_except_table7:
 	.p2align	3, 0x0
 .Lanon.7389e6565b10821dad2f4dd8892551e5.4:
 	.quad	.Lanon.7389e6565b10821dad2f4dd8892551e5.2
-	.asciz	"h\000\000\000\000\000\000\000M\000\000\000\024\000\000"
+	.asciz	"h\000\000\000\000\000\000\000N\000\000\000\024\000\000"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.4, 24
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.5,@object
 	.section	.rodata..Lanon.7389e6565b10821dad2f4dd8892551e5.5,"a",@progbits
 .Lanon.7389e6565b10821dad2f4dd8892551e5.5:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/01649f1/crates/bevy_ecs/src/storage/resource.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/e5a4698/crates/bevy_ecs/src/storage/resource.rs"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.5, 102
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.6,@object

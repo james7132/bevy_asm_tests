@@ -1,5 +1,5 @@
 	.text
-	.file	"event_reader.d4299a42f19a3f2f-cgu.0"
+	.file	"event_reader.5baa4d68526442d4-cgu.0"
 	.section	.text.event_reader,"ax",@progbits
 	.globl	event_reader
 	.p2align	4, 0x90

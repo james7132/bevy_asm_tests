@@ -1,5 +1,5 @@
 	.text
-	.file	"entity_remove.f9df73aaab8938a3-cgu.0"
+	.file	"entity_remove.c5db741e5dd10df3-cgu.0"
 	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4, 0x90
 	.type	alloc::raw_vec::finish_grow,@function
@@ -1317,7 +1317,7 @@ hashbrown::raw::inner::RawTable<T,A>::reserve_rehash:
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI6_0:
-	.zero	16,69
+	.zero	16,5
 	.section	.text.entity_remove,"ax",@progbits
 	.globl	entity_remove
 	.p2align	4, 0x90
@@ -1347,8 +1347,8 @@ entity_remove:
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
-	movabsq	$106978982118916875, %rbp
-	movabsq	$-8394226809278626462, %rbx
+	movabsq	$5557259261326457872, %rbp
+	movabsq	$800843560429097824, %rbx
 	movq	%rbx, %r11
 	movq	(%rdi), %r14
 	leaq	488(%r14), %r12
@@ -1558,8 +1558,8 @@ entity_remove:
 	subq	%rcx, 528(%r14)
 	leaq	-16(%rax), %rcx
 	andq	%r13, %rcx
-	movb	$69, (%r15,%rax)
-	movb	$69, 16(%rcx,%r15)
+	movb	$5, (%r15,%rax)
+	movb	$5, 16(%rcx,%r15)
 	incq	536(%r14)
 	negq	%rax
 	leaq	(%rax,%rax,2), %rax
@@ -1670,8 +1670,8 @@ entity_remove:
 	subq	%rsi, 104(%r14)
 	leaq	-16(%rdx), %rsi
 	andq	%rcx, %rsi
-	movb	$69, (%rax,%rdx)
-	movb	$69, 16(%rsi,%rax)
+	movb	$5, (%rax,%rdx)
+	movb	$5, 16(%rsi,%rax)
 	incq	112(%r14)
 	negq	%rdx
 	leaq	(%rdx,%rdx,2), %rcx
@@ -1796,7 +1796,7 @@ GCC_except_table6:
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.1,@object
 	.section	.rodata..Lanon.ddd9cd1641521d33379e20f985469fcb.1,"a",@progbits
 .Lanon.ddd9cd1641521d33379e20f985469fcb.1:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/01649f1/crates/bevy_ecs/src/component.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-11a63d9ba653d13e/e5a4698/crates/bevy_ecs/src/component.rs"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.1, 95
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.2,@object
