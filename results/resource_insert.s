@@ -1,5 +1,5 @@
 	.text
-	.file	"resource_insert.75c19ebbc1fcbc1c-cgu.0"
+	.file	"resource_insert.b24bbcf3b0af2264-cgu.0"
 	.section	".text.<&T as core::fmt::Display>::fmt","ax",@progbits
 	.p2align	4, 0x90
 	.type	<&T as core::fmt::Display>::fmt,@function
@@ -898,7 +898,7 @@ hashbrown::raw::inner::RawTable<T,A>::reserve_rehash:
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI7_0:
-	.zero	16,29
+	.zero	16,113
 	.section	.text.resource_insert,"ax",@progbits
 	.globl	resource_insert
 	.p2align	4, 0x90
@@ -929,8 +929,8 @@ resource_insert:
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
 	movq	%rdi, %rbx
-	movabsq	$-4863754462284221694, %r14
-	movabsq	$4216918271152379631, %r12
+	movabsq	$3436502675844485740, %r14
+	movabsq	$-2111201313024529587, %r12
 	movq	%r12, %r15
 	addq	$64, %rdi
 	movq	120(%rbx), %rax
@@ -979,7 +979,7 @@ resource_insert:
 	movq	-8(%rax,%r10,8), %r13
 .LBB7_7:
 	movd	%xmm0, 12(%rsp)
-	movl	848(%rbx), %ebp
+	movl	776(%rbx), %ebp
 	movq	400(%rbx), %rcx
 	movq	408(%rbx), %r15
 	cmpq	%r13, %r15
@@ -1253,8 +1253,8 @@ resource_insert:
 	subq	%rsi, 136(%rbx)
 	leaq	-16(%rdx), %rsi
 	andq	%rcx, %rsi
-	movb	$29, (%rax,%rdx)
-	movb	$29, 16(%rsi,%rax)
+	movb	$113, (%rax,%rdx)
+	movb	$113, 16(%rsi,%rax)
 	incq	144(%rbx)
 	negq	%rdx
 	leaq	(%rdx,%rdx,2), %rcx
@@ -1532,7 +1532,7 @@ GCC_except_table7:
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.2,@object
 	.section	.rodata..Lanon.7389e6565b10821dad2f4dd8892551e5.2,"a",@progbits
 .Lanon.7389e6565b10821dad2f4dd8892551e5.2:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/3a83f4e/crates/bevy_ecs/src/storage/sparse_set.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/01649f1/crates/bevy_ecs/src/storage/sparse_set.rs"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.2, 104
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.3,@object
@@ -1554,7 +1554,7 @@ GCC_except_table7:
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.5,@object
 	.section	.rodata..Lanon.7389e6565b10821dad2f4dd8892551e5.5,"a",@progbits
 .Lanon.7389e6565b10821dad2f4dd8892551e5.5:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/3a83f4e/crates/bevy_ecs/src/storage/resource.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/01649f1/crates/bevy_ecs/src/storage/resource.rs"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.5, 102
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.6,@object

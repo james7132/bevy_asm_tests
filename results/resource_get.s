@@ -1,26 +1,26 @@
 	.text
-	.file	"resource_get.6d4a0522fbdd4189-cgu.0"
+	.file	"resource_get.ebf11d99c41b3ba-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,57
+	.zero	16,96
 .LCPI0_1:
-	.byte	124
-	.byte	0
+	.byte	110
+	.byte	169
+	.byte	136
+	.byte	46
+	.byte	237
+	.byte	135
+	.byte	96
+	.byte	192
+	.byte	159
+	.byte	251
+	.byte	247
 	.byte	89
-	.byte	165
-	.byte	116
-	.byte	89
-	.byte	44
-	.byte	114
-	.byte	12
-	.byte	174
-	.byte	61
+	.byte	229
 	.byte	216
-	.byte	200
-	.byte	89
-	.byte	106
-	.byte	73
+	.byte	29
+	.byte	218
 	.section	.text.resource_get,"ax",@progbits
 	.globl	resource_get
 	.p2align	4, 0x90
@@ -39,7 +39,7 @@ resource_get:
 	movq	120(%rsi), %rcx
 	movq	128(%rsi), %rdx
 	leaq	-24(%rcx), %rdi
-	movabsq	$8227048976824205436, %r8
+	movabsq	$-4584514967905457810, %r8
 	xorl	%r9d, %r9d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -99,8 +99,8 @@ resource_get:
 	leaq	(%rcx,%rdx), %r8
 	addq	$88, %r8
 	leaq	92(%rcx,%rdx), %rcx
-	movl	852(%rsi), %edx
-	movl	848(%rsi), %esi
+	movl	780(%rsi), %edx
+	movl	776(%rsi), %esi
 	movq	%rdi, (%rax)
 	movq	%r8, 8(%rax)
 	movq	%rcx, 16(%rax)

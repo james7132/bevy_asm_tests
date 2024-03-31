@@ -1,26 +1,26 @@
 	.text
-	.file	"world_get.95a16d68cbea52d0-cgu.0"
+	.file	"world_get.95b33f27e2093a33-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,48
+	.zero	16,38
 .LCPI0_1:
-	.byte	232
-	.byte	48
-	.byte	220
-	.byte	123
-	.byte	60
-	.byte	162
-	.byte	119
-	.byte	97
-	.byte	101
-	.byte	192
-	.byte	173
-	.byte	6
-	.byte	250
-	.byte	240
-	.byte	113
-	.byte	216
+	.byte	75
+	.byte	40
+	.byte	145
+	.byte	65
+	.byte	109
+	.byte	0
+	.byte	244
+	.byte	77
+	.byte	171
+	.byte	73
+	.byte	152
+	.byte	206
+	.byte	71
+	.byte	147
+	.byte	103
+	.byte	52
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4, 0x90
@@ -63,14 +63,14 @@ world_get:
 	addq	$4, %rcx
 	movl	8(%rcx), %eax
 	movl	12(%rcx), %r8d
-	movl	852(%rdi), %edx
-	movl	848(%rdi), %ecx
+	movl	780(%rdi), %edx
+	movl	776(%rdi), %ecx
 	cmpq	$0, 112(%rdi)
 	je	.LBB0_16
 	movq	88(%rdi), %r9
 	movq	96(%rdi), %r10
 	leaq	-24(%r9), %r11
-	movabsq	$7023260524567343336, %rbx
+	movabsq	$5617115104489318475, %rbx
 	xorl	%esi, %esi
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -178,7 +178,7 @@ world_get:
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.0,@object
 	.section	.rodata..Lanon.155300dae0580fe2c3564be8a13f3f51.0,"a",@progbits
 .Lanon.155300dae0580fe2c3564be8a13f3f51.0:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/3a83f4e/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
+	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/01649f1/crates/bevy_ecs/src/world/unsafe_world_cell.rs"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.0, 109
 
 	.type	.Lanon.155300dae0580fe2c3564be8a13f3f51.1,@object
@@ -186,7 +186,7 @@ world_get:
 	.p2align	3, 0x0
 .Lanon.155300dae0580fe2c3564be8a13f3f51.1:
 	.quad	.Lanon.155300dae0580fe2c3564be8a13f3f51.0
-	.asciz	"m\000\000\000\000\000\000\000\242\003\000\000*\000\000"
+	.asciz	"m\000\000\000\000\000\000\000\204\003\000\000*\000\000"
 	.size	.Lanon.155300dae0580fe2c3564be8a13f3f51.1, 24
 
 	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
