@@ -19,8 +19,17 @@ name = "entity_insert"
 crate-type = ["lib"]
 
 [[example]]
+name = "entity_insert_sparse"
+crate-type = ["lib"]
+
+[[example]]
 name = "entity_remove"
 crate-type = ["lib"]
+
+[[example]]
+name = "entity_remove_sparse"
+crate-type = ["lib"]
+
 
 [[example]]
 name = "entity_take"
