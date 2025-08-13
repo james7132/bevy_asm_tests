@@ -9,6 +9,8 @@ bevy_ecs = { git = "https://github.com/bevyengine/bevy", branch = "main" }
 [profile.release]
 opt-level = 3
 lto = "fat"
+panic = "abort"
+strip = true
 
 [[example]]
 name = "command_queue_apply"
@@ -117,4 +119,5 @@ crate-type = ["lib"]
 
 [[example]]
 name = "world_get_sparse"
+
 crate-type = ["lib"]

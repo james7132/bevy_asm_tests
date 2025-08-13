@@ -1,4 +1,4 @@
-	.file	"world_get.d5a497bb87e9890d-cgu.0"
+	.file	"world_get.53bd26623e7f6e31-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
@@ -47,13 +47,13 @@ world_get:
 	movl	12(%rax), %eax
 	movl	1448(%rdi), %r13d
 	movl	1452(%rdi), %ebp
-	movabsq	$-1832652401199327590, %rdx
+	movabsq	$-1835201932053056881, %rdx
 	movq	80(%rdi), %rcx
 	movq	88(%rdi), %rsi
 	xorl	%ebx, %ebx
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$-1477569048465175248, %r8
+	movabsq	$6739086836328614201, %r8
 	movq	%rdx, %r9
 	xorl	%r10d, %r10d
 .LBB0_5:

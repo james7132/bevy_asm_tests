@@ -1,27 +1,24 @@
-	.file	"resource_get.a33901a8e7e1717b-cgu.0"
+	.file	"resource_get.7759da2b2d8176fa-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,74
+	.zero	16,87
 	.section	.text.resource_get,"ax",@progbits
 	.globl	resource_get
 	.p2align	4
 	.type	resource_get,@function
 resource_get:
-	.cfi_startproc
 	pushq	%rbx
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbx, -16
 	movq	%rdi, %rax
 	cmpq	$0, 136(%rsi)
 	je	.LBB0_12
-	movabsq	$-7742965289223295322, %rdx
+	movabsq	$-5899631996011066938, %rdx
 	movq	112(%rsi), %rcx
 	movq	120(%rsi), %rdi
 	xorl	%r8d, %r8d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$2726120556839955359, %r9
+	movabsq	$7616743713659208065, %r9
 	movq	%rdx, %r10
 .LBB0_2:
 	andq	%rdi, %r10
@@ -82,17 +79,13 @@ resource_get:
 	movl	%r8d, 24(%rax)
 	movl	%esi, 28(%rax)
 	popq	%rbx
-	.cfi_def_cfa_offset 8
 	retq
 .LBB0_12:
-	.cfi_def_cfa_offset 16
 	movq	$0, (%rax)
 	popq	%rbx
-	.cfi_def_cfa_offset 8
 	retq
 .Lfunc_end0:
 	.size	resource_get, .Lfunc_end0-resource_get
-	.cfi_endproc
 
 	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
 	.section	".note.GNU-stack","",@progbits

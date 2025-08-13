@@ -1,4 +1,4 @@
-	.file	"query_get_sparse.67f0b238e3dd0bcb-cgu.0"
+	.file	"query_get_sparse.97c8176922b4793a-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4
@@ -76,13 +76,13 @@ query_get:
 	leaq	(%rcx,%rcx,8), %rdx
 	shlq	$4, %rdx
 	addq	344(%r8), %rdx
-	cmpq	%rax, 136(%rsi)
-	jbe	.LBB0_19
+	cmpq	136(%rsi), %rax
+	jae	.LBB0_19
 	jmp	.LBB0_17
 .LBB0_16:
 	xorl	%edx, %edx
-	cmpq	%rax, 136(%rsi)
-	jbe	.LBB0_19
+	cmpq	136(%rsi), %rax
+	jae	.LBB0_19
 .LBB0_17:
 	movq	128(%rsi), %rcx
 	movl	(%rcx,%rax,4), %r10d

@@ -1,18 +1,11 @@
-	.file	"query_state_get.c5583522c8e76d7-cgu.0"
+	.file	"query_state_get.3f4f28f622284c6c-cgu.0"
 	.section	.text.unlikely.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4
 	.type	alloc::raw_vec::finish_grow,@function
 alloc::raw_vec::finish_grow:
-	.cfi_startproc
 	pushq	%r15
-	.cfi_def_cfa_offset 16
 	pushq	%r14
-	.cfi_def_cfa_offset 24
 	pushq	%rbx
-	.cfi_def_cfa_offset 32
-	.cfi_offset %rbx, -32
-	.cfi_offset %r14, -24
-	.cfi_offset %r15, -16
 	movq	%rdx, %rbx
 	movq	%rsi, %r15
 	movq	%rdi, %r14
@@ -45,15 +38,11 @@ alloc::raw_vec::finish_grow:
 	movq	%rbx, 16(%r14)
 	movq	%rcx, (%r14)
 	popq	%rbx
-	.cfi_def_cfa_offset 24
 	popq	%r14
-	.cfi_def_cfa_offset 16
 	popq	%r15
-	.cfi_def_cfa_offset 8
 	retq
 .Lfunc_end0:
 	.size	alloc::raw_vec::finish_grow, .Lfunc_end0-alloc::raw_vec::finish_grow
-	.cfi_endproc
 
 	.section	".text.alloc::raw_vec::RawVec<T,A>::grow_one","ax",@progbits
 	.globl	alloc::raw_vec::RawVec<T,A>::grow_one
@@ -200,7 +189,7 @@ bevy_ecs::query::state::QueryState<D,F>::new_archetype:
 	movq	(%r15), %r12
 	cmpq	$1, %r9
 	leaq	-8(%r15,%r9,8), %r14
-	leaq	.Lanon.68495acd7eee88ef6b603c2c1ea40279.0(%rip), %r8
+	leaq	.Lanon.dcbbac90d493f6909000bea9b6edc340.0(%rip), %r8
 	cmoveq	%r8, %r14
 	leaq	-2(%r9), %r9
 	movl	$0, %ebx
@@ -268,7 +257,7 @@ bevy_ecs::query::state::QueryState<D,F>::new_archetype:
 	movq	(%r8), %r15
 	cmpq	$1, %r11
 	leaq	-8(%r8,%r11,8), %rbx
-	leaq	.Lanon.68495acd7eee88ef6b603c2c1ea40279.0(%rip), %r14
+	leaq	.Lanon.dcbbac90d493f6909000bea9b6edc340.0(%rip), %r14
 	cmoveq	%r14, %rbx
 	leaq	-2(%r11), %r14
 	movl	$0, %r11d
@@ -342,7 +331,7 @@ bevy_ecs::query::state::QueryState<D,F>::new_archetype:
 	cmpq	240(%rdi), %r14
 	jne	.LBB2_38
 	leaq	240(%rdi), %rax
-	leaq	.Lanon.68495acd7eee88ef6b603c2c1ea40279.4(%rip), %rcx
+	leaq	.Lanon.dcbbac90d493f6909000bea9b6edc340.4(%rip), %rcx
 	movq	%rdi, %r15
 	movq	%rax, %rdi
 	movq	%rsi, %r12
@@ -377,7 +366,7 @@ bevy_ecs::query::state::QueryState<D,F>::new_archetype:
 	cmpq	240(%rdi), %r14
 	jne	.LBB2_43
 	leaq	240(%rdi), %rax
-	leaq	.Lanon.68495acd7eee88ef6b603c2c1ea40279.5(%rip), %rsi
+	leaq	.Lanon.dcbbac90d493f6909000bea9b6edc340.5(%rip), %rsi
 	movq	%rdi, %r15
 	movq	%rax, %rdi
 	callq	*alloc::raw_vec::RawVec<T,A>::grow_one@GOTPCREL(%rip)
@@ -420,7 +409,7 @@ bevy_ecs::query::state::QueryState<D,F>::new_archetype:
 	.cfi_offset %r15, -24
 	leaq	1(%rbx), %rax
 	leaq	40(%rdi), %rcx
-	leaq	.Lanon.68495acd7eee88ef6b603c2c1ea40279.2(%rip), %rdx
+	leaq	.Lanon.dcbbac90d493f6909000bea9b6edc340.2(%rip), %rdx
 	movq	%rdi, %r14
 	movq	%rcx, %rdi
 	movq	%rsi, %r15
@@ -443,7 +432,7 @@ bevy_ecs::query::state::QueryState<D,F>::new_archetype:
 .LBB2_39:
 	leaq	1(%rbx), %rsi
 	leaq	16(%rdi), %rax
-	leaq	.Lanon.68495acd7eee88ef6b603c2c1ea40279.2(%rip), %rdx
+	leaq	.Lanon.dcbbac90d493f6909000bea9b6edc340.2(%rip), %rdx
 	movq	%rdi, %r14
 	movq	%rax, %rdi
 	callq	*fixedbitset::FixedBitSet::grow::do_grow@GOTPCREL(%rip)
@@ -522,7 +511,7 @@ query_get:
 	xorl	%r9d, %r9d
 	cmpq	$1, %rdx
 	leaq	-8(%rax,%rdx,8), %rdx
-	leaq	.Lanon.68495acd7eee88ef6b603c2c1ea40279.0(%rip), %rdi
+	leaq	.Lanon.dcbbac90d493f6909000bea9b6edc340.0(%rip), %rdi
 	cmovneq	%rdx, %rdi
 	cmovneq	%rsi, %r9
 	movq	(%rdi), %rdx
@@ -961,86 +950,86 @@ query_get:
 	shrq	$32, %r12
 	jmp	.LBB3_59
 .LBB3_64:
-	leaq	.Lanon.68495acd7eee88ef6b603c2c1ea40279.8(%rip), %rdx
+	leaq	.Lanon.dcbbac90d493f6909000bea9b6edc340.8(%rip), %rdx
 	callq	*bevy_ecs::query::state::QueryState<D,F>::validate_world::panic_mismatched@GOTPCREL(%rip)
 .LBB3_65:
-	leaq	.Lanon.68495acd7eee88ef6b603c2c1ea40279.6(%rip), %rdx
+	leaq	.Lanon.dcbbac90d493f6909000bea9b6edc340.6(%rip), %rdx
 	movq	%r10, %rsi
 	callq	*core::slice::index::slice_start_index_len_fail@GOTPCREL(%rip)
 .LBB3_66:
-	leaq	.Lanon.68495acd7eee88ef6b603c2c1ea40279.7(%rip), %rdx
+	leaq	.Lanon.dcbbac90d493f6909000bea9b6edc340.7(%rip), %rdx
 	movq	64(%rsp), %rsi
 	callq	*core::panicking::panic_bounds_check@GOTPCREL(%rip)
 .Lfunc_end3:
 	.size	query_get, .Lfunc_end3-query_get
 	.cfi_endproc
 
-	.type	.Lanon.68495acd7eee88ef6b603c2c1ea40279.0,@object
+	.type	.Lanon.dcbbac90d493f6909000bea9b6edc340.0,@object
 	.section	.rodata.cst8,"aM",@progbits,8
 	.p2align	3, 0x0
-.Lanon.68495acd7eee88ef6b603c2c1ea40279.0:
+.Lanon.dcbbac90d493f6909000bea9b6edc340.0:
 	.zero	8
-	.size	.Lanon.68495acd7eee88ef6b603c2c1ea40279.0, 8
+	.size	.Lanon.dcbbac90d493f6909000bea9b6edc340.0, 8
 
-	.type	.Lanon.68495acd7eee88ef6b603c2c1ea40279.1,@object
+	.type	.Lanon.dcbbac90d493f6909000bea9b6edc340.1,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.Lanon.68495acd7eee88ef6b603c2c1ea40279.1:
+.Lanon.dcbbac90d493f6909000bea9b6edc340.1:
 	.asciz	"/home/james/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fixedbitset-0.5.7/src/lib.rs"
-	.size	.Lanon.68495acd7eee88ef6b603c2c1ea40279.1, 94
+	.size	.Lanon.dcbbac90d493f6909000bea9b6edc340.1, 94
 
-	.type	.Lanon.68495acd7eee88ef6b603c2c1ea40279.2,@object
-	.section	.data.rel.ro..Lanon.68495acd7eee88ef6b603c2c1ea40279.2,"aw",@progbits
+	.type	.Lanon.dcbbac90d493f6909000bea9b6edc340.2,@object
+	.section	.data.rel.ro..Lanon.dcbbac90d493f6909000bea9b6edc340.2,"aw",@progbits
 	.p2align	3, 0x0
-.Lanon.68495acd7eee88ef6b603c2c1ea40279.2:
-	.quad	.Lanon.68495acd7eee88ef6b603c2c1ea40279.1
+.Lanon.dcbbac90d493f6909000bea9b6edc340.2:
+	.quad	.Lanon.dcbbac90d493f6909000bea9b6edc340.1
 	.asciz	"^\000\000\000\000\000\000\000\223\000\000\000\r\000\000"
-	.size	.Lanon.68495acd7eee88ef6b603c2c1ea40279.2, 24
+	.size	.Lanon.dcbbac90d493f6909000bea9b6edc340.2, 24
 
-	.type	.Lanon.68495acd7eee88ef6b603c2c1ea40279.3,@object
+	.type	.Lanon.dcbbac90d493f6909000bea9b6edc340.3,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.Lanon.68495acd7eee88ef6b603c2c1ea40279.3:
+.Lanon.dcbbac90d493f6909000bea9b6edc340.3:
 	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/7fa4f74/crates/bevy_ecs/src/query/state.rs"
-	.size	.Lanon.68495acd7eee88ef6b603c2c1ea40279.3, 98
+	.size	.Lanon.dcbbac90d493f6909000bea9b6edc340.3, 98
 
-	.type	.Lanon.68495acd7eee88ef6b603c2c1ea40279.4,@object
-	.section	.data.rel.ro..Lanon.68495acd7eee88ef6b603c2c1ea40279.4,"aw",@progbits
+	.type	.Lanon.dcbbac90d493f6909000bea9b6edc340.4,@object
+	.section	.data.rel.ro..Lanon.dcbbac90d493f6909000bea9b6edc340.4,"aw",@progbits
 	.p2align	3, 0x0
-.Lanon.68495acd7eee88ef6b603c2c1ea40279.4:
-	.quad	.Lanon.68495acd7eee88ef6b603c2c1ea40279.3
+.Lanon.dcbbac90d493f6909000bea9b6edc340.4:
+	.quad	.Lanon.dcbbac90d493f6909000bea9b6edc340.3
 	.asciz	"b\000\000\000\000\000\000\000R\002\000\000.\000\000"
-	.size	.Lanon.68495acd7eee88ef6b603c2c1ea40279.4, 24
+	.size	.Lanon.dcbbac90d493f6909000bea9b6edc340.4, 24
 
-	.type	.Lanon.68495acd7eee88ef6b603c2c1ea40279.5,@object
-	.section	.data.rel.ro..Lanon.68495acd7eee88ef6b603c2c1ea40279.5,"aw",@progbits
+	.type	.Lanon.dcbbac90d493f6909000bea9b6edc340.5,@object
+	.section	.data.rel.ro..Lanon.dcbbac90d493f6909000bea9b6edc340.5,"aw",@progbits
 	.p2align	3, 0x0
-.Lanon.68495acd7eee88ef6b603c2c1ea40279.5:
-	.quad	.Lanon.68495acd7eee88ef6b603c2c1ea40279.3
+.Lanon.dcbbac90d493f6909000bea9b6edc340.5:
+	.quad	.Lanon.dcbbac90d493f6909000bea9b6edc340.3
 	.asciz	"b\000\000\000\000\000\000\000[\002\000\000.\000\000"
-	.size	.Lanon.68495acd7eee88ef6b603c2c1ea40279.5, 24
+	.size	.Lanon.dcbbac90d493f6909000bea9b6edc340.5, 24
 
-	.type	.Lanon.68495acd7eee88ef6b603c2c1ea40279.6,@object
-	.section	.data.rel.ro..Lanon.68495acd7eee88ef6b603c2c1ea40279.6,"aw",@progbits
+	.type	.Lanon.dcbbac90d493f6909000bea9b6edc340.6,@object
+	.section	.data.rel.ro..Lanon.dcbbac90d493f6909000bea9b6edc340.6,"aw",@progbits
 	.p2align	3, 0x0
-.Lanon.68495acd7eee88ef6b603c2c1ea40279.6:
-	.quad	.Lanon.68495acd7eee88ef6b603c2c1ea40279.3
+.Lanon.dcbbac90d493f6909000bea9b6edc340.6:
+	.quad	.Lanon.dcbbac90d493f6909000bea9b6edc340.3
 	.asciz	"b\000\000\000\000\000\000\000\000\002\000\000)\000\000"
-	.size	.Lanon.68495acd7eee88ef6b603c2c1ea40279.6, 24
+	.size	.Lanon.dcbbac90d493f6909000bea9b6edc340.6, 24
 
-	.type	.Lanon.68495acd7eee88ef6b603c2c1ea40279.7,@object
-	.section	.data.rel.ro..Lanon.68495acd7eee88ef6b603c2c1ea40279.7,"aw",@progbits
+	.type	.Lanon.dcbbac90d493f6909000bea9b6edc340.7,@object
+	.section	.data.rel.ro..Lanon.dcbbac90d493f6909000bea9b6edc340.7,"aw",@progbits
 	.p2align	3, 0x0
-.Lanon.68495acd7eee88ef6b603c2c1ea40279.7:
-	.quad	.Lanon.68495acd7eee88ef6b603c2c1ea40279.3
+.Lanon.dcbbac90d493f6909000bea9b6edc340.7:
+	.quad	.Lanon.dcbbac90d493f6909000bea9b6edc340.3
 	.asciz	"b\000\000\000\000\000\000\000#\002\000\0008\000\000"
-	.size	.Lanon.68495acd7eee88ef6b603c2c1ea40279.7, 24
+	.size	.Lanon.dcbbac90d493f6909000bea9b6edc340.7, 24
 
-	.type	.Lanon.68495acd7eee88ef6b603c2c1ea40279.8,@object
-	.section	.data.rel.ro..Lanon.68495acd7eee88ef6b603c2c1ea40279.8,"aw",@progbits
+	.type	.Lanon.dcbbac90d493f6909000bea9b6edc340.8,@object
+	.section	.data.rel.ro..Lanon.dcbbac90d493f6909000bea9b6edc340.8,"aw",@progbits
 	.p2align	3, 0x0
-.Lanon.68495acd7eee88ef6b603c2c1ea40279.8:
-	.quad	.Lanon.68495acd7eee88ef6b603c2c1ea40279.3
+.Lanon.dcbbac90d493f6909000bea9b6edc340.8:
+	.quad	.Lanon.dcbbac90d493f6909000bea9b6edc340.3
 	.asciz	"b\000\000\000\000\000\000\000\372\001\000\000\016\000\000"
-	.size	.Lanon.68495acd7eee88ef6b603c2c1ea40279.8, 24
+	.size	.Lanon.dcbbac90d493f6909000bea9b6edc340.8, 24
 
 	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
 	.section	".note.GNU-stack","",@progbits

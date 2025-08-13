@@ -1,25 +1,23 @@
-	.file	"resource_remove.1860e3d9635eebd4-cgu.0"
+	.file	"resource_remove.2838a6ce232c907c-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,70
+	.zero	16,74
 	.section	.text.resource_insert,"ax",@progbits
 	.globl	resource_insert
 	.p2align	4
 	.type	resource_insert,@function
 resource_insert:
-	.cfi_startproc
 	cmpq	$0, 136(%rdi)
 	je	.LBB0_13
 	pushq	%rax
-	.cfi_def_cfa_offset 16
-	movabsq	$-8303925920220750552, %rdx
+	movabsq	$-7716850704236066690, %rdx
 	movq	112(%rdi), %rcx
 	movq	120(%rdi), %rsi
 	xorl	%r8d, %r8d
 	movdqa	.LCPI0_0(%rip), %xmm1
 	pcmpeqd	%xmm2, %xmm2
-	movabsq	$8458968206360850082, %r9
+	movabsq	$7910049620051391880, %r9
 	movq	%rdx, %r10
 .LBB0_2:
 	andq	%rsi, %r10
@@ -77,19 +75,15 @@ resource_insert:
 	movl	$1, %eax
 .LBB0_12:
 	addq	$8, %rsp
-	.cfi_def_cfa_offset 8
 	retq
 .LBB0_13:
 	xorl	%eax, %eax
 	retq
 .LBB0_14:
-	.cfi_def_cfa_offset 16
 	addq	$8, %rsp
-	.cfi_def_cfa_offset 8
 	retq
 .Lfunc_end0:
 	.size	resource_insert, .Lfunc_end0-resource_insert
-	.cfi_endproc
 
 	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
 	.section	".note.GNU-stack","",@progbits

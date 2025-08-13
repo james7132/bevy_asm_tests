@@ -1,18 +1,11 @@
-	.file	"event_writer.4223d64be82e3416-cgu.0"
+	.file	"event_writer.d2ec1b3ce9809b23-cgu.0"
 	.section	.text.unlikely.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4
 	.type	alloc::raw_vec::finish_grow,@function
 alloc::raw_vec::finish_grow:
-	.cfi_startproc
 	pushq	%r15
-	.cfi_def_cfa_offset 16
 	pushq	%r14
-	.cfi_def_cfa_offset 24
 	pushq	%rbx
-	.cfi_def_cfa_offset 32
-	.cfi_offset %rbx, -32
-	.cfi_offset %r14, -24
-	.cfi_offset %r15, -16
 	movq	%rdx, %rbx
 	movq	%rsi, %r15
 	movq	%rdi, %r14
@@ -45,15 +38,11 @@ alloc::raw_vec::finish_grow:
 	movq	%rbx, 16(%r14)
 	movq	%rcx, (%r14)
 	popq	%rbx
-	.cfi_def_cfa_offset 24
 	popq	%r14
-	.cfi_def_cfa_offset 16
 	popq	%r15
-	.cfi_def_cfa_offset 8
 	retq
 .Lfunc_end0:
 	.size	alloc::raw_vec::finish_grow, .Lfunc_end0-alloc::raw_vec::finish_grow
-	.cfi_endproc
 
 	.section	".text.alloc::raw_vec::RawVec<T,A>::grow_one","ax",@progbits
 	.globl	alloc::raw_vec::RawVec<T,A>::grow_one
@@ -160,7 +149,7 @@ event_writer:
 	cmpq	32(%rbx), %r15
 	jne	.LBB2_2
 	leaq	32(%rbx), %rdi
-	leaq	.Lanon.59f57a65e0ecb6d760ce70a26114e500.1(%rip), %rsi
+	leaq	.Lanon.149b4dcd263d693906737b881a8ca959.1(%rip), %rsi
 	callq	*alloc::raw_vec::RawVec<T,A>::grow_one@GOTPCREL(%rip)
 .LBB2_2:
 	movq	40(%rbx), %rax
@@ -188,19 +177,19 @@ event_writer:
 	.size	event_writer, .Lfunc_end2-event_writer
 	.cfi_endproc
 
-	.type	.Lanon.59f57a65e0ecb6d760ce70a26114e500.0,@object
+	.type	.Lanon.149b4dcd263d693906737b881a8ca959.0,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.Lanon.59f57a65e0ecb6d760ce70a26114e500.0:
+.Lanon.149b4dcd263d693906737b881a8ca959.0:
 	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/7fa4f74/crates/bevy_ecs/src/event/collections.rs"
-	.size	.Lanon.59f57a65e0ecb6d760ce70a26114e500.0, 104
+	.size	.Lanon.149b4dcd263d693906737b881a8ca959.0, 104
 
-	.type	.Lanon.59f57a65e0ecb6d760ce70a26114e500.1,@object
-	.section	.data.rel.ro..Lanon.59f57a65e0ecb6d760ce70a26114e500.1,"aw",@progbits
+	.type	.Lanon.149b4dcd263d693906737b881a8ca959.1,@object
+	.section	.data.rel.ro..Lanon.149b4dcd263d693906737b881a8ca959.1,"aw",@progbits
 	.p2align	3, 0x0
-.Lanon.59f57a65e0ecb6d760ce70a26114e500.1:
-	.quad	.Lanon.59f57a65e0ecb6d760ce70a26114e500.0
+.Lanon.149b4dcd263d693906737b881a8ca959.1:
+	.quad	.Lanon.149b4dcd263d693906737b881a8ca959.0
 	.asciz	"h\000\000\000\000\000\000\000\214\000\000\000\027\000\000"
-	.size	.Lanon.59f57a65e0ecb6d760ce70a26114e500.1, 24
+	.size	.Lanon.149b4dcd263d693906737b881a8ca959.1, 24
 
 	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
 	.section	".note.GNU-stack","",@progbits

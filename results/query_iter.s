@@ -1,28 +1,15 @@
-	.file	"query_iter.5572c3f4558630d9-cgu.0"
+	.file	"query_iter.bbb8be8035aa7e92-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4
 	.type	query_iter,@function
 query_iter:
-	.cfi_startproc
 	pushq	%rbp
-	.cfi_def_cfa_offset 16
 	pushq	%r15
-	.cfi_def_cfa_offset 24
 	pushq	%r14
-	.cfi_def_cfa_offset 32
 	pushq	%r13
-	.cfi_def_cfa_offset 40
 	pushq	%r12
-	.cfi_def_cfa_offset 48
 	pushq	%rbx
-	.cfi_def_cfa_offset 56
-	.cfi_offset %rbx, -56
-	.cfi_offset %r12, -48
-	.cfi_offset %r13, -40
-	.cfi_offset %r14, -32
-	.cfi_offset %r15, -24
-	.cfi_offset %rbp, -16
 	movq	(%rdi), %rax
 	movq	8(%rdi), %rcx
 	movl	20(%rdi), %edx
@@ -141,21 +128,14 @@ query_iter:
 	jmp	.LBB0_4
 .LBB0_23:
 	popq	%rbx
-	.cfi_def_cfa_offset 48
 	popq	%r12
-	.cfi_def_cfa_offset 40
 	popq	%r13
-	.cfi_def_cfa_offset 32
 	popq	%r14
-	.cfi_def_cfa_offset 24
 	popq	%r15
-	.cfi_def_cfa_offset 16
 	popq	%rbp
-	.cfi_def_cfa_offset 8
 	retq
 .Lfunc_end0:
 	.size	query_iter, .Lfunc_end0-query_iter
-	.cfi_endproc
 
 	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
 	.section	".note.GNU-stack","",@progbits

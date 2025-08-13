@@ -1,4 +1,4 @@
-	.file	"event_reader.4e972d7ca1d1ed72-cgu.0"
+	.file	"event_reader.e2cc235b1f533352-cgu.0"
 	.section	.text.event_reader,"ax",@progbits
 	.globl	event_reader
 	.p2align	4
