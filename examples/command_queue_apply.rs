@@ -1,4 +1,4 @@
-use bevy_ecs::{prelude::*, system::CommandQueue};
+use bevy_ecs::{prelude::*, world::CommandQueue};
 use std::hint::black_box;
 
 #[no_mangle]

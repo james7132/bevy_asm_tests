@@ -109,7 +109,3 @@ crate-type = ["lib"]
 [[example]]
 name = "world_get_sparse"
 crate-type = ["lib"]
-
-[[example]]
-name = "world_insert_or_spawn_batch"
-crate-type = ["lib"]

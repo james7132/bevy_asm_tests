@@ -1,8 +1,7 @@
-	.text
-	.file	"event_reader.74e8bd05f1be1e1b-cgu.0"
+	.file	"event_reader.4e972d7ca1d1ed72-cgu.0"
 	.section	.text.event_reader,"ax",@progbits
 	.globl	event_reader
-	.p2align	4, 0x90
+	.p2align	4
 	.type	event_reader,@function
 event_reader:
 	.cfi_startproc
@@ -21,27 +20,26 @@ event_reader:
 	movq	16(%r8), %rcx
 	subq	%rdx, %rcx
 	cmovbq	%r9, %rcx
-	movq	48(%r8), %rdx
-	leaq	.Lanon.5729158841f6a0a43c5f462d65065398.0(%rip), %r11
+	movl	$8, %r11d
 	cmovbq	%r11, %rdi
-	movq	%r10, %rsi
-	shlq	$4, %rsi
-	addq	40(%r8), %rsi
-	cmpq	%rdx, %r10
-	cmovaq	%r11, %rsi
-	subq	%r10, %rdx
-	cmovbq	%r9, %rdx
+	movq	%r10, %rdx
+	shlq	$4, %rdx
+	addq	40(%r8), %rdx
+	movq	48(%r8), %rsi
+	subq	%r10, %rsi
+	cmovbq	%r11, %rdx
+	cmovbq	%r9, %rsi
 	movq	64(%r8), %r8
-	subq	%rdx, %r8
+	subq	%rsi, %r8
 	subq	%rcx, %r8
 	movq	%r8, (%rax)
 	shlq	$4, %rcx
 	addq	%rdi, %rcx
-	shlq	$4, %rdx
-	addq	%rsi, %rdx
+	shlq	$4, %rsi
+	addq	%rdx, %rsi
 	leaq	-8(%rsp), %r8
 	jmp	.LBB0_1
-	.p2align	4, 0x90
+	.p2align	4
 .LBB0_3:
 	leaq	16(%rdi), %r9
 .LBB0_7:
@@ -57,12 +55,12 @@ event_reader:
 	cmpq	%rcx, %rdi
 	jne	.LBB0_3
 .LBB0_4:
-	testq	%rsi, %rsi
+	testq	%rdx, %rdx
 	je	.LBB0_8
-	cmpq	%rdx, %rsi
+	cmpq	%rsi, %rdx
 	je	.LBB0_8
-	movq	%rsi, %rdi
-	addq	$16, %rsi
+	movq	%rdx, %rdi
+	addq	$16, %rdx
 	xorl	%r9d, %r9d
 	jmp	.LBB0_7
 .LBB0_8:
@@ -71,11 +69,5 @@ event_reader:
 	.size	event_reader, .Lfunc_end0-event_reader
 	.cfi_endproc
 
-	.type	.Lanon.5729158841f6a0a43c5f462d65065398.0,@object
-	.section	.rodata..Lanon.5729158841f6a0a43c5f462d65065398.0,"a",@progbits
-	.p2align	3, 0x0
-.Lanon.5729158841f6a0a43c5f462d65065398.0:
-	.size	.Lanon.5729158841f6a0a43c5f462d65065398.0, 0
-
-	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
+	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
 	.section	".note.GNU-stack","",@progbits

@@ -1,7 +1,7 @@
 use bevy_ecs::prelude::*;
 use std::hint::black_box;
 
-#[derive(Event, Clone)]
+#[derive(BufferedEvent, Clone)]
 pub struct A(f32);
 
 #[no_mangle]

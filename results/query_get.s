@@ -1,118 +1,99 @@
-	.text
-	.file	"query_get.9056f05f0507ce8e-cgu.0"
+	.file	"query_get.44fc3406594955d2-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
-	.p2align	4, 0x90
+	.p2align	4
 	.type	query_get,@function
 query_get:
 	.cfi_startproc
-	pushq	%r15
-	.cfi_def_cfa_offset 16
-	pushq	%r14
-	.cfi_def_cfa_offset 24
 	pushq	%rbx
-	.cfi_def_cfa_offset 32
-	.cfi_offset %rbx, -32
-	.cfi_offset %r14, -24
-	.cfi_offset %r15, -16
-	movq	8(%rdi), %r8
-	movl	16(%rdi), %eax
-	movl	20(%rdi), %ecx
-	movl	%esi, %edx
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbx, -16
+	movq	8(%rdi), %rdx
+	movl	%esi, %eax
+	movl	$4294967295, %r8d
+	xorq	%rax, %r8
 	shrq	$32, %rsi
-	movl	$1, %r9d
-	cmpq	16(%r8), %rdx
-	jae	.LBB0_7
-	movq	8(%r8), %r10
-	leaq	(%rdx,%rdx,4), %r11
-	cmpl	%esi, (%r10,%r11,4)
-	jne	.LBB0_7
-	movl	4(%r10,%r11,4), %ebx
-	movl	$4294967295, %r14d
-	cmpq	%r14, %rbx
-	je	.LBB0_7
-	movq	(%rdi), %r9
-	movl	%ebx, %r14d
-	shrl	$5, %r14d
-	xorl	%edi, %edi
-	cmpq	64(%r9), %r14
-	jae	.LBB0_11
-	movq	56(%r9), %r15
-	testq	%r15, %r15
-	je	.LBB0_11
-	movl	(%r15,%r14,4), %edi
-	btl	%ebx, %edi
+	movl	$1, %ecx
+	cmpq	%r8, 16(%rdx)
+	jbe	.LBB0_8
+	movq	8(%rdx), %r9
+	leaq	(%r8,%r8,2), %r8
+	cmpl	%esi, 16(%r9,%r8,8)
+	jne	.LBB0_8
+	leaq	(%r9,%r8,8), %r9
+	cmpl	$0, (%r9)
+	je	.LBB0_8
+	movq	8(%r9), %rcx
+	movq	(%rdi), %r8
+	movl	%ecx, %r10d
+	cmpq	56(%r8), %r10
 	jae	.LBB0_10
-	leaq	(%r10,%r11,4), %rdx
-	addq	$4, %rdx
-	movl	8(%rdx), %esi
-	leaq	(%rsi,%rsi,8), %rdi
-	shlq	$3, %rdi
-	addq	296(%r8), %rdi
-	xorl	%r10d, %r10d
-	cmpq	304(%r8), %rsi
-	cmovbq	%rdi, %r10
-	movl	12(%rdx), %r8d
-	movq	392(%r9), %rdx
-	movq	400(%r9), %rsi
-	movq	24(%r10), %rdi
-	movq	56(%r10), %r9
-	movq	(%r9,%rdx,8), %rdx
-	notq	%rdx
-	leaq	(%rdx,%rdx,2), %rdx
-	shlq	$5, %rdx
-	movq	(%r9,%rsi,8), %rsi
-	notq	%rsi
-	leaq	(%rsi,%rsi,2), %rsi
-	shlq	$5, %rsi
-	shlq	$2, %r8
-	movq	16(%rdi,%rdx), %r10
-	addq	%r8, %r10
-	movq	56(%rdi,%rdx), %r9
-	addq	%r8, %r9
-	movq	80(%rdi,%rdx), %r11
-	addq	%r8, %r11
-	addq	16(%rdi,%rsi), %r8
-	movabsq	$-4294967296, %rdi
-	andq	%r9, %rdi
-	movl	%r11d, %edx
-	movq	%r11, %rsi
-	shrq	$32, %rsi
-	movl	%r9d, %r9d
-	jmp	.LBB0_9
-.LBB0_7:
-	xorl	%edi, %edi
+	movq	40(%r8), %r11
+	shrl	$6, %r10d
+	movq	(%r11,%r10,8), %r10
+	btq	%rcx, %r10
+	jae	.LBB0_10
+	movl	4(%r9), %eax
+	shrq	$32, %rcx
+	movq	416(%rdx), %r11
+	leaq	(%rcx,%rcx,8), %rbx
+	movq	272(%r8), %rcx
+	movq	280(%r8), %r9
+	movq	24(%r11,%rbx,8), %rdx
+	movq	56(%r11,%rbx,8), %r10
+	movq	(%r10,%rcx,8), %rcx
+	notq	%rcx
+	leaq	(%rcx,%rcx,2), %r8
+	shlq	$4, %r8
+	movq	16(%rdx,%r8), %rcx
+	movq	32(%rdx,%r8), %rsi
+	movq	40(%rdx,%r8), %r8
+	cmpq	64(%r11,%rbx,8), %r9
+	jae	.LBB0_12
+	movq	(%r10,%r9,8), %r9
+	testq	%r9, %r9
+	je	.LBB0_12
+	notq	%r9
+	leaq	(%r9,%r9,2), %r9
+	shlq	$4, %r9
+	movq	16(%rdx,%r9), %r10
+	jmp	.LBB0_13
+.LBB0_10:
+	shlq	$32, %rcx
 .LBB0_8:
-	xorl	%r10d, %r10d
+	xorl	%edx, %edx
 .LBB0_9:
-	orq	%r9, %rdi
-	movq	%r10, -40(%rsp)
-	movq	%rdi, -32(%rsp)
+	movq	%rdx, -40(%rsp)
+	movq	%rcx, -32(%rsp)
 	shlq	$32, %rsi
-	orq	%rdx, %rsi
+	orq	%rax, %rsi
 	movq	%rsi, -24(%rsp)
-	movl	%eax, -16(%rsp)
-	movl	%ecx, -12(%rsp)
+	movl	%r9d, -16(%rsp)
+	movl	%edi, -12(%rsp)
 	movq	%r8, -8(%rsp)
 	leaq	-40(%rsp), %rax
 	#APP
 	#NO_APP
 	popq	%rbx
-	.cfi_def_cfa_offset 24
-	popq	%r14
-	.cfi_def_cfa_offset 16
-	popq	%r15
 	.cfi_def_cfa_offset 8
 	retq
-.LBB0_10:
-	.cfi_def_cfa_offset 32
-	xorl	%edi, %edi
-.LBB0_11:
-	xorl	%r9d, %r9d
-	jmp	.LBB0_8
+.LBB0_12:
+	.cfi_def_cfa_offset 16
+	xorl	%r10d, %r10d
+.LBB0_13:
+	movl	16(%rdi), %r9d
+	movl	20(%rdi), %edi
+	notl	%eax
+	leaq	(%rcx,%rax,4), %rdx
+	leaq	(%rsi,%rax,4), %rcx
+	leaq	(%r8,%rax,4), %rsi
+	leaq	(%r10,%rax,4), %r8
+	movl	%esi, %eax
+	shrq	$32, %rsi
+	jmp	.LBB0_9
 .Lfunc_end0:
 	.size	query_get, .Lfunc_end0-query_get
 	.cfi_endproc
 
-	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
+	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
 	.section	".note.GNU-stack","",@progbits

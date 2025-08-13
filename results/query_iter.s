@@ -1,119 +1,161 @@
-	.text
-	.file	"query_iter.96e582ed144f857a-cgu.0"
+	.file	"query_iter.5572c3f4558630d9-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
-	.p2align	4, 0x90
+	.p2align	4
 	.type	query_iter,@function
 query_iter:
 	.cfi_startproc
-	pushq	%r15
+	pushq	%rbp
 	.cfi_def_cfa_offset 16
-	pushq	%r14
+	pushq	%r15
 	.cfi_def_cfa_offset 24
-	pushq	%rbx
+	pushq	%r14
 	.cfi_def_cfa_offset 32
-	.cfi_offset %rbx, -32
-	.cfi_offset %r14, -24
-	.cfi_offset %r15, -16
+	pushq	%r13
+	.cfi_def_cfa_offset 40
+	pushq	%r12
+	.cfi_def_cfa_offset 48
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset %rbx, -56
+	.cfi_offset %r12, -48
+	.cfi_offset %r13, -40
+	.cfi_offset %r14, -32
+	.cfi_offset %r15, -24
+	.cfi_offset %rbp, -16
 	movq	(%rdi), %rax
 	movq	8(%rdi), %rcx
 	movl	20(%rdi), %edx
-	movq	352(%rax), %rsi
-	movq	360(%rax), %rdi
+	movq	248(%rax), %rsi
+	movq	256(%rax), %rdi
 	leaq	(%rsi,%rdi,4), %rdi
-	xorl	%r8d, %r8d
-	xorl	%r10d, %r10d
+	movzbl	264(%rax), %r8d
 	xorl	%ebx, %ebx
+	movl	$8, %r10d
+	xorl	%r11d, %r11d
 	xorl	%r9d, %r9d
-	xorl	%r14d, %r14d
-	cmpq	%r9, %r14
-	jne	.LBB0_7
+	xorl	%ebp, %ebp
+	jmp	.LBB0_5
+.LBB0_1:
+	xorl	%r11d, %r11d
 .LBB0_2:
-	movq	296(%rcx), %rbx
-	movq	304(%rcx), %r14
-	movq	392(%rax), %r11
-	movq	400(%rax), %r10
-	.p2align	4, 0x90
+	movq	272(%rax), %r15
+	movq	(%rbx,%r15,8), %rbx
+	notq	%rbx
+	leaq	(%rbx,%rbx,2), %r15
+	shlq	$4, %r15
+	movq	16(%r14,%r15), %rbx
+	movq	40(%r14,%r15), %r14
+	xorl	%ebp, %ebp
 .LBB0_3:
+	movl	%ebp, %r13d
+.LBB0_4:
+	leaq	(%rbx,%r13,4), %r15
+	leaq	(%r14,%r13,4), %r12
+	leaq	(%r11,%r13,4), %r13
+	incl	%ebp
+	movss	(%r13), %xmm0
+	movl	%edx, (%r12)
+	addss	(%r15), %xmm0
+	movss	%xmm0, (%r15)
+.LBB0_5:
+	testb	%r8b, %r8b
+	je	.LBB0_12
+	cmpl	%r9d, %ebp
+	jne	.LBB0_3
+	.p2align	4
+.LBB0_7:
 	cmpq	%rdi, %rsi
-	je	.LBB0_9
+	je	.LBB0_23
 	movl	(%rsi), %r9d
 	addq	$4, %rsi
-	cmpq	%r9, %r14
-	leaq	(%r9,%r9,8), %r9
-	leaq	(%rbx,%r9,8), %r15
-	cmovbeq	%r8, %r15
-	movq	16(%r15), %r9
+	movq	416(%rcx), %r11
+	leaq	(%r9,%r9,8), %rbx
+	movq	16(%r11,%rbx,8), %r9
 	testq	%r9, %r9
-	je	.LBB0_3
-	movq	56(%r15), %rbx
-	movq	(%rbx,%r11,8), %r11
-	notq	%r11
-	movq	(%rbx,%r10,8), %rbx
-	notq	%rbx
+	je	.LBB0_7
+	leaq	(%r11,%rbx,8), %r15
+	movq	280(%rax), %r11
 	movq	24(%r15), %r14
+	movq	56(%r15), %rbx
+	cmpq	64(%r15), %r11
+	jae	.LBB0_1
+	movq	(%rbx,%r11,8), %r11
+	testq	%r11, %r11
+	je	.LBB0_1
+	notq	%r11
 	leaq	(%r11,%r11,2), %r11
-	shlq	$5, %r11
-	movq	16(%r14,%r11), %r10
-	movq	80(%r14,%r11), %r11
-	leaq	(%rbx,%rbx,2), %rbx
-	shlq	$5, %rbx
-	movq	16(%r14,%rbx), %rbx
-	xorl	%r14d, %r14d
-	jmp	.LBB0_6
-	.p2align	4, 0x90
-.LBB0_7:
-	movq	%r14, %r15
-	shrq	$32, %r15
-	jne	.LBB0_10
-	testq	%r10, %r10
-	je	.LBB0_9
-.LBB0_6:
-	movss	(%rbx,%r14,4), %xmm0
-	movl	%edx, (%r11,%r14,4)
-	addss	(%r10,%r14,4), %xmm0
-	movss	%xmm0, (%r10,%r14,4)
-	incq	%r14
-	cmpq	%r9, %r14
-	jne	.LBB0_7
+	shlq	$4, %r11
+	movq	16(%r14,%r11), %r11
 	jmp	.LBB0_2
-.LBB0_9:
+	.p2align	4
+.LBB0_12:
+	cmpl	%r9d, %ebp
+	jne	.LBB0_22
+	.p2align	4
+.LBB0_13:
+	cmpq	%rdi, %rsi
+	je	.LBB0_23
+	movl	(%rsi), %r9d
+	addq	$4, %rsi
+	movq	256(%rcx), %r10
+	leaq	(%r9,%r9,4), %r11
+	shlq	$5, %r11
+	movq	88(%r10,%r11), %r9
+	testq	%r9, %r9
+	je	.LBB0_13
+	addq	%r11, %r10
+	movl	148(%r10), %r11d
+	movq	416(%rcx), %r15
+	leaq	(%r11,%r11,8), %r12
+	movq	280(%rax), %r11
+	movq	24(%r15,%r12,8), %r14
+	movq	56(%r15,%r12,8), %rbx
+	cmpq	64(%r15,%r12,8), %r11
+	jae	.LBB0_20
+	movq	(%rbx,%r11,8), %r11
+	testq	%r11, %r11
+	je	.LBB0_20
+	notq	%r11
+	leaq	(%r11,%r11,2), %r11
+	shlq	$4, %r11
+	movq	16(%r14,%r11), %r11
+	jmp	.LBB0_21
+.LBB0_20:
+	xorl	%r11d, %r11d
+.LBB0_21:
+	movq	272(%rax), %r15
+	movq	(%rbx,%r15,8), %rbx
+	notq	%rbx
+	leaq	(%rbx,%rbx,2), %r15
+	shlq	$4, %r15
+	movq	16(%r14,%r15), %rbx
+	movq	40(%r14,%r15), %r14
+	movq	80(%r10), %r10
+	xorl	%ebp, %ebp
+.LBB0_22:
+	movl	%ebp, %r15d
+	shlq	$4, %r15
+	movl	8(%r10,%r15), %r13d
+	notl	%r13d
+	jmp	.LBB0_4
+.LBB0_23:
 	popq	%rbx
-	.cfi_def_cfa_offset 24
+	.cfi_def_cfa_offset 48
+	popq	%r12
+	.cfi_def_cfa_offset 40
+	popq	%r13
+	.cfi_def_cfa_offset 32
 	popq	%r14
-	.cfi_def_cfa_offset 16
+	.cfi_def_cfa_offset 24
 	popq	%r15
+	.cfi_def_cfa_offset 16
+	popq	%rbp
 	.cfi_def_cfa_offset 8
 	retq
-.LBB0_10:
-	.cfi_def_cfa_offset 32
-	leaq	.Lanon.a01df851b6197f632189e2f0fa818bdd.0(%rip), %rdi
-	leaq	.Lanon.a01df851b6197f632189e2f0fa818bdd.2(%rip), %rdx
-	movl	$48, %esi
-	callq	*core::panicking::panic@GOTPCREL(%rip)
 .Lfunc_end0:
 	.size	query_iter, .Lfunc_end0-query_iter
 	.cfi_endproc
 
-	.type	.Lanon.a01df851b6197f632189e2f0fa818bdd.0,@object
-	.section	.rodata..Lanon.a01df851b6197f632189e2f0fa818bdd.0,"a",@progbits
-.Lanon.a01df851b6197f632189e2f0fa818bdd.0:
-	.ascii	"assertion failed: index as u32 as usize == index"
-	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.0, 48
-
-	.type	.Lanon.a01df851b6197f632189e2f0fa818bdd.1,@object
-	.section	.rodata..Lanon.a01df851b6197f632189e2f0fa818bdd.1,"a",@progbits
-.Lanon.a01df851b6197f632189e2f0fa818bdd.1:
-	.ascii	"/home/james/.cargo/git/checkouts/bevy-f7ffde730c324c74/3a83f4e/crates/bevy_ecs/src/storage/table.rs"
-	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.1, 99
-
-	.type	.Lanon.a01df851b6197f632189e2f0fa818bdd.2,@object
-	.section	.data.rel.ro..Lanon.a01df851b6197f632189e2f0fa818bdd.2,"aw",@progbits
-	.p2align	3, 0x0
-.Lanon.a01df851b6197f632189e2f0fa818bdd.2:
-	.quad	.Lanon.a01df851b6197f632189e2f0fa818bdd.1
-	.asciz	"c\000\000\000\000\000\000\000w\000\000\000\t\000\000"
-	.size	.Lanon.a01df851b6197f632189e2f0fa818bdd.2, 24
-
-	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
+	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
 	.section	".note.GNU-stack","",@progbits

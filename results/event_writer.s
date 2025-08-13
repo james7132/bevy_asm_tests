@@ -1,7 +1,6 @@
-	.text
-	.file	"event_writer.925bbcb86fccbca8-cgu.0"
-	.section	.text.alloc::raw_vec::finish_grow,"ax",@progbits
-	.p2align	4, 0x90
+	.file	"event_writer.4223d64be82e3416-cgu.0"
+	.section	.text.unlikely.alloc::raw_vec::finish_grow,"ax",@progbits
+	.p2align	4
 	.type	alloc::raw_vec::finish_grow,@function
 alloc::raw_vec::finish_grow:
 	.cfi_startproc
@@ -15,45 +14,36 @@ alloc::raw_vec::finish_grow:
 	.cfi_offset %r14, -24
 	.cfi_offset %r15, -16
 	movq	%rdx, %rbx
-	movq	%rdi, %r14
-	testq	%rsi, %rsi
-	je	.LBB0_6
 	movq	%rsi, %r15
+	movq	%rdi, %r14
 	cmpq	$0, 8(%rcx)
-	je	.LBB0_7
+	je	.LBB0_3
 	movq	16(%rcx), %rsi
 	testq	%rsi, %rsi
-	je	.LBB0_7
+	je	.LBB0_3
 	movq	(%rcx), %rdi
 	movq	%r15, %rdx
 	movq	%rbx, %rcx
-	callq	*__rust_realloc@GOTPCREL(%rip)
-	testq	%rax, %rax
-	jne	.LBB0_11
-.LBB0_4:
-	movq	%r15, 8(%r14)
-	jmp	.LBB0_5
-.LBB0_7:
+	callq	*__rustc::__rust_realloc@GOTPCREL(%rip)
+	jmp	.LBB0_7
+.LBB0_3:
 	testq	%rbx, %rbx
-	je	.LBB0_8
-	movq	__rust_no_alloc_shim_is_unstable@GOTPCREL(%rip), %rax
-	movzbl	(%rax), %eax
+	je	.LBB0_4
+	callq	*__rustc::__rust_no_alloc_shim_is_unstable_v2@GOTPCREL(%rip)
 	movq	%rbx, %rdi
 	movq	%r15, %rsi
-	callq	*__rust_alloc@GOTPCREL(%rip)
+	callq	*__rustc::__rust_alloc@GOTPCREL(%rip)
+	jmp	.LBB0_7
+.LBB0_4:
+	movq	%r15, %rax
+.LBB0_7:
+	xorl	%ecx, %ecx
 	testq	%rax, %rax
-	je	.LBB0_4
-.LBB0_11:
-	movq	%rax, 8(%r14)
-	xorl	%eax, %eax
-	jmp	.LBB0_12
-.LBB0_6:
-	movq	$0, 8(%r14)
-.LBB0_5:
-	movl	$1, %eax
-.LBB0_12:
+	cmovneq	%rax, %r15
+	sete	%cl
+	movq	%r15, 8(%r14)
 	movq	%rbx, 16(%r14)
-	movq	%rax, (%r14)
+	movq	%rcx, (%r14)
 	popq	%rbx
 	.cfi_def_cfa_offset 24
 	popq	%r14
@@ -61,150 +51,156 @@ alloc::raw_vec::finish_grow:
 	popq	%r15
 	.cfi_def_cfa_offset 8
 	retq
-.LBB0_8:
-	.cfi_def_cfa_offset 32
-	movq	%r15, %rax
-	testq	%rax, %rax
-	jne	.LBB0_11
-	jmp	.LBB0_4
 .Lfunc_end0:
 	.size	alloc::raw_vec::finish_grow, .Lfunc_end0-alloc::raw_vec::finish_grow
 	.cfi_endproc
 
-	.section	".text.alloc::raw_vec::RawVec<T,A>::reserve_for_push","ax",@progbits
-	.p2align	4, 0x90
-	.type	alloc::raw_vec::RawVec<T,A>::reserve_for_push,@function
-alloc::raw_vec::RawVec<T,A>::reserve_for_push:
+	.section	".text.alloc::raw_vec::RawVec<T,A>::grow_one","ax",@progbits
+	.globl	alloc::raw_vec::RawVec<T,A>::grow_one
+	.p2align	4
+	.type	alloc::raw_vec::RawVec<T,A>::grow_one,@function
+alloc::raw_vec::RawVec<T,A>::grow_one:
 	.cfi_startproc
-	pushq	%r14
+	pushq	%r15
 	.cfi_def_cfa_offset 16
-	pushq	%rbx
+	pushq	%r14
 	.cfi_def_cfa_offset 24
-	subq	$56, %rsp
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	subq	$48, %rsp
 	.cfi_def_cfa_offset 80
-	.cfi_offset %rbx, -24
-	.cfi_offset %r14, -16
-	incq	%rsi
-	je	.LBB1_10
-	movq	%rdi, %rbx
+	.cfi_offset %rbx, -32
+	.cfi_offset %r14, -24
+	.cfi_offset %r15, -16
+	movq	%rsi, %rbx
+	movq	%rdi, %r14
 	movq	(%rdi), %rax
 	leaq	(%rax,%rax), %rcx
-	cmpq	%rsi, %rcx
-	cmovaq	%rcx, %rsi
-	cmpq	$5, %rsi
-	movl	$4, %r14d
-	cmovaeq	%rsi, %r14
-	xorl	%esi, %esi
-	movq	%r14, %rcx
-	shrq	$59, %rcx
-	sete	%sil
-	movq	%r14, %rdx
-	shlq	$4, %rdx
-	shlq	$3, %rsi
 	testq	%rax, %rax
-	je	.LBB1_2
-	movq	8(%rbx), %rcx
-	shlq	$4, %rax
-	movq	%rcx, 8(%rsp)
-	movq	$8, 16(%rsp)
-	movq	%rax, 24(%rsp)
-	jmp	.LBB1_4
-.LBB1_2:
-	movq	$0, 16(%rsp)
-.LBB1_4:
-	leaq	32(%rsp), %rdi
-	leaq	8(%rsp), %rcx
-	callq	alloc::raw_vec::finish_grow
-	cmpq	$0, 32(%rsp)
-	movq	40(%rsp), %rdi
-	je	.LBB1_5
-	movabsq	$-9223372036854775807, %rax
-	cmpq	%rax, %rdi
-	jne	.LBB1_8
-	addq	$56, %rsp
-	.cfi_def_cfa_offset 24
-	popq	%rbx
-	.cfi_def_cfa_offset 16
-	popq	%r14
-	.cfi_def_cfa_offset 8
-	retq
+	movl	$1, %edx
+	cmovneq	%rcx, %rdx
+	cmpq	$5, %rdx
+	movl	$4, %r15d
+	cmovaeq	%rdx, %r15
+	xorl	%edi, %edi
+	shrq	$60, %rdx
+	jne	.LBB1_1
+	movq	%r15, %rdx
+	shlq	$4, %rdx
+	movabsq	$9223372036854775800, %rcx
+	cmpq	%rcx, %rdx
+	ja	.LBB1_8
+	testq	%rax, %rax
+	jne	.LBB1_5
+	xorl	%eax, %eax
+	jmp	.LBB1_6
 .LBB1_5:
-	.cfi_def_cfa_offset 80
-	movq	%rdi, 8(%rbx)
-	movq	%r14, (%rbx)
-	addq	$56, %rsp
-	.cfi_def_cfa_offset 24
+	movq	8(%r14), %rcx
+	shlq	$4, %rax
+	movq	%rcx, 24(%rsp)
+	movq	%rax, 40(%rsp)
+	movl	$8, %eax
+.LBB1_6:
+	movq	%rax, 32(%rsp)
+	movq	%rsp, %rdi
+	leaq	24(%rsp), %rcx
+	movl	$8, %esi
+	callq	alloc::raw_vec::finish_grow
+	cmpl	$1, (%rsp)
+	je	.LBB1_7
+	movq	8(%rsp), %rax
+	movq	%rax, 8(%r14)
+	movq	%r15, (%r14)
+	addq	$48, %rsp
+	.cfi_def_cfa_offset 32
 	popq	%rbx
-	.cfi_def_cfa_offset 16
+	.cfi_def_cfa_offset 24
 	popq	%r14
+	.cfi_def_cfa_offset 16
+	popq	%r15
 	.cfi_def_cfa_offset 8
 	retq
-.LBB1_8:
+.LBB1_1:
 	.cfi_def_cfa_offset 80
-	testq	%rdi, %rdi
-	jne	.LBB1_9
-.LBB1_10:
-	callq	*alloc::raw_vec::capacity_overflow@GOTPCREL(%rip)
-.LBB1_9:
-	movq	48(%rsp), %rsi
-	callq	*alloc::alloc::handle_alloc_error@GOTPCREL(%rip)
+	movq	%rbx, %rdx
+	callq	*alloc::raw_vec::handle_error@GOTPCREL(%rip)
+.LBB1_7:
+	movq	8(%rsp), %rdi
+	movq	16(%rsp), %rsi
+.LBB1_8:
+	movq	%rbx, %rdx
+	callq	*alloc::raw_vec::handle_error@GOTPCREL(%rip)
 .Lfunc_end1:
-	.size	alloc::raw_vec::RawVec<T,A>::reserve_for_push, .Lfunc_end1-alloc::raw_vec::RawVec<T,A>::reserve_for_push
+	.size	alloc::raw_vec::RawVec<T,A>::grow_one, .Lfunc_end1-alloc::raw_vec::RawVec<T,A>::grow_one
 	.cfi_endproc
 
 	.section	.text.event_writer,"ax",@progbits
 	.globl	event_writer
-	.p2align	4, 0x90
+	.p2align	4
 	.type	event_writer,@function
 event_writer:
 	.cfi_startproc
-	pushq	%r14
+	pushq	%r15
 	.cfi_def_cfa_offset 16
-	pushq	%rbx
+	pushq	%r14
 	.cfi_def_cfa_offset 24
-	pushq	%rax
+	pushq	%rbx
 	.cfi_def_cfa_offset 32
-	.cfi_offset %rbx, -24
-	.cfi_offset %r14, -16
+	subq	$16, %rsp
+	.cfi_def_cfa_offset 48
+	.cfi_offset %rbx, -32
+	.cfi_offset %r14, -24
+	.cfi_offset %r15, -16
 	movl	28(%rdi), %eax
 	movq	16(%rdi), %rcx
 	movl	%eax, (%rcx)
 	movq	(%rdi), %rbx
-	movq	48(%rbx), %rsi
+	movq	48(%rbx), %r15
 	movq	64(%rbx), %r14
-	cmpq	32(%rbx), %rsi
-	jne	.LBB2_1
+	cmpq	32(%rbx), %r15
+	jne	.LBB2_2
 	leaq	32(%rbx), %rdi
-	callq	alloc::raw_vec::RawVec<T,A>::reserve_for_push
-	movq	48(%rbx), %rsi
-	movq	64(%rbx), %rax
-	jmp	.LBB2_3
-.LBB2_1:
-	movq	%r14, %rax
-.LBB2_3:
-	movq	40(%rbx), %rcx
-	movq	%rsi, %rdx
-	shlq	$4, %rdx
-	movq	%r14, (%rcx,%rdx)
-	movl	$0, 8(%rcx,%rdx)
-	incq	%rsi
-	movq	%rsi, 48(%rbx)
-	incq	%rax
-	movq	%rax, 64(%rbx)
-	movq	%r14, (%rsp)
-	movq	%rsp, %rax
+	leaq	.Lanon.59f57a65e0ecb6d760ce70a26114e500.1(%rip), %rsi
+	callq	*alloc::raw_vec::RawVec<T,A>::grow_one@GOTPCREL(%rip)
+.LBB2_2:
+	movq	40(%rbx), %rax
+	movq	%r15, %rcx
+	shlq	$4, %rcx
+	movq	%r14, (%rax,%rcx)
+	movl	$0, 8(%rax,%rcx)
+	incq	%r15
+	movq	%r15, 48(%rbx)
+	incq	64(%rbx)
+	movq	%r14, 8(%rsp)
+	leaq	8(%rsp), %rax
 	#APP
 	#NO_APP
-	addq	$8, %rsp
-	.cfi_def_cfa_offset 24
+	addq	$16, %rsp
+	.cfi_def_cfa_offset 32
 	popq	%rbx
-	.cfi_def_cfa_offset 16
+	.cfi_def_cfa_offset 24
 	popq	%r14
+	.cfi_def_cfa_offset 16
+	popq	%r15
 	.cfi_def_cfa_offset 8
 	retq
 .Lfunc_end2:
 	.size	event_writer, .Lfunc_end2-event_writer
 	.cfi_endproc
 
-	.ident	"rustc version 1.76.0 (07dca489a 2024-02-04)"
+	.type	.Lanon.59f57a65e0ecb6d760ce70a26114e500.0,@object
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.Lanon.59f57a65e0ecb6d760ce70a26114e500.0:
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/7fa4f74/crates/bevy_ecs/src/event/collections.rs"
+	.size	.Lanon.59f57a65e0ecb6d760ce70a26114e500.0, 104
+
+	.type	.Lanon.59f57a65e0ecb6d760ce70a26114e500.1,@object
+	.section	.data.rel.ro..Lanon.59f57a65e0ecb6d760ce70a26114e500.1,"aw",@progbits
+	.p2align	3, 0x0
+.Lanon.59f57a65e0ecb6d760ce70a26114e500.1:
+	.quad	.Lanon.59f57a65e0ecb6d760ce70a26114e500.0
+	.asciz	"h\000\000\000\000\000\000\000\214\000\000\000\027\000\000"
+	.size	.Lanon.59f57a65e0ecb6d760ce70a26114e500.1, 24
+
+	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
 	.section	".note.GNU-stack","",@progbits
