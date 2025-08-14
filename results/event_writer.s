@@ -1,4 +1,4 @@
-	.file	"event_writer.d2ec1b3ce9809b23-cgu.0"
+	.file	"event_writer.615ee1dcf94429f7-cgu.0"
 	.section	.text.unlikely.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4
 	.type	alloc::raw_vec::finish_grow,@function
@@ -149,7 +149,7 @@ event_writer:
 	cmpq	32(%rbx), %r15
 	jne	.LBB2_2
 	leaq	32(%rbx), %rdi
-	leaq	.Lanon.149b4dcd263d693906737b881a8ca959.1(%rip), %rsi
+	leaq	.Lanon.1fbbf7ac677dce193d5a5c576d1a73ef.1(%rip), %rsi
 	callq	*alloc::raw_vec::RawVec<T,A>::grow_one@GOTPCREL(%rip)
 .LBB2_2:
 	movq	40(%rbx), %rax
@@ -177,19 +177,19 @@ event_writer:
 	.size	event_writer, .Lfunc_end2-event_writer
 	.cfi_endproc
 
-	.type	.Lanon.149b4dcd263d693906737b881a8ca959.0,@object
+	.type	.Lanon.1fbbf7ac677dce193d5a5c576d1a73ef.0,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.Lanon.149b4dcd263d693906737b881a8ca959.0:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/7fa4f74/crates/bevy_ecs/src/event/collections.rs"
-	.size	.Lanon.149b4dcd263d693906737b881a8ca959.0, 104
+.Lanon.1fbbf7ac677dce193d5a5c576d1a73ef.0:
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/aad5e99/crates/bevy_ecs/src/event/collections.rs"
+	.size	.Lanon.1fbbf7ac677dce193d5a5c576d1a73ef.0, 104
 
-	.type	.Lanon.149b4dcd263d693906737b881a8ca959.1,@object
-	.section	.data.rel.ro..Lanon.149b4dcd263d693906737b881a8ca959.1,"aw",@progbits
+	.type	.Lanon.1fbbf7ac677dce193d5a5c576d1a73ef.1,@object
+	.section	.data.rel.ro..Lanon.1fbbf7ac677dce193d5a5c576d1a73ef.1,"aw",@progbits
 	.p2align	3, 0x0
-.Lanon.149b4dcd263d693906737b881a8ca959.1:
-	.quad	.Lanon.149b4dcd263d693906737b881a8ca959.0
+.Lanon.1fbbf7ac677dce193d5a5c576d1a73ef.1:
+	.quad	.Lanon.1fbbf7ac677dce193d5a5c576d1a73ef.0
 	.asciz	"h\000\000\000\000\000\000\000\214\000\000\000\027\000\000"
-	.size	.Lanon.149b4dcd263d693906737b881a8ca959.1, 24
+	.size	.Lanon.1fbbf7ac677dce193d5a5c576d1a73ef.1, 24
 
 	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
 	.section	".note.GNU-stack","",@progbits

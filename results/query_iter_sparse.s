@@ -1,4 +1,4 @@
-	.file	"query_iter_sparse.d9fab665dd707949-cgu.0"
+	.file	"query_iter_sparse.fe54169b22af48d3-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4
@@ -22,8 +22,8 @@ query_iter:
 	testq	%rcx, %rcx
 	je	.LBB0_3
 	notq	%rcx
-	leaq	(%rcx,%rcx,8), %rcx
-	shlq	$4, %rcx
+	leaq	(%rcx,%rcx,2), %rcx
+	shlq	$5, %rcx
 	addq	344(%rax), %rcx
 	xorl	%esi, %esi
 	cmpq	%r8, %rdx
@@ -40,8 +40,8 @@ query_iter:
 	testq	%rdx, %rdx
 	je	.LBB0_8
 	notq	%rdx
-	leaq	(%rdx,%rdx,8), %rdx
-	shlq	$4, %rdx
+	leaq	(%rdx,%rdx,2), %rdx
+	shlq	$5, %rdx
 	addq	344(%rax), %rdx
 	jmp	.LBB0_9
 .LBB0_8:
@@ -67,15 +67,15 @@ query_iter:
 	shlq	$4, %r14
 	movl	(%r11,%r14), %r14d
 	notl	%r14d
-	movq	128(%rcx), %r15
+	movq	80(%rcx), %r15
 	movl	(%r15,%r14,4), %r15d
 	notl	%r15d
 	movq	8(%rcx), %r12
 	imulq	%r15, %r12
 	movq	16(%rcx), %r13
-	movq	80(%rcx), %rbp
+	movq	40(%rcx), %rbp
 	movq	16(%rdx), %r9
-	movq	128(%rdx), %r10
+	movq	80(%rdx), %r10
 	movl	(%r10,%r14,4), %r10d
 	notl	%r10d
 	imulq	8(%rdx), %r10

@@ -1,4 +1,4 @@
-	.file	"query_iter_many_sparse.373bee1141f9effd-cgu.0"
+	.file	"query_iter_many_sparse.800fc136585c4a77-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4
@@ -26,8 +26,8 @@ query_iter:
 	testq	%rdi, %rdi
 	je	.LBB0_3
 	notq	%rdi
-	leaq	(%rdi,%rdi,8), %rdi
-	shlq	$4, %rdi
+	leaq	(%rdi,%rdi,2), %rdi
+	shlq	$5, %rdi
 	addq	344(%rcx), %rdi
 	cmpq	%r9, %r8
 	jb	.LBB0_4
@@ -42,8 +42,8 @@ query_iter:
 	testq	%r8, %r8
 	je	.LBB0_8
 	notq	%r8
-	leaq	(%r8,%r8,8), %r8
-	shlq	$4, %r8
+	leaq	(%r8,%r8,2), %r8
+	shlq	$5, %r8
 	addq	344(%rcx), %r8
 	testq	%rdx, %rdx
 	jne	.LBB0_9
@@ -86,12 +86,12 @@ query_iter:
 	movq	(%r14,%r15,8), %r14
 	btq	%rbx, %r14
 	jae	.LBB0_11
-	movq	128(%rdi), %r10
+	movq	80(%rdi), %r10
 	movl	(%r10,%r11,4), %r10d
 	notl	%r10d
 	imulq	8(%rdi), %r10
 	addq	16(%rdi), %r10
-	movq	128(%r8), %rbx
+	movq	80(%r8), %rbx
 	movl	(%rbx,%r11,4), %r11d
 	notl	%r11d
 	imulq	8(%r8), %r11

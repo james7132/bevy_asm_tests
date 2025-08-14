@@ -1,8 +1,8 @@
-	.file	"world_get_sparse.3f19b28fb571fd5d-cgu.0"
+	.file	"world_get_sparse.f2327be846a1cae0-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,31
+	.zero	16,56
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4
@@ -40,13 +40,13 @@ world_get:
 	je	.LBB0_16
 	movl	1448(%rdi), %eax
 	movl	1452(%rdi), %ecx
-	movabsq	$4514074820160711338, %r9
+	movabsq	$8120162496584724539, %r9
 	movq	80(%rdi), %rsi
 	movq	88(%rdi), %r10
 	xorl	%edx, %edx
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$-8947910603753900906, %r11
+	movabsq	$718013677693799473, %r11
 	movq	%r9, %rbx
 	xorl	%r14d, %r14d
 .LBB0_5:
@@ -92,12 +92,12 @@ world_get:
 	je	.LBB0_16
 	movq	344(%rdi), %r9
 	notq	%rdx
-	leaq	(%rdx,%rdx,8), %rdx
-	shlq	$4, %rdx
-	cmpq	136(%r9,%rdx), %r8
+	leaq	(%rdx,%rdx,2), %rdx
+	shlq	$5, %rdx
+	cmpq	88(%r9,%rdx), %r8
 	jae	.LBB0_16
 	addq	%rdx, %r9
-	movq	128(%r9), %rdx
+	movq	80(%r9), %rdx
 	movl	(%rdx,%r8,4), %esi
 	testl	%esi, %esi
 	je	.LBB0_16
@@ -106,9 +106,9 @@ world_get:
 	imulq	%rsi, %rdx
 	addq	16(%r9), %rdx
 	shlq	$2, %rsi
-	movq	56(%r9), %rdi
+	movq	32(%r9), %rdi
 	addq	%rsi, %rdi
-	addq	80(%r9), %rsi
+	addq	40(%r9), %rsi
 	jmp	.LBB0_18
 .LBB0_16:
 	xorl	%edx, %edx
