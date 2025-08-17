@@ -1,4 +1,4 @@
-	.file	"resource_insert.64c7dd7b5d6da56c-cgu.0"
+	.file	"resource_insert.1dc342edfbdab9aa-cgu.0"
 	.section	.text.unlikely.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4
 	.type	alloc::raw_vec::finish_grow,@function
@@ -120,6 +120,10 @@ alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle:
 	.size	alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle, .Lfunc_end1-alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle
 	.cfi_endproc
 
+	.section	.rodata.cst16,"aM",@progbits,16
+	.p2align	4, 0x0
+.LCPI2_0:
+	.zero	16,18
 	.section	.text.resource_insert,"ax",@progbits
 	.globl	resource_insert
 	.p2align	4
@@ -148,8 +152,8 @@ resource_insert:
 	.cfi_offset %rbp, -16
 	movd	%xmm0, 20(%rsp)
 	movq	%rdi, %rbx
-	movabsq	$-4304159756399193868, %rbp
-	movabsq	$134108629206252412, %r10
+	movabsq	$5949172014967434722, %rbp
+	movabsq	$2645457223739758945, %r10
 	leaq	56(%rdi), %r15
 	leaq	1440(%rdi), %rax
 	movq	%r15, 48(%rsp)
@@ -162,7 +166,7 @@ resource_insert:
 	movq	112(%rbx), %rax
 	movq	120(%rbx), %rcx
 	xorl	%edx, %edx
-	pxor	%xmm0, %xmm0
+	movdqa	.LCPI2_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
 	movq	%r10, %rsi
 .LBB2_2:
@@ -203,15 +207,15 @@ resource_insert:
 	movq	216(%rbx), %rax
 	movq	224(%rbx), %rcx
 	xorl	%esi, %esi
-	pxor	%xmm0, %xmm0
-	pcmpeqd	%xmm1, %xmm1
+	movdqa	.LCPI2_0(%rip), %xmm3
+	pcmpeqd	%xmm0, %xmm0
 	movq	%r10, %rdi
 .LBB2_10:
 	andq	%rcx, %rdi
-	movdqu	(%rax,%rdi), %xmm2
-	movdqa	%xmm2, %xmm3
-	pcmpeqb	%xmm0, %xmm3
-	pmovmskb	%xmm3, %r8d
+	movdqu	(%rax,%rdi), %xmm1
+	movdqa	%xmm1, %xmm2
+	pcmpeqb	%xmm3, %xmm2
+	pmovmskb	%xmm2, %r8d
 	testl	%r8d, %r8d
 	je	.LBB2_14
 .LBB2_11:
@@ -232,13 +236,14 @@ resource_insert:
 	jne	.LBB2_11
 	.p2align	4
 .LBB2_14:
-	pcmpeqb	%xmm1, %xmm2
-	pmovmskb	%xmm2, %edx
+	pcmpeqb	%xmm0, %xmm1
+	pmovmskb	%xmm1, %edx
 	testl	%edx, %edx
 	jne	.LBB2_20
 	addq	%rsi, %rdi
 	addq	$16, %rdi
 	addq	$16, %rsi
+	movdqa	.LCPI2_0(%rip), %xmm3
 	jmp	.LBB2_10
 .LBB2_8:
 	leaq	(%rax,%r8,8), %rax
@@ -324,7 +329,7 @@ resource_insert:
 .LBB2_21:
 	movq	64(%rbx), %rax
 .LBB2_27:
-	movabsq	$134108629206252412, %r12
+	movabsq	$2645457223739758945, %r12
 	leaq	(%r14,%r14,8), %rcx
 	shlq	$5, %rcx
 	leaq	(%rax,%rcx), %r15
@@ -416,8 +421,8 @@ resource_insert:
 .LBB2_46:
 	movq	216(%r15), %rax
 	testq	%rax, %rax
-	movabsq	$-4304159756399193868, %rbp
-	movabsq	$134108629206252412, %r12
+	movabsq	$5949172014967434722, %rbp
+	movabsq	$2645457223739758945, %r12
 	je	.LBB2_48
 	movq	208(%r15), %rdi
 	leaq	23(,%rax,8), %rcx
@@ -446,16 +451,16 @@ resource_insert:
 	movq	112(%rbx), %rax
 	movq	120(%rbx), %rcx
 	xorl	%esi, %esi
-	pxor	%xmm0, %xmm0
-	pcmpeqd	%xmm1, %xmm1
+	pcmpeqd	%xmm0, %xmm0
 	movq	%r12, %rdi
 	xorl	%r8d, %r8d
+	movdqa	.LCPI2_0(%rip), %xmm3
 .LBB2_53:
 	andq	%rcx, %rdi
-	movdqu	(%rax,%rdi), %xmm2
-	movdqa	%xmm2, %xmm3
-	pcmpeqb	%xmm0, %xmm3
-	pmovmskb	%xmm3, %r9d
+	movdqu	(%rax,%rdi), %xmm1
+	movdqa	%xmm1, %xmm2
+	pcmpeqb	%xmm3, %xmm2
+	pmovmskb	%xmm2, %r9d
 	testl	%r9d, %r9d
 	je	.LBB2_57
 .LBB2_54:
@@ -476,15 +481,15 @@ resource_insert:
 .LBB2_57:
 	cmpq	$1, %r8
 	je	.LBB2_61
-	pmovmskb	%xmm2, %edx
+	pmovmskb	%xmm1, %edx
 	testl	%edx, %edx
 	je	.LBB2_59
 	rep		bsfl	%edx, %edx
 	addq	%rdi, %rdx
 	andq	%rcx, %rdx
 .LBB2_61:
-	pcmpeqb	%xmm1, %xmm2
-	pmovmskb	%xmm2, %r8d
+	pcmpeqb	%xmm0, %xmm1
+	pmovmskb	%xmm1, %r8d
 	testl	%r8d, %r8d
 	jne	.LBB2_64
 	movl	$1, %r8d
@@ -525,8 +530,8 @@ resource_insert:
 	subq	%rsi, 128(%rbx)
 	leaq	-16(%rdx), %rsi
 	andq	%rcx, %rsi
-	movb	$0, (%rax,%rdx)
-	movb	$0, 16(%rax,%rsi)
+	movb	$18, (%rax,%rdx)
+	movb	$18, 16(%rax,%rsi)
 	incq	136(%rbx)
 	negq	%rdx
 	leaq	(%rdx,%rdx,2), %rcx
@@ -757,7 +762,7 @@ resource_insert:
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.2,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.7389e6565b10821dad2f4dd8892551e5.2:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/7fa4f74/crates/bevy_ecs/src/storage/sparse_set.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/0a19ebc/crates/bevy_ecs/src/storage/sparse_set.rs"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.2, 105
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.3,@object
@@ -765,7 +770,7 @@ resource_insert:
 	.p2align	3, 0x0
 .Lanon.7389e6565b10821dad2f4dd8892551e5.3:
 	.quad	.Lanon.7389e6565b10821dad2f4dd8892551e5.2
-	.asciz	"i\000\000\000\000\000\000\000\003\002\000\000\032\000\000"
+	.asciz	"i\000\000\000\000\000\000\000\f\002\000\000\032\000\000"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.3, 24
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.4,@object
@@ -773,7 +778,7 @@ resource_insert:
 	.p2align	3, 0x0
 .Lanon.7389e6565b10821dad2f4dd8892551e5.4:
 	.quad	.Lanon.7389e6565b10821dad2f4dd8892551e5.2
-	.asciz	"i\000\000\000\000\000\000\000\004\002\000\000\030\000\000"
+	.asciz	"i\000\000\000\000\000\000\000\r\002\000\000\030\000\000"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.4, 24
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.5,@object
@@ -781,13 +786,13 @@ resource_insert:
 	.p2align	3, 0x0
 .Lanon.7389e6565b10821dad2f4dd8892551e5.5:
 	.quad	.Lanon.7389e6565b10821dad2f4dd8892551e5.2
-	.asciz	"i\000\000\000\000\000\000\000M\000\000\000\024\000\000"
+	.asciz	"i\000\000\000\000\000\000\000N\000\000\000\024\000\000"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.5, 24
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.6,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.7389e6565b10821dad2f4dd8892551e5.6:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/7fa4f74/crates/bevy_ecs/src/storage/resource.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/0a19ebc/crates/bevy_ecs/src/storage/resource.rs"
 	.size	.Lanon.7389e6565b10821dad2f4dd8892551e5.6, 103
 
 	.type	.Lanon.7389e6565b10821dad2f4dd8892551e5.7,@object
