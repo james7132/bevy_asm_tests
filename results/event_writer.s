@@ -1,4 +1,4 @@
-	.file	"event_writer.d2ec1b3ce9809b23-cgu.0"
+	.file	"event_writer.ca2d32a718ad1f4a-cgu.0"
 	.section	.text.unlikely.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4
 	.type	alloc::raw_vec::finish_grow,@function
@@ -62,41 +62,46 @@ alloc::raw_vec::RawVec<T,A>::grow_one:
 	.cfi_offset %r14, -24
 	.cfi_offset %r15, -16
 	movq	%rsi, %rbx
-	movq	%rdi, %r14
 	movq	(%rdi), %rax
 	leaq	(%rax,%rax), %rcx
 	testq	%rax, %rax
-	movl	$1, %edx
-	cmovneq	%rcx, %rdx
-	cmpq	$5, %rdx
+	movl	$1, %esi
+	cmovneq	%rcx, %rsi
+	cmpq	$5, %rsi
 	movl	$4, %r15d
-	cmovaeq	%rdx, %r15
-	xorl	%edi, %edi
-	shrq	$60, %rdx
-	jne	.LBB1_1
+	cmovaeq	%rsi, %r15
 	movq	%r15, %rdx
 	shlq	$4, %rdx
-	movabsq	$9223372036854775800, %rcx
-	cmpq	%rcx, %rdx
-	ja	.LBB1_8
+	shrq	$60, %rsi
+	setne	%cl
+	movabsq	$9223372036854775800, %rsi
+	cmpq	%rsi, %rdx
+	seta	%sil
+	orb	%cl, %sil
+	je	.LBB1_2
+	xorl	%edi, %edi
+	movq	%rbx, %rdx
+	callq	*alloc::raw_vec::handle_error@GOTPCREL(%rip)
+.LBB1_2:
+	movq	%rdi, %r14
 	testq	%rax, %rax
-	jne	.LBB1_5
+	jne	.LBB1_4
 	xorl	%eax, %eax
-	jmp	.LBB1_6
-.LBB1_5:
+	jmp	.LBB1_5
+.LBB1_4:
 	movq	8(%r14), %rcx
 	shlq	$4, %rax
 	movq	%rcx, 24(%rsp)
 	movq	%rax, 40(%rsp)
 	movl	$8, %eax
-.LBB1_6:
+.LBB1_5:
 	movq	%rax, 32(%rsp)
 	movq	%rsp, %rdi
 	leaq	24(%rsp), %rcx
 	movl	$8, %esi
 	callq	alloc::raw_vec::finish_grow
 	cmpl	$1, (%rsp)
-	je	.LBB1_7
+	je	.LBB1_6
 	movq	8(%rsp), %rax
 	movq	%rax, 8(%r14)
 	movq	%r15, (%r14)
@@ -109,14 +114,10 @@ alloc::raw_vec::RawVec<T,A>::grow_one:
 	popq	%r15
 	.cfi_def_cfa_offset 8
 	retq
-.LBB1_1:
+.LBB1_6:
 	.cfi_def_cfa_offset 80
-	movq	%rbx, %rdx
-	callq	*alloc::raw_vec::handle_error@GOTPCREL(%rip)
-.LBB1_7:
 	movq	8(%rsp), %rdi
 	movq	16(%rsp), %rsi
-.LBB1_8:
 	movq	%rbx, %rdx
 	callq	*alloc::raw_vec::handle_error@GOTPCREL(%rip)
 .Lfunc_end1:
@@ -149,7 +150,7 @@ event_writer:
 	cmpq	32(%rbx), %r15
 	jne	.LBB2_2
 	leaq	32(%rbx), %rdi
-	leaq	.Lanon.149b4dcd263d693906737b881a8ca959.1(%rip), %rsi
+	leaq	.Lanon.de8aa2cbbe4e5ea07459729eb3575037.1(%rip), %rsi
 	callq	*alloc::raw_vec::RawVec<T,A>::grow_one@GOTPCREL(%rip)
 .LBB2_2:
 	movq	40(%rbx), %rax
@@ -177,19 +178,19 @@ event_writer:
 	.size	event_writer, .Lfunc_end2-event_writer
 	.cfi_endproc
 
-	.type	.Lanon.149b4dcd263d693906737b881a8ca959.0,@object
+	.type	.Lanon.de8aa2cbbe4e5ea07459729eb3575037.0,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.Lanon.149b4dcd263d693906737b881a8ca959.0:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/7fa4f74/crates/bevy_ecs/src/event/collections.rs"
-	.size	.Lanon.149b4dcd263d693906737b881a8ca959.0, 104
+.Lanon.de8aa2cbbe4e5ea07459729eb3575037.0:
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/606794e/crates/bevy_ecs/src/event/collections.rs"
+	.size	.Lanon.de8aa2cbbe4e5ea07459729eb3575037.0, 104
 
-	.type	.Lanon.149b4dcd263d693906737b881a8ca959.1,@object
-	.section	.data.rel.ro..Lanon.149b4dcd263d693906737b881a8ca959.1,"aw",@progbits
+	.type	.Lanon.de8aa2cbbe4e5ea07459729eb3575037.1,@object
+	.section	.data.rel.ro..Lanon.de8aa2cbbe4e5ea07459729eb3575037.1,"aw",@progbits
 	.p2align	3, 0x0
-.Lanon.149b4dcd263d693906737b881a8ca959.1:
-	.quad	.Lanon.149b4dcd263d693906737b881a8ca959.0
-	.asciz	"h\000\000\000\000\000\000\000\214\000\000\000\027\000\000"
-	.size	.Lanon.149b4dcd263d693906737b881a8ca959.1, 24
+.Lanon.de8aa2cbbe4e5ea07459729eb3575037.1:
+	.quad	.Lanon.de8aa2cbbe4e5ea07459729eb3575037.0
+	.asciz	"g\000\000\000\000\000\000\000\214\000\000\000\027\000\000"
+	.size	.Lanon.de8aa2cbbe4e5ea07459729eb3575037.1, 24
 
-	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
+	.ident	"rustc version 1.91.0-nightly (8e62bfd31 2025-08-12)"
 	.section	".note.GNU-stack","",@progbits

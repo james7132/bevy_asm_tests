@@ -1,4 +1,4 @@
-	.file	"query_for_each.5cf1476d3cf45134-cgu.0"
+	.file	"query_for_each.7cdcde388992043-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4
@@ -93,9 +93,8 @@ query_for_each:
 	movl	%ecx, (%r10,%rbx,4)
 	addss	(%r11,%rbx,4), %xmm0
 	movss	%xmm0, (%r11,%rbx,4)
-	leaq	1(%rbx), %r14
-	movq	%r14, %rbx
-	cmpq	%r14, %r8
+	incq	%rbx
+	cmpq	%rbx, %r8
 	jne	.LBB0_17
 	jmp	.LBB0_3
 	.p2align	4
@@ -177,9 +176,8 @@ query_for_each:
 	movl	%ecx, (%r10,%r14,4)
 	addss	(%rbx,%r14,4), %xmm0
 	movss	%xmm0, (%rbx,%r14,4)
-	leaq	1(%r14), %r15
-	movq	%r15, %r14
-	cmpq	%r15, %r9
+	incq	%r14
+	cmpq	%r14, %r9
 	jne	.LBB0_29
 	jmp	.LBB0_21
 .LBB0_30:
@@ -190,5 +188,5 @@ query_for_each:
 .Lfunc_end0:
 	.size	query_for_each, .Lfunc_end0-query_for_each
 
-	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
+	.ident	"rustc version 1.91.0-nightly (8e62bfd31 2025-08-12)"
 	.section	".note.GNU-stack","",@progbits

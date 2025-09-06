@@ -4,8 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-bevy_ecs = { git = "https://github.com/james7132/bevy", branch =
-"stack-overflow-fix" }
+bevy_ecs = { git = "https://github.com/james7132/bevy", branch = "stack-overflow-fix" }
 
 [profile.release]
 opt-level = 3

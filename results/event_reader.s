@@ -1,4 +1,4 @@
-	.file	"event_reader.e2cc235b1f533352-cgu.0"
+	.file	"event_reader.ac8a3ec771063baf-cgu.0"
 	.section	.text.event_reader,"ax",@progbits
 	.globl	event_reader
 	.p2align	4
@@ -69,5 +69,5 @@ event_reader:
 	.size	event_reader, .Lfunc_end0-event_reader
 	.cfi_endproc
 
-	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
+	.ident	"rustc version 1.91.0-nightly (8e62bfd31 2025-08-12)"
 	.section	".note.GNU-stack","",@progbits

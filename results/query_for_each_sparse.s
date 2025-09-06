@@ -1,4 +1,4 @@
-	.file	"query_for_each_sparse.ac3152b8dbfee1bb-cgu.0"
+	.file	"query_for_each_sparse.ebf99355966505e7-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4
@@ -153,5 +153,5 @@ query_for_each:
 .Lfunc_end0:
 	.size	query_for_each, .Lfunc_end0-query_for_each
 
-	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
+	.ident	"rustc version 1.91.0-nightly (8e62bfd31 2025-08-12)"
 	.section	".note.GNU-stack","",@progbits

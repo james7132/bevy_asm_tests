@@ -1,4 +1,4 @@
-	.file	"query_iter_many_sparse.373bee1141f9effd-cgu.0"
+	.file	"query_iter_many_sparse.9409e74d87a9400b-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4
@@ -9,9 +9,12 @@ query_iter:
 	.cfi_def_cfa_offset 16
 	pushq	%r14
 	.cfi_def_cfa_offset 24
-	pushq	%rbx
+	pushq	%r12
 	.cfi_def_cfa_offset 32
-	.cfi_offset %rbx, -32
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset %rbx, -40
+	.cfi_offset %r12, -32
 	.cfi_offset %r14, -24
 	.cfi_offset %r15, -16
 	movq	(%rdi), %rax
@@ -56,7 +59,8 @@ query_iter:
 	leaq	(%rsi,%rdx,8), %rdx
 	leaq	-8(%rsp), %r9
 .LBB0_10:
-	movq	16(%rcx), %r10
+	movq	8(%rcx), %r10
+	movq	16(%rcx), %r11
 	jmp	.LBB0_12
 	.p2align	4
 .LBB0_11:
@@ -64,35 +68,34 @@ query_iter:
 	cmpq	%rdx, %rsi
 	je	.LBB0_18
 .LBB0_12:
-	movq	(%rsi), %rbx
-	movl	%ebx, %r11d
-	notl	%r11d
-	cmpq	%r11, %r10
-	jbe	.LBB0_11
-	shrq	$32, %rbx
-	movq	8(%rcx), %r14
-	leaq	(%r11,%r11,2), %r15
-	cmpl	%ebx, 16(%r14,%r15,8)
+	movq	(%rsi), %r14
+	movl	%r14d, %ebx
+	notl	%ebx
+	cmpq	%r11, %rbx
+	jae	.LBB0_11
+	leaq	(%rbx,%rbx,2), %r15
+	leaq	(%r10,%r15,8), %r15
+	shrq	$32, %r14
+	cmpl	%r14d, 16(%r15)
 	jne	.LBB0_11
-	leaq	(%r14,%r15,8), %rbx
-	cmpl	$0, (%rbx)
+	cmpl	$0, (%r15)
 	je	.LBB0_11
-	movl	8(%rbx), %ebx
-	cmpq	%rbx, 56(%rax)
+	movl	8(%r15), %r14d
+	cmpq	%r14, 56(%rax)
 	jbe	.LBB0_11
-	movq	40(%rax), %r14
-	movl	%ebx, %r15d
-	shrl	$6, %r15d
-	movq	(%r14,%r15,8), %r14
-	btq	%rbx, %r14
+	movq	40(%rax), %r15
+	movl	%r14d, %r12d
+	shrl	$6, %r12d
+	movq	(%r15,%r12,8), %r15
+	btq	%r14, %r15
 	jae	.LBB0_11
 	movq	128(%rdi), %r10
-	movl	(%r10,%r11,4), %r10d
+	movl	(%r10,%rbx,4), %r10d
 	notl	%r10d
 	imulq	8(%rdi), %r10
 	addq	16(%rdi), %r10
-	movq	128(%r8), %rbx
-	movl	(%rbx,%r11,4), %r11d
+	movq	128(%r8), %r11
+	movl	(%r11,%rbx,4), %r11d
 	notl	%r11d
 	imulq	8(%r8), %r11
 	addq	16(%r8), %r11
@@ -107,6 +110,8 @@ query_iter:
 	jne	.LBB0_10
 .LBB0_18:
 	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%r12
 	.cfi_def_cfa_offset 24
 	popq	%r14
 	.cfi_def_cfa_offset 16
@@ -117,5 +122,5 @@ query_iter:
 	.size	query_iter, .Lfunc_end0-query_iter
 	.cfi_endproc
 
-	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
+	.ident	"rustc version 1.91.0-nightly (8e62bfd31 2025-08-12)"
 	.section	".note.GNU-stack","",@progbits

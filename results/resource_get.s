@@ -1,8 +1,25 @@
-	.file	"resource_get.7759da2b2d8176fa-cgu.0"
+	.file	"resource_get.eb4cd5e2a9fc6c14-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,87
+	.zero	16,67
+.LCPI0_1:
+	.byte	42
+	.byte	243
+	.byte	29
+	.byte	86
+	.byte	217
+	.byte	139
+	.byte	42
+	.byte	76
+	.byte	233
+	.byte	19
+	.byte	18
+	.byte	55
+	.byte	92
+	.byte	102
+	.byte	127
+	.byte	135
 	.section	.text.resource_get,"ax",@progbits
 	.globl	resource_get
 	.p2align	4
@@ -11,62 +28,61 @@ resource_get:
 	pushq	%rbx
 	movq	%rdi, %rax
 	cmpq	$0, 136(%rsi)
-	je	.LBB0_12
-	movabsq	$-5899631996011066938, %rdx
+	je	.LBB0_11
 	movq	112(%rsi), %rcx
-	movq	120(%rsi), %rdi
-	xorl	%r8d, %r8d
+	movq	120(%rsi), %rdx
+	leaq	-24(%rcx), %rdi
+	movabsq	$-8683109010300070935, %r8
+	xorl	%r9d, %r9d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$7616743713659208065, %r9
-	movq	%rdx, %r10
+	movdqa	.LCPI0_1(%rip), %xmm2
 .LBB0_2:
-	andq	%rdi, %r10
-	movdqu	(%rcx,%r10), %xmm2
-	movdqa	%xmm2, %xmm3
-	pcmpeqb	%xmm0, %xmm3
-	pmovmskb	%xmm3, %r11d
-	testl	%r11d, %r11d
-	je	.LBB0_6
+	andq	%rdx, %r8
+	movdqu	(%rcx,%r8), %xmm3
+	movdqa	%xmm3, %xmm4
+	pcmpeqb	%xmm0, %xmm4
+	pmovmskb	%xmm4, %r10d
+	testl	%r10d, %r10d
+	je	.LBB0_5
 .LBB0_3:
-	rep		bsfl	%r11d, %ebx
-	addq	%r10, %rbx
-	andq	%rdi, %rbx
-	negq	%rbx
-	leaq	(%rbx,%rbx,2), %rbx
-	cmpq	%r9, -24(%rcx,%rbx,8)
-	jne	.LBB0_5
-	cmpq	%rdx, -16(%rcx,%rbx,8)
-	je	.LBB0_8
-.LBB0_5:
-	leal	-1(%r11), %ebx
-	andw	%r11w, %bx
-	movl	%ebx, %r11d
+	rep		bsfl	%r10d, %r11d
+	addq	%r8, %r11
+	andq	%rdx, %r11
+	negq	%r11
+	leaq	(%r11,%r11,2), %r11
+	movdqu	(%rdi,%r11,8), %xmm4
+	pcmpeqb	%xmm2, %xmm4
+	pmovmskb	%xmm4, %ebx
+	cmpl	$65535, %ebx
+	je	.LBB0_7
+	leal	-1(%r10), %r11d
+	andw	%r10w, %r11w
+	movl	%r11d, %r10d
 	jne	.LBB0_3
 	.p2align	4
-.LBB0_6:
-	pcmpeqb	%xmm1, %xmm2
-	pmovmskb	%xmm2, %r11d
-	testl	%r11d, %r11d
-	jne	.LBB0_12
-	addq	%r8, %r10
-	addq	$16, %r10
+.LBB0_5:
+	pcmpeqb	%xmm1, %xmm3
+	pmovmskb	%xmm3, %r10d
+	testl	%r10d, %r10d
+	jne	.LBB0_11
+	addq	%r9, %r8
 	addq	$16, %r8
+	addq	$16, %r9
 	jmp	.LBB0_2
-.LBB0_8:
-	leaq	(%rcx,%rbx,8), %rcx
-	movq	-8(%rcx), %rcx
+.LBB0_7:
+	movq	-8(%rcx,%r11,8), %rcx
 	cmpq	528(%rsi), %rcx
-	jae	.LBB0_12
+	jae	.LBB0_11
 	movq	520(%rsi), %rdx
 	movq	(%rdx,%rcx,8), %rdx
 	testq	%rdx, %rdx
-	je	.LBB0_12
+	je	.LBB0_11
 	movq	472(%rsi), %rcx
 	notq	%rdx
 	shlq	$6, %rdx
 	cmpq	$0, 32(%rcx,%rdx)
-	je	.LBB0_12
+	je	.LBB0_11
 	addq	%rdx, %rcx
 	movq	16(%rcx), %rdx
 	leaq	56(%rcx), %rdi
@@ -80,12 +96,12 @@ resource_get:
 	movl	%esi, 28(%rax)
 	popq	%rbx
 	retq
-.LBB0_12:
+.LBB0_11:
 	movq	$0, (%rax)
 	popq	%rbx
 	retq
 .Lfunc_end0:
 	.size	resource_get, .Lfunc_end0-resource_get
 
-	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
+	.ident	"rustc version 1.91.0-nightly (8e62bfd31 2025-08-12)"
 	.section	".note.GNU-stack","",@progbits
