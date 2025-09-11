@@ -79,7 +79,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs"
 version = "0.17.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#b80913a4f61970fae5eb6725f0deefd1ba313c2a"
+source = "git+https://github.com/james7132/bevy?branch=stack-overflow-fix#b0515734573acdd8c51d42c6ed164d3d49371823"
 dependencies = [
  "arrayvec",
  "bevy_ecs_macros",
@@ -106,7 +106,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs_macros"
 version = "0.17.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#b80913a4f61970fae5eb6725f0deefd1ba313c2a"
+source = "git+https://github.com/james7132/bevy?branch=stack-overflow-fix#b0515734573acdd8c51d42c6ed164d3d49371823"
 dependencies = [
  "bevy_macro_utils",
  "proc-macro2",
@@ -117,7 +117,7 @@ dependencies = [
 [[package]]
 name = "bevy_macro_utils"
 version = "0.17.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#b80913a4f61970fae5eb6725f0deefd1ba313c2a"
+source = "git+https://github.com/james7132/bevy?branch=stack-overflow-fix#b0515734573acdd8c51d42c6ed164d3d49371823"
 dependencies = [
  "parking_lot",
  "proc-macro2",
@@ -129,7 +129,7 @@ dependencies = [
 [[package]]
 name = "bevy_platform"
 version = "0.17.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#b80913a4f61970fae5eb6725f0deefd1ba313c2a"
+source = "git+https://github.com/james7132/bevy?branch=stack-overflow-fix#b0515734573acdd8c51d42c6ed164d3d49371823"
 dependencies = [
  "critical-section",
  "foldhash",
@@ -147,12 +147,12 @@ dependencies = [
 [[package]]
 name = "bevy_ptr"
 version = "0.17.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#b80913a4f61970fae5eb6725f0deefd1ba313c2a"
+source = "git+https://github.com/james7132/bevy?branch=stack-overflow-fix#b0515734573acdd8c51d42c6ed164d3d49371823"
 
 [[package]]
 name = "bevy_reflect"
 version = "0.17.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#b80913a4f61970fae5eb6725f0deefd1ba313c2a"
+source = "git+https://github.com/james7132/bevy?branch=stack-overflow-fix#b0515734573acdd8c51d42c6ed164d3d49371823"
 dependencies = [
  "assert_type_match",
  "bevy_platform",
@@ -177,7 +177,7 @@ dependencies = [
 [[package]]
 name = "bevy_reflect_derive"
 version = "0.17.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#b80913a4f61970fae5eb6725f0deefd1ba313c2a"
+source = "git+https://github.com/james7132/bevy?branch=stack-overflow-fix#b0515734573acdd8c51d42c6ed164d3d49371823"
 dependencies = [
  "bevy_macro_utils",
  "indexmap",
@@ -190,7 +190,7 @@ dependencies = [
 [[package]]
 name = "bevy_tasks"
 version = "0.17.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#b80913a4f61970fae5eb6725f0deefd1ba313c2a"
+source = "git+https://github.com/james7132/bevy?branch=stack-overflow-fix#b0515734573acdd8c51d42c6ed164d3d49371823"
 dependencies = [
  "async-channel",
  "async-executor",
@@ -207,7 +207,7 @@ dependencies = [
 [[package]]
 name = "bevy_utils"
 version = "0.17.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#b80913a4f61970fae5eb6725f0deefd1ba313c2a"
+source = "git+https://github.com/james7132/bevy?branch=stack-overflow-fix#b0515734573acdd8c51d42c6ed164d3d49371823"
 dependencies = [
  "bevy_platform",
  "disqualified",
