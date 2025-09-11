@@ -1,4 +1,4 @@
-	.file	"query_get_sparse.2d9e5531803c08c-cgu.0"
+	.file	"query_get_sparse.b7c7aebe41385d2a-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4

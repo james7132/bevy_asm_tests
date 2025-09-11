@@ -1,8 +1,4 @@
-	.file	"entity_insert.ce80aa672af8b03b-cgu.0"
-	.section	.rodata.cst16,"aM",@progbits,16
-	.p2align	4, 0x0
-.LCPI0_0:
-	.zero	16,91
+	.file	"entity_insert.fcf670b90a9faec6-cgu.0"
 	.section	.text.core::ops::function::FnOnce::call_once,"ax",@progbits
 	.p2align	4
 	.type	core::ops::function::FnOnce::call_once,@function
@@ -26,8 +22,8 @@ core::ops::function::FnOnce::call_once:
 	.cfi_offset %r14, -24
 	.cfi_offset %r15, -16
 	movq	%rsi, %rbx
-	movabsq	$-5232917436151097155, %r14
-	movabsq	$1463809386090719959, %r15
+	movabsq	$-2143499196919588733, %r14
+	movabsq	$65616604881305666, %r15
 	movl	(%rdi), %eax
 	movl	%eax, 4(%rsp)
 	leaq	56(%rsi), %rdi
@@ -42,9 +38,9 @@ core::ops::function::FnOnce::call_once:
 	movq	80(%rbx), %rax
 	movq	88(%rbx), %rcx
 	xorl	%edx, %edx
-	movdqa	.LCPI0_0(%rip), %xmm0
+	pxor	%xmm0, %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movq	%r14, %rsi
+	movq	%r15, %rsi
 .LBB0_3:
 	andq	%rcx, %rsi
 	movdqu	(%rax,%rsi), %xmm2
@@ -59,9 +55,9 @@ core::ops::function::FnOnce::call_once:
 	andq	%rcx, %r9
 	negq	%r9
 	leaq	(%r9,%r9,2), %r9
-	cmpq	%r15, -24(%rax,%r9,8)
+	cmpq	%r14, -24(%rax,%r9,8)
 	jne	.LBB0_6
-	cmpq	%r14, -16(%rax,%r9,8)
+	cmpq	%r15, -16(%rax,%r9,8)
 	je	.LBB0_9
 .LBB0_6:
 	leal	-1(%r8), %r9d
@@ -82,9 +78,9 @@ core::ops::function::FnOnce::call_once:
 	movq	184(%rbx), %rax
 	movq	192(%rbx), %rcx
 	xorl	%esi, %esi
-	movdqa	.LCPI0_0(%rip), %xmm0
+	pxor	%xmm0, %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movq	%r14, %r8
+	movq	%r15, %r8
 .LBB0_11:
 	andq	%rcx, %r8
 	movdqu	(%rax,%r8), %xmm2
@@ -100,9 +96,9 @@ core::ops::function::FnOnce::call_once:
 	movq	%r10, %rdx
 	negq	%rdx
 	imulq	$112, %rdx, %rdx
-	cmpq	%r15, -112(%rax,%rdx)
+	cmpq	%r14, -112(%rax,%rdx)
 	jne	.LBB0_14
-	cmpq	%r14, -104(%rax,%rdx)
+	cmpq	%r15, -104(%rax,%rdx)
 	je	.LBB0_17
 .LBB0_14:
 	leal	-1(%r9), %edx
@@ -168,8 +164,8 @@ core::ops::function::FnOnce::call_once:
 	movq	%rax, 1440(%rbx)
 	movw	$256, 112(%rsp)
 	movq	$1, 48(%rsp)
-	movq	%r15, 56(%rsp)
-	movq	%r14, 64(%rsp)
+	movq	%r14, 56(%rsp)
+	movq	%r15, 64(%rsp)
 	movq	$1, 88(%rsp)
 	pxor	%xmm0, %xmm0
 	movdqu	%xmm0, 96(%rsp)
@@ -179,8 +175,8 @@ core::ops::function::FnOnce::call_once:
 	movq	%r12, %rsi
 	callq	bevy_ecs::component::info::Components::register_component_inner
 	leaq	80(%rbx), %rdi
-	movq	%r15, %rsi
-	movq	%r14, %rdx
+	movq	%r14, %rsi
+	movq	%r15, %rdx
 	movq	%r12, %rcx
 	callq	hashbrown::map::HashMap<K,V,S,A>::insert
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.37(%rip), %rsi
@@ -823,7 +819,7 @@ hashbrown::raw::RawTableInner::find_insert_slot:
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI7_0:
-	.zero	16,32
+	.zero	16,91
 	.section	.text.entity_insert,"ax",@progbits
 	.globl	entity_insert
 	.p2align	4
@@ -850,22 +846,22 @@ entity_insert:
 	.cfi_offset %r14, -32
 	.cfi_offset %r15, -24
 	.cfi_offset %rbp, -16
-	movss	%xmm0, 32(%rsp)
 	movq	%rdi, %r14
+	movss	%xmm0, 52(%rsp)
 	movl	16(%rdi), %eax
 	movl	%eax, 28(%rsp)
 	testl	%eax, %eax
-	je	.LBB7_204
-	movabsq	$-3932132446836431822, %r12
-	movabsq	$4660242116304403819, %r15
+	je	.LBB7_203
+	movabsq	$-5322528759364240965, %r15
+	movabsq	$2859024748991744683, %r12
 	movl	20(%r14), %r11d
 	movl	24(%r14), %eax
 	movq	%rax, 256(%rsp)
 	movl	28(%r14), %eax
-	movl	%eax, 184(%rsp)
+	movl	%eax, 192(%rsp)
 	movq	(%r14), %r10
 	movl	1448(%r10), %eax
-	movl	%eax, 52(%rsp)
+	movl	%eax, 32(%rsp)
 	leaq	56(%r10), %rbx
 	leaq	1440(%r10), %rax
 	movq	%rbx, 232(%rsp)
@@ -949,7 +945,7 @@ entity_insert:
 	jne	.LBB7_43
 	movq	264(%rbx), %rsi
 	cmpq	%r12, %rsi
-	jbe	.LBB7_216
+	jbe	.LBB7_215
 	movq	256(%rbx), %rcx
 	leaq	(%r12,%r12,4), %rsi
 	shlq	$5, %rsi
@@ -971,7 +967,7 @@ entity_insert:
 	movq	%rbx, %r9
 	jae	.LBB7_47
 	cmpq	%r12, %rdi
-	jb	.LBB7_210
+	jb	.LBB7_209
 	jne	.LBB7_50
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.34(%rip), %rdx
 	xorl	%edi, %edi
@@ -1023,11 +1019,11 @@ entity_insert:
 	jmp	.LBB7_11
 .LBB7_47:
 	cmpq	%rsi, %rdi
-	jb	.LBB7_211
+	jb	.LBB7_210
 	cmpl	%r12d, %eax
-	jbe	.LBB7_219
+	jbe	.LBB7_218
 	cmpq	%rsi, %rdi
-	je	.LBB7_220
+	je	.LBB7_219
 .LBB7_50:
 	leaq	(%r12,%r12,4), %rdi
 	shlq	$5, %rdi
@@ -1053,7 +1049,7 @@ entity_insert:
 	cmpl	%esi, %edi
 	jbe	.LBB7_63
 	cmpq	%rdi, %r8
-	jb	.LBB7_213
+	jb	.LBB7_212
 	jne	.LBB7_66
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.29(%rip), %rdx
 	xorl	%edi, %edi
@@ -1066,12 +1062,12 @@ entity_insert:
 	movl	148(%rbp), %edi
 	movq	424(%r8), %rsi
 	cmpq	%rdi, %rsi
-	jbe	.LBB7_217
+	jbe	.LBB7_216
 	leaq	(%rdi,%rdi,8), %rcx
 	shlq	$3, %rcx
 	movq	%r8, %rdi
 	addq	416(%r8), %rcx
-	movq	%rcx, 176(%rsp)
+	movq	%rcx, 64(%rsp)
 	movq	$0, 272(%rsp)
 	jmp	.LBB7_62
 .LBB7_59:
@@ -1083,12 +1079,12 @@ entity_insert:
 .LBB7_60:
 	movq	424(%r9), %rsi
 	cmpq	%rdi, %rsi
-	jbe	.LBB7_221
+	jbe	.LBB7_220
 	leaq	(%rdi,%rdi,8), %rcx
 	shlq	$3, %rcx
 	movq	%r9, %rdi
 	addq	416(%r9), %rcx
-	movq	%rcx, 176(%rsp)
+	movq	%rcx, 64(%rsp)
 	movl	$1, %ecx
 	movq	%rcx, 272(%rsp)
 .LBB7_62:
@@ -1136,7 +1132,7 @@ entity_insert:
 	addq	%rsi, %rdi
 	addq	$16, %rdi
 	addq	$16, %rsi
-	movabsq	$-3932132446836431822, %r12
+	movabsq	$2859024748991744683, %r12
 	jmp	.LBB7_18
 .LBB7_24:
 	leaq	(%rax,%r8,8), %rax
@@ -1184,17 +1180,17 @@ entity_insert:
 	movq	1440(%r10), %rbp
 	leaq	1(%rbp), %rax
 	movq	%rax, 1440(%r10)
-	movw	$256, 128(%rsp)
-	movq	$1, 64(%rsp)
-	movabsq	$-3932132446836431822, %r13
-	movq	%r13, 72(%rsp)
-	movq	%r15, 80(%rsp)
-	movq	$4, 104(%rsp)
-	movq	$4, 112(%rsp)
-	movq	$0, 120(%rsp)
-	movb	$1, 130(%rsp)
-	movq	$0, 88(%rsp)
-	leaq	64(%rsp), %rdx
+	movw	$256, 144(%rsp)
+	movq	$1, 80(%rsp)
+	movabsq	$2859024748991744683, %r13
+	movq	%r13, 88(%rsp)
+	movq	%r15, 96(%rsp)
+	movq	$4, 120(%rsp)
+	movq	$4, 128(%rsp)
+	movq	$0, 136(%rsp)
+	movb	$1, 146(%rsp)
+	movq	$0, 104(%rsp)
+	leaq	80(%rsp), %rdx
 	movq	%rbx, %rdi
 	movq	%rbp, %rsi
 	movq	%r10, %r12
@@ -1238,32 +1234,32 @@ entity_insert:
 	addq	%rbp, %r13
 	shlq	$5, %r13
 	movups	400(%rsp), %xmm0
-	movaps	%xmm0, 160(%rsp)
+	movaps	%xmm0, 176(%rsp)
 	movups	384(%rsp), %xmm0
-	movaps	%xmm0, 144(%rsp)
+	movaps	%xmm0, 160(%rsp)
 	movups	368(%rsp), %xmm0
-	movaps	%xmm0, 128(%rsp)
+	movaps	%xmm0, 144(%rsp)
 	movups	304(%rsp), %xmm0
 	movups	320(%rsp), %xmm1
 	movups	336(%rsp), %xmm2
 	movups	352(%rsp), %xmm3
-	movaps	%xmm3, 112(%rsp)
-	movaps	%xmm2, 96(%rsp)
-	movaps	%xmm1, 80(%rsp)
-	movaps	%xmm0, 64(%rsp)
+	movaps	%xmm3, 128(%rsp)
+	movaps	%xmm2, 112(%rsp)
+	movaps	%xmm1, 96(%rsp)
+	movaps	%xmm0, 80(%rsp)
 	leaq	(%r12,%r13), %rdi
 	addq	$72, %rdi
 	callq	core::ptr::drop_in_place<bevy_ecs::component::required::RequiredComponents>
-	movaps	160(%rsp), %xmm0
+	movaps	176(%rsp), %xmm0
 	movups	%xmm0, 168(%r12,%r13)
-	movaps	144(%rsp), %xmm0
+	movaps	160(%rsp), %xmm0
 	movups	%xmm0, 152(%r12,%r13)
-	movaps	128(%rsp), %xmm0
+	movaps	144(%rsp), %xmm0
 	movups	%xmm0, 136(%r12,%r13)
-	movdqa	64(%rsp), %xmm0
-	movdqa	80(%rsp), %xmm1
-	movdqa	96(%rsp), %xmm2
-	movdqa	112(%rsp), %xmm3
+	movdqa	80(%rsp), %xmm0
+	movdqa	96(%rsp), %xmm1
+	movdqa	112(%rsp), %xmm2
+	movdqa	128(%rsp), %xmm3
 	movdqu	%xmm3, 120(%r12,%r13)
 	movdqu	%xmm2, 104(%r12,%r13)
 	movdqu	%xmm1, 88(%r12,%r13)
@@ -1272,15 +1268,15 @@ entity_insert:
 	jmp	.LBB7_32
 .LBB7_63:
 	cmpq	%rsi, %r8
-	jb	.LBB7_214
+	jb	.LBB7_213
 	cmpl	%edi, %esi
-	jbe	.LBB7_223
+	jbe	.LBB7_222
 	cmpq	%rsi, %r8
-	je	.LBB7_224
+	je	.LBB7_223
 .LBB7_66:
 	leaq	(%rdi,%rdi,8), %rdi
 	leaq	(%rcx,%rdi,8), %rdi
-	movq	%rdi, 176(%rsp)
+	movq	%rdi, 64(%rsp)
 	leaq	(%rsi,%rsi,8), %rsi
 	leaq	(%rcx,%rsi,8), %rcx
 	movq	%rcx, 264(%rsp)
@@ -1301,7 +1297,7 @@ entity_insert:
 	movq	16(%rbx), %r12
 	subq	%r12, %rcx
 	cmpq	$11, %rcx
-	jbe	.LBB7_206
+	jbe	.LBB7_205
 .LBB7_70:
 	movq	8(%rbx), %rcx
 	leaq	core::ops::function::FnOnce::call_once(%rip), %rdx
@@ -1321,7 +1317,7 @@ entity_insert:
 	movq	200(%rsp), %rax
 	movl	%eax, 212(%rsp)
 	movdqu	48(%r15), %xmm0
-	movdqu	%xmm0, 64(%rsp)
+	movdqu	%xmm0, 80(%rsp)
 	movl	$2, %esi
 	movq	288(%rsp), %rdi
 	callq	*bevy_ecs::observer::centralized_storage::Observers::try_get_observers@GOTPCREL(%rip)
@@ -1329,7 +1325,7 @@ entity_insert:
 	je	.LBB7_74
 	movq	$2, 304(%rsp)
 	movq	208(%rsp), %r8
-	leaq	64(%rsp), %rdi
+	leaq	80(%rsp), %rdi
 	leaq	208(%rsp), %rcx
 	leaq	304(%rsp), %r9
 	movq	16(%rsp), %rsi
@@ -1348,7 +1344,7 @@ entity_insert:
 	movq	48(%r15), %rbp
 	shlq	$3, %r13
 	xorl	%r14d, %r14d
-	leaq	64(%rsp), %r12
+	leaq	80(%rsp), %r12
 	jmp	.LBB7_79
 	.p2align	4
 .LBB7_78:
@@ -1363,9 +1359,9 @@ entity_insert:
 	movq	264(%rcx,%rdx), %rcx
 	testq	%rcx, %rcx
 	je	.LBB7_78
-	movq	%rbx, 64(%rsp)
-	movq	%rax, 72(%rsp)
-	movb	$0, 80(%rsp)
+	movq	%rbx, 80(%rsp)
+	movq	%rax, 88(%rsp)
+	movb	$0, 96(%rsp)
 	movq	%r12, %rsi
 	callq	*%rcx
 	movq	16(%rsp), %rdi
@@ -1373,18 +1369,18 @@ entity_insert:
 .LBB7_81:
 	movq	272(%rsp), %rcx
 	testq	%rcx, %rcx
-	movq	%r15, 192(%rsp)
+	movq	%r15, 72(%rsp)
 	je	.LBB7_93
 	movq	%rdi, %r8
 	movl	28(%rsp), %edi
 	notl	%edi
 	cmpl	$1, %ecx
 	movq	56(%rsp), %rbp
-	movq	176(%rsp), %r9
+	movq	64(%rsp), %r9
 	jne	.LBB7_96
 	movq	88(%rbp), %rsi
 	cmpq	%rdi, %rsi
-	jbe	.LBB7_205
+	jbe	.LBB7_204
 	decq	%rsi
 	movq	80(%rbp), %rax
 	movq	%rdi, %rcx
@@ -1393,12 +1389,12 @@ entity_insert:
 	shlq	$4, %rdx
 	movq	%rbp, %r9
 	movl	8(%rax,%rcx), %ebp
-	movups	(%rax,%rdx), %xmm0
-	movups	%xmm0, (%rax,%rcx)
+	movdqu	(%rax,%rdx), %xmm0
+	movdqu	%xmm0, (%rax,%rcx)
 	movq	%rsi, 88(%r9)
 	cmpq	%rdi, %rsi
 	je	.LBB7_88
-	jbe	.LBB7_218
+	jbe	.LBB7_217
 	addq	%rcx, %rax
 	movl	(%rax), %eax
 	testl	%eax, %eax
@@ -1443,71 +1439,48 @@ entity_insert:
 	movq	%rsi, 256(%rsp)
 	movl	%esi, 8(%rax,%rcx,8)
 	movl	%edi, 12(%rax,%rcx,8)
-	movq	16(%r15), %rax
-	movq	24(%r15), %r13
+	movq	(%r15), %rax
 	movq	280(%rsp), %rcx
 	movq	(%rcx), %rcx
-	movd	32(%rsp), %xmm0
-	movd	%xmm0, 64(%rsp)
-	movq	(%rcx), %rdx
-	movq	(%r15), %rcx
-	movzbl	(%rcx), %ecx
-	movq	176(%rsp), %r14
-	cmpq	64(%r14), %rdx
+	movq	(%rcx), %rcx
+	movzbl	(%rax), %eax
+	movq	64(%rsp), %r14
+	cmpq	64(%r14), %rcx
 	movl	%ebp, 12(%rsp)
 	jae	.LBB7_124
-	movq	56(%r14), %rsi
-	movq	(%rsi,%rdx,8), %rdx
-	testq	%rdx, %rdx
+	movq	56(%r14), %rdx
+	movq	(%rdx,%rcx,8), %rcx
+	testq	%rcx, %rcx
 	je	.LBB7_124
-	notq	%rdx
-	leaq	(%rdx,%rdx,2), %rbp
+	notq	%rcx
+	leaq	(%rcx,%rcx,2), %rbp
 	shlq	$4, %rbp
 	addq	24(%r14), %rbp
 	jmp	.LBB7_125
 .LBB7_93:
-	movq	16(%r15), %rax
-	movq	24(%r15), %r13
+	movq	(%r15), %rax
 	movq	280(%rsp), %rcx
 	movq	(%rcx), %rcx
-	movd	32(%rsp), %xmm0
-	movd	%xmm0, 64(%rsp)
-	movq	(%rcx), %rdx
-	movq	(%r15), %rcx
-	movzbl	(%rcx), %ecx
-	movq	176(%rsp), %r14
-	cmpq	64(%r14), %rdx
-	jae	.LBB7_107
-	movq	56(%r14), %rsi
-	movq	(%rsi,%rdx,8), %rdx
-	testq	%rdx, %rdx
-	je	.LBB7_107
-	notq	%rdx
-	leaq	(%rdx,%rdx,2), %rbp
+	movq	(%rcx), %rcx
+	movzbl	(%rax), %eax
+	movq	64(%rsp), %r14
+	cmpq	64(%r14), %rcx
+	jae	.LBB7_116
+	movq	56(%r14), %rdx
+	movq	(%rdx,%rcx,8), %rcx
+	testq	%rcx, %rcx
+	je	.LBB7_116
+	notq	%rcx
+	leaq	(%rcx,%rcx,2), %rbp
 	shlq	$4, %rbp
 	addq	24(%r14), %rbp
-	movq	%rax, 40(%rsp)
-	testb	%cl, %cl
-	jne	.LBB7_108
-.LBB7_118:
-	movl	12(%rsp), %r12d
-	notl	%r12d
-	movq	8(%rbp), %rdx
-	movq	%rdx, %rdi
-	imulq	%r12, %rdi
-	addq	16(%rbp), %rdi
-	leaq	64(%rsp), %rsi
-	callq	*memmove@GOTPCREL(%rip)
-	movq	32(%rbp), %rax
-	movl	52(%rsp), %ecx
-	movl	%ecx, (%rax,%r12,4)
-	jmp	.LBB7_119
+	jmp	.LBB7_117
 .LBB7_96:
 	movq	88(%rbp), %rsi
 	cmpq	%rdi, %rsi
-	jbe	.LBB7_205
+	jbe	.LBB7_204
 	movq	256(%r8), %rax
-	movq	%rax, 184(%rsp)
+	movq	%rax, 192(%rsp)
 	decq	%rsi
 	movq	80(%rbp), %rax
 	movq	%rdi, %rcx
@@ -1515,13 +1488,13 @@ entity_insert:
 	movq	%rsi, %rdx
 	shlq	$4, %rdx
 	movl	8(%rax,%rcx), %r10d
-	movups	(%rax,%rdx), %xmm0
-	movups	%xmm0, (%rax,%rcx)
+	movdqu	(%rax,%rdx), %xmm0
+	movdqu	%xmm0, (%rax,%rcx)
 	movq	%rsi, 88(%rbp)
 	cmpq	%rdi, %rsi
 	movq	40(%rsp), %r13
 	je	.LBB7_101
-	jbe	.LBB7_218
+	jbe	.LBB7_217
 	addq	%rcx, %rax
 	movl	(%rax), %eax
 	testl	%eax, %eax
@@ -1532,13 +1505,13 @@ entity_insert:
 	movl	28(%rsp), %edx
 	movl	%edx, (%rcx,%rax,8)
 .LBB7_101:
-	leaq	64(%rsp), %rdi
+	leaq	80(%rsp), %rdi
 	movq	%r9, %rsi
 	movl	%r10d, %r12d
 	movl	%r10d, %edx
 	movq	264(%rsp), %rcx
 	callq	*bevy_ecs::storage::table::Table::move_to_superset_unchecked@GOTPCREL(%rip)
-	movl	72(%rsp), %eax
+	movl	88(%rsp), %eax
 	movl	%eax, 12(%rsp)
 	movq	88(%r13), %r14
 	movl	%r14d, %eax
@@ -1574,49 +1547,51 @@ entity_insert:
 	movq	%rdi, 256(%rsp)
 	movl	%edi, 8(%rax,%rcx,8)
 	movl	%r9d, 12(%rax,%rcx,8)
-	movl	64(%rsp), %ecx
+	movl	80(%rsp), %ecx
 	testl	%ecx, %ecx
-	je	.LBB7_136
+	je	.LBB7_135
 	movq	8(%rsi), %rax
 	notl	%ecx
 	xorl	%edi, %edi
 	leaq	(%rcx,%rcx,2), %rdx
 	cmpq	%rcx, 16(%rsi)
-	jbe	.LBB7_110
+	jbe	.LBB7_109
 	movl	16(%rax,%rdx,8), %r8d
-	cmpl	68(%rsp), %r8d
-	jne	.LBB7_111
+	cmpl	84(%rsp), %r8d
+	jne	.LBB7_110
 	leaq	(%rax,%rdx,8), %rsi
 	movl	(%rsi), %edi
 	movl	8(%rsi), %ecx
 	movl	12(%rsi), %esi
-	jmp	.LBB7_111
-.LBB7_107:
+	jmp	.LBB7_110
+.LBB7_116:
 	xorl	%ebp, %ebp
-	movq	%rax, 40(%rsp)
-	testb	%cl, %cl
-	je	.LBB7_118
-.LBB7_108:
+.LBB7_117:
+	movq	16(%r15), %rcx
+	movq	%rcx, 40(%rsp)
+	movq	24(%r15), %r13
+	testb	%al, %al
+	je	.LBB7_122
 	movl	12(%rsp), %r12d
 	notl	%r12d
-	leaq	64(%rsp), %rdx
+	leaq	52(%rsp), %rdx
 	movq	%rbp, %rdi
 	movq	%r12, %rsi
 	callq	*bevy_ecs::storage::blob_array::BlobArray::replace_unchecked@GOTPCREL(%rip)
-	movl	52(%rsp), %ecx
-.LBB7_119:
+	movl	32(%rsp), %ecx
 	movq	40(%rbp), %rax
 	movl	%ecx, (%rax,%r12,4)
 	testq	%r13, %r13
-	movq	40(%rsp), %rdi
 	je	.LBB7_123
+.LBB7_119:
 	shlq	$4, %r13
+	movq	40(%rsp), %rdi
 	movq	%rbx, 32(%rsp)
 	movl	12(%rsp), %ebx
 	movl	%ecx, %r15d
 	movq	248(%rsp), %rbp
 	.p2align	4
-.LBB7_121:
+.LBB7_120:
 	leaq	16(%rdi), %r12
 	movq	%r14, %rsi
 	movq	%rbp, %rdx
@@ -1626,106 +1601,127 @@ entity_insert:
 	callq	*bevy_ecs::component::required::RequiredComponentConstructor::initialize@GOTPCREL(%rip)
 	movq	%r12, %rdi
 	addq	$-16, %r13
-	jne	.LBB7_121
+	jne	.LBB7_120
 	movq	56(%rsp), %rbp
-	movq	192(%rsp), %r15
+	movq	72(%rsp), %r15
 	movq	32(%rsp), %rbx
-	jmp	.LBB7_148
+	jmp	.LBB7_147
 .LBB7_124:
 	xorl	%ebp, %ebp
 .LBB7_125:
-	movl	%edi, 184(%rsp)
-	movq	%rax, 56(%rsp)
+	movl	%edi, 192(%rsp)
+	movq	16(%r15), %rcx
+	movq	%rcx, 56(%rsp)
+	movq	24(%r15), %r13
 	movl	12(%rsp), %r12d
 	notl	%r12d
-	testb	%cl, %cl
-	je	.LBB7_127
-	leaq	64(%rsp), %rdx
+	testb	%al, %al
+	je	.LBB7_130
+	leaq	52(%rsp), %rdx
 	movq	%rbp, %rdi
 	movq	%r12, %rsi
 	callq	*bevy_ecs::storage::blob_array::BlobArray::replace_unchecked@GOTPCREL(%rip)
-	movl	52(%rsp), %ecx
-	jmp	.LBB7_128
+	movl	32(%rsp), %ecx
+	movq	40(%rbp), %rax
+	movl	%ecx, (%rax,%r12,4)
+	testq	%r13, %r13
+	je	.LBB7_131
 .LBB7_127:
+	shlq	$4, %r13
+	movq	56(%rsp), %rdi
+	movq	%rbx, 32(%rsp)
+	movl	12(%rsp), %ebx
+	movl	%ecx, %r15d
+	movq	248(%rsp), %rbp
+	.p2align	4
+.LBB7_128:
+	leaq	16(%rdi), %r12
+	movq	%r14, %rsi
+	movq	%rbp, %rdx
+	movl	%r15d, %ecx
+	movl	%ebx, %r8d
+	movq	32(%rsp), %r9
+	callq	*bevy_ecs::component::required::RequiredComponentConstructor::initialize@GOTPCREL(%rip)
+	movq	%r12, %rdi
+	addq	$-16, %r13
+	jne	.LBB7_128
+	movq	72(%rsp), %r15
+	movq	40(%rsp), %rbp
+	movq	32(%rsp), %rbx
+	jmp	.LBB7_147
+.LBB7_122:
+	movl	12(%rsp), %r12d
+	notl	%r12d
 	movq	8(%rbp), %rdx
 	movq	%rdx, %rdi
 	imulq	%r12, %rdi
 	addq	16(%rbp), %rdi
-	leaq	64(%rsp), %rsi
+	leaq	52(%rsp), %rsi
 	callq	*memmove@GOTPCREL(%rip)
 	movq	32(%rbp), %rax
-	movl	52(%rsp), %ecx
+	movl	32(%rsp), %ecx
 	movl	%ecx, (%rax,%r12,4)
-.LBB7_128:
 	movq	40(%rbp), %rax
 	movl	%ecx, (%rax,%r12,4)
 	testq	%r13, %r13
-	movq	56(%rsp), %rdi
-	je	.LBB7_132
-	shlq	$4, %r13
-	movq	%rbx, 32(%rsp)
-	movl	12(%rsp), %ebx
-	movl	%ecx, %r15d
-	movq	248(%rsp), %rbp
-	.p2align	4
-.LBB7_130:
-	leaq	16(%rdi), %r12
-	movq	%r14, %rsi
-	movq	%rbp, %rdx
-	movl	%r15d, %ecx
-	movl	%ebx, %r8d
-	movq	32(%rsp), %r9
-	callq	*bevy_ecs::component::required::RequiredComponentConstructor::initialize@GOTPCREL(%rip)
-	movq	%r12, %rdi
-	addq	$-16, %r13
-	jne	.LBB7_130
-	movq	192(%rsp), %r15
-	movq	40(%rsp), %rbp
-	movq	32(%rsp), %rbx
-	jmp	.LBB7_148
+	jne	.LBB7_119
 .LBB7_123:
 	movq	56(%rsp), %rbp
-	jmp	.LBB7_148
-.LBB7_132:
+	jmp	.LBB7_147
+.LBB7_130:
+	movq	8(%rbp), %rdx
+	movq	%rdx, %rdi
+	imulq	%r12, %rdi
+	addq	16(%rbp), %rdi
+	leaq	52(%rsp), %rsi
+	callq	*memmove@GOTPCREL(%rip)
+	movq	32(%rbp), %rax
+	movl	32(%rsp), %ecx
+	movl	%ecx, (%rax,%r12,4)
+	movq	40(%rbp), %rax
+	movl	%ecx, (%rax,%r12,4)
+	testq	%r13, %r13
+	jne	.LBB7_127
+.LBB7_131:
 	movq	40(%rsp), %rbp
-	jmp	.LBB7_148
+	jmp	.LBB7_147
+.LBB7_109:
 .LBB7_110:
-.LBB7_111:
 	movl	%edi, (%rax,%rdx,8)
 	movl	%r12d, 4(%rax,%rdx,8)
 	movl	%ecx, 8(%rax,%rdx,8)
 	movl	%esi, 12(%rax,%rdx,8)
 	notl	%edi
 	cmpl	%ecx, 144(%rbp)
-	jne	.LBB7_114
+	jne	.LBB7_113
 	movq	88(%rbp), %rsi
 	cmpq	%rdi, %rsi
-	jbe	.LBB7_222
+	jbe	.LBB7_221
 	movq	80(%rbp), %rax
-	jmp	.LBB7_135
-.LBB7_114:
+	jmp	.LBB7_134
+.LBB7_113:
 	cmpl	%ecx, 144(%r13)
-	jne	.LBB7_133
+	jne	.LBB7_132
 	movq	88(%r13), %rsi
 	cmpq	%rdi, %rsi
-	jbe	.LBB7_222
+	jbe	.LBB7_221
 	movq	80(%r13), %rax
-	jmp	.LBB7_135
+	jmp	.LBB7_134
 .LBB7_31:
 	movups	-88(%rdx), %xmm0
 	movdqu	-72(%rdx), %xmm1
 	movdqu	-56(%rdx), %xmm2
 	movdqu	-40(%rdx), %xmm3
-	movdqu	%xmm3, 120(%rsp)
-	movdqu	%xmm2, 104(%rsp)
-	movdqu	%xmm1, 88(%rsp)
-	movups	%xmm0, 72(%rsp)
+	movdqu	%xmm3, 136(%rsp)
+	movdqu	%xmm2, 120(%rsp)
+	movdqu	%xmm1, 104(%rsp)
+	movups	%xmm0, 88(%rsp)
 	movdqu	-24(%rdx), %xmm0
 	movq	-8(%rdx), %rcx
-	movq	%rax, 64(%rsp)
-	movdqu	%xmm0, 136(%rsp)
-	movq	%rcx, 152(%rsp)
-	leaq	64(%rsp), %rdi
+	movq	%rax, 80(%rsp)
+	movdqu	%xmm0, 152(%rsp)
+	movq	%rcx, 168(%rsp)
+	leaq	80(%rsp), %rdi
 	leaq	208(%rsp), %rsi
 	callq	*bevy_ecs::component::register::QueuedRegistration::register@GOTPCREL(%rip)
 	movq	%rax, %rbp
@@ -1744,7 +1740,7 @@ entity_insert:
 	movq	$1, 320(%rsp)
 	movq	%rbp, (%rsp)
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.11(%rip), %rsi
-	leaq	64(%rsp), %rdi
+	leaq	80(%rsp), %rdi
 	leaq	304(%rsp), %r9
 	movl	$16, %edx
 	movq	%r13, %rcx
@@ -1760,10 +1756,10 @@ entity_insert:
 	movq	616(%r10), %rax
 	leaq	(,%rbp,4), %rcx
 	addq	%rbp, %rcx
-	movq	96(%rsp), %rdx
+	movq	112(%rsp), %rdx
 	movq	%rdx, 32(%rax,%rcx,8)
-	movups	64(%rsp), %xmm0
-	movdqu	80(%rsp), %xmm1
+	movups	80(%rsp), %xmm0
+	movdqu	96(%rsp), %xmm1
 	movdqu	%xmm1, 16(%rax,%rcx,8)
 	movups	%xmm0, (%rax,%rcx,8)
 	leaq	1(%rbp), %rax
@@ -1775,32 +1771,32 @@ entity_insert:
 	movdqu	(%rax,%rsi), %xmm0
 	pmovmskb	%xmm0, %edx
 	testl	%edx, %edx
-	je	.LBB7_207
+	je	.LBB7_206
 .LBB7_35:
 	rep		bsfl	%edx, %edx
 	addq	%rsi, %rdx
 	andq	%rcx, %rdx
 	movzbl	(%rax,%rdx), %esi
 	testb	%sil, %sil
-	jns	.LBB7_209
+	jns	.LBB7_208
 .LBB7_36:
 	movq	648(%r10), %rdi
 	testq	%rdi, %rdi
 	sete	%r8b
 	andb	$1, %sil
 	testb	%r8b, %sil
-	jne	.LBB7_212
+	jne	.LBB7_211
 	movzbl	%sil, %esi
 	subq	%rsi, %rdi
 	movq	%rdi, 648(%r10)
 	leaq	-16(%rdx), %rsi
 	andq	%rcx, %rsi
-	movb	$32, (%rax,%rdx)
-	movb	$32, 16(%rax,%rsi)
+	movb	$91, (%rax,%rdx)
+	movb	$91, 16(%rax,%rsi)
 	incq	656(%r10)
 	negq	%rdx
 	leaq	(%rdx,%rdx,2), %rcx
-	movabsq	$-3932132446836431822, %rdx
+	movabsq	$2859024748991744683, %rdx
 	movq	%rdx, -24(%rax,%rcx,8)
 	movq	%r15, -16(%rax,%rcx,8)
 	movq	%rbp, -8(%rax,%rcx,8)
@@ -1808,90 +1804,88 @@ entity_insert:
 	testq	%rsi, %rsi
 	jne	.LBB7_38
 	jmp	.LBB7_39
-.LBB7_133:
+.LBB7_132:
 	movl	%ecx, %eax
 	leaq	(%rax,%rax,4), %rax
 	shlq	$5, %rax
-	movq	184(%rsp), %rcx
+	movq	192(%rsp), %rcx
 	movq	88(%rcx,%rax), %rsi
 	cmpq	%rdi, %rsi
-	jbe	.LBB7_222
+	jbe	.LBB7_221
 	addq	%rcx, %rax
 	addq	$72, %rax
 	movq	8(%rax), %rax
-.LBB7_135:
+.LBB7_134:
 	shlq	$4, %rdi
 	movl	%r12d, 8(%rax,%rdi)
-.LBB7_136:
-	movq	16(%r15), %rax
-	movq	24(%r15), %r13
+.LBB7_135:
+	movq	(%r15), %rax
 	movq	280(%rsp), %rcx
 	movq	(%rcx), %rcx
-	movd	32(%rsp), %xmm0
-	movd	%xmm0, 304(%rsp)
-	movq	(%rcx), %rdx
-	movq	(%r15), %rcx
-	movzbl	(%rcx), %ecx
+	movq	(%rcx), %rcx
+	movzbl	(%rax), %eax
 	movq	264(%rsp), %rdi
-	cmpq	64(%rdi), %rdx
-	jae	.LBB7_139
-	movq	56(%rdi), %rsi
-	movq	(%rsi,%rdx,8), %rdx
-	testq	%rdx, %rdx
+	cmpq	64(%rdi), %rcx
+	jae	.LBB7_138
+	movq	56(%rdi), %rdx
+	movq	(%rdx,%rcx,8), %rcx
+	testq	%rcx, %rcx
 	movl	12(%rsp), %esi
-	je	.LBB7_140
-	notq	%rdx
-	leaq	(%rdx,%rdx,2), %r15
+	je	.LBB7_139
+	notq	%rcx
+	leaq	(%rcx,%rcx,2), %r15
 	shlq	$4, %r15
 	addq	24(%rdi), %r15
-	jmp	.LBB7_141
-.LBB7_139:
+	jmp	.LBB7_140
+.LBB7_138:
 	xorl	%r15d, %r15d
 	movl	12(%rsp), %esi
-	jmp	.LBB7_141
-.LBB7_140:
+	jmp	.LBB7_140
+.LBB7_139:
 	xorl	%r15d, %r15d
-.LBB7_141:
-	movl	%r9d, 184(%rsp)
-	movq	%rax, 32(%rsp)
+.LBB7_140:
+	movl	%r9d, 192(%rsp)
+	movq	72(%rsp), %rdx
+	movq	16(%rdx), %rcx
+	movq	%rcx, 64(%rsp)
+	movq	24(%rdx), %r13
 	movq	%rbx, %r14
 	movl	%esi, %r12d
 	notl	%r12d
-	testb	%cl, %cl
-	je	.LBB7_143
-	leaq	304(%rsp), %rdx
+	testb	%al, %al
+	je	.LBB7_142
+	leaq	52(%rsp), %rdx
 	movq	%r15, %rdi
 	movq	%r12, %rsi
 	callq	*bevy_ecs::storage::blob_array::BlobArray::replace_unchecked@GOTPCREL(%rip)
-	movl	52(%rsp), %ebp
-	jmp	.LBB7_144
-.LBB7_143:
+	movl	32(%rsp), %ebp
+	jmp	.LBB7_143
+.LBB7_142:
 	movq	8(%r15), %rdx
 	movq	%rdx, %rdi
 	imulq	%r12, %rdi
 	addq	16(%r15), %rdi
-	leaq	304(%rsp), %rsi
+	leaq	52(%rsp), %rsi
 	callq	*memmove@GOTPCREL(%rip)
 	movq	32(%r15), %rax
-	movl	52(%rsp), %ebp
+	movl	32(%rsp), %ebp
 	movl	%ebp, (%rax,%r12,4)
-.LBB7_144:
+.LBB7_143:
 	movq	40(%r15), %rax
 	movl	%ebp, (%rax,%r12,4)
-	movq	%r13, %r15
 	testq	%r13, %r13
-	movq	32(%rsp), %rdi
+	movq	64(%rsp), %rdi
 	movq	248(%rsp), %rbx
 	movl	12(%rsp), %eax
 	movq	%r14, %r12
-	movq	264(%rsp), %r13
-	je	.LBB7_147
-	shlq	$4, %r15
+	movq	264(%rsp), %r15
+	je	.LBB7_146
+	shlq	$4, %r13
 	.p2align	4
-.LBB7_146:
+.LBB7_145:
 	leaq	16(%rdi), %rcx
 	movq	%rcx, 32(%rsp)
-	movq	%r13, %rsi
+	movq	%r15, %rsi
 	movq	%rbx, %rdx
 	movl	%ebp, %ecx
 	movl	%eax, %r14d
@@ -1900,105 +1894,105 @@ entity_insert:
 	callq	*bevy_ecs::component::required::RequiredComponentConstructor::initialize@GOTPCREL(%rip)
 	movl	%r14d, %eax
 	movq	32(%rsp), %rdi
-	addq	$-16, %r15
-	jne	.LBB7_146
-.LBB7_147:
-	movq	192(%rsp), %r15
+	addq	$-16, %r13
+	jne	.LBB7_145
+.LBB7_146:
+	movq	72(%rsp), %r15
 	movq	40(%rsp), %rbp
 	movq	%r12, %rbx
-.LBB7_148:
+.LBB7_147:
 	movq	40(%r15), %r12
 	movl	152(%rbp), %eax
 	testq	%r12, %r12
 	movq	16(%rsp), %rdi
-	je	.LBB7_155
+	je	.LBB7_154
 	movl	%eax, %ecx
 	andl	$1, %ecx
-	je	.LBB7_155
+	je	.LBB7_154
 	movq	32(%r15), %r13
 	shlq	$3, %r12
 	xorl	%r14d, %r14d
-	leaq	64(%rsp), %r15
-	jmp	.LBB7_152
+	leaq	80(%rsp), %r15
+	jmp	.LBB7_151
 	.p2align	4
-.LBB7_151:
+.LBB7_150:
 	addq	$8, %r14
 	cmpq	%r14, %r12
-	je	.LBB7_154
-.LBB7_152:
+	je	.LBB7_153
+.LBB7_151:
 	movq	(%r13,%r14), %rax
 	movq	64(%rdi), %rcx
 	leaq	(%rax,%rax,8), %rdx
 	shlq	$5, %rdx
 	movq	248(%rcx,%rdx), %rcx
 	testq	%rcx, %rcx
-	je	.LBB7_151
-	movq	%rbx, 64(%rsp)
-	movq	%rax, 72(%rsp)
-	movb	$0, 80(%rsp)
+	je	.LBB7_150
+	movq	%rbx, 80(%rsp)
+	movq	%rax, 88(%rsp)
+	movb	$0, 96(%rsp)
 	movq	%r15, %rsi
 	callq	*%rcx
 	movq	16(%rsp), %rdi
-	jmp	.LBB7_151
-.LBB7_154:
+	jmp	.LBB7_150
+.LBB7_153:
 	movl	152(%rbp), %eax
-	movq	192(%rsp), %r15
-.LBB7_155:
+	movq	72(%rsp), %r15
+.LBB7_154:
 	testb	$32, %al
 	movq	296(%rsp), %r14
-	je	.LBB7_158
+	je	.LBB7_157
 	movl	%ebx, 208(%rsp)
 	movq	200(%rsp), %rax
 	movl	%eax, 212(%rsp)
 	movdqu	32(%r15), %xmm0
-	movdqu	%xmm0, 64(%rsp)
+	movdqu	%xmm0, 80(%rsp)
 	movq	288(%rsp), %rdi
 	xorl	%esi, %esi
 	callq	*bevy_ecs::observer::centralized_storage::Observers::try_get_observers@GOTPCREL(%rip)
 	testq	%rax, %rax
-	je	.LBB7_158
+	je	.LBB7_157
 	movq	$0, 304(%rsp)
 	movq	208(%rsp), %r8
-	leaq	64(%rsp), %rdi
+	leaq	80(%rsp), %rdi
 	leaq	208(%rsp), %rcx
 	leaq	304(%rsp), %r9
 	movq	16(%rsp), %rsi
 	movq	%rax, %rdx
 	callq	*bevy_ecs::event::trigger::EntityComponentsTrigger::trigger_internal@GOTPCREL(%rip)
-.LBB7_158:
-	leaq	64(%rsp), %rdi
+.LBB7_157:
+	leaq	80(%rsp), %rdi
 	movq	%r15, %rsi
 	callq	*bevy_ecs::archetype::ArchetypeAfterBundleInsert::iter_inserted@GOTPCREL(%rip)
 	movl	152(%rbp), %eax
 	testb	$2, %al
 	movq	16(%rsp), %rdi
-	je	.LBB7_169
+	je	.LBB7_168
 	movq	%rbp, 40(%rsp)
-	movq	64(%rsp), %rcx
-	movq	72(%rsp), %r12
-	movq	80(%rsp), %rax
-	movq	88(%rsp), %r13
+	movq	80(%rsp), %rcx
+	movq	88(%rsp), %r12
+	movq	96(%rsp), %rax
+	movq	104(%rsp), %r13
 	leaq	304(%rsp), %r15
 	.p2align	4
-.LBB7_160:
+.LBB7_159:
 	testq	%rcx, %rcx
-	je	.LBB7_163
+	je	.LBB7_162
 	cmpq	%r12, %rcx
-	je	.LBB7_163
+	je	.LBB7_162
 	leaq	8(%rcx), %r14
 	movq	%rax, %rbp
-	jmp	.LBB7_166
+	jmp	.LBB7_165
 	.p2align	4
-.LBB7_163:
+.LBB7_162:
 	testq	%rax, %rax
-	je	.LBB7_168
+	je	.LBB7_167
 	cmpq	%r13, %rax
-	je	.LBB7_168
+	je	.LBB7_167
 	leaq	8(%rax), %rbp
 	xorl	%r14d, %r14d
 	movq	%rax, %rcx
 	movq	%rbp, %rax
-.LBB7_166:
+.LBB7_165:
 	movq	(%rcx), %rdx
 	movq	64(%rdi), %rcx
 	leaq	(%rdx,%rdx,8), %rsi
@@ -2006,7 +2000,7 @@ entity_insert:
 	movq	256(%rcx,%rsi), %r8
 	movq	%r14, %rcx
 	testq	%r8, %r8
-	je	.LBB7_160
+	je	.LBB7_159
 	movq	%rbx, 304(%rsp)
 	movq	%rdx, 312(%rsp)
 	movb	$0, 320(%rsp)
@@ -2015,58 +2009,58 @@ entity_insert:
 	movq	16(%rsp), %rdi
 	movq	%rbp, %rax
 	movq	%r14, %rcx
-	jmp	.LBB7_160
-.LBB7_168:
+	jmp	.LBB7_159
+.LBB7_167:
 	movq	40(%rsp), %rax
 	movl	152(%rax), %eax
 	movq	296(%rsp), %r14
-	movq	192(%rsp), %r15
-.LBB7_169:
+	movq	72(%rsp), %r15
+.LBB7_168:
 	testb	$64, %al
 	movl	12(%rsp), %ebp
-	je	.LBB7_203
+	je	.LBB7_202
 	movl	%ebx, 208(%rsp)
 	movq	200(%rsp), %rax
 	movl	%eax, 212(%rsp)
-	leaq	64(%rsp), %rdi
+	leaq	80(%rsp), %rdi
 	movq	%r15, %rsi
 	callq	*bevy_ecs::archetype::ArchetypeAfterBundleInsert::iter_inserted@GOTPCREL(%rip)
-	movq	64(%rsp), %r12
-	movq	72(%rsp), %r15
-	movq	80(%rsp), %r13
-	movq	88(%rsp), %r8
+	movq	80(%rsp), %r12
+	movq	88(%rsp), %r15
+	movq	96(%rsp), %r13
+	movq	104(%rsp), %r8
 	testq	%r12, %r12
-	je	.LBB7_173
+	je	.LBB7_172
 	movq	%r15, %rbp
 	subq	%r12, %rbp
 	shrq	$3, %rbp
 	testq	%r13, %r13
-	je	.LBB7_176
+	je	.LBB7_175
 	movq	%r8, %rax
 	subq	%r13, %rax
 	shrq	$3, %rax
 	addq	%rax, %rbp
-	jmp	.LBB7_176
-.LBB7_173:
+	jmp	.LBB7_175
+.LBB7_172:
 	testq	%r13, %r13
-	je	.LBB7_175
+	je	.LBB7_174
 	movq	%r8, %rbp
 	subq	%r13, %rbp
 	shrq	$3, %rbp
-	jmp	.LBB7_176
-.LBB7_175:
+	jmp	.LBB7_175
+.LBB7_174:
 	xorl	%ebp, %ebp
-.LBB7_176:
+.LBB7_175:
 	leaq	(,%rbp,8), %rsi
 	xorl	%edi, %edi
 	movq	%rbp, %rax
 	shrq	$61, %rax
-	jne	.LBB7_215
+	jne	.LBB7_214
 	movabsq	$9223372036854775800, %rax
 	cmpq	%rax, %rsi
-	ja	.LBB7_215
+	ja	.LBB7_214
 	testq	%rsi, %rsi
-	je	.LBB7_181
+	je	.LBB7_180
 	movq	%r8, 32(%rsp)
 	movq	%r14, %rbx
 	movq	%rsi, %r14
@@ -2078,77 +2072,77 @@ entity_insert:
 	movq	%r14, %rsi
 	movq	32(%rsp), %r8
 	testq	%rax, %rax
-	je	.LBB7_215
+	je	.LBB7_214
 	movq	%rbx, %r14
 	movq	%rax, %rbx
-	jmp	.LBB7_182
-.LBB7_181:
+	jmp	.LBB7_181
+.LBB7_180:
 	movl	$8, %ebx
 	xorl	%ebp, %ebp
-.LBB7_182:
+.LBB7_181:
 	movq	%rbp, 304(%rsp)
 	movq	%rbx, 312(%rsp)
 	movq	$0, 320(%rsp)
 	testq	%r12, %r12
-	je	.LBB7_195
+	je	.LBB7_194
 	movq	%r15, %rdx
 	subq	%r12, %rdx
 	shrq	$3, %rdx
 	testq	%r13, %r13
-	je	.LBB7_185
+	je	.LBB7_184
 	movq	%r8, %rax
 	subq	%r13, %rax
 	shrq	$3, %rax
 	addq	%rax, %rdx
-.LBB7_185:
+.LBB7_184:
 	cmpq	%rbp, %rdx
-	ja	.LBB7_197
-.LBB7_186:
+	ja	.LBB7_196
+.LBB7_185:
 	xorl	%eax, %eax
 	movl	12(%rsp), %ebp
 	testq	%r12, %r12
-	je	.LBB7_191
-.LBB7_187:
+	je	.LBB7_190
+.LBB7_186:
 	cmpq	%r15, %r12
-	je	.LBB7_191
+	je	.LBB7_190
 	subq	%r12, %r15
 	shrq	$3, %r15
 	leaq	(%rbx,%rax,8), %rdx
 	xorl	%ecx, %ecx
 	.p2align	4
-.LBB7_189:
+.LBB7_188:
 	movq	(%r12,%rcx,8), %rsi
 	movq	%rsi, (%rdx,%rcx,8)
 	incq	%rcx
 	cmpq	%rcx, %r15
-	jne	.LBB7_189
+	jne	.LBB7_188
 	addq	%rcx, %rax
-.LBB7_191:
+.LBB7_190:
 	testq	%r13, %r13
-	je	.LBB7_199
+	je	.LBB7_198
 	cmpq	%r8, %r13
-	je	.LBB7_199
+	je	.LBB7_198
 	subq	%r13, %r8
 	shrq	$3, %r8
 	xorl	%ecx, %ecx
 	.p2align	4
-.LBB7_194:
+.LBB7_193:
 	movq	(%r13,%rcx,8), %rdx
 	movq	%rdx, (%rbx,%rax,8)
 	incq	%rax
 	incq	%rcx
 	cmpq	%rcx, %r8
-	jne	.LBB7_194
-	jmp	.LBB7_199
-.LBB7_195:
+	jne	.LBB7_193
+	jmp	.LBB7_198
+.LBB7_194:
 	testq	%r13, %r13
-	je	.LBB7_198
+	je	.LBB7_197
 	movq	%r8, %rdx
 	subq	%r13, %rdx
 	shrq	$3, %rdx
 	cmpq	%rbp, %rdx
-	jbe	.LBB7_186
-.LBB7_197:
+	jbe	.LBB7_185
+.LBB7_196:
 	movq	%r8, %rbx
 	leaq	304(%rsp), %rdi
 	movl	$8, %ecx
@@ -2160,43 +2154,43 @@ entity_insert:
 	movq	320(%rsp), %rax
 	movl	12(%rsp), %ebp
 	testq	%r12, %r12
-	jne	.LBB7_187
-	jmp	.LBB7_191
-.LBB7_198:
+	jne	.LBB7_186
+	jmp	.LBB7_190
+.LBB7_197:
 	xorl	%eax, %eax
 	movl	12(%rsp), %ebp
-.LBB7_199:
+.LBB7_198:
 	movq	304(%rsp), %r15
-	movq	%rbx, 64(%rsp)
-	movq	%rax, 72(%rsp)
+	movq	%rbx, 80(%rsp)
+	movq	%rax, 88(%rsp)
 	movl	$1, %esi
 	movq	288(%rsp), %rdi
 	callq	*bevy_ecs::observer::centralized_storage::Observers::try_get_observers@GOTPCREL(%rip)
 	testq	%rax, %rax
-	je	.LBB7_201
+	je	.LBB7_200
 	movq	$1, 304(%rsp)
 	movq	208(%rsp), %r8
-	leaq	64(%rsp), %rdi
+	leaq	80(%rsp), %rdi
 	leaq	208(%rsp), %rcx
 	leaq	304(%rsp), %r9
 	movq	16(%rsp), %rsi
 	movq	%rax, %rdx
 	callq	*bevy_ecs::event::trigger::EntityComponentsTrigger::trigger_internal@GOTPCREL(%rip)
-.LBB7_201:
+.LBB7_200:
 	testq	%r15, %r15
-	je	.LBB7_203
+	je	.LBB7_202
 	shlq	$3, %r15
 	movl	$8, %edx
 	movq	%rbx, %rdi
 	movq	%r15, %rsi
 	callq	*__rustc::__rust_dealloc@GOTPCREL(%rip)
-.LBB7_203:
+.LBB7_202:
 	movl	28(%rsp), %eax
 	movl	%eax, 16(%r14)
 	movl	%ebp, 20(%r14)
 	movq	256(%rsp), %rax
 	movl	%eax, 24(%r14)
-	movl	184(%rsp), %eax
+	movl	192(%rsp), %eax
 	movl	%eax, 28(%r14)
 	movq	(%r14), %rbx
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.8(%rip), %rsi
@@ -2223,15 +2217,15 @@ entity_insert:
 	popq	%rbp
 	.cfi_def_cfa_offset 8
 	retq
-.LBB7_204:
+.LBB7_203:
 	.cfi_def_cfa_offset 496
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.7(%rip), %rsi
 	movq	%r14, %rdi
 	callq	*bevy_ecs::world::entity_ref::EntityWorldMut::panic_despawned@GOTPCREL(%rip)
-.LBB7_205:
+.LBB7_204:
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.3(%rip), %rdx
 	callq	*alloc::vec::Vec<T,A>::swap_remove::assert_failed@GOTPCREL(%rip)
-.LBB7_206:
+.LBB7_205:
 	movl	$12, %edx
 	movl	$1, %ecx
 	movl	$1, %r8d
@@ -2243,9 +2237,9 @@ entity_insert:
 	movl	%ebp, %eax
 	movq	56(%rsp), %rbp
 	jmp	.LBB7_70
-.LBB7_207:
+.LBB7_206:
 	movl	$16, %edi
-.LBB7_208:
+.LBB7_207:
 	addq	%rdi, %rsi
 	andq	%rcx, %rsi
 	movdqu	(%rax,%rsi), %xmm0
@@ -2253,34 +2247,34 @@ entity_insert:
 	addq	$16, %rdi
 	testl	%edx, %edx
 	jne	.LBB7_35
-	jmp	.LBB7_208
-.LBB7_209:
+	jmp	.LBB7_207
+.LBB7_208:
 	movdqa	(%rax), %xmm0
 	pmovmskb	%xmm0, %edx
 	rep		bsfl	%edx, %edx
 	movzbl	(%rax,%rdx), %esi
 	jmp	.LBB7_36
+.LBB7_209:
+	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.23(%rip), %rax
+	movq	%rax, 80(%rsp)
+	movq	$1, 88(%rsp)
+	movq	$8, 96(%rsp)
+	pxor	%xmm0, %xmm0
+	movdqu	%xmm0, 104(%rsp)
+	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.33(%rip), %rsi
+	leaq	80(%rsp), %rdi
+	callq	*core::panicking::panic_fmt@GOTPCREL(%rip)
 .LBB7_210:
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.23(%rip), %rax
-	movq	%rax, 64(%rsp)
-	movq	$1, 72(%rsp)
-	movq	$8, 80(%rsp)
+	movq	%rax, 80(%rsp)
+	movq	$1, 88(%rsp)
+	movq	$8, 96(%rsp)
 	pxor	%xmm0, %xmm0
-	movdqu	%xmm0, 88(%rsp)
-	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.33(%rip), %rsi
-	leaq	64(%rsp), %rdi
+	movdqu	%xmm0, 104(%rsp)
+	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.30(%rip), %rsi
+	leaq	80(%rsp), %rdi
 	callq	*core::panicking::panic_fmt@GOTPCREL(%rip)
 .LBB7_211:
-	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.23(%rip), %rax
-	movq	%rax, 64(%rsp)
-	movq	$1, 72(%rsp)
-	movq	$8, 80(%rsp)
-	pxor	%xmm0, %xmm0
-	movdqu	%xmm0, 88(%rsp)
-	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.30(%rip), %rsi
-	leaq	64(%rsp), %rdi
-	callq	*core::panicking::panic_fmt@GOTPCREL(%rip)
-.LBB7_212:
 	leaq	632(%r10), %rdi
 	leaq	664(%r10), %rdx
 	movl	$1, %esi
@@ -2300,12 +2294,12 @@ entity_insert:
 	subq	%rcx, 648(%r10)
 	leaq	-16(%rax), %rcx
 	andq	40(%rsp), %rcx
-	movb	$32, (%r12,%rax)
-	movb	$32, 16(%r12,%rcx)
+	movb	$91, (%r12,%rax)
+	movb	$91, 16(%r12,%rcx)
 	incq	656(%r10)
 	negq	%rax
 	leaq	(%rax,%rax,2), %rax
-	movabsq	$-3932132446836431822, %rcx
+	movabsq	$2859024748991744683, %rcx
 	movq	%rcx, -24(%r12,%rax,8)
 	movq	%r15, -16(%r12,%rax,8)
 	movq	%rbp, -8(%r12,%rax,8)
@@ -2313,58 +2307,58 @@ entity_insert:
 	testq	%rsi, %rsi
 	jne	.LBB7_38
 	jmp	.LBB7_39
+.LBB7_212:
+	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.23(%rip), %rax
+	movq	%rax, 80(%rsp)
+	movq	$1, 88(%rsp)
+	movq	$8, 96(%rsp)
+	pxor	%xmm0, %xmm0
+	movdqu	%xmm0, 104(%rsp)
+	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.28(%rip), %rsi
+	leaq	80(%rsp), %rdi
+	callq	*core::panicking::panic_fmt@GOTPCREL(%rip)
 .LBB7_213:
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.23(%rip), %rax
-	movq	%rax, 64(%rsp)
-	movq	$1, 72(%rsp)
-	movq	$8, 80(%rsp)
+	movq	%rax, 80(%rsp)
+	movq	$1, 88(%rsp)
+	movq	$8, 96(%rsp)
 	pxor	%xmm0, %xmm0
-	movdqu	%xmm0, 88(%rsp)
-	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.28(%rip), %rsi
-	leaq	64(%rsp), %rdi
+	movdqu	%xmm0, 104(%rsp)
+	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.25(%rip), %rsi
+	leaq	80(%rsp), %rdi
 	callq	*core::panicking::panic_fmt@GOTPCREL(%rip)
 .LBB7_214:
-	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.23(%rip), %rax
-	movq	%rax, 64(%rsp)
-	movq	$1, 72(%rsp)
-	movq	$8, 80(%rsp)
-	pxor	%xmm0, %xmm0
-	movdqu	%xmm0, 88(%rsp)
-	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.25(%rip), %rsi
-	leaq	64(%rsp), %rdi
-	callq	*core::panicking::panic_fmt@GOTPCREL(%rip)
-.LBB7_215:
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.1(%rip), %rdx
 	callq	*alloc::raw_vec::handle_error@GOTPCREL(%rip)
-.LBB7_216:
+.LBB7_215:
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.17(%rip), %rdx
 	movq	%r12, %rdi
 	callq	*core::panicking::panic_bounds_check@GOTPCREL(%rip)
-.LBB7_217:
+.LBB7_216:
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.18(%rip), %rdx
 	callq	*core::panicking::panic_bounds_check@GOTPCREL(%rip)
-.LBB7_218:
+.LBB7_217:
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.35(%rip), %rdx
 	callq	*core::panicking::panic_bounds_check@GOTPCREL(%rip)
-.LBB7_219:
+.LBB7_218:
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.31(%rip), %rdx
 	movq	%r12, %rdi
 	callq	*core::panicking::panic_bounds_check@GOTPCREL(%rip)
-.LBB7_220:
+.LBB7_219:
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.32(%rip), %rdx
 	xorl	%edi, %edi
 	xorl	%esi, %esi
 	callq	*core::panicking::panic_bounds_check@GOTPCREL(%rip)
-.LBB7_221:
+.LBB7_220:
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.16(%rip), %rdx
 	callq	*core::panicking::panic_bounds_check@GOTPCREL(%rip)
-.LBB7_222:
+.LBB7_221:
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.21(%rip), %rdx
 	callq	*core::panicking::panic_bounds_check@GOTPCREL(%rip)
-.LBB7_223:
+.LBB7_222:
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.26(%rip), %rdx
 	callq	*core::panicking::panic_bounds_check@GOTPCREL(%rip)
-.LBB7_224:
+.LBB7_223:
 	leaq	.Lanon.83959b72e5b8236df4a28836bf490603.27(%rip), %rdx
 	xorl	%edi, %edi
 	xorl	%esi, %esi
@@ -2418,7 +2412,7 @@ entity_insert:
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.6,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.83959b72e5b8236df4a28836bf490603.6:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/world/entity_ref.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/world/entity_ref.rs"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.6, 103
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.7,@object
@@ -2426,7 +2420,7 @@ entity_insert:
 	.p2align	3, 0x0
 .Lanon.83959b72e5b8236df4a28836bf490603.7:
 	.quad	.Lanon.83959b72e5b8236df4a28836bf490603.6
-	.asciz	"g\000\000\000\000\000\000\000\031\005\000\000\032\000\000"
+	.asciz	"g\000\000\000\000\000\000\000\030\005\000\000\032\000\000"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.7, 24
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.8,@object
@@ -2434,13 +2428,13 @@ entity_insert:
 	.p2align	3, 0x0
 .Lanon.83959b72e5b8236df4a28836bf490603.8:
 	.quad	.Lanon.83959b72e5b8236df4a28836bf490603.6
-	.asciz	"g\000\000\000\000\000\000\000\003\b\000\000\024\000\000"
+	.asciz	"g\000\000\000\000\000\000\000\013\b\000\000\024\000\000"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.8, 24
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.9,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.83959b72e5b8236df4a28836bf490603.9:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/world/command_queue.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/world/command_queue.rs"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.9, 106
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.10,@object
@@ -2460,7 +2454,7 @@ entity_insert:
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.12,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.83959b72e5b8236df4a28836bf490603.12:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/bundle/info.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/bundle/info.rs"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.12, 98
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.13,@object
@@ -2468,7 +2462,7 @@ entity_insert:
 	.p2align	3, 0x0
 .Lanon.83959b72e5b8236df4a28836bf490603.13:
 	.quad	.Lanon.83959b72e5b8236df4a28836bf490603.12
-	.asciz	"b\000\000\000\000\000\000\000\274\001\000\000\032\000\000"
+	.asciz	"b\000\000\000\000\000\000\000\277\001\000\000\032\000\000"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.13, 24
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.14,@object
@@ -2476,13 +2470,13 @@ entity_insert:
 	.p2align	3, 0x0
 .Lanon.83959b72e5b8236df4a28836bf490603.14:
 	.quad	.Lanon.83959b72e5b8236df4a28836bf490603.12
-	.asciz	"b\000\000\000\000\000\000\000\264\001\000\000B\000\000"
+	.asciz	"b\000\000\000\000\000\000\000\267\001\000\000B\000\000"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.14, 24
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.15,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.83959b72e5b8236df4a28836bf490603.15:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/bundle/insert.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/bundle/insert.rs"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.15, 100
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.16,@object
@@ -2512,7 +2506,7 @@ entity_insert:
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.19,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.83959b72e5b8236df4a28836bf490603.19:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/archetype.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/archetype.rs"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.19, 96
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.20,@object
@@ -2548,7 +2542,7 @@ entity_insert:
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.24,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.83959b72e5b8236df4a28836bf490603.24:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/storage/table/mod.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/storage/table/mod.rs"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.24, 104
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.25,@object
@@ -2642,7 +2636,7 @@ entity_insert:
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.36,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.83959b72e5b8236df4a28836bf490603.36:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/component/register.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/component/register.rs"
 	.size	.Lanon.83959b72e5b8236df4a28836bf490603.36, 105
 
 	.type	.Lanon.83959b72e5b8236df4a28836bf490603.37,@object

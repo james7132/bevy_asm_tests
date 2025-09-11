@@ -1,8 +1,4 @@
-	.file	"entity_take.15ad1116661e8947-cgu.0"
-	.section	.rodata.cst16,"aM",@progbits,16
-	.p2align	4, 0x0
-.LCPI0_0:
-	.zero	16,91
+	.file	"entity_take.ec4ec7e900f5839f-cgu.0"
 	.section	.text.core::ops::function::FnOnce::call_once,"ax",@progbits
 	.p2align	4
 	.type	core::ops::function::FnOnce::call_once,@function
@@ -26,8 +22,8 @@ core::ops::function::FnOnce::call_once:
 	.cfi_offset %r14, -24
 	.cfi_offset %r15, -16
 	movq	%rsi, %rbx
-	movabsq	$-5232917436151097155, %r14
-	movabsq	$1463809386090719959, %r15
+	movabsq	$-2143499196919588733, %r14
+	movabsq	$65616604881305666, %r15
 	movl	(%rdi), %eax
 	movl	%eax, 4(%rsp)
 	leaq	56(%rsi), %rdi
@@ -42,9 +38,9 @@ core::ops::function::FnOnce::call_once:
 	movq	80(%rbx), %rax
 	movq	88(%rbx), %rcx
 	xorl	%edx, %edx
-	movdqa	.LCPI0_0(%rip), %xmm0
+	pxor	%xmm0, %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movq	%r14, %rsi
+	movq	%r15, %rsi
 .LBB0_3:
 	andq	%rcx, %rsi
 	movdqu	(%rax,%rsi), %xmm2
@@ -59,9 +55,9 @@ core::ops::function::FnOnce::call_once:
 	andq	%rcx, %r9
 	negq	%r9
 	leaq	(%r9,%r9,2), %r9
-	cmpq	%r15, -24(%rax,%r9,8)
+	cmpq	%r14, -24(%rax,%r9,8)
 	jne	.LBB0_6
-	cmpq	%r14, -16(%rax,%r9,8)
+	cmpq	%r15, -16(%rax,%r9,8)
 	je	.LBB0_9
 .LBB0_6:
 	leal	-1(%r8), %r9d
@@ -82,9 +78,9 @@ core::ops::function::FnOnce::call_once:
 	movq	184(%rbx), %rax
 	movq	192(%rbx), %rcx
 	xorl	%esi, %esi
-	movdqa	.LCPI0_0(%rip), %xmm0
+	pxor	%xmm0, %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movq	%r14, %r8
+	movq	%r15, %r8
 .LBB0_11:
 	andq	%rcx, %r8
 	movdqu	(%rax,%r8), %xmm2
@@ -100,9 +96,9 @@ core::ops::function::FnOnce::call_once:
 	movq	%r10, %rdx
 	negq	%rdx
 	imulq	$112, %rdx, %rdx
-	cmpq	%r15, -112(%rax,%rdx)
+	cmpq	%r14, -112(%rax,%rdx)
 	jne	.LBB0_14
-	cmpq	%r14, -104(%rax,%rdx)
+	cmpq	%r15, -104(%rax,%rdx)
 	je	.LBB0_17
 .LBB0_14:
 	leal	-1(%r9), %edx
@@ -168,8 +164,8 @@ core::ops::function::FnOnce::call_once:
 	movq	%rax, 1440(%rbx)
 	movw	$256, 112(%rsp)
 	movq	$1, 48(%rsp)
-	movq	%r15, 56(%rsp)
-	movq	%r14, 64(%rsp)
+	movq	%r14, 56(%rsp)
+	movq	%r15, 64(%rsp)
 	movq	$1, 88(%rsp)
 	pxor	%xmm0, %xmm0
 	movdqu	%xmm0, 96(%rsp)
@@ -179,8 +175,8 @@ core::ops::function::FnOnce::call_once:
 	movq	%r12, %rsi
 	callq	bevy_ecs::component::info::Components::register_component_inner
 	leaq	80(%rbx), %rdi
-	movq	%r15, %rsi
-	movq	%r14, %rdx
+	movq	%r14, %rsi
+	movq	%r15, %rdx
 	movq	%r12, %rcx
 	callq	hashbrown::map::HashMap<K,V,S,A>::insert
 	leaq	.Lanon.ddd9cd1641521d33379e20f985469fcb.45(%rip), %rsi
@@ -959,7 +955,7 @@ hashbrown::raw::RawTableInner::find_insert_slot:
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI8_0:
-	.zero	16,32
+	.zero	16,118
 	.section	.text.entity_remove,"ax",@progbits
 	.globl	entity_remove
 	.p2align	4
@@ -991,8 +987,8 @@ entity_remove:
 	testl	%eax, %eax
 	je	.LBB8_77
 	movl	%eax, 228(%rsp)
-	movabsq	$-2087853249370522355, %r11
-	movabsq	$4660779766208247570, %r10
+	movabsq	$-1358975252531334216, %r10
+	movabsq	$-6514051197717753357, %r11
 	movl	20(%r14), %eax
 	movl	%eax, 20(%rsp)
 	movl	24(%r14), %r12d
@@ -1335,13 +1331,13 @@ entity_remove:
 	movq	632(%rbp), %rax
 	movq	640(%rbp), %rcx
 	movq	%rcx, %rsi
-	movabsq	$4660779766208247570, %r9
+	movabsq	$-1358975252531334216, %r9
 	andq	%r9, %rsi
 	movdqu	(%rax,%rsi), %xmm0
 	pmovmskb	%xmm0, %edx
 	testl	%edx, %edx
 	je	.LBB8_39
-	movabsq	$-2087853249370522355, %r10
+	movabsq	$-6514051197717753357, %r10
 .LBB8_35:
 	rep		bsfl	%edx, %edx
 	addq	%rsi, %rdx
@@ -1361,8 +1357,8 @@ entity_remove:
 	movq	%rdi, 648(%rbp)
 	leaq	-16(%rdx), %rsi
 	andq	%rcx, %rsi
-	movb	$32, (%rax,%rdx)
-	movb	$32, 16(%rax,%rsi)
+	movb	$118, (%rax,%rdx)
+	movb	$118, 16(%rax,%rsi)
 	incq	656(%rbp)
 	negq	%rdx
 	leaq	(%rdx,%rdx,2), %rcx
@@ -2079,7 +2075,7 @@ entity_remove:
 	callq	*core::option::unwrap_failed@GOTPCREL(%rip)
 .LBB8_39:
 	movl	$16, %edi
-	movabsq	$-2087853249370522355, %r10
+	movabsq	$-6514051197717753357, %r10
 .LBB8_40:
 	addq	%rdi, %rsi
 	andq	%rcx, %rsi
@@ -2141,7 +2137,7 @@ entity_remove:
 	movq	640(%rax), %rbp
 	movq	%r15, %rdi
 	movq	%rbp, %rsi
-	movabsq	$4660779766208247570, %rdx
+	movabsq	$-1358975252531334216, %rdx
 	callq	hashbrown::raw::RawTableInner::find_insert_slot
 	movzbl	(%r15,%rax), %ecx
 	andl	$1, %ecx
@@ -2150,14 +2146,14 @@ entity_remove:
 	leaq	-16(%rax), %rcx
 	andq	%rbp, %rcx
 	movq	8(%rsp), %rbp
-	movb	$32, (%r15,%rax)
-	movb	$32, 16(%r15,%rcx)
+	movb	$118, (%r15,%rax)
+	movb	$118, 16(%r15,%rcx)
 	incq	656(%rbp)
 	negq	%rax
 	leaq	(%rax,%rax,2), %rax
-	movabsq	$-2087853249370522355, %rcx
+	movabsq	$-6514051197717753357, %rcx
 	movq	%rcx, -24(%r15,%rax,8)
-	movabsq	$4660779766208247570, %rcx
+	movabsq	$-1358975252531334216, %rcx
 	movq	%rcx, -16(%r15,%rax,8)
 	movq	%rbx, -8(%r15,%rax,8)
 	movq	176(%rsp), %rsi
@@ -2271,7 +2267,7 @@ entity_remove:
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.6,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.ddd9cd1641521d33379e20f985469fcb.6:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/world/entity_ref.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/world/entity_ref.rs"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.6, 103
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.7,@object
@@ -2279,7 +2275,7 @@ entity_remove:
 	.p2align	3, 0x0
 .Lanon.ddd9cd1641521d33379e20f985469fcb.7:
 	.quad	.Lanon.ddd9cd1641521d33379e20f985469fcb.6
-	.asciz	"g\000\000\000\000\000\000\000\031\005\000\000\032\000\000"
+	.asciz	"g\000\000\000\000\000\000\000\030\005\000\000\032\000\000"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.7, 24
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.8,@object
@@ -2287,7 +2283,7 @@ entity_remove:
 	.p2align	3, 0x0
 .Lanon.ddd9cd1641521d33379e20f985469fcb.8:
 	.quad	.Lanon.ddd9cd1641521d33379e20f985469fcb.6
-	.asciz	"g\000\000\000\000\000\000\000\264\b\000\000&\000\000"
+	.asciz	"g\000\000\000\000\000\000\000\277\b\000\000&\000\000"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.8, 24
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.9,@object
@@ -2295,7 +2291,7 @@ entity_remove:
 	.p2align	3, 0x0
 .Lanon.ddd9cd1641521d33379e20f985469fcb.9:
 	.quad	.Lanon.ddd9cd1641521d33379e20f985469fcb.6
-	.asciz	"g\000\000\000\000\000\000\000\266\b\000\000&\000\000"
+	.asciz	"g\000\000\000\000\000\000\000\301\b\000\000&\000\000"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.9, 24
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.10,@object
@@ -2303,13 +2299,13 @@ entity_remove:
 	.p2align	3, 0x0
 .Lanon.ddd9cd1641521d33379e20f985469fcb.10:
 	.quad	.Lanon.ddd9cd1641521d33379e20f985469fcb.6
-	.asciz	"g\000\000\000\000\000\000\000\246\b\000\000I\000\000"
+	.asciz	"g\000\000\000\000\000\000\000\261\b\000\000I\000\000"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.10, 24
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.11,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.ddd9cd1641521d33379e20f985469fcb.11:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/world/command_queue.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/world/command_queue.rs"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.11, 106
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.12,@object
@@ -2329,7 +2325,7 @@ entity_remove:
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.14,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.ddd9cd1641521d33379e20f985469fcb.14:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/bundle/info.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/bundle/info.rs"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.14, 98
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.15,@object
@@ -2337,7 +2333,7 @@ entity_remove:
 	.p2align	3, 0x0
 .Lanon.ddd9cd1641521d33379e20f985469fcb.15:
 	.quad	.Lanon.ddd9cd1641521d33379e20f985469fcb.14
-	.asciz	"b\000\000\000\000\000\000\000\274\001\000\000\032\000\000"
+	.asciz	"b\000\000\000\000\000\000\000\277\001\000\000\032\000\000"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.15, 24
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.16,@object
@@ -2345,7 +2341,7 @@ entity_remove:
 	.p2align	3, 0x0
 .Lanon.ddd9cd1641521d33379e20f985469fcb.16:
 	.quad	.Lanon.ddd9cd1641521d33379e20f985469fcb.14
-	.asciz	"b\000\000\000\000\000\000\000\264\001\000\000B\000\000"
+	.asciz	"b\000\000\000\000\000\000\000\267\001\000\000B\000\000"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.16, 24
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.17,@object
@@ -2359,7 +2355,7 @@ entity_remove:
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.18,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.ddd9cd1641521d33379e20f985469fcb.18:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/bundle/remove.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/bundle/remove.rs"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.18, 100
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.19,@object
@@ -2373,7 +2369,7 @@ entity_remove:
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.20,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.ddd9cd1641521d33379e20f985469fcb.20:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/archetype.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/archetype.rs"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.20, 96
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.21,@object
@@ -2419,7 +2415,7 @@ entity_remove:
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.26,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.ddd9cd1641521d33379e20f985469fcb.26:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/storage/sparse_set.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/storage/sparse_set.rs"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.26, 105
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.27,@object
@@ -2463,7 +2459,7 @@ entity_remove:
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.32,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.ddd9cd1641521d33379e20f985469fcb.32:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/storage/table/mod.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/storage/table/mod.rs"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.32, 104
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.33,@object
@@ -2557,7 +2553,7 @@ entity_remove:
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.44,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.ddd9cd1641521d33379e20f985469fcb.44:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/component/register.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/component/register.rs"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.44, 105
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.45,@object
@@ -2571,15 +2567,15 @@ entity_remove:
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.46,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.ddd9cd1641521d33379e20f985469fcb.46:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/message/messages.rs"
-	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.46, 103
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-91340e2100a853f9/b051573/crates/bevy_ecs/src/event/buffered_event/collections.rs"
+	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.46, 119
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.47,@object
 	.section	.data.rel.ro..Lanon.ddd9cd1641521d33379e20f985469fcb.47,"aw",@progbits
 	.p2align	3, 0x0
 .Lanon.ddd9cd1641521d33379e20f985469fcb.47:
 	.quad	.Lanon.ddd9cd1641521d33379e20f985469fcb.46
-	.asciz	"g\000\000\000\000\000\000\000\217\000\000\000\031\000\000"
+	.asciz	"w\000\000\000\000\000\000\000\214\000\000\000\027\000\000"
 	.size	.Lanon.ddd9cd1641521d33379e20f985469fcb.47, 24
 
 	.type	.Lanon.ddd9cd1641521d33379e20f985469fcb.48,@object
