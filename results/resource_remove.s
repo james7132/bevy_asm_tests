@@ -1,8 +1,8 @@
-	.file	"resource_remove.2838a6ce232c907c-cgu.0"
+	.file	"resource_remove.23e5b83f839dd59f-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,74
+	.zero	16,26
 	.section	.text.resource_insert,"ax",@progbits
 	.globl	resource_insert
 	.p2align	4
@@ -11,13 +11,13 @@ resource_insert:
 	cmpq	$0, 136(%rdi)
 	je	.LBB0_13
 	pushq	%rax
-	movabsq	$-7716850704236066690, %rdx
+	movabsq	$3829924974895441596, %rdx
 	movq	112(%rdi), %rcx
 	movq	120(%rdi), %rsi
 	xorl	%r8d, %r8d
 	movdqa	.LCPI0_0(%rip), %xmm1
 	pcmpeqd	%xmm2, %xmm2
-	movabsq	$7910049620051391880, %r9
+	movabsq	$4600876345758632634, %r9
 	movq	%rdx, %r10
 .LBB0_2:
 	andq	%rsi, %r10

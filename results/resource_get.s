@@ -1,8 +1,8 @@
-	.file	"resource_get.7759da2b2d8176fa-cgu.0"
+	.file	"resource_get.1287bf986d6f9fbc-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,87
+	.zero	16,13
 	.section	.text.resource_get,"ax",@progbits
 	.globl	resource_get
 	.p2align	4
@@ -12,13 +12,13 @@ resource_get:
 	movq	%rdi, %rax
 	cmpq	$0, 136(%rsi)
 	je	.LBB0_12
-	movabsq	$-5899631996011066938, %rdx
+	movabsq	$1892232200353991113, %rdx
 	movq	112(%rsi), %rcx
 	movq	120(%rsi), %rdi
 	xorl	%r8d, %r8d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$7616743713659208065, %r9
+	movabsq	$-1533835289776249415, %r9
 	movq	%rdx, %r10
 .LBB0_2:
 	andq	%rdi, %r10
