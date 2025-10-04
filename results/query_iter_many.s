@@ -1,4 +1,4 @@
-	.file	"query_iter_many.83aae03436a847bf-cgu.0"
+	.file	"query_iter_many.a862098186336689-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4
@@ -7,15 +7,19 @@ query_iter:
 	.cfi_startproc
 	testq	%rdx, %rdx
 	je	.LBB0_20
-	pushq	%rbx
+	pushq	%r14
 	.cfi_def_cfa_offset 16
-	.cfi_offset %rbx, -16
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset %rbx, -24
+	.cfi_offset %r14, -16
 	leaq	(%rsi,%rdx,8), %rax
 	movq	(%rdi), %rcx
 	movq	8(%rdi), %rdx
 	leaq	-8(%rsp), %rdi
 .LBB0_2:
-	movq	16(%rdx), %r9
+	movq	8(%rdx), %r9
+	movq	16(%rdx), %r10
 	jmp	.LBB0_4
 	.p2align	4
 .LBB0_3:
@@ -23,27 +27,26 @@ query_iter:
 	cmpq	%rax, %rsi
 	je	.LBB0_19
 .LBB0_4:
-	movq	(%rsi), %r8
-	movl	%r8d, %r10d
-	notl	%r10d
-	cmpq	%r10, %r9
-	jbe	.LBB0_3
-	shrq	$32, %r8
-	movq	8(%rdx), %r11
-	leaq	(%r10,%r10,2), %r10
-	cmpl	%r8d, 16(%r11,%r10,8)
+	movq	(%rsi), %r11
+	movl	%r11d, %r8d
+	notl	%r8d
+	cmpq	%r10, %r8
+	jae	.LBB0_3
+	leaq	(%r8,%r8,2), %r8
+	leaq	(%r9,%r8,8), %r8
+	shrq	$32, %r11
+	cmpl	%r11d, 16(%r8)
 	jne	.LBB0_3
-	leaq	(%r11,%r10,8), %r8
 	cmpl	$0, (%r8)
 	je	.LBB0_3
-	movl	8(%r8), %r10d
-	cmpq	%r10, 56(%rcx)
+	movl	8(%r8), %r11d
+	cmpq	%r11, 56(%rcx)
 	jbe	.LBB0_3
-	movq	40(%rcx), %r11
-	movl	%r10d, %ebx
-	shrl	$6, %ebx
-	movq	(%r11,%rbx,8), %r11
-	btq	%r10, %r11
+	movq	40(%rcx), %rbx
+	movl	%r11d, %r14d
+	shrl	$6, %r14d
+	movq	(%rbx,%r14,8), %rbx
+	btq	%r11, %rbx
 	jae	.LBB0_3
 	movl	12(%r8), %r9d
 	movq	416(%rdx), %r11
@@ -100,13 +103,16 @@ query_iter:
 	jne	.LBB0_2
 .LBB0_19:
 	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%r14
 	.cfi_def_cfa_offset 8
 	.cfi_restore %rbx
+	.cfi_restore %r14
 .LBB0_20:
 	retq
 .Lfunc_end0:
 	.size	query_iter, .Lfunc_end0-query_iter
 	.cfi_endproc
 
-	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
+	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
 	.section	".note.GNU-stack","",@progbits

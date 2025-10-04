@@ -1,4 +1,4 @@
-	.file	"query_get.5fdf9d79106364ca-cgu.0"
+	.file	"query_get.c812dee7ba3277c6-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4
@@ -14,31 +14,31 @@ query_get:
 	xorq	%rax, %r8
 	shrq	$32, %rsi
 	movl	$1, %ecx
-	cmpq	%r8, 16(%rdx)
-	jbe	.LBB0_8
-	movq	8(%rdx), %r9
+	cmpq	16(%rdx), %r8
+	jae	.LBB0_8
 	leaq	(%r8,%r8,2), %r8
-	cmpl	%esi, 16(%r9,%r8,8)
+	shlq	$3, %r8
+	addq	8(%rdx), %r8
+	cmpl	%esi, 16(%r8)
 	jne	.LBB0_8
-	leaq	(%r9,%r8,8), %r9
-	cmpl	$0, (%r9)
+	cmpl	$0, (%r8)
 	je	.LBB0_8
-	movq	8(%r9), %rcx
-	movq	(%rdi), %r8
+	movq	8(%r8), %rcx
+	movq	(%rdi), %r9
 	movl	%ecx, %r10d
-	cmpq	56(%r8), %r10
+	cmpq	56(%r9), %r10
 	jae	.LBB0_10
-	movq	40(%r8), %r11
+	movq	40(%r9), %r11
 	shrl	$6, %r10d
 	movq	(%r11,%r10,8), %r10
 	btq	%rcx, %r10
 	jae	.LBB0_10
-	movl	4(%r9), %eax
+	movl	4(%r8), %eax
 	shrq	$32, %rcx
 	movq	416(%rdx), %r11
 	leaq	(%rcx,%rcx,8), %rbx
-	movq	272(%r8), %rcx
-	movq	280(%r8), %r9
+	movq	272(%r9), %rcx
+	movq	280(%r9), %r9
 	movq	24(%r11,%rbx,8), %rdx
 	movq	56(%r11,%rbx,8), %r10
 	movq	(%r10,%rcx,8), %rcx
@@ -95,5 +95,5 @@ query_get:
 	.size	query_get, .Lfunc_end0-query_get
 	.cfi_endproc
 
-	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
+	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
 	.section	".note.GNU-stack","",@progbits

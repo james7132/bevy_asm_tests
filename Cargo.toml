@@ -38,11 +38,11 @@ name = "entity_take"
 crate-type = ["lib"]
 
 [[example]]
-name = "event_reader"
+name = "message_reader"
 crate-type = ["lib"]
 
 [[example]]
-name = "event_writer"
+name = "message_writer"
 crate-type = ["lib"]
 
 [[example]]

@@ -1,4 +1,4 @@
-	.file	"query_get_sparse.2d9e5531803c08c-cgu.0"
+	.file	"query_get_sparse.815046f74cfebf8f-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4
@@ -11,13 +11,13 @@ query_get:
 	xorq	%rdx, %rax
 	shrq	$32, %rsi
 	movl	$1, %ecx
-	cmpq	%rax, 16(%r8)
-	jbe	.LBB0_8
-	movq	8(%r8), %r9
-	leaq	(%rax,%rax,2), %r10
-	cmpl	%esi, 16(%r9,%r10,8)
+	cmpq	16(%r8), %rax
+	jae	.LBB0_8
+	leaq	(%rax,%rax,2), %r9
+	shlq	$3, %r9
+	addq	8(%r8), %r9
+	cmpl	%esi, 16(%r9)
 	jne	.LBB0_8
-	leaq	(%r9,%r10,8), %r9
 	cmpl	$0, (%r9)
 	je	.LBB0_8
 	movl	8(%r9), %ecx
@@ -115,5 +115,5 @@ query_get:
 	.size	query_get, .Lfunc_end0-query_get
 	.cfi_endproc
 
-	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
+	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
 	.section	".note.GNU-stack","",@progbits

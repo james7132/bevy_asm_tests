@@ -1,4 +1,4 @@
-	.file	"query_iter.d8b271ace072dfea-cgu.0"
+	.file	"query_iter.59d2f9b9c6dddd0b-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4
@@ -137,5 +137,5 @@ query_iter:
 .Lfunc_end0:
 	.size	query_iter, .Lfunc_end0-query_iter
 
-	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
+	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
 	.section	".note.GNU-stack","",@progbits

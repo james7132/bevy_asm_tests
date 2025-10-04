@@ -1,4 +1,4 @@
-	.file	"command_queue_apply.274919f3150ede0f-cgu.0"
+	.file	"command_queue_apply.7d3154ebd34957ce-cgu.0"
 	.section	.text.command_queue_apply,"ax",@progbits
 	.globl	command_queue_apply
 	.p2align	4
@@ -54,7 +54,7 @@ command_queue_apply:
 	.type	.Lanon.f64071cb774cefebe3366eea033ea36d.0,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.f64071cb774cefebe3366eea033ea36d.0:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/b80913a/crates/bevy_ecs/src/world/command_queue.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/6adae04/crates/bevy_ecs/src/world/command_queue.rs"
 	.size	.Lanon.f64071cb774cefebe3366eea033ea36d.0, 106
 
 	.type	.Lanon.f64071cb774cefebe3366eea033ea36d.1,@object
@@ -62,8 +62,8 @@ command_queue_apply:
 	.p2align	3, 0x0
 .Lanon.f64071cb774cefebe3366eea033ea36d.1:
 	.quad	.Lanon.f64071cb774cefebe3366eea033ea36d.0
-	.asciz	"j\000\000\000\000\000\000\000W\000\000\000\017\000\000"
+	.asciz	"i\000\000\000\000\000\000\000l\000\000\000\017\000\000"
 	.size	.Lanon.f64071cb774cefebe3366eea033ea36d.1, 24
 
-	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
+	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
 	.section	".note.GNU-stack","",@progbits

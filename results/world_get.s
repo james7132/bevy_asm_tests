@@ -1,8 +1,25 @@
-	.file	"world_get.9a797bcd79a79c55-cgu.0"
+	.file	"world_get.8051f7c78b4f5861-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,110
+	.zero	16,113
+.LCPI0_1:
+	.byte	43
+	.byte	107
+	.byte	86
+	.byte	180
+	.byte	122
+	.byte	95
+	.byte	142
+	.byte	60
+	.byte	49
+	.byte	238
+	.byte	174
+	.byte	87
+	.byte	173
+	.byte	31
+	.byte	146
+	.byte	226
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4
@@ -31,69 +48,68 @@ world_get:
 	.cfi_offset %rbp, -16
 	movl	%esi, %eax
 	notl	%eax
-	cmpq	%rax, 16(%rdi)
-	jbe	.LBB0_14
-	shrq	$32, %rsi
-	movq	8(%rdi), %rcx
+	cmpq	16(%rdi), %rax
+	jae	.LBB0_13
 	leaq	(%rax,%rax,2), %rax
-	cmpl	%esi, 16(%rcx,%rax,8)
-	jne	.LBB0_14
-	leaq	(%rcx,%rax,8), %rax
+	shlq	$3, %rax
+	addq	8(%rdi), %rax
+	shrq	$32, %rsi
+	cmpl	%esi, 16(%rax)
+	jne	.LBB0_13
 	cmpl	$0, (%rax)
-	je	.LBB0_14
+	je	.LBB0_13
 	cmpq	$0, 104(%rdi)
-	je	.LBB0_14
+	je	.LBB0_13
 	movl	4(%rax), %r15d
 	movl	12(%rax), %eax
 	movl	1448(%rdi), %r13d
 	movl	1452(%rdi), %ebp
-	movabsq	$-2548271346467615167, %rdx
 	movq	80(%rdi), %rcx
-	movq	88(%rdi), %rsi
+	movq	88(%rdi), %rdx
+	leaq	-24(%rcx), %rsi
+	movabsq	$-2120597645177197007, %r8
 	xorl	%ebx, %ebx
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
-	movabsq	$-7946021563690567857, %r8
-	movq	%rdx, %r9
-	xorl	%r10d, %r10d
+	movdqa	.LCPI0_1(%rip), %xmm2
+	xorl	%r9d, %r9d
 .LBB0_5:
-	andq	%rsi, %r9
-	movdqu	(%rcx,%r9), %xmm2
-	movdqa	%xmm2, %xmm3
-	pcmpeqb	%xmm0, %xmm3
-	pmovmskb	%xmm3, %r11d
-	testl	%r11d, %r11d
-	je	.LBB0_9
+	andq	%rdx, %r8
+	movdqu	(%rcx,%r8), %xmm3
+	movdqa	%xmm3, %xmm4
+	pcmpeqb	%xmm0, %xmm4
+	pmovmskb	%xmm4, %r10d
+	testl	%r10d, %r10d
+	je	.LBB0_8
 .LBB0_6:
-	rep		bsfl	%r11d, %r14d
-	addq	%r9, %r14
-	andq	%rsi, %r14
-	negq	%r14
-	leaq	(%r14,%r14,2), %r14
-	cmpq	%r8, -24(%rcx,%r14,8)
-	jne	.LBB0_8
-	cmpq	%rdx, -16(%rcx,%r14,8)
-	je	.LBB0_11
-.LBB0_8:
-	leal	-1(%r11), %r14d
-	andw	%r11w, %r14w
-	movl	%r14d, %r11d
+	rep		bsfl	%r10d, %r11d
+	addq	%r8, %r11
+	andq	%rdx, %r11
+	negq	%r11
+	leaq	(%r11,%r11,2), %r11
+	movdqu	(%rsi,%r11,8), %xmm4
+	pcmpeqb	%xmm2, %xmm4
+	pmovmskb	%xmm4, %r14d
+	cmpl	$65535, %r14d
+	je	.LBB0_10
+	leal	-1(%r10), %r11d
+	andw	%r10w, %r11w
+	movl	%r11d, %r10d
 	jne	.LBB0_6
-.LBB0_9:
-	pcmpeqb	%xmm1, %xmm2
-	pmovmskb	%xmm2, %r11d
-	testl	%r11d, %r11d
-	jne	.LBB0_15
-	addq	%r10, %r9
+.LBB0_8:
+	pcmpeqb	%xmm1, %xmm3
+	pmovmskb	%xmm3, %r10d
+	testl	%r10d, %r10d
+	jne	.LBB0_14
+	addq	%r9, %r8
+	addq	$16, %r8
 	addq	$16, %r9
-	addq	$16, %r10
 	jmp	.LBB0_5
-.LBB0_11:
+.LBB0_10:
 	cmpq	%rax, 424(%rdi)
-	jbe	.LBB0_14
-	leaq	(%rcx,%r14,8), %rcx
+	jbe	.LBB0_13
 	movl	%r15d, %r14d
-	movq	-8(%rcx), %r15
+	movq	-8(%rcx,%r11,8), %r15
 	leaq	(%rax,%rax,8), %r12
 	shlq	$3, %r12
 	addq	416(%rdi), %r12
@@ -102,7 +118,7 @@ world_get:
 	movl	%r14d, %edx
 	callq	*bevy_ecs::storage::table::Table::get_component@GOTPCREL(%rip)
 	testq	%rax, %rax
-	je	.LBB0_14
+	je	.LBB0_13
 	movq	%rax, %rbx
 	movq	%r12, %rdi
 	movq	%r15, %rsi
@@ -113,11 +129,11 @@ world_get:
 	movq	%r12, %rdi
 	movq	%r15, %rsi
 	callq	*bevy_ecs::storage::table::Table::get_changed_tick@GOTPCREL(%rip)
-	jmp	.LBB0_16
-.LBB0_14:
+	jmp	.LBB0_15
+.LBB0_13:
 	xorl	%ebx, %ebx
+.LBB0_14:
 .LBB0_15:
-.LBB0_16:
 	movq	%rbx, 8(%rsp)
 	movq	%r14, 16(%rsp)
 	movq	%rax, 24(%rsp)
@@ -145,5 +161,5 @@ world_get:
 	.size	world_get, .Lfunc_end0-world_get
 	.cfi_endproc
 
-	.ident	"rustc version 1.89.0 (29483883e 2025-08-04)"
+	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
 	.section	".note.GNU-stack","",@progbits
