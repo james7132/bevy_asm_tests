@@ -1,4 +1,4 @@
-	.file	"message_reader.1658e80cb12a215f-cgu.0"
+	.file	"message_reader.339591bc53977095-cgu.0"
 	.section	.text.message_reader,"ax",@progbits
 	.globl	message_reader
 	.p2align	4

@@ -1,4 +1,4 @@
-	.file	"query_get.6ecd67ebca8d34a4-cgu.0"
+	.file	"query_get.72ad8fddeda60012-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4

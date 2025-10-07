@@ -1,4 +1,4 @@
-	.file	"query_iter_many_sparse.afcd1c637315e318-cgu.0"
+	.file	"query_iter_many_sparse.4e5aff8c6fe50d63-cgu.0"
 	.section	.text.query_iter,"ax",@progbits
 	.globl	query_iter
 	.p2align	4

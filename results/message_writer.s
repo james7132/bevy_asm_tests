@@ -1,4 +1,4 @@
-	.file	"message_writer.80f54a0bde3d2523-cgu.0"
+	.file	"message_writer.fb47462ef5f820d3-cgu.0"
 	.section	.text.unlikely.alloc::raw_vec::finish_grow,"ax",@progbits
 	.p2align	4
 	.type	alloc::raw_vec::finish_grow,@function
