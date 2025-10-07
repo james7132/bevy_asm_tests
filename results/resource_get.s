@@ -1,38 +1,41 @@
-	.file	"resource_get.5392d3cce35e5e8e-cgu.0"
+	.file	"resource_get.affcf6f79e56c1d7-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,44
+	.zero	16,90
 .LCPI0_1:
-	.byte	89
-	.byte	185
-	.byte	51
-	.byte	94
-	.byte	72
-	.byte	20
-	.byte	166
-	.byte	106
-	.byte	42
-	.byte	217
-	.byte	206
-	.byte	79
-	.byte	240
-	.byte	204
-	.byte	219
-	.byte	88
+	.byte	192
+	.byte	227
+	.byte	4
+	.byte	244
+	.byte	98
+	.byte	21
+	.byte	8
+	.byte	19
+	.byte	125
+	.byte	12
+	.byte	26
+	.byte	84
+	.byte	29
+	.byte	246
+	.byte	84
+	.byte	180
 	.section	.text.resource_get,"ax",@progbits
 	.globl	resource_get
 	.p2align	4
 	.type	resource_get,@function
 resource_get:
+	.cfi_startproc
 	pushq	%rbx
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbx, -16
 	movq	%rdi, %rax
 	cmpq	$0, 136(%rsi)
 	je	.LBB0_11
 	movq	112(%rsi), %rcx
 	movq	120(%rsi), %rdx
 	leaq	-24(%rcx), %rdi
-	movabsq	$6402936627740465450, %r8
+	movabsq	$-5452462643013350275, %r8
 	xorl	%r9d, %r9d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -80,13 +83,13 @@ resource_get:
 	je	.LBB0_11
 	movq	472(%rsi), %rcx
 	notq	%rdx
-	shlq	$6, %rdx
-	cmpq	$0, 32(%rcx,%rdx)
+	imulq	$56, %rdx, %rdx
+	cmpb	$0, 48(%rcx,%rdx)
 	je	.LBB0_11
 	addq	%rdx, %rcx
 	movq	16(%rcx), %rdx
-	leaq	56(%rcx), %rdi
-	addq	$60, %rcx
+	leaq	40(%rcx), %rdi
+	addq	$44, %rcx
 	movl	1452(%rsi), %r8d
 	movl	1448(%rsi), %esi
 	movq	%rdx, (%rax)
@@ -95,13 +98,17 @@ resource_get:
 	movl	%r8d, 24(%rax)
 	movl	%esi, 28(%rax)
 	popq	%rbx
+	.cfi_def_cfa_offset 8
 	retq
 .LBB0_11:
+	.cfi_def_cfa_offset 16
 	movq	$0, (%rax)
 	popq	%rbx
+	.cfi_def_cfa_offset 8
 	retq
 .Lfunc_end0:
 	.size	resource_get, .Lfunc_end0-resource_get
+	.cfi_endproc
 
-	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
+	.ident	"rustc version 1.92.0-nightly (2cb4e7dce 2025-10-04)"
 	.section	".note.GNU-stack","",@progbits

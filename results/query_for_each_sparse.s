@@ -1,9 +1,10 @@
-	.file	"query_for_each_sparse.778147ca4d467934-cgu.0"
+	.file	"query_for_each_sparse.735c915595b4a262-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4
 	.type	query_for_each,@function
 query_for_each:
+	.cfi_startproc
 	movq	(%rdi), %r8
 	movq	8(%rdi), %rax
 	movq	272(%r8), %rcx
@@ -16,8 +17,8 @@ query_for_each:
 	testq	%rcx, %rcx
 	je	.LBB0_3
 	notq	%rcx
-	leaq	(%rcx,%rcx,8), %rcx
-	shlq	$4, %rcx
+	leaq	(%rcx,%rcx,2), %rcx
+	shlq	$5, %rcx
 	addq	344(%rax), %rcx
 	cmpq	%rsi, %rdx
 	jb	.LBB0_4
@@ -32,19 +33,31 @@ query_for_each:
 	testq	%rdx, %rdx
 	je	.LBB0_8
 	notq	%rdx
-	leaq	(%rdx,%rdx,8), %rdx
-	shlq	$4, %rdx
+	leaq	(%rdx,%rdx,2), %rdx
+	shlq	$5, %rdx
 	addq	344(%rax), %rdx
 	jmp	.LBB0_9
 .LBB0_8:
 	xorl	%edx, %edx
 .LBB0_9:
 	pushq	%rbp
+	.cfi_def_cfa_offset 16
 	pushq	%r15
+	.cfi_def_cfa_offset 24
 	pushq	%r14
+	.cfi_def_cfa_offset 32
 	pushq	%r13
+	.cfi_def_cfa_offset 40
 	pushq	%r12
+	.cfi_def_cfa_offset 48
 	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset %rbx, -56
+	.cfi_offset %r12, -48
+	.cfi_offset %r13, -40
+	.cfi_offset %r14, -32
+	.cfi_offset %r15, -24
+	.cfi_offset %rbp, -16
 	movq	256(%r8), %r9
 	testq	%r9, %r9
 	je	.LBB0_11
@@ -52,13 +65,20 @@ query_for_each:
 	je	.LBB0_12
 .LBB0_11:
 	popq	%rbx
+	.cfi_def_cfa_offset 48
 	popq	%r12
+	.cfi_def_cfa_offset 40
 	popq	%r13
+	.cfi_def_cfa_offset 32
 	popq	%r14
+	.cfi_def_cfa_offset 24
 	popq	%r15
+	.cfi_def_cfa_offset 16
 	popq	%rbp
+	.cfi_def_cfa_offset 8
 	retq
 .LBB0_12:
+	.cfi_def_cfa_offset 56
 	movl	20(%rdi), %esi
 	movq	248(%r8), %rdi
 	leaq	(%rdi,%r9,4), %r8
@@ -96,15 +116,15 @@ query_for_each:
 	movl	(%r10,%rbx,8), %eax
 	incq	%rbx
 	xorq	%r9, %rax
-	movq	128(%rcx), %r8
+	movq	80(%rcx), %r8
 	movl	(%r8,%rax,4), %r8d
 	notl	%r8d
 	movq	8(%rcx), %r14
 	imulq	%r8, %r14
 	movq	16(%rcx), %r15
-	movq	80(%rcx), %r12
+	movq	40(%rcx), %r12
 	movq	16(%rdx), %r13
-	movq	128(%rdx), %rbp
+	movq	80(%rdx), %rbp
 	movl	(%rbp,%rax,4), %eax
 	notl	%eax
 	imulq	8(%rdx), %rax
@@ -129,15 +149,15 @@ query_for_each:
 .LBB0_22:
 	movl	(%r10), %r14d
 	xorq	%r9, %r14
-	movq	128(%rcx), %r15
+	movq	80(%rcx), %r15
 	movl	(%r15,%r14,4), %r15d
 	notl	%r15d
 	movq	8(%rcx), %r12
 	imulq	%r15, %r12
 	movq	16(%rcx), %r13
-	movq	80(%rcx), %rbp
+	movq	40(%rcx), %rbp
 	movq	16(%rdx), %r8
-	movq	128(%rdx), %rax
+	movq	80(%rdx), %rax
 	movl	(%rax,%r14,4), %eax
 	notl	%eax
 	imulq	8(%rdx), %rax
@@ -152,6 +172,7 @@ query_for_each:
 	jmp	.LBB0_13
 .Lfunc_end0:
 	.size	query_for_each, .Lfunc_end0-query_for_each
+	.cfi_endproc
 
-	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
+	.ident	"rustc version 1.92.0-nightly (2cb4e7dce 2025-10-04)"
 	.section	".note.GNU-stack","",@progbits

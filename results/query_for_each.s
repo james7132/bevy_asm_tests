@@ -1,12 +1,19 @@
-	.file	"query_for_each.a993eb0dda7c97cf-cgu.0"
+	.file	"query_for_each.3eb2a7975de785a-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4
 	.type	query_for_each,@function
 query_for_each:
+	.cfi_startproc
 	pushq	%r15
+	.cfi_def_cfa_offset 16
 	pushq	%r14
+	.cfi_def_cfa_offset 24
 	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset %rbx, -32
+	.cfi_offset %r14, -24
+	.cfi_offset %r15, -16
 	movq	(%rdi), %rax
 	movq	256(%rax), %rsi
 	testq	%rsi, %rsi
@@ -93,9 +100,8 @@ query_for_each:
 	movl	%ecx, (%r10,%rbx,4)
 	addss	(%r11,%rbx,4), %xmm0
 	movss	%xmm0, (%r11,%rbx,4)
-	leaq	1(%rbx), %r14
-	movq	%r14, %rbx
-	cmpq	%r14, %r8
+	incq	%rbx
+	cmpq	%rbx, %r8
 	jne	.LBB0_17
 	jmp	.LBB0_3
 	.p2align	4
@@ -177,18 +183,21 @@ query_for_each:
 	movl	%ecx, (%r10,%r14,4)
 	addss	(%rbx,%r14,4), %xmm0
 	movss	%xmm0, (%rbx,%r14,4)
-	leaq	1(%r14), %r15
-	movq	%r15, %r14
-	cmpq	%r15, %r9
+	incq	%r14
+	cmpq	%r14, %r9
 	jne	.LBB0_29
 	jmp	.LBB0_21
 .LBB0_30:
 	popq	%rbx
+	.cfi_def_cfa_offset 24
 	popq	%r14
+	.cfi_def_cfa_offset 16
 	popq	%r15
+	.cfi_def_cfa_offset 8
 	retq
 .Lfunc_end0:
 	.size	query_for_each, .Lfunc_end0-query_for_each
+	.cfi_endproc
 
-	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
+	.ident	"rustc version 1.92.0-nightly (2cb4e7dce 2025-10-04)"
 	.section	".note.GNU-stack","",@progbits

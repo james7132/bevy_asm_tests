@@ -73,7 +73,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs"
 version = "0.18.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#6adae0407882311301b564d831b27246ecd4f027"
+source = "git+https://github.com/bevyengine/bevy?branch=main#1610aa9d91190151785d81e3226be8dd08f0a2b3"
 dependencies = [
  "arrayvec",
  "bevy_ecs_macros",
@@ -100,7 +100,7 @@ dependencies = [
 [[package]]
 name = "bevy_ecs_macros"
 version = "0.18.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#6adae0407882311301b564d831b27246ecd4f027"
+source = "git+https://github.com/bevyengine/bevy?branch=main#1610aa9d91190151785d81e3226be8dd08f0a2b3"
 dependencies = [
  "bevy_macro_utils",
  "proc-macro2",
@@ -111,7 +111,7 @@ dependencies = [
 [[package]]
 name = "bevy_macro_utils"
 version = "0.18.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#6adae0407882311301b564d831b27246ecd4f027"
+source = "git+https://github.com/bevyengine/bevy?branch=main#1610aa9d91190151785d81e3226be8dd08f0a2b3"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -122,7 +122,7 @@ dependencies = [
 [[package]]
 name = "bevy_platform"
 version = "0.18.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#6adae0407882311301b564d831b27246ecd4f027"
+source = "git+https://github.com/bevyengine/bevy?branch=main#1610aa9d91190151785d81e3226be8dd08f0a2b3"
 dependencies = [
  "critical-section",
  "foldhash",
@@ -140,12 +140,12 @@ dependencies = [
 [[package]]
 name = "bevy_ptr"
 version = "0.18.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#6adae0407882311301b564d831b27246ecd4f027"
+source = "git+https://github.com/bevyengine/bevy?branch=main#1610aa9d91190151785d81e3226be8dd08f0a2b3"
 
 [[package]]
 name = "bevy_reflect"
 version = "0.18.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#6adae0407882311301b564d831b27246ecd4f027"
+source = "git+https://github.com/bevyengine/bevy?branch=main#1610aa9d91190151785d81e3226be8dd08f0a2b3"
 dependencies = [
  "assert_type_match",
  "bevy_platform",
@@ -170,7 +170,7 @@ dependencies = [
 [[package]]
 name = "bevy_reflect_derive"
 version = "0.18.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#6adae0407882311301b564d831b27246ecd4f027"
+source = "git+https://github.com/bevyengine/bevy?branch=main#1610aa9d91190151785d81e3226be8dd08f0a2b3"
 dependencies = [
  "bevy_macro_utils",
  "indexmap",
@@ -183,7 +183,7 @@ dependencies = [
 [[package]]
 name = "bevy_tasks"
 version = "0.18.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#6adae0407882311301b564d831b27246ecd4f027"
+source = "git+https://github.com/bevyengine/bevy?branch=main#1610aa9d91190151785d81e3226be8dd08f0a2b3"
 dependencies = [
  "async-channel",
  "async-executor",
@@ -200,7 +200,7 @@ dependencies = [
 [[package]]
 name = "bevy_utils"
 version = "0.18.0-dev"
-source = "git+https://github.com/bevyengine/bevy?branch=main#6adae0407882311301b564d831b27246ecd4f027"
+source = "git+https://github.com/bevyengine/bevy?branch=main#1610aa9d91190151785d81e3226be8dd08f0a2b3"
 dependencies = [
  "bevy_platform",
  "disqualified",

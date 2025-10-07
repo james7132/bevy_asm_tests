@@ -1,25 +1,25 @@
-	.file	"world_get_sparse.c5c2973cb39d3fbb-cgu.0"
+	.file	"world_get_sparse.35fd6ca2ea432e27-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,11
+	.zero	16,98
 .LCPI0_1:
-	.byte	2
-	.byte	186
-	.byte	13
-	.byte	172
-	.byte	241
-	.byte	28
-	.byte	249
-	.byte	248
-	.byte	135
+	.byte	3
+	.byte	228
+	.byte	242
+	.byte	199
+	.byte	140
+	.byte	188
+	.byte	103
+	.byte	39
 	.byte	4
-	.byte	114
-	.byte	7
-	.byte	118
-	.byte	97
-	.byte	126
-	.byte	22
+	.byte	127
+	.byte	155
+	.byte	243
+	.byte	116
+	.byte	10
+	.byte	64
+	.byte	197
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4
@@ -57,7 +57,7 @@ world_get:
 	movq	80(%rdi), %rsi
 	movq	88(%rdi), %r9
 	leaq	-24(%rsi), %r10
-	movabsq	$1620840075458905223, %r11
+	movabsq	$-4233372152308728060, %r11
 	xorl	%edx, %edx
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -105,12 +105,12 @@ world_get:
 	je	.LBB0_15
 	movq	344(%rdi), %r9
 	notq	%rdx
-	leaq	(%rdx,%rdx,8), %rdx
-	shlq	$4, %rdx
-	cmpq	136(%r9,%rdx), %r8
+	leaq	(%rdx,%rdx,2), %rdx
+	shlq	$5, %rdx
+	cmpq	88(%r9,%rdx), %r8
 	jae	.LBB0_15
 	addq	%rdx, %r9
-	movq	128(%r9), %rdx
+	movq	80(%r9), %rdx
 	movl	(%rdx,%r8,4), %esi
 	testl	%esi, %esi
 	je	.LBB0_15
@@ -119,9 +119,9 @@ world_get:
 	imulq	%rsi, %rdx
 	addq	16(%r9), %rdx
 	shlq	$2, %rsi
-	movq	56(%r9), %rdi
+	movq	32(%r9), %rdi
 	addq	%rsi, %rdi
-	addq	80(%r9), %rsi
+	addq	40(%r9), %rsi
 	jmp	.LBB0_17
 .LBB0_15:
 	xorl	%edx, %edx
@@ -148,5 +148,5 @@ world_get:
 	.size	world_get, .Lfunc_end0-world_get
 	.cfi_endproc
 
-	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
+	.ident	"rustc version 1.92.0-nightly (2cb4e7dce 2025-10-04)"
 	.section	".note.GNU-stack","",@progbits

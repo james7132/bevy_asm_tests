@@ -1,4 +1,4 @@
-	.file	"query_get_sparse.815046f74cfebf8f-cgu.0"
+	.file	"query_get_sparse.514758df52dae03b-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4
@@ -40,8 +40,8 @@ query_get:
 	testq	%rsi, %rsi
 	je	.LBB0_11
 	notq	%rsi
-	leaq	(%rsi,%rsi,8), %rsi
-	shlq	$4, %rsi
+	leaq	(%rsi,%rsi,2), %rsi
+	shlq	$5, %rsi
 	addq	344(%r8), %rsi
 	cmpq	%rdx, %rcx
 	jb	.LBB0_12
@@ -73,18 +73,18 @@ query_get:
 	testq	%rcx, %rcx
 	je	.LBB0_16
 	notq	%rcx
-	leaq	(%rcx,%rcx,8), %rdx
-	shlq	$4, %rdx
+	leaq	(%rcx,%rcx,2), %rdx
+	shlq	$5, %rdx
 	addq	344(%r8), %rdx
-	cmpq	136(%rsi), %rax
+	cmpq	88(%rsi), %rax
 	jae	.LBB0_19
 	jmp	.LBB0_17
 .LBB0_16:
 	xorl	%edx, %edx
-	cmpq	136(%rsi), %rax
+	cmpq	88(%rsi), %rax
 	jae	.LBB0_19
 .LBB0_17:
-	movq	128(%rsi), %rcx
+	movq	80(%rsi), %rcx
 	movl	(%rcx,%rax,4), %r10d
 	testl	%r10d, %r10d
 	je	.LBB0_19
@@ -93,15 +93,15 @@ query_get:
 	imulq	%r10, %r8
 	addq	16(%rsi), %r8
 	shlq	$2, %r10
-	movq	56(%rsi), %rcx
+	movq	32(%rsi), %rcx
 	addq	%r10, %rcx
-	addq	80(%rsi), %r10
+	addq	40(%rsi), %r10
 	jmp	.LBB0_20
 .LBB0_19:
 	xorl	%r8d, %r8d
 .LBB0_20:
 	movl	16(%rdi), %r9d
-	movq	128(%rdx), %rsi
+	movq	80(%rdx), %rsi
 	movl	(%rsi,%rax,4), %eax
 	notl	%eax
 	imulq	8(%rdx), %rax
@@ -115,5 +115,5 @@ query_get:
 	.size	query_get, .Lfunc_end0-query_get
 	.cfi_endproc
 
-	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
+	.ident	"rustc version 1.92.0-nightly (2cb4e7dce 2025-10-04)"
 	.section	".note.GNU-stack","",@progbits

@@ -1,4 +1,4 @@
-	.file	"message_reader.1e368376577cfef-cgu.0"
+	.file	"message_reader.1658e80cb12a215f-cgu.0"
 	.section	.text.message_reader,"ax",@progbits
 	.globl	message_reader
 	.p2align	4
@@ -69,5 +69,5 @@ message_reader:
 	.size	message_reader, .Lfunc_end0-message_reader
 	.cfi_endproc
 
-	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
+	.ident	"rustc version 1.92.0-nightly (2cb4e7dce 2025-10-04)"
 	.section	".note.GNU-stack","",@progbits

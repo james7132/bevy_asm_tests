@@ -1,25 +1,25 @@
-	.file	"world_get.8051f7c78b4f5861-cgu.0"
+	.file	"world_get.b01c29beba93a618-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,113
+	.zero	16,127
 .LCPI0_1:
-	.byte	43
-	.byte	107
-	.byte	86
-	.byte	180
-	.byte	122
-	.byte	95
-	.byte	142
-	.byte	60
-	.byte	49
-	.byte	238
-	.byte	174
-	.byte	87
-	.byte	173
-	.byte	31
-	.byte	146
-	.byte	226
+	.byte	147
+	.byte	224
+	.byte	156
+	.byte	178
+	.byte	148
+	.byte	192
+	.byte	212
+	.byte	198
+	.byte	218
+	.byte	8
+	.byte	231
+	.byte	139
+	.byte	78
+	.byte	233
+	.byte	172
+	.byte	255
 	.section	.text.world_get,"ax",@progbits
 	.globl	world_get
 	.p2align	4
@@ -67,7 +67,7 @@ world_get:
 	movq	80(%rdi), %rcx
 	movq	88(%rdi), %rdx
 	leaq	-24(%rcx), %rsi
-	movabsq	$-2120597645177197007, %r8
+	movabsq	$-23387374479800102, %r8
 	xorl	%ebx, %ebx
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -161,5 +161,5 @@ world_get:
 	.size	world_get, .Lfunc_end0-world_get
 	.cfi_endproc
 
-	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
+	.ident	"rustc version 1.92.0-nightly (2cb4e7dce 2025-10-04)"
 	.section	".note.GNU-stack","",@progbits

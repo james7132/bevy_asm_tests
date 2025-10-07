@@ -1,16 +1,30 @@
-	.file	"command_queue_apply.7d3154ebd34957ce-cgu.0"
+	.file	"command_queue_apply.d0a2c5bdedd20aa3-cgu.0"
 	.section	.text.command_queue_apply,"ax",@progbits
 	.globl	command_queue_apply
 	.p2align	4
 	.type	command_queue_apply,@function
 command_queue_apply:
+	.cfi_startproc
 	pushq	%rbp
+	.cfi_def_cfa_offset 16
 	pushq	%r15
+	.cfi_def_cfa_offset 24
 	pushq	%r14
+	.cfi_def_cfa_offset 32
 	pushq	%r13
+	.cfi_def_cfa_offset 40
 	pushq	%r12
+	.cfi_def_cfa_offset 48
 	pushq	%rbx
+	.cfi_def_cfa_offset 56
 	pushq	%rax
+	.cfi_def_cfa_offset 64
+	.cfi_offset %rbx, -56
+	.cfi_offset %r12, -48
+	.cfi_offset %r13, -40
+	.cfi_offset %r14, -32
+	.cfi_offset %r15, -24
+	.cfi_offset %rbp, -16
 	movq	%rsi, %r14
 	movq	%rdi, %rbx
 	leaq	.Lanon.f64071cb774cefebe3366eea033ea36d.1(%rip), %rsi
@@ -41,20 +55,28 @@ command_queue_apply:
 .LBB0_3:
 	movq	%r12, 16(%rbx)
 	addq	$8, %rsp
+	.cfi_def_cfa_offset 56
 	popq	%rbx
+	.cfi_def_cfa_offset 48
 	popq	%r12
+	.cfi_def_cfa_offset 40
 	popq	%r13
+	.cfi_def_cfa_offset 32
 	popq	%r14
+	.cfi_def_cfa_offset 24
 	popq	%r15
+	.cfi_def_cfa_offset 16
 	popq	%rbp
+	.cfi_def_cfa_offset 8
 	retq
 .Lfunc_end0:
 	.size	command_queue_apply, .Lfunc_end0-command_queue_apply
+	.cfi_endproc
 
 	.type	.Lanon.f64071cb774cefebe3366eea033ea36d.0,@object
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .Lanon.f64071cb774cefebe3366eea033ea36d.0:
-	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/6adae04/crates/bevy_ecs/src/world/command_queue.rs"
+	.asciz	"/home/james/.cargo/git/checkouts/bevy-50d7e162b728c6c6/1610aa9/crates/bevy_ecs/src/world/command_queue.rs"
 	.size	.Lanon.f64071cb774cefebe3366eea033ea36d.0, 106
 
 	.type	.Lanon.f64071cb774cefebe3366eea033ea36d.1,@object
@@ -62,8 +84,8 @@ command_queue_apply:
 	.p2align	3, 0x0
 .Lanon.f64071cb774cefebe3366eea033ea36d.1:
 	.quad	.Lanon.f64071cb774cefebe3366eea033ea36d.0
-	.asciz	"i\000\000\000\000\000\000\000l\000\000\000\017\000\000"
+	.asciz	"i\000\000\000\000\000\000\000f\000\000\000\017\000\000"
 	.size	.Lanon.f64071cb774cefebe3366eea033ea36d.1, 24
 
-	.ident	"rustc version 1.90.0 (1159e78c4 2025-09-14)"
+	.ident	"rustc version 1.92.0-nightly (2cb4e7dce 2025-10-04)"
 	.section	".note.GNU-stack","",@progbits
