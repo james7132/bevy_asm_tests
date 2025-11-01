@@ -1,4 +1,4 @@
-	.file	"query_for_each.3eb2a7975de785a-cgu.0"
+	.file	"query_for_each.979aef3dc5166c27-cgu.0"
 	.section	.text.query_for_each,"ax",@progbits
 	.globl	query_for_each
 	.p2align	4
@@ -199,5 +199,5 @@ query_for_each:
 	.size	query_for_each, .Lfunc_end0-query_for_each
 	.cfi_endproc
 
-	.ident	"rustc version 1.92.0-nightly (2cb4e7dce 2025-10-04)"
+	.ident	"rustc version 1.93.0-nightly (82ae0ee64 2025-10-31)"
 	.section	".note.GNU-stack","",@progbits

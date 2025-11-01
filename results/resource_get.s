@@ -1,25 +1,25 @@
-	.file	"resource_get.affcf6f79e56c1d7-cgu.0"
+	.file	"resource_get.3103c258c2da6212-cgu.0"
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4, 0x0
 .LCPI0_0:
-	.zero	16,90
+	.zero	16,45
 .LCPI0_1:
-	.byte	192
-	.byte	227
-	.byte	4
-	.byte	244
-	.byte	98
-	.byte	21
-	.byte	8
-	.byte	19
-	.byte	125
-	.byte	12
-	.byte	26
-	.byte	84
-	.byte	29
-	.byte	246
-	.byte	84
-	.byte	180
+	.byte	223
+	.byte	100
+	.byte	1
+	.byte	52
+	.byte	177
+	.byte	229
+	.byte	147
+	.byte	124
+	.byte	68
+	.byte	51
+	.byte	102
+	.byte	186
+	.byte	13
+	.byte	168
+	.byte	7
+	.byte	91
 	.section	.text.resource_get,"ax",@progbits
 	.globl	resource_get
 	.p2align	4
@@ -35,7 +35,7 @@ resource_get:
 	movq	112(%rsi), %rcx
 	movq	120(%rsi), %rdx
 	leaq	-24(%rcx), %rdi
-	movabsq	$-5452462643013350275, %r8
+	movabsq	$6559396159203717956, %r8
 	xorl	%r9d, %r9d
 	movdqa	.LCPI0_0(%rip), %xmm0
 	pcmpeqd	%xmm1, %xmm1
@@ -110,5 +110,5 @@ resource_get:
 	.size	resource_get, .Lfunc_end0-resource_get
 	.cfi_endproc
 
-	.ident	"rustc version 1.92.0-nightly (2cb4e7dce 2025-10-04)"
+	.ident	"rustc version 1.93.0-nightly (82ae0ee64 2025-10-31)"
 	.section	".note.GNU-stack","",@progbits

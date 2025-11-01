@@ -1,4 +1,4 @@
-	.file	"query_get.6ecd67ebca8d34a4-cgu.0"
+	.file	"query_get.445fe36e01d02ca9-cgu.0"
 	.section	.text.query_get,"ax",@progbits
 	.globl	query_get
 	.p2align	4
@@ -95,5 +95,5 @@ query_get:
 	.size	query_get, .Lfunc_end0-query_get
 	.cfi_endproc
 
-	.ident	"rustc version 1.92.0-nightly (2cb4e7dce 2025-10-04)"
+	.ident	"rustc version 1.93.0-nightly (82ae0ee64 2025-10-31)"
 	.section	".note.GNU-stack","",@progbits
